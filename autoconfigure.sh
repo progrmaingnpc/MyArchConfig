@@ -6,6 +6,7 @@ KITTY_DIRECTORY=~/.config/kitty
 WAYBAR_DIRECTORY=~/.config/waybar
 SHELL_FASTFETCH_DIRECTORY=~/.config/fast_fetch_shell
 WAYPAPER_DIRECTORY=~/.config/waypaper 
+SCRIPTS_DIRECTORY=~/.config/hypr/scripts
 
 yay -Syu hyprland hyprpaper swww hyprlock waybar \
        xdg-desktop-portal xdg-desktop-portal-hyprland waypaper \
@@ -13,7 +14,7 @@ yay -Syu hyprland hyprpaper swww hyprlock waybar \
        hyprcursor hyprutils hyprlang hyprwayland-scanner \
        aquamarine hyprgraphics wl-clipboard qt5-wayland \
        otf-font-awesome kitty oh-my-posh-bin bash-completion \
-       zsh-completions
+       zsh-completions rofi-wayland
 # Create the hyprland directory (hypr) if it doesn't already exist
 if [ ! -d "$HYPRLAND_DIRECTORY" ]; then	
 	mkdir "$HYPRLAND_DIRECTORY"
@@ -56,6 +57,13 @@ if [ ! -d "$WAYPAPER_DIRECTORY" ]; then
 else
 	echo "Found existing local waypaper directory at $WAYPAPER_DIRECTORY" 
 fi
+# Create the hyprland scripts directory if doesn't already exist
+if [ ! -d "$SCRIPTS_DIRECTORY" ]; then	
+	mkdir "$SCRIPTS_DIRECTORY"
+	echo "Created local scripts directory at $SCRIPTS_DIRECTORY"
+else
+	echo "Found existing local scripts directory at $SCRIPTS_DIRECTORY" 
+fi
 
 # Copy the hyprland configs to the hyprland directory on the user's device
 cp hyprland_confs/confs/new_confs/*.conf "$HYPRLAND_DIRECTORY" -v
@@ -78,3 +86,4 @@ oh-my-posh font install JetBrainsMono
 # Copy default wallpaper directory with default background to user's directory
 cp wallpaper/ ~/ -r -v
 cp hyprland_confs/waypaper_conf/config.ini "$WAYPAPER_DIRECTORY" -v
+cp personal_scripts/*.sh "$SCRIPTS_DIRECTORY" -v

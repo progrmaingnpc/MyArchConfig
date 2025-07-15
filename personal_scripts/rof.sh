@@ -1,1 +1,1 @@
-rofi -show
+rofi -show drun
