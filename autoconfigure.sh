@@ -1,4 +1,5 @@
 #!/bin/bash
+
 HYPRLAND_DIRECTORY=~/.config/hypr
 HYPR_CONF_DIRECTORY=~/.config/hypr/conf
 KITTY_DIRECTORY=~/.config/kitty
@@ -48,6 +49,7 @@ cp hyprland_confs/kitty/*.conf "$KITTY_DIRECTORY" -v
 # Copy the waybar configs to the waybar config directory on the user's device
 cp hyprland_confs/waybar_confs/*.jsonc "$WAYBAR_DIRECTORY" -v
 cp hyprland_confs/waybar_confs/*.css "$WAYBAR_DIRECTORY" -v
-# Copy the .bashrc file to the user's device
-#cp hyrpland_confs/bash_conf/.bashrc ~/.bashrc
-cp hyprland_confs/bash_conf/.bashrc ~/.bashrc -v
+# Copy the bash config file to the user's .bashrc file
+cp hyprland_confs/bashrc/bash_conf ~/.bashrc -v
+# Copy the zsh config file to the user's .zshrc file
+cp hyprland_confs/zshrc/zsh_conf ~/.zshrc -v
