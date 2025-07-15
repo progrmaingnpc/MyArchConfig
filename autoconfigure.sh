@@ -5,6 +5,7 @@ HYPR_CONF_DIRECTORY=~/.config/hypr/conf
 KITTY_DIRECTORY=~/.config/kitty
 WAYBAR_DIRECTORY=~/.config/waybar
 SHELL_FASTFETCH_DIRECTORY=~/.config/fast_fetch_shell
+WAYPAPER_DIRECTORY=~/.config/waypaper 
 
 yay -Syu hyprland hyprpaper swww hyprlock waybar \
        xdg-desktop-portal xdg-desktop-portal-hyprland waypaper \
@@ -44,9 +45,16 @@ fi
 # Create the fastfetch shell config directory if doesn't already exist
 if [ ! -d "$SHELL_FASTFETCH_DIRECTORY" ]; then	
 	mkdir "$SHELL_FASTFETCH_DIRECTORY"
-	echo "Created local waybar directory at $SHELL_FASTFETCH_DIRECTORY"
+	echo "Created local fastfetch shell config directory at $SHELL_FASTFETCH_DIRECTORY"
 else
-	echo "Found existing local waybar directory at $SHELL_FASTFETCH_DIRECTORY" 
+	echo "Found existing local fastfetch shell config directory at $SHELL_FASTFETCH_DIRECTORY" 
+fi
+# Create the waypaper directory if doesn't already exist
+if [ ! -d "$WAYPAPER_DIRECTORY" ]; then	
+	mkdir "$WAYPAPER_DIRECTORY"
+	echo "Created local waypaper directory at $WAYPAPER_DIRECTORY"
+else
+	echo "Found existing local waypaper directory at $WAYPAPER_DIRECTORY" 
 fi
 
 # Copy the hyprland configs to the hyprland directory on the user's device
@@ -68,4 +76,5 @@ cp hyprland_confs/fast_fetch_conf/default.png "$SHELL_FASTFETCH_DIRECTORY" -v
 # Install oh-my-posh font
 oh-my-posh font install JetBrainsMono
 # Copy default wallpaper directory with default background to user's directory
-cp wallpaper/ ~/ -r -v 
+cp wallpaper/ ~/ -r -v
+cp hyprland_confs/waypaper_conf/config.ini "$WAYPAPER_DIRECTORY" -v
