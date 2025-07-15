@@ -9,7 +9,7 @@ yay -Syu hyprland hyprpaper swww hyprlock waybar \
        hypridle hyprpicker hyprland-qt-support hyprland-qtutils \
        hyprcursor hyprutils hyprlang hyprwayland-scanner \
        aquamarine hyprgraphics wl-clipboard qt5-wayland \
-       otf-font-awesome kitty
+       otf-font-awesome kitty oh-my-posh
 # Create the hyprland directory (hypr) if it doesn't already exist
 if [ ! -d "$HYPRLAND_DIRECTORY" ]; then	
 	mkdir "$HYPRLAND_DIRECTORY"
@@ -47,4 +47,7 @@ cp hyprland_confs/confs/new_confs/conf/*.conf "$HYPR_CONF_DIRECTORY" -v
 cp hyprland_confs/kitty/*.conf "$KITTY_DIRECTORY" -v
 # Copy the waybar configs to the waybar config directory on the user's device
 cp hyprland_confs/waybar_confs/*.jsonc "$WAYBAR_DIRECTORY" -v
-cp hyprland_confs/waybar_confs/*.css "$WAYBAR_DIRECTORY" -v 
+cp hyprland_confs/waybar_confs/*.css "$WAYBAR_DIRECTORY" -v
+# Copy the .bashrc file to the user's device
+#cp hyrpland_confs/bash_conf/.bashrc ~/.bashrc
+cp hyprland_confs/bash_conf/.bashrc ~/.bashrc -v
