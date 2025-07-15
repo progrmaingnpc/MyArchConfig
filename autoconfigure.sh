@@ -4,6 +4,7 @@ HYPRLAND_DIRECTORY=~/.config/hypr
 HYPR_CONF_DIRECTORY=~/.config/hypr/conf
 KITTY_DIRECTORY=~/.config/kitty
 WAYBAR_DIRECTORY=~/.config/waybar
+SHELL_FASTFETCH_DIRECTORY=~/.config/fast_fetch_shell
 
 yay -Syu hyprland hyprpaper swww hyprlock waybar \
        xdg-desktop-portal xdg-desktop-portal-hyprland waypaper \
@@ -39,6 +40,13 @@ if [ ! -d "$WAYBAR_DIRECTORY" ]; then
 else
 	echo "Found existing local waybar directory at $WAYBAR_DIRECTORY"
 fi
+# Create the fastfetch shell config directory if doesn't already exist
+if [ ! -d "$SHELL_FASTFETCH_DIRECTORY" ]; then	
+	mkdir "$SHELL_FASTFETCH_DIRECTORY"
+	echo "Created local waybar directory at $SHELL_FASTFETCH_DIRECTORY"
+else
+	echo "Found existing local waybar directory at $SHELL_FASTFETCH_DIRECTORY" 
+fi
 
 # Copy the hyprland configs to the hyprland directory on the user's device
 cp hyprland_confs/confs/new_confs/*.conf "$HYPRLAND_DIRECTORY" -v
@@ -53,3 +61,6 @@ cp hyprland_confs/waybar_confs/*.css "$WAYBAR_DIRECTORY" -v
 cp hyprland_confs/bashrc/bash_conf ~/.bashrc -v
 # Copy the zsh config file to the user's .zshrc file
 cp hyprland_confs/zshrc/zsh_conf ~/.zshrc -v
+# Copy the fastfetch shell config to the fastfetch shell config directory on the user's device
+cp hyprland_confs/fast_fetch_conf/default.jsonc "$SHELL_FASTFETCH_DIRECTORY" -v
+cp hyprland_confs/fast_fetch_conf/default.png "$SHELL_FASTFETCH_DIRECTORY" -v

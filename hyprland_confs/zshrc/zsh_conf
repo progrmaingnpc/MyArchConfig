@@ -1,2 +1,2 @@
-fastfetch --config examples/13
+fastfetch --config ~/.config/fast_fetch_shell/default.jsonc --logo ~/.config/fast_fetch_shell/default.png
 eval "$(oh-my-posh init bash --config /usr/share/oh-my-posh/themes/negligible.omp.json)"
