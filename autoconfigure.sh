@@ -1,13 +1,14 @@
 #!/bin/bash
 WAYBAR_DIRECTORY=~/.config/waybar
 HYPRLAND_DIRECTORY=~/.config/hypr
+KITTY_DIRECTORY=~/.config/kitty
 
 yay -Syu hyprland hyprpaper swww hyprlock waybar \
        xdg-desktop-portal xdg-desktop-portal-hyprland waypaper \
        hypridle hyprpicker hyprland-qt-support hyprland-qtutils \
        hyprcursor hyprutils hyprlang hyprwayland-scanner \
        aquamarine hyprgraphics wl-clipboard qt5-wayland \
-       otf-font-awesome
+       otf-font-awesome kitty
 
 if [ ! -d "$HYPRLAND_DIRECTORY" ]; then	
 	mkdir "$HYPRLAND_DIRECTORY"
@@ -17,6 +18,15 @@ else
 fi
 
 cp hyprland_confs/confs/new_confs/*.conf ~/.config/hypr -v
+
+if [ ! -d "$KITTY_DIRECTORY" ]; then	
+	mkdir "$KITTY_DIRECTORY"
+	echo "Created local kitty directory at $KITTY_DIRECTORY"
+else
+	echo "Found existing local kitty directory at $KITTY_DIRECTORY"
+fi
+
+cp hyprland_confs/kitty/*.conf ~/.config/kitty -v
 
 if [ ! -d "$WAYBAR_DIRECTORY" ]; then	
 	mkdir "$WAYBAR_DIRECTORY"
