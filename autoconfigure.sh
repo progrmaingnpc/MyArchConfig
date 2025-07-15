@@ -65,4 +65,7 @@ cp hyprland_confs/zshrc/zsh_conf ~/.zshrc -v
 # Copy the fastfetch shell config to the fastfetch shell config directory on the user's device
 cp hyprland_confs/fast_fetch_conf/default.jsonc "$SHELL_FASTFETCH_DIRECTORY" -v
 cp hyprland_confs/fast_fetch_conf/default.png "$SHELL_FASTFETCH_DIRECTORY" -v
+# Install oh-my-posh font
 oh-my-posh font install JetBrainsMono
+# Copy default wallpaper directory with default background to user's directory
+cp wallpaper/ ~/ -r -v 

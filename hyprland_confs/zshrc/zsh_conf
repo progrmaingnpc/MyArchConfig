@@ -1,2 +1,3 @@
+wallust -q run ~/wallpaper/default.jpg
 fastfetch --config ~/.config/fast_fetch_shell/default.jsonc --logo ~/.config/fast_fetch_shell/default.png
 eval "$(oh-my-posh init zsh --config /usr/share/oh-my-posh/themes/negligible.omp.json)"
