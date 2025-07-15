@@ -11,7 +11,8 @@ yay -Syu hyprland hyprpaper swww hyprlock waybar \
        hypridle hyprpicker hyprland-qt-support hyprland-qtutils \
        hyprcursor hyprutils hyprlang hyprwayland-scanner \
        aquamarine hyprgraphics wl-clipboard qt5-wayland \
-       otf-font-awesome kitty oh-my-posh-bin
+       otf-font-awesome kitty oh-my-posh-bin bash-completion \
+       zsh-completions
 # Create the hyprland directory (hypr) if it doesn't already exist
 if [ ! -d "$HYPRLAND_DIRECTORY" ]; then	
 	mkdir "$HYPRLAND_DIRECTORY"
