@@ -1,6 +1,7 @@
 #!/bin/bash
 WAYBAR_DIRECTORY=~/.config/waybar
 HYPRLAND_DIRECTORY=~/.config/hypr
+HYPR_CONF_DIRECTORY=~/.config/hypr/conf
 KITTY_DIRECTORY=~/.config/kitty
 
 yay -Syu hyprland hyprpaper swww hyprlock waybar \
@@ -17,7 +18,16 @@ else
 	echo "Found existing local hyprland directory at $HYPRLAND_DIRECTORY"
 fi
 
-cp hyprland_confs/confs/new_confs/*.conf ~/.config/hypr -v
+cp hyprland_confs/confs/new_confs/*.conf ~/.config/hypr/ -v
+
+if [ ! -d "$HYPR_CONF_DIRECTORY" ]; then	
+	mkdir "$HYPR_CONF_DIRECTORY"
+	echo "Created local hyprland config directory at $HYPR_CONF_DIRECTORY"
+else
+	echo "Found existing local hyprland config directory at $HYPR_CONF_DIRECTORY"
+fi
+
+cp hyprland_confs/confs/new_confs/conf/*.conf ~/.config/hypr/conf -v
 
 if [ ! -d "$KITTY_DIRECTORY" ]; then	
 	mkdir "$KITTY_DIRECTORY"
