@@ -15,7 +15,7 @@ yay -Syu hyprland hyprpaper swww hyprlock waybar \
        aquamarine hyprgraphics wl-clipboard qt5-wayland \
        otf-font-awesome kitty oh-my-posh-bin bash-completion \
        zsh-completions rofi-wayland tor tor-browser-bin wireshark-cli \
-       wireshark-qt rustup postgresql zed
+       wireshark-qt rustup postgresql zed fastfetch wallust
 # Create the hyprland directory (hypr) if it doesn't already exist
 if [ ! -d "$HYPRLAND_DIRECTORY" ]; then	
 	mkdir "$HYPRLAND_DIRECTORY"
