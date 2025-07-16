@@ -89,4 +89,5 @@ cp wallpaper/ ~/ -r -v
 cp hyprland_confs/waypaper_conf/config.ini "$WAYPAPER_DIRECTORY" -v
 cp personal_scripts/*.sh "$SCRIPTS_DIRECTORY" -v
 
+waypaper --wallpaper ~/wallpaper/default.jpg
 sudo usermod -aG wireshark $USER
