@@ -14,7 +14,8 @@ yay -Syu hyprland hyprpaper swww hyprlock waybar \
        hyprcursor hyprutils hyprlang hyprwayland-scanner \
        aquamarine hyprgraphics wl-clipboard qt5-wayland \
        otf-font-awesome kitty oh-my-posh-bin bash-completion \
-       zsh-completions rofi-wayland
+       zsh-completions rofi-wayland tor tor-browser-bin wireshark-cli \
+       wireshark-qt rustup postgresql zed
 # Create the hyprland directory (hypr) if it doesn't already exist
 if [ ! -d "$HYPRLAND_DIRECTORY" ]; then	
 	mkdir "$HYPRLAND_DIRECTORY"
@@ -87,3 +88,5 @@ oh-my-posh font install JetBrainsMono
 cp wallpaper/ ~/ -r -v
 cp hyprland_confs/waypaper_conf/config.ini "$WAYPAPER_DIRECTORY" -v
 cp personal_scripts/*.sh "$SCRIPTS_DIRECTORY" -v
+
+sudo usermod -aG wireshark $USER
