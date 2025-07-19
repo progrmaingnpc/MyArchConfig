@@ -10,12 +10,16 @@ SCRIPTS_DIRECTORY=~/.config/hypr/scripts
 
 yay -Syu
 
-yay -S hyprland hyprpaper swww hyprlock waybar waypaper \ 
-       hypridle hyprpicker hyprland-qt-support hyprland-qtutils \
-       hyprcursor hyprutils hyprlang hyprwayland-scanner \
-       aquamarine hyprgraphics hyprpolkitagent wl-clipboard qt5-wayland \
-       otf-font-awesome rofi-wayland  
-echo "[Finished installing hyprland configuration packages]"
+yay -S hyprland hyprpaper hyprlock
+
+yay -S hypridle hyprpicker hyprland-qt-support hyprland-qtutils \
+	hyprcursor hyprutils hyprlang hyprwayland-scanner \
+	hyprgraphics hyprpolkitagent hyprsysteminfo hyprsunset 
+
+yay -S swww waybar waypaper aquamarine swaync nautilus 
+
+yay -S wl-clipboard qt5-wayland otf-font-awesome rofi-wayland
+echo "Finished installing hyprland configuration packages"
 
 yay -S kitty oh-my-posh-bin bash-completion \
        zsh-completions fastfetch wallust 
