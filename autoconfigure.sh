@@ -8,22 +8,24 @@ SHELL_FASTFETCH_DIRECTORY=~/.config/fast_fetch_shell
 WAYPAPER_DIRECTORY=~/.config/waypaper 
 SCRIPTS_DIRECTORY=~/.config/hypr/scripts
 
-yay -Syu hyprland hyprpaper swww hyprlock waybar waypaper \ 
+yay -Syu
+
+yay -S hyprland hyprpaper swww hyprlock waybar waypaper \ 
        hypridle hyprpicker hyprland-qt-support hyprland-qtutils \
        hyprcursor hyprutils hyprlang hyprwayland-scanner \
        aquamarine hyprgraphics hyprpolkitagent wl-clipboard qt5-wayland \
        otf-font-awesome rofi-wayland  
 echo "[Finished installing hyprland configuration packages]"
 
-yay -Syu kitty oh-my-posh-bin bash-completion \
+yay -S kitty oh-my-posh-bin bash-completion \
        zsh-completions fastfetch wallust 
 echo "[Finished installing shell configuration packages]"
 
-yay -Syu networkmanager tor tor-browser-bin wireshark-cli \
+yay -S networkmanager tor tor-browser-bin wireshark-cli \
        wireshark-qt rustup postgresql zed 
 echo "[Finished installing basic apps]"
 
-yay -Syu xdg-desktop-portal xdg-desktop-portal-hyprland \
+yay -S xdg-desktop-portal xdg-desktop-portal-hyprland \
        xdg-desktop-portal-gtk xdg-desktop-portal-wlr xdg-desktop-portal-lxqt \
        xdg-desktop-portal-kde xdg-desktop-portal-gnome
 echo "[Finished installing xdg-desktop packages]"
