@@ -85,58 +85,6 @@ window#waybar.hidden {
     color: #64727d;
 }
 
-#battery {
-    background-color: #ffffff;
-    color: #000000;
-}
-
-#battery.charging,
-#battery.plugged {
-    color: #ffffff;
-    background-color: #26a65b;
-}
-
-@keyframes blink {
-    to {
-        color: #ffffff;
-        /*color: #000000;*/
-    }
-}
-
-/* Using steps() instead of linear as a timing function to limit cpu usage */
-#battery.critical:not(.charging) {
-    background-color: #f53c3c;
-    color: #ffffff;
-    animation-name: blink;
-    animation-duration: 0.5s;
-    animation-timing-function: steps(12);
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-}
-
-#power-profiles-daemon {
-    padding-right: 15px;
-}
-
-#power-profiles-daemon.performance {
-    background-color: #f53c3c;
-    color: #ffffff;
-}
-
-#power-profiles-daemon.balanced {
-    background-color: #2980b9;
-    color: #ffffff;
-}
-
-#power-profiles-daemon.power-saver {
-    background-color: #2ecc71;
-    color: #000000;
-}
-
-label:focus {
-    background-color: #000000;
-}
-
 #cpu {
     box-shadow: none;
     text-shadow: none;
@@ -155,6 +103,9 @@ label:focus {
     padding: 0px;
     border-radius: 5px;
     margin-top: 3px;
+    margin-bottom: 3px;
+    padding-right: 4px;
+    padding-left: 4px;
     color: #9b59b6;
 }
 
@@ -164,6 +115,9 @@ label:focus {
     padding: 0px;
     border-radius: 5px;
     margin-top: 3px;
+    margin-bottom: 3px;
+    padding-right: 4px;
+    padding-left: 4px;
     color: #964b00;
 }
 
@@ -197,17 +151,66 @@ label:focus {
     color: #f53c3c;
 }
 
+#pulseaudio {
+    box-shadow: none;
+    text-shadow: none;
+    padding: 0px;
+    border-radius: 5px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    padding-right: 12px;
+    padding-left: 4px;
+    color: #f1c40f;
+}
+
 /* you can set a style on hover for any module like this */
 #pulseaudio:hover {
     color: #a37800;
 }
 
-#pulseaudio {
-    color: #f1c40f;
-}
-
 #pulseaudio.muted {
     color: #90b1b1;
+}
+
+#battery {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+#battery.charging,
+#battery.plugged {
+    color: #ffffff;
+    background-color: #26a65b;
+}
+
+/* Using steps() instead of linear as a timing function to limit cpu usage */
+#battery.critical:not(.charging) {
+    background-color: #f53c3c;
+    color: #ffffff;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: steps(12);
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#power-profiles-daemon {
+    padding-right: 15px;
+}
+
+#power-profiles-daemon.performance {
+    background-color: #f53c3c;
+    color: #ffffff;
+}
+
+#power-profiles-daemon.balanced {
+    background-color: #2980b9;
+    color: #ffffff;
+}
+
+#power-profiles-daemon.power-saver {
+    background-color: #2ecc71;
+    color: #000000;
 }
 
 #wireplumber {
