@@ -78,6 +78,7 @@ button:hover {
 }
 
 #custom-appmenu,
+#sway-workspaces,
 #clock,
 #battery,
 #cpu,
@@ -116,6 +117,10 @@ button:hover {
 
 #custom-appmenu {
     background-color: #26a65b;
+}
+
+#sway-workspaces {
+    background-color: #64727d;
 }
 
 #clock {
