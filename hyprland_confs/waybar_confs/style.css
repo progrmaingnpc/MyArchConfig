@@ -11,7 +11,7 @@
 }
 
 window#waybar {
-    background: #aecce6;
+    background: transparent;
     color: #26a65b;
     /*Uncomment the below item to add a border.*/
     border: 1px solid #9dcbd7;
