@@ -11,11 +11,17 @@
 }
 
 window#waybar {
+    background: #aecce6;
+    /*Uncomment the below item to add a border.*/
+    /*border: 1px solid #9DCBD7;*/
+    border-radius: 5px;
+    /*
     background-color: rgba(43, 48, 59, 0.5);
     border-bottom: 3px solid rgba(100, 114, 125, 0.5);
     color: #ffffff;
     transition-property: background-color;
     transition-duration: 0.5s;
+    */
 }
 
 window#waybar.hidden {
