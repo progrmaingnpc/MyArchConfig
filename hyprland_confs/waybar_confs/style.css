@@ -1,7 +1,13 @@
 * {
     /* `otf-font-awesome` is required to be installed for icons */
+    border: none;
+    border-radius: 0px;
     font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;
-    font-size: 13px;
+    font-weight: bold;
+    font-size: 14px;
+    min-height: 22px;
+    margin-left: 2px
+    margin-right: 2px
 }
 
 window#waybar {
