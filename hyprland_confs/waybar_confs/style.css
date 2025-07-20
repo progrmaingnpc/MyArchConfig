@@ -89,7 +89,8 @@ button:hover {
 }
 
 #workspaces button:hover {
-    background: rgba(0, 0, 0, 0.2);
+    background: transparent;
+    color: #242639;
 }
 
 #mode {
