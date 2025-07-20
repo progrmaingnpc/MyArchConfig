@@ -60,13 +60,14 @@ button:hover {
 }
 
 #workspaces button {
-    padding: 0 5px;
-    background-color: transparent;
-    color: #ffffff;
-}
-
-#workspaces button:hover {
-    background: rgba(0, 0, 0, 0.2);
+    box-shadow: none;
+    text-shadow: none;
+    padding: 0px;
+    margin-right: 0px;
+    margin-left: 0px;
+    padding-right: 10px;
+    padding-left: 10px;
+    color: #242639;
 }
 
 #workspaces button.active {
@@ -85,6 +86,10 @@ button:hover {
 
 #workspaces button.urgent {
     background-color: #eb4d4b;
+}
+
+#workspaces button:hover {
+    background: rgba(0, 0, 0, 0.2);
 }
 
 #mode {
