@@ -14,7 +14,7 @@ window#waybar {
     background: #aecce6;
     color: #26a65b;
     /*Uncomment the below item to add a border.*/
-    /*border: 1px solid #9DCBD7;*/
+    border: 1px solid #9dcbd7;
     border-radius: 5px;
 }
 
