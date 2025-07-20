@@ -22,24 +22,6 @@ window#waybar.hidden {
     opacity: 0.2;
 }
 
-/*
-window#waybar.empty {
-    background-color: transparent;
-}
-window#waybar.solo {
-    background-color: #FFFFFF;
-}
-*/
-
-window#waybar.termite {
-    color: #3f3f3f;
-}
-
-window#waybar.chromium {
-    color: #000000;
-    border: none;
-}
-
 button {
     /* Use box-shadow instead of border so the text isn't offset */
     box-shadow: inset 0 -3px transparent;
@@ -92,30 +74,28 @@ button:hover {
     background: transparent;
     color: #242639;
 }
-
+/*
 #mode {
     color: #64727d;
     box-shadow: inset 0 -3px #ffffff;
-}
+
 
 #mpd {
     padding: 0 10px;
     color: #ffffff;
 }
-/*
-#window,
 */
-
 /* If workspaces is the leftmost module, omit left margin */
+/*
 .modules-left > widget:first-child > #workspaces {
     margin-left: 0;
 }
 
 /* If workspaces is the rightmost module, omit right margin */
+/*
 .modules-right > widget:last-child > #workspaces {
     margin-right: 0;
-}
-
+} */
 #clock {
     box-shadow: none;
     text-shadow: none;
