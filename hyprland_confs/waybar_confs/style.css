@@ -135,6 +135,11 @@ button:hover {
     padding: 0px;
     border-radius: 5px;
     margin-top: 3px;
+    margin-bottom: 3px;
+    margin-right: 1px;
+    margin-left: 1px;
+    padding-right: 4px;
+    padding-left: 4px;
     background-color: #26a65b;
 }
 
