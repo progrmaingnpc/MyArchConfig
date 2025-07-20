@@ -130,6 +130,11 @@ button:hover {
 
 #window,
 #custom-appmenu {
+    box-shadow: none;
+    text-shadow: none;
+    padding: 0px;
+    border-radius: 5px;
+    margin-top: 3px;
     background-color: #26a65b;
 }
 
@@ -212,28 +217,52 @@ label:focus {
     margin-bottom: 3px;
     margin-left: 4px;
     margin-right: 4px;
-    background-color: #2ecc71;
-    color: #000000;
+    color: #2ecc71;
 }
 
 #memory {
-    background-color: #9b59b6;
+    box-shadow: none;
+    text-shadow: none;
+    padding: 0px;
+    border-radius: 5px;
+    margin-top: 3px;
+    color: #9b59b6;
 }
 
 #disk {
-    background-color: #964b00;
+    box-shadow: none;
+    text-shadow: none;
+    padding: 0px;
+    border-radius: 5px;
+    margin-top: 3px;
+    color: #964b00;
 }
 
 #backlight {
-    background-color: #90b1b1;
+    box-shadow: none;
+    text-shadow: none;
+    padding: 0px;
+    border-radius: 5px;
+    margin-top: 3px;
+    color: #90b1b1;
 }
 
 #network {
-    background-color: #2980b9;
+    box-shadow: none;
+    text-shadow: none;
+    padding: 0px;
+    border-radius: 5px;
+    margin-top: 3px;
+    color: #2980b9;
 }
 
 #network.disconnected {
-    background-color: #f53c3c;
+    box-shadow: none;
+    text-shadow: none;
+    padding: 0px;
+    border-radius: 5px;
+    margin-top: 3px;
+    color: #f53c3c;
 }
 
 #pulseaudio {
