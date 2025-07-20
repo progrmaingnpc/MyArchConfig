@@ -58,6 +58,20 @@ button:hover {
     color: #a37800;
 }
 
+#custom-appmenu {
+    box-shadow: none;
+    text-shadow: none;
+    padding: 0px;
+    border-radius: 5px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    margin-right: 1px;
+    margin-left: 1px;
+    padding-right: 4px;
+    padding-left: 4px;
+    color: #26a65b;
+}
+
 #workspaces button {
     box-shadow: none;
     text-shadow: none;
@@ -95,23 +109,6 @@ button:hover {
 /*
 #window,
 */
-#custom-appmenu {
-    box-shadow: none;
-    text-shadow: none;
-    padding: 0px;
-    border-radius: 5px;
-    margin-top: 3px;
-    margin-bottom: 3px;
-    margin-right: 1px;
-    margin-left: 1px;
-    padding-right: 4px;
-    padding-left: 4px;
-    color: #26a65b;
-}
-
-#workspaces {
-    margin: 0 4px;
-}
 
 /* If workspaces is the leftmost module, omit left margin */
 .modules-left > widget:first-child > #workspaces {
