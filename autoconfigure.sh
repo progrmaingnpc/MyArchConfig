@@ -6,8 +6,8 @@ WAYBAR_DIRECTORY=~/.config/waybar
 SHELL_FASTFETCH_DIRECTORY=~/.config/fast_fetch_shell
 WAYPAPER_DIRECTORY=~/.config/waypaper
 SCRIPTS_DIRECTORY=~/.config/hypr/scripts
-YAY_DIRECTORY=~/.cache/.yay
-PARU_DIRECTORY=~/.cache/.paru
+YAY_DIRECTORY=~/.cache/yay
+PARU_DIRECTORY=~/.cache/paru
 
 sudo pacman -Syu
 sudo pacman -S git
