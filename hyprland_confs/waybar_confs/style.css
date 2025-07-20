@@ -171,6 +171,9 @@ window#waybar {
     padding: 0px;
     border-radius: 5px;
     margin-top: 3px;
+    margin-bottom: 3px;
+    padding-right: 4px;
+    padding-left: 4px;
     color: #9dcbd7;
 }
 
@@ -180,6 +183,9 @@ window#waybar {
     padding: 0px;
     border-radius: 5px;
     margin-top: 3px;
+    margin-bottom: 3px;
+    padding-right: 4px;
+    padding-left: 4px;
     color: #eb4d4b;
 }
 
