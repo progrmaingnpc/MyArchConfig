@@ -12,14 +12,8 @@
 
 window#waybar {
     background: transparent;
-    color: #26a65b;
-    /*Uncomment the below item to add a border.*/
     border: 1px solid #9dcbd7;
     border-radius: 5px;
-}
-
-window#waybar.hidden {
-    opacity: 0.2;
 }
 
 #custom-appmenu {
@@ -61,16 +55,15 @@ window#waybar.hidden {
     color: #242639;
 }
 
-/* If workspaces is the leftmost module, omit left margin
+/* If workspaces is the leftmost module, omit left margin */
 .modules-left > widget:first-child > #workspaces {
     margin-left: 0;
 }
-*/
-/* If workspaces is the rightmost module, omit right margin
+
+/* If workspaces is the rightmost module, omit right margin */
 .modules-right > widget:last-child > #workspaces {
     margin-right: 0;
 }
-*/
 
 #clock {
     box-shadow: none;
