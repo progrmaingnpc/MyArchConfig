@@ -34,16 +34,16 @@ window#waybar {
     box-shadow: none;
     text-shadow: none;
     padding: 0px;
-    margin-right: 2px;
-    margin-left: 2px;
+    margin-right: 0px;
+    margin-left: 0px;
     padding-right: 10px;
     padding-left: 10px;
     color: #242639;
 }
 
 #workspaces button.active {
-    background: #aecce6;
-    color: #242639;
+    background: #242639;
+    color: #aecce6;
     margin-right: 2px;
     margin-left: 2px;
     padding-right: 4px;
@@ -53,10 +53,6 @@ window#waybar {
 #workspaces button:hover {
     background: transparent;
     color: #242639;
-    margin-right: 2px;
-    margin-left: 2px;
-    padding-right: 4px;
-    padding-left: 4px;
 }
 
 /* If workspaces is the leftmost module, omit left margin */
