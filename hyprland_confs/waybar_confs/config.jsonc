@@ -110,12 +110,12 @@
     },
   },
   "tray": {
-    // "icon-size": 21,
+    "icon-size": 21,
     "spacing": 10,
-    // "icons": {
-    //   "blueman": "bluetooth",
-    //   "TelegramDesktop": "$HOME/.local/share/icons/hicolor/16x16/apps/telegram.png"
-    // }
+    "icons": {
+      "blueman": "bluetooth",
+      //   "TelegramDesktop": "$HOME/.local/share/icons/hicolor/16x16/apps/telegram.png"
+    },
   },
   "clock": {
     // "timezone": "America/New_York",
@@ -144,7 +144,7 @@
   },
   "battery": {
     "states": {
-      "good": 95,
+      //"good": 95,
       "warning": 30,
       "critical": 15,
     },
@@ -153,7 +153,8 @@
     "format-charging": "{capacity}% ",
     "format-plugged": "{capacity}% ",
     "format-alt": "{time} {icon}",
-    "format-good": "", // An empty format will hide the module
+    // "format-good": "", // An empty format will hide the module
+    // "format-full": "",
     "format-icons": ["", "", "", "", ""],
   },
   "battery#bat2": {
