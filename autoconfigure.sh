@@ -7,34 +7,76 @@ WAYBAR_DIRECTORY=~/.config/waybar
 SHELL_FASTFETCH_DIRECTORY=~/.config/fast_fetch_shell
 WAYPAPER_DIRECTORY=~/.config/waypaper 
 SCRIPTS_DIRECTORY=~/.config/hypr/scripts
+YAY_DIRECTORY=~/.cache/.yay
+PARU_DIRECTORY=~/.cache/.paru
 
-yay -Syu
+sudo pacman -Syu
+sudo pacman -S git 
 
-yay -S hyprland hyprpaper hyprlock
+# Install the yay AUR manager if there isn't one
+if [[ ! -d "$YAY_DIRECTORY" ]] && [[ ! -d "$PARU_DIRECTORY" ]]; then	
+	git clone https://aur.archlinux.org/yay.git $HOME/yay
+	makepkg -si --dir $HOME/yay
+	echo "Installing yay at $HOME/yay"
+elif [ -d "$YAY_DIRECTORY" ]; then
+	echo "There is a yay cache at $YAY_DIRECTORY"
+	yay -Syu
 
-yay -S hypridle hyprpicker hyprland-qt-support hyprland-qtutils \
+	yay -S hyprland hyprpaper hyprlock
+
+	yay -S hypridle hyprpicker hyprland-qt-support hyprland-qtutils \
+		hyprcursor hyprutils hyprlang hyprwayland-scanner \
+		hyprgraphics hyprpolkitagent hyprsysteminfo hyprsunset 
+
+	yay -S swww waybar waypaper aquamarine swaync nautilus 
+
+	yay -S nwg-look 
+
+	yay -S wl-clipboard qt5-wayland otf-font-awesome rofi-wayland
+	echo "Finished installing hyprland configuration packages"
+
+	yay -S kitty oh-my-posh-bin bash-completion \
+       		zsh-completions fastfetch wallust 
+	echo "[Finished installing shell configuration packages]"
+
+	yay -S networkmanager tor tor-browser-bin wireshark-cli \
+      		wireshark-qt rustup postgresql zed 
+	echo "[Finished installing basic apps]"
+
+	yay -S xdg-desktop-portal xdg-desktop-portal-hyprland \
+       		xdg-desktop-portal-gtk xdg-desktop-portal-wlr xdg-desktop-portal-lxqt \
+      		xdg-desktop-portal-kde xdg-desktop-portal-gnome
+	echo "[Finished installing xdg-desktop packages]"
+elif [	-d "$PARU_DIRECTORY" ]; then
+	echo "There is a paru cache at $PARU_DIRECTORY"
+	paru -Syu
+
+	paru -S hyprland hyprpaper hyprlock
+
+	paru -S hypridle hyprpicker hyprland-qt-support hyprland-qtutils \
 	hyprcursor hyprutils hyprlang hyprwayland-scanner \
 	hyprgraphics hyprpolkitagent hyprsysteminfo hyprsunset 
 
-yay -S swww waybar waypaper aquamarine swaync nautilus 
+	paru -S swww waybar waypaper aquamarine swaync nautilus 
 
-yay -S nwg-look 
+	paru -S nwg-look 
 
-yay -S wl-clipboard qt5-wayland otf-font-awesome rofi-wayland
-echo "Finished installing hyprland configuration packages"
+	paru -S wl-clipboard qt5-wayland otf-font-awesome rofi-wayland
+	echo "Finished installing hyprland configuration packages"
 
-yay -S kitty oh-my-posh-bin bash-completion \
-       zsh-completions fastfetch wallust 
-echo "[Finished installing shell configuration packages]"
+	paru -S kitty oh-my-posh-bin bash-completion \
+       		zsh-completions fastfetch wallust 
+	echo "[Finished installing shell configuration packages]"
 
-yay -S networkmanager tor tor-browser-bin wireshark-cli \
-       wireshark-qt rustup postgresql zed 
-echo "[Finished installing basic apps]"
+	paru -S networkmanager tor tor-browser-bin wireshark-cli \
+       		wireshark-qt rustup postgresql zed 
+	echo "[Finished installing basic apps]"
 
-yay -S xdg-desktop-portal xdg-desktop-portal-hyprland \
-       xdg-desktop-portal-gtk xdg-desktop-portal-wlr xdg-desktop-portal-lxqt \
-       xdg-desktop-portal-kde xdg-desktop-portal-gnome
-echo "[Finished installing xdg-desktop packages]"
+	paru -S xdg-desktop-portal xdg-desktop-portal-hyprland \
+       		xdg-desktop-portal-gtk xdg-desktop-portal-wlr xdg-desktop-portal-lxqt \
+       		xdg-desktop-portal-kde xdg-desktop-portal-gnome
+	echo "[Finished installing xdg-desktop packages]"
+fi
 
 # Create the hyprland directory (hypr) if it doesn't already exist
 if [ ! -d "$HYPRLAND_DIRECTORY" ]; then	
