@@ -78,7 +78,7 @@ button:hover {
 }
 
 #custom-appmenu,
-#sway-workspaces,
+#hyprland-workspaces,
 #clock,
 #battery,
 #cpu,
@@ -119,7 +119,7 @@ button:hover {
     background-color: #26a65b;
 }
 
-#sway-workspaces {
+#hyprland-workspaces {
     background-color: #64727d;
 }
 

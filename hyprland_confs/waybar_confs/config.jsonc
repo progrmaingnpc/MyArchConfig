@@ -38,20 +38,19 @@
     "on-click": "~/.config/hypr/scripts/rofi.sh",
   },
   // Modules configuration
-  "sway/workspaces": {
-    "disable-scroll": true,
-    "all-outputs": true,
-    "warp-on-scroll": false,
-    "format": "{name}: {icon}",
+  "hyprland/workspaces": {
+    "format": "{name} : {icon}",
     "format-icons": {
-      "1": "",
-      "2": "",
-      "3": "",
-      "4": "",
-      "5": "",
-      //         "urgent": "",
-      //         "focused": "",
-      //         "default": ""
+      "1": "",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "active": "",
+      "default": "",
+    },
+    "persistent-workspaces": {
+      "Virtual-1": [1, 2, 3, 4, 5],
     },
   },
   "keyboard-state": {
