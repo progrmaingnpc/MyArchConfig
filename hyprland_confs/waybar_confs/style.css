@@ -185,22 +185,32 @@ label:focus {
 #cpu {
     background-color: #2ecc71;
     color: #000000;
+    padding-right: 4px;
+    padding-left: 4px;
 }
 
 #memory {
     background-color: #9b59b6;
+    padding-right: 4px;
+    padding-left: 4px;
 }
 
 #disk {
     background-color: #964b00;
+    padding-right: 4px;
+    padding-left: 4px;
 }
 
 #backlight {
     background-color: #90b1b1;
+    padding-right: 4px;
+    padding-left: 4px;
 }
 
 #network {
     background-color: #2980b9;
+    padding-right: 4px;
+    padding-left: 4px;
 }
 
 #network.disconnected {
