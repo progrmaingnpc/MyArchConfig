@@ -172,6 +172,27 @@ window#waybar.hidden {
     color: #90b1b1;
 }
 
+#tray {
+    box-shadow: none;
+    text-shadow: none;
+    padding: 0px;
+    border-radius: 5px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    padding-right: 4px;
+    padding-left: 4px;
+    color: #2980b9;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: #eb4d4b;
+}
+
 #battery {
     background-color: #ffffff;
     color: #000000;
@@ -242,19 +263,6 @@ window#waybar.hidden {
     color: #eb4d4b;
 }
 
-#tray {
-    color: #2980b9;
-}
-
-#tray > .passive {
-    -gtk-icon-effect: dim;
-}
-
-#tray > .needs-attention {
-    -gtk-icon-effect: highlight;
-    background-color: #eb4d4b;
-}
-
 #idle_inhibitor {
     color: #2d3436;
 }
@@ -262,23 +270,6 @@ window#waybar.hidden {
 #idle_inhibitor.activated {
     color: #ecf0f1;
     color: #2d3436;
-}
-
-#mpd {
-    color: #66cc99;
-    color: #2a5c45;
-}
-
-#mpd.disconnected {
-    color: #f53c3c;
-}
-
-#mpd.stopped {
-    color: #90b1b1;
-}
-
-#mpd.paused {
-    color: #51a37a;
 }
 
 #language {
