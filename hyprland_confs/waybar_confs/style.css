@@ -82,7 +82,7 @@ button:hover {
     background-color: #64727d;
     box-shadow: inset 0 -3px #ffffff;
 }
-
+/*
 #custom-appmenu,
 #workspaces,
 #clock,
@@ -101,6 +101,7 @@ button:hover {
 #idle_inhibitor,
 #scratchpad,
 #power-profiles-daemon,
+*/
 #mpd {
     padding: 0 10px;
     color: #ffffff;
