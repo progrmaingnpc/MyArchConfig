@@ -92,8 +92,9 @@ button:hover {
     padding: 0 10px;
     color: #ffffff;
 }
-
+/*
 #window,
+*/
 #custom-appmenu {
     box-shadow: none;
     text-shadow: none;
@@ -123,7 +124,16 @@ button:hover {
 }
 
 #clock {
-    background-color: #64727d;
+    box-shadow: none;
+    text-shadow: none;
+    padding: 0px;
+    border-radius: 5px;
+    margin-top: 3px;
+    margin-right: 6px;
+    margin-left: 6px;
+    padding-right: 3px;
+    padding-left: 3px;
+    color: #64727d;
 }
 
 #battery {
