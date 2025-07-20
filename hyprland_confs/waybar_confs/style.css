@@ -192,10 +192,16 @@ label:focus {
 }
 
 #cpu {
-    background-color: #2ecc71;
-    color: #000000;
+    box-shadow: none;
+    text-shadow: none;
+    padding: 0px;
+    border-radius: 5px;
+    margin-top: 3px;
+    margin-bottom: 3px;
     margin-left: 4px;
     margin-right: 4px;
+    background-color: #2ecc71;
+    color: #000000;
 }
 
 #memory {
