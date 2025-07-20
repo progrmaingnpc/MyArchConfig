@@ -50,8 +50,8 @@ window#waybar.hidden {
 #workspaces button.active {
     background: #aecce6;
     color: #242639;
-    margin-right: 0px;
-    margin-left: 0px;
+    margin-right: 2px;
+    margin-left: 2px;
     padding-right: 4px;
     padding-left: 4px;
 }
