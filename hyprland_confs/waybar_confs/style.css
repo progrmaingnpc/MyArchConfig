@@ -185,6 +185,8 @@ label:focus {
 #cpu {
     background-color: #2ecc71;
     color: #000000;
+    margin-left: 4px;
+    margin-right: 4px;
 }
 
 #memory {
