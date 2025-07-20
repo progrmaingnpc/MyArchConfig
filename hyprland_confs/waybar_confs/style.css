@@ -15,13 +15,6 @@ window#waybar {
     /*Uncomment the below item to add a border.*/
     /*border: 1px solid #9DCBD7;*/
     border-radius: 5px;
-    /*
-    background-color: rgba(43, 48, 59, 0.5);
-    border-bottom: 3px solid rgba(100, 114, 125, 0.5);
-    color: #ffffff;
-    transition-property: background-color;
-    transition-duration: 0.5s;
-    */
 }
 
 window#waybar.hidden {
@@ -62,7 +55,7 @@ button:hover {
 
 /* you can set a style on hover for any module like this */
 #pulseaudio:hover {
-    background-color: #a37800;
+    color: #a37800;
 }
 
 #workspaces button {
@@ -84,16 +77,7 @@ button:hover {
     padding-right: 4px;
     padding-left: 4px;
 }
-/*
-#workspaces button.focused {
-    background-color: #64727d;
-    box-shadow: inset 0 -3px #ffffff;
-}
 
-#workspaces button.urgent {
-    background-color: #eb4d4b;
-}
-*/
 #workspaces button:hover {
     background: transparent;
     color: #242639;
@@ -103,26 +87,7 @@ button:hover {
     background-color: #64727d;
     box-shadow: inset 0 -3px #ffffff;
 }
-/*
-#custom-appmenu,
-#workspaces,
-#clock,
-#battery,
-#cpu,
-#memory,
-#disk,
-#temperature,
-#backlight,
-#network,
-#pulseaudio,
-#wireplumber,
-#custom-media,
-#tray,
-#mode,
-#idle_inhibitor,
-#scratchpad,
-#power-profiles-daemon,
-*/
+
 #mpd {
     padding: 0 10px;
     color: #ffffff;
@@ -140,7 +105,7 @@ button:hover {
     margin-left: 1px;
     padding-right: 4px;
     padding-left: 4px;
-    background-color: #26a65b;
+    color: #26a65b;
 }
 
 #workspaces {
@@ -271,12 +236,12 @@ label:focus {
 }
 
 #pulseaudio {
-    background-color: #f1c40f;
+    color: #f1c40f;
     color: #000000;
 }
 
 #pulseaudio.muted {
-    background-color: #90b1b1;
+    color: #90b1b1;
     color: #2a5c45;
 }
 
