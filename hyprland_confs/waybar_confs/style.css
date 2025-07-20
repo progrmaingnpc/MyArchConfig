@@ -9,7 +9,7 @@ window#waybar {
     border-bottom: 3px solid rgba(100, 114, 125, 0.5);
     color: #ffffff;
     transition-property: background-color;
-    transition-duration: .5s;
+    transition-duration: 0.5s;
 }
 
 window#waybar.hidden {
@@ -26,7 +26,7 @@ window#waybar.solo {
 */
 
 window#waybar.termite {
-    background-color: #3F3F3F;
+    background-color: #3f3f3f;
 }
 
 window#waybar.chromium {
@@ -64,7 +64,7 @@ button:hover {
 }
 
 #workspaces button.focused {
-    background-color: #64727D;
+    background-color: #64727d;
     box-shadow: inset 0 -3px #ffffff;
 }
 
@@ -73,7 +73,7 @@ button:hover {
 }
 
 #mode {
-    background-color: #64727D;
+    background-color: #64727d;
     box-shadow: inset 0 -3px #ffffff;
 }
 
@@ -114,7 +114,7 @@ button:hover {
 }
 
 #clock {
-    background-color: #64727D;
+    background-color: #64727d;
 }
 
 #battery {
@@ -122,9 +122,10 @@ button:hover {
     color: #000000;
 }
 
-#battery.charging, #battery.plugged {
+#battery.charging,
+#battery.plugged {
     color: #ffffff;
-    background-color: #26A65B;
+    background-color: #26a65b;
 }
 
 @keyframes blink {
@@ -178,7 +179,7 @@ label:focus {
 }
 
 #disk {
-    background-color: #964B00;
+    background-color: #964b00;
 }
 
 #backlight {
@@ -302,7 +303,7 @@ label:focus {
 }
 
 #scratchpad.empty {
-	background-color: transparent;
+    background-color: transparent;
 }
 
 #privacy {

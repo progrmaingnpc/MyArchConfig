@@ -1,5 +1,11 @@
 // -*- mode: jsonc -*-
 {
+  "custom/appmenu": {
+    "format": "Menu {icon}",
+    "format-icon": "",
+    "rotate": 0,
+    "on-click": "~/.config/hypr/scripts/rofi.sh",
+  },
   // "layer": "top", // Waybar at top layer
   // "position": "bottom", // Waybar position (top|bottom|left|right)
   "height": 30, // Waybar height (to be removed for auto height)
