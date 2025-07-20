@@ -165,6 +165,24 @@ window#waybar {
     color: #90b1b1;
 }
 
+#idle_inhibitor {
+    box-shadow: none;
+    text-shadow: none;
+    padding: 0px;
+    border-radius: 5px;
+    margin-top: 3px;
+    color: #9dcbd7;
+}
+
+#idle_inhibitor.activated {
+    box-shadow: none;
+    text-shadow: none;
+    padding: 0px;
+    border-radius: 5px;
+    margin-top: 3px;
+    color: #eb4d4b;
+}
+
 #tray {
     box-shadow: none;
     text-shadow: none;
@@ -253,14 +271,6 @@ window#waybar {
 }
 
 #temperature.critical {
-    color: #eb4d4b;
-}
-
-#idle_inhibitor {
-    color: #9dcbd7;
-}
-
-#idle_inhibitor.activated {
     color: #eb4d4b;
 }
 
