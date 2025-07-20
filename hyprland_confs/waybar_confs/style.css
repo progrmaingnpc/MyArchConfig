@@ -257,12 +257,11 @@ window#waybar {
 }
 
 #idle_inhibitor {
-    color: #2d3436;
+    color: #9dcbd7;
 }
 
 #idle_inhibitor.activated {
-    color: #ecf0f1;
-    color: #2d3436;
+    color: #eb4d4b;
 }
 
 #language {
