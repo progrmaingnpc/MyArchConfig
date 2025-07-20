@@ -10,7 +10,7 @@ YAY_DIRECTORY=~/.cache/yay
 PARU_DIRECTORY=~/.cache/paru
 
 sudo pacman -Syu
-sudo pacman -S git
+sudo pacman -S git --noconfirm --needed
 
 # Install the yay AUR manager if there isn't one
 if [[ ! -d "$YAY_DIRECTORY" ]] && [[ ! -d "$PARU_DIRECTORY" ]]; then
@@ -21,65 +21,65 @@ elif [ -d "$YAY_DIRECTORY" ]; then
 	echo "There is a yay cache at $YAY_DIRECTORY"
 	yay -Syu
 
-	yay -S hyprland hyprpaper hyprlock --noconfirm
+	yay -S hyprland hyprpaper hyprlock --noconfirm --needed
 
 	yay -S hypridle hyprpicker hyprland-qt-support hyprland-qtutils \
 		hyprcursor hyprutils hyprlang hyprwayland-scanner \
-		hyprgraphics hyprpolkitagent hyprsysteminfo hyprsunset --noconfirm
+		hyprgraphics hyprpolkitagent hyprsysteminfo hyprsunset --noconfirm --needed
 	echo "[Successfully installed basic utilities for hyprland]"
 
-	yay -S swww waybar waypaper aquamarine swaync nautilus --noconfirm
+	yay -S swww waybar waypaper aquamarine swaync nautilus --noconfirm --needed
 	echo "[Successfully installed wayber, waypaper, notification daemon and nautilus]"
 
-	yay -S nwg-look nwg-dock-hyprland --noconfirm
+	yay -S nwg-look nwg-dock-hyprland --noconfirm --needed
 	echo "[Successfully installed dock for hyprland]"
 
-	yay -S wl-clipboard qt5-wayland otf-font-awesome rofi-wayland --noconfirm
+	yay -S wl-clipboard qt5-wayland otf-font-awesome rofi-wayland --noconfirm --needed
 	echo "Finished installing hyprland configuration packages"
 
 	yay -S kitty oh-my-posh-bin bash-completion \
-       	zsh-completions fastfetch wallust --noconfirm
+       	zsh-completions fastfetch wallust --noconfirm --needed
 	echo "[Finished installing shell configuration packages]"
 
 	yay -S networkmanager tor tor-browser-bin wireshark-cli \
-        wireshark-qt rustup postgresql zed --noconfirm
+        wireshark-qt rustup postgresql zed --noconfirm --needed
 	echo "[Finished installing basic apps]"
 
 	yay -S xdg-desktop-portal xdg-desktop-portal-hyprland \
        	xdg-desktop-portal-gtk xdg-desktop-portal-wlr xdg-desktop-portal-lxqt \
-        xdg-desktop-portal-kde xdg-desktop-portal-gnome --noconfirm
+        xdg-desktop-portal-kde xdg-desktop-portal-gnome --noconfirm --needed
 	echo "[Finished installing xdg-desktop packages]"
 elif [	-d "$PARU_DIRECTORY" ]; then
 	echo "There is a paru cache at $PARU_DIRECTORY"
 	paru -Syu
 
-	paru -S hyprland hyprpaper hyprlock --noconfirm
+	paru -S hyprland hyprpaper hyprlock --noconfirm --needed
 
 	paru -S hypridle hyprpicker hyprland-qt-support hyprland-qtutils \
 	    hyprcursor hyprutils hyprlang hyprwayland-scanner \
-	    hyprgraphics hyprpolkitagent hyprsysteminfo hyprsunset --noconfirm
+	    hyprgraphics hyprpolkitagent hyprsysteminfo hyprsunset --noconfirm --needed
 	echo "[Successfully installed basic utilities for hyprland]"
 
-	paru -S swww waybar waypaper aquamarine swaync nautilus --noconfirm
+	paru -S swww waybar waypaper aquamarine swaync nautilus --noconfirm --needed
 	echo "[Successfully installed wayber, waypaper, notification daemon and nautilus]"
 
-	paru -S nwg-look nwg-dock-hyprland --noconfirm
+	paru -S nwg-look nwg-dock-hyprland --noconfirm --needed
 	echo "[Successfully installed dock for hyprland]"
 
-	paru -S wl-clipboard qt5-wayland otf-font-awesome rofi-wayland --noconfirm
+	paru -S wl-clipboard qt5-wayland otf-font-awesome rofi-wayland --noconfirm --needed
 	echo "Finished installing hyprland configuration packages"
 
 	paru -S kitty oh-my-posh-bin bash-completion \
-       	zsh-completions fastfetch wallust --noconfirm
+       	zsh-completions fastfetch wallust --noconfirm --needed
 	echo "[Finished installing shell configuration packages]"
 
 	paru -S networkmanager tor tor-browser-bin wireshark-cli \
-       	wireshark-qt rustup postgresql zed --noconfirm
+       	wireshark-qt rustup postgresql zed --noconfirm --needed
 	echo "[Finished installing basic apps]"
 
 	paru -S xdg-desktop-portal xdg-desktop-portal-hyprland \
        	xdg-desktop-portal-gtk xdg-desktop-portal-wlr xdg-desktop-portal-lxqt \
-       	xdg-desktop-portal-kde xdg-desktop-portal-gnome --noconfirm
+       	xdg-desktop-portal-kde xdg-desktop-portal-gnome --noconfirm --needed
 	echo "[Finished installing xdg-desktop packages]"
 fi
 
