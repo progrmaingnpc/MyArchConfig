@@ -74,15 +74,17 @@ button:hover {
     background: transparent;
     color: #242639;
 }
-
+/*
 #mode {
     color: #64727d;
     box-shadow: inset 0 -3px #ffffff;
+}
 
 #mpd {
     padding: 0 10px;
     color: #ffffff;
 }
+*/
 
 /* If workspaces is the leftmost module, omit left margin */
 .modules-left > widget:first-child > #workspaces {
