@@ -33,7 +33,7 @@
     "custom/power",
   ],
   "custom/appmenu": {
-    "format": "Menu ",
+    "format": "",
     "format-icon": "",
     "rotate": 0,
     "on-click": "~/.config/hypr/scripts/rofi.sh",
