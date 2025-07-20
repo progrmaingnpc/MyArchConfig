@@ -18,6 +18,8 @@ yay -S hypridle hyprpicker hyprland-qt-support hyprland-qtutils \
 
 yay -S swww waybar waypaper aquamarine swaync nautilus 
 
+yay -S nwg-look 
+
 yay -S wl-clipboard qt5-wayland otf-font-awesome rofi-wayland
 echo "Finished installing hyprland configuration packages"
 
