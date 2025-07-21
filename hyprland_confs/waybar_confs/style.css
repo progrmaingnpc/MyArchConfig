@@ -46,6 +46,7 @@ window#waybar {
     margin-left: 0px;
     padding-right: 10px;
     padding-left: 10px;
+    border: 1px solid #9dcbd7;
     color: #242639;
 }
 
