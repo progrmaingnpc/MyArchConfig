@@ -20,15 +20,15 @@ window#waybar {
     box-shadow: none;
     text-shadow: none;
     padding: 0px;
-    border-radius: 5px;
+    border-radius: 3px;
     margin-top: 0px;
     margin-bottom: 0px;
-    margin-right: 2px;
+    margin-right: 1px;
     margin-left: 1px;
     padding-top: 0;
     padding-bottom: 0;
-    padding-right: 6px;
-    padding-left: 3px;
+    padding-right: 1px;
+    padding-left: 1px;
     color: #aecce6;
     background-color: #ff0000;
 }
