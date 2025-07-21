@@ -17,6 +17,7 @@ window#waybar {
 }
 
 #custom-appmenu {
+    font-size: 16px;
     box-shadow: none;
     text-shadow: none;
     padding: 0px;
