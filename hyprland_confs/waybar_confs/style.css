@@ -24,7 +24,7 @@ window#waybar {
     text-shadow: none;
     padding: 0px;
     border-radius: 3px;
-    margin: 0px 3px 0px 3px;
+    margin: 0px 3px 0px 0px;
     padding: 1px 25px 1px 10px;
     color: #aecce6;
     background-color: #ff0000;
