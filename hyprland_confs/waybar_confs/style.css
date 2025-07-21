@@ -26,8 +26,6 @@ window#waybar {
     border-radius: 3px;
     margin: 5px 1px 5px 1px;
     padding: 1px 16px 1px 10px;
-    border-top: 0px solid transparent;
-    border-bottom: 0px solid transparent;
     color: #aecce6;
     background-color: #ff0000;
 }
