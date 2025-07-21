@@ -28,6 +28,7 @@ window#waybar {
     padding-right: 4px;
     padding-left: 4px;
     color: #aecce6;
+    background-color: #ff0000;
 }
 
 #workspaces button {
