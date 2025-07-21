@@ -83,7 +83,7 @@ window#waybar.empty #window {
     text-shadow: none;
     padding: 0px;
     border-radius: 5px;
-    margin: 3px 3px 3px 3px;
+    margin: 0px 3px 0px 3px;
     padding-right: 3px;
     padding-left: 3px;
     color: #aecce6;
