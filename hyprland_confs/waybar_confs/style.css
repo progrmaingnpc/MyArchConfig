@@ -106,6 +106,7 @@ window#waybar.empty #window {
     border-radius: 5px;
     margin: 3px 3px 3px 3px;
     color: #ff0000;
+    border: 2px solid #ff0000;
 }
 
 #cpu:hover {
@@ -121,6 +122,7 @@ window#waybar.empty #window {
     padding-right: 4px;
     padding-left: 4px;
     color: #ff0000;
+    border: 2px solid #ff0000;
 }
 
 #memory:hover {
@@ -136,6 +138,7 @@ window#waybar.empty #window {
     padding-right: 4px;
     padding-left: 4px;
     color: #ff0000;
+    border: 2px solid #ff0000;
 }
 
 #disk:hover {
