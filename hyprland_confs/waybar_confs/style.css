@@ -49,10 +49,6 @@ window#waybar {
 
 #workspaces button.active {
     color: #ff0000;
-    margin: 3px 0px 3px 0px;
-    padding: 1px 10px 1px 10px;
-    padding-right: 4px;
-    padding-left: 4px;
 }
 
 #workspaces button:hover {
