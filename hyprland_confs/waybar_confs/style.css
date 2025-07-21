@@ -35,16 +35,14 @@ window#waybar {
     box-shadow: none;
     text-shadow: none;
     padding: 0px;
-    margin: 10px 6px 10px 6px;
-    padding-right: 10px;
-    padding-left: 10px;
+    margin: 3px 3px 3px 3px;
+    padding: 0px 10px 0px 10px;
     color: #242639;
 }
 
 #workspaces button.active {
     color: #aecce6;
-    margin-right: 2px;
-    margin-left: 2px;
+    margin: 3px 3px 3px 3px;
     padding-right: 4px;
     padding-left: 4px;
 }
@@ -84,9 +82,7 @@ window#waybar.empty #window {
     text-shadow: none;
     padding: 0px;
     border-radius: 5px;
-    margin-top: 3px;
-    margin-right: 6px;
-    margin-left: 6px;
+    margin: 3px 3px 3px 3px;
     padding-right: 3px;
     padding-left: 3px;
     color: #64727d;
@@ -97,10 +93,7 @@ window#waybar.empty #window {
     text-shadow: none;
     padding: 0px;
     border-radius: 5px;
-    margin-top: 3px;
-    margin-bottom: 3px;
-    margin-left: 4px;
-    margin-right: 4px;
+    margin: 3px 3px 3px 3px;
     color: #2ecc71;
 }
 
@@ -109,8 +102,7 @@ window#waybar.empty #window {
     text-shadow: none;
     padding: 0px;
     border-radius: 5px;
-    margin-top: 3px;
-    margin-bottom: 3px;
+    margin: 3px 3px 3px 3px;
     padding-right: 4px;
     padding-left: 4px;
     color: #9b59b6;
@@ -121,8 +113,7 @@ window#waybar.empty #window {
     text-shadow: none;
     padding: 0px;
     border-radius: 5px;
-    margin-top: 3px;
-    margin-bottom: 3px;
+    margin: 3px 3px 3px 3px;
     padding-right: 4px;
     padding-left: 4px;
     color: #964b00;
@@ -133,7 +124,7 @@ window#waybar.empty #window {
     text-shadow: none;
     padding: 0px;
     border-radius: 5px;
-    margin-top: 3px;
+    margin: 3px 3px 3px 3px;
     color: #90b1b1;
 }
 
@@ -142,8 +133,7 @@ window#waybar.empty #window {
     text-shadow: none;
     padding: 0px;
     border-radius: 5px;
-    margin-top: 3px;
-    margin-bottom: 3px;
+    margin: 3px 3px 3px 3px;
     padding-right: 4px;
     padding-left: 4px;
     color: #2980b9;
@@ -154,7 +144,7 @@ window#waybar.empty #window {
     text-shadow: none;
     padding: 0px;
     border-radius: 5px;
-    margin-top: 3px;
+    margin: 3px 3px 3px 3px;
     color: #f53c3c;
 }
 
@@ -163,8 +153,7 @@ window#waybar.empty #window {
     text-shadow: none;
     padding: 0px;
     border-radius: 5px;
-    margin-top: 3px;
-    margin-bottom: 3px;
+    margin: 3px 3px 3px 3px;
     padding-right: 12px;
     padding-left: 4px;
     color: #f1c40f;
@@ -184,8 +173,7 @@ window#waybar.empty #window {
     text-shadow: none;
     padding: 0px;
     border-radius: 5px;
-    margin-top: 3px;
-    margin-bottom: 3px;
+    margin: 3px 3px 3px 3px;
     padding-right: 4px;
     padding-left: 4px;
     color: #9dcbd7;
@@ -196,8 +184,7 @@ window#waybar.empty #window {
     text-shadow: none;
     padding: 0px;
     border-radius: 5px;
-    margin-top: 3px;
-    margin-bottom: 3px;
+    margin: 3px 3px 3px 3px;
     padding-right: 4px;
     padding-left: 4px;
     color: #eb4d4b;
@@ -208,8 +195,7 @@ window#waybar.empty #window {
     text-shadow: none;
     padding: 0px;
     border-radius: 5px;
-    margin-top: 3px;
-    margin-bottom: 3px;
+    margin: 3px 3px 3px 3px;
     padding-right: 4px;
     padding-left: 4px;
     color: #2980b9;
