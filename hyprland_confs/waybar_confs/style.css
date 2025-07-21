@@ -45,11 +45,11 @@ window#waybar {
     margin: 1px 0px 1px 0px;
     padding: 1px 10px 1px 10px;
     border: 2px solid #ff0000;
-    color: #242639;
+    color: #ff0000;
 }
 
 #workspaces button.active {
-    color: #ff0000;
+    color: white;
 }
 
 #workspaces button:hover {
