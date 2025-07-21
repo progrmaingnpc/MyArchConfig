@@ -163,7 +163,7 @@ window#waybar.empty #window {
 
 /* you can set a style on hover for any module like this */
 #pulseaudio:hover {
-    color: #a37800;
+    color: white;
 }
 
 #pulseaudio.muted {
@@ -178,7 +178,7 @@ window#waybar.empty #window {
     margin: 3px 3px 3px 3px;
     padding-right: 4px;
     padding-left: 4px;
-    color: #9dcbd7;
+    color: #ff0000;
 }
 
 #idle_inhibitor.activated {
@@ -189,7 +189,7 @@ window#waybar.empty #window {
     margin: 3px 3px 3px 3px;
     padding-right: 4px;
     padding-left: 4px;
-    color: #ff0000;
+    color: #9dcbd7;
 }
 
 #tray {
