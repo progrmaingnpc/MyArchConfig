@@ -136,7 +136,7 @@ window#waybar.empty #window {
     text-shadow: none;
     padding: 0px;
     border-radius: 5px;
-    margin: 3px 3px 3px 3px;
+    margin: 0px 3px 0px 3px;
     padding-right: 4px;
     padding-left: 4px;
     color: #ff0000;
@@ -152,7 +152,7 @@ window#waybar.empty #window {
     text-shadow: none;
     padding: 0px;
     border-radius: 5px;
-    margin: 3px 3px 3px 3px;
+    margin: 0px 3px 0px 3px;
     color: #ff0000;
     border: 2px solid #ff0000;
 }
@@ -166,7 +166,7 @@ window#waybar.empty #window {
     text-shadow: none;
     padding: 0px;
     border-radius: 5px;
-    margin: 3px 3px 3px 3px;
+    margin: 0px 3px 0px 3px;
     padding-right: 4px;
     padding-left: 4px;
     color: #ff0000;
@@ -178,7 +178,7 @@ window#waybar.empty #window {
     text-shadow: none;
     padding: 0px;
     border-radius: 5px;
-    margin: 3px 3px 3px 3px;
+    margin: 0px 3px 0px 3px;
     color: #f53c3c;
 }
 
@@ -191,7 +191,7 @@ window#waybar.empty #window {
     text-shadow: none;
     padding: 0px;
     border-radius: 5px;
-    margin: 3px 3px 3px 3px;
+    margin: 0px 3px 0px 3px;
     padding-right: 12px;
     padding-left: 4px;
     color: #ff0000;
@@ -212,10 +212,11 @@ window#waybar.empty #window {
     text-shadow: none;
     padding: 0px;
     border-radius: 5px;
-    margin: 3px 3px 3px 3px;
+    margin: 0px 3px 0px 3px;
     padding-right: 4px;
     padding-left: 4px;
     color: #ff0000;
+    border: 2px solid #ff0000;
 }
 
 #idle_inhibitor.activated {
@@ -223,7 +224,7 @@ window#waybar.empty #window {
     text-shadow: none;
     padding: 0px;
     border-radius: 5px;
-    margin: 3px 3px 3px 3px;
+    margin: 0px 3px 0px 3px;
     padding-right: 4px;
     padding-left: 4px;
     color: #ff0000;
