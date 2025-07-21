@@ -78,6 +78,7 @@ window#waybar.empty #window {
 }
 
 #clock {
+    font-size: 20px;
     box-shadow: none;
     text-shadow: none;
     padding: 0px;
@@ -85,7 +86,8 @@ window#waybar.empty #window {
     margin: 3px 3px 3px 3px;
     padding-right: 3px;
     padding-left: 3px;
-    color: #64727d;
+    color: #aecce6;
+    background-color: #ff0000;
 }
 
 #cpu {
