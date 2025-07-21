@@ -87,7 +87,7 @@ window#waybar.empty #window {
     padding-right: 3px;
     padding-left: 3px;
     color: #aecce6;
-    background-color: #ff0000;
+    border: 3px solid #aecce6;
 }
 
 #cpu {
