@@ -65,6 +65,21 @@ window#waybar {
     margin-right: 0;
 }
 
+#window {
+    margin: 3px 15px 3px 0px;
+    padding: 2px 10px 0px 10px;
+    border-radius: 5px 5px 5px 5px;
+    color: white;
+    font-size: 16px;
+    font-weight: normal;
+    opacity: 1;
+    text-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+}
+
+window#waybar.empty #window {
+    background-color: transparent;
+}
+
 #clock {
     box-shadow: none;
     text-shadow: none;
