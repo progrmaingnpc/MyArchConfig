@@ -30,6 +30,10 @@ window#waybar {
     border: 2px solid #ff0000;
 }
 
+#custom-appmenu:hover {
+    color: white;
+}
+
 #workspaces button {
     background: transparent;
     box-shadow: none;
@@ -90,6 +94,10 @@ window#waybar.empty #window {
     border: 2px solid #ff0000;
 }
 
+#clock:hover {
+    color: white;
+}
+
 #cpu {
     box-shadow: none;
     text-shadow: none;
@@ -97,6 +105,10 @@ window#waybar.empty #window {
     border-radius: 5px;
     margin: 3px 3px 3px 3px;
     color: #ff0000;
+}
+
+#cpu:hover {
+    color: white;
 }
 
 #memory {
@@ -110,6 +122,10 @@ window#waybar.empty #window {
     color: #ff0000;
 }
 
+#memory:hover {
+    color: white;
+}
+
 #disk {
     box-shadow: none;
     text-shadow: none;
@@ -121,6 +137,10 @@ window#waybar.empty #window {
     color: #ff0000;
 }
 
+#disk:hover {
+    color: white;
+}
+
 #backlight {
     box-shadow: none;
     text-shadow: none;
@@ -128,6 +148,10 @@ window#waybar.empty #window {
     border-radius: 5px;
     margin: 3px 3px 3px 3px;
     color: #ff0000;
+}
+
+#backlight:hover {
+    color: white;
 }
 
 #network {
@@ -148,6 +172,10 @@ window#waybar.empty #window {
     border-radius: 5px;
     margin: 3px 3px 3px 3px;
     color: #f53c3c;
+}
+
+#network:hover {
+    color: white;
 }
 
 #pulseaudio {
@@ -189,7 +217,11 @@ window#waybar.empty #window {
     margin: 3px 3px 3px 3px;
     padding-right: 4px;
     padding-left: 4px;
-    color: #9dcbd7;
+    color: #ff0000;
+}
+
+#idle_inhibitor:hover {
+    color: white;
 }
 
 #tray {
