@@ -12,8 +12,9 @@
     "sway/scratchpad",
     "custom/media",
   ],
-  "modules-center": ["hyprland/window"],
+  "modules-center": ["clock"],
   "modules-right": [
+    "hyprland/window",
     "mpd",
     "idle_inhibitor",
     "pulseaudio",
@@ -27,7 +28,6 @@
     "sway/language",
     "battery",
     "battery#bat2",
-    "clock",
     "tray",
     "custom/power",
   ],
