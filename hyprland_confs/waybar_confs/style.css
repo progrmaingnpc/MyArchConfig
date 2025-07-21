@@ -18,11 +18,6 @@ window#waybar {
     border-radius: 5px;
 }
 
-window:hover#waybar {
-    border: 3px solid white;
-    border-radius: 5px;
-}
-
 #custom-appmenu {
     font-size: 20px;
     box-shadow: none;
