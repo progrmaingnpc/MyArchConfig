@@ -5,9 +5,11 @@
     font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;
     font-weight: bold;
     font-size: 14px;
+    /*
     min-height: 22px;
     margin-left: 2px;
     margin-right: 2px;
+    */
 }
 
 window#waybar {
