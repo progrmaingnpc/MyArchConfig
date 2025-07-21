@@ -28,6 +28,7 @@ window#waybar {
     padding: 1px 25px 1px 10px;
     color: #aecce6;
     background-color: #ff0000;
+    border: 3px solid #aecce6;
 }
 
 #workspaces button {
@@ -35,15 +36,14 @@ window#waybar {
     box-shadow: none;
     text-shadow: none;
     padding: 0px;
-    margin: 0px 3px 0px 3px;
+    margin: 3px 3px 3px 3px;
     padding: 0px 10px 0px 10px;
     color: #242639;
-    border: 3px solid #aecce6;
 }
 
 #workspaces button.active {
     color: #aecce6;
-    margin: 0px 3px 0px 3px;
+    margin: 3px 3px 3px 3px;
     padding-right: 4px;
     padding-left: 4px;
 }
