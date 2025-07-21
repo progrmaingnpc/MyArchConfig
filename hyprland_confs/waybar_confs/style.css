@@ -32,7 +32,8 @@ window#waybar {
     padding-bottom: 0;
     padding-right: 6px;
     padding-left: 6px;
-    border: 1px solid #9dcbd7;
+    border-top: 3px solid transparent;
+    border-bottom: 3px solid transparent;
     color: #aecce6;
     background-color: #ff0000;
 }
