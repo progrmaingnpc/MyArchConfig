@@ -105,6 +105,7 @@ window#waybar.empty #window {
 #clock:hover {
     background: red;
     color: white;
+    border: 2px solid white;
 }
 
 #cpu {
@@ -123,6 +124,7 @@ window#waybar.empty #window {
 #cpu:hover {
     background: red;
     color: white;
+    border: 2px solid white;
 }
 
 #memory {
@@ -141,6 +143,7 @@ window#waybar.empty #window {
 #memory:hover {
     background: red;
     color: white;
+    border: 2px solid white;
 }
 
 #disk {
@@ -157,6 +160,7 @@ window#waybar.empty #window {
 
 #disk:hover {
     color: white;
+    border: 2px solid white;
 }
 
 #backlight {
@@ -171,6 +175,7 @@ window#waybar.empty #window {
 
 #backlight:hover {
     color: white;
+    border: 2px solid white;
 }
 
 #network {
@@ -198,6 +203,7 @@ window#waybar.empty #window {
 #network:hover {
     background: red;
     color: white;
+    border: 2px solid white;
 }
 
 #pulseaudio {
@@ -217,6 +223,7 @@ window#waybar.empty #window {
 #pulseaudio:hover {
     background: red;
     color: white;
+    border: 2px solid white;
 }
 
 #pulseaudio.muted {
@@ -243,6 +250,7 @@ window#waybar.empty #window {
 #idle_inhibitor:hover {
     background: red;
     color: white;
+    border: 2px solid white;
 }
 
 #tray {
