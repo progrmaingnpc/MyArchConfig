@@ -98,19 +98,19 @@ if [ ! -d "$HYPR_CONF_DIRECTORY" ]; then
 else
 	echo "Found existing local hyprland config directory at $HYPR_CONF_DIRECTORY"
 fi
-# Create the kitty directory if doesn't already exist
-if [ ! -d "$KITTY_DIRECTORY" ]; then
-	mkdir "$KITTY_DIRECTORY"
-	echo "Created local kitty directory at $KITTY_DIRECTORY"
-else
-	echo "Found existing local kitty directory at $KITTY_DIRECTORY"
-fi
 # Create the waybar directory if doesn't already exist
 if [ ! -d "$WAYBAR_DIRECTORY" ]; then
 	mkdir "$WAYBAR_DIRECTORY"
 	echo "Created local waybar directory at $WAYBAR_DIRECTORY"
 else
 	echo "Found existing local waybar directory at $WAYBAR_DIRECTORY"
+fi
+# Create the kitty directory if doesn't already exist
+if [ ! -d "$KITTY_DIRECTORY" ]; then
+	mkdir "$KITTY_DIRECTORY"
+	echo "Created local kitty directory at $KITTY_DIRECTORY"
+else
+	echo "Found existing local kitty directory at $KITTY_DIRECTORY"
 fi
 # Create the fastfetch shell config directory if doesn't already exist
 if [ ! -d "$SHELL_FASTFETCH_DIRECTORY" ]; then
@@ -119,19 +119,19 @@ if [ ! -d "$SHELL_FASTFETCH_DIRECTORY" ]; then
 else
 	echo "Found existing local fastfetch shell config directory at $SHELL_FASTFETCH_DIRECTORY"
 fi
-# Create the waypaper directory if doesn't already exist
-if [ ! -d "$WAYPAPER_DIRECTORY" ]; then
-	mkdir "$WAYPAPER_DIRECTORY"
-	echo "Created local waypaper directory at $WAYPAPER_DIRECTORY"
-else
-	echo "Found existing local waypaper directory at $WAYPAPER_DIRECTORY"
-fi
 # Create wallust directory in the user's directory if doesn't already exist
 if [ ! -d "$WALLUST_DIRECTORY" ]; then
 	mkdir "$WALLUST_DIRECTORY"
 	echo "Created local wallust directory at $WALLUST_DIRECTORY"
 else
 	echo "Found existing local wallust directory at $WALLUST_DIRECTORY"
+fi
+# Create the waypaper directory if doesn't already exist
+if [ ! -d "$WAYPAPER_DIRECTORY" ]; then
+	mkdir "$WAYPAPER_DIRECTORY"
+	echo "Created local waypaper directory at $WAYPAPER_DIRECTORY"
+else
+	echo "Found existing local waypaper directory at $WAYPAPER_DIRECTORY"
 fi
 # Create the hyprland scripts directory if doesn't already exist
 if [ ! -d "$SCRIPTS_DIRECTORY" ]; then
@@ -142,30 +142,30 @@ else
 fi
 
 # Copy the hyprland configs to the hyprland directory on the user's device
-cp hyprland_confs/confs/*.conf "$HYPRLAND_DIRECTORY" -v
+cp ~/MyArchConfig/confs/hyrpland_confs/*.conf "$HYPRLAND_DIRECTORY" -v
 # Copy the hyprland configs to the hyprland config directory on the user's device
-cp hyprland_confs/confs/conf/*.conf "$HYPR_CONF_DIRECTORY" -v
-# Copy the kitty configs to the kitty config directory on the user's device
-cp hyprland_confs/kitty/*.conf "$KITTY_DIRECTORY" -v
+cp ~/MyArchConfig/confs/hyrpland_confs/conf/*.conf "$HYPR_CONF_DIRECTORY" -v
 # Copy the waybar configs to the waybar config directory on the user's device
-cp hyprland_confs/waybar_confs/*.jsonc "$WAYBAR_DIRECTORY" -v
-cp hyprland_confs/waybar_confs/*.css "$WAYBAR_DIRECTORY" -v
+cp ~/MyArchConfig/confs/waybar_confs/*.jsonc "$WAYBAR_DIRECTORY" -v
+cp ~/MyArchConfig/confs/waybar_confs/*.css "$WAYBAR_DIRECTORY" -v
+# Copy the kitty configs to the kitty config directory on the user's device
+cp ~/MyArchConfig/confs/terminal_conf/kitty/*.conf "$KITTY_DIRECTORY" -v
 # Copy the bash config file to the user's .bashrc file
-cp hyprland_confs/bashrc/bash_conf ~/.bashrc -v
+cp ~/MyArchConfig/confs/terminal_conf/shells/bashrc/bash_conf ~/.bashrc -v
 # Copy the zsh config file to the user's .zshrc file
-cp hyprland_confs/zshrc/zsh_conf ~/.zshrc -v
+cp ~/MyArchConfig/confs/terminal_conf/shells/zshrc/zsh_conf ~/.zshrc -v
 # Copy the fastfetch shell config to the fastfetch shell config directory on the user's device
-cp hyprland_confs/fast_fetch_conf/default.jsonc "$SHELL_FASTFETCH_DIRECTORY" -v
-cp hyprland_confs/fast_fetch_conf/default.png "$SHELL_FASTFETCH_DIRECTORY" -v
+cp ~/MyArchConfig/confs/terminal_conf/fast_fetch_conf/default.* "$SHELL_FASTFETCH_DIRECTORY" -v
+# Copy wallust directory to user's directory
+cp ~/MyArchConfig/confs/terminal_conf/wallust "$WALLUST_DIRECTORY" -r -v
 # Install oh-my-posh font
 oh-my-posh font install JetBrainsMono
 # Copy default wallpaper directory with default background to user's directory
-cp wallpaper/ ~/ -r -v
-cp hyprland_confs/waypaper_conf/config.ini "$WAYPAPER_DIRECTORY" -v
-# Copy wallust directory to user's directory
-cp hyprland_confs/wallust "$WALLUST_DIRECTORY" -r -v
+cp ~/MyArchConfig/wallpaper/ ~/ -r -v
+# Copy waypaper config to user's directory
+cp ~/MyArchConfig/confs/waypaper_conf/config.ini "$WAYPAPER_DIRECTORY" -v
 # Copy hyprland scripts directory to user's hyprland config directory
-cp personal_scripts/*.sh "$SCRIPTS_DIRECTORY" -v
+cp ~/MyArchConfig/scripts/*.sh "$SCRIPTS_DIRECTORY" -v
 
 waypaper --wallpaper ~/wallpaper/default.jpg
 sudo usermod -aG wireshark $USER
