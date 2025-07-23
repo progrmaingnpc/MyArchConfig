@@ -6,6 +6,7 @@ WAYBAR_DIRECTORY=~/.config/waybar
 SHELL_FASTFETCH_DIRECTORY=~/.config/fast_fetch_shell
 WAYPAPER_DIRECTORY=~/.config/waypaper
 SCRIPTS_DIRECTORY=~/.config/hypr/scripts
+WALLUST_DIRECTORY=~/.config/wallust
 YAY_DIRECTORY=~/.cache/yay
 PARU_DIRECTORY=~/.cache/paru
 
@@ -125,6 +126,13 @@ if [ ! -d "$WAYPAPER_DIRECTORY" ]; then
 else
 	echo "Found existing local waypaper directory at $WAYPAPER_DIRECTORY"
 fi
+# Create wallust directory in the user's directory if doesn't already exist
+if [ ! -d "$WALLUST_DIRECTORY" ]; then
+	mkdir "$WALLUST_DIRECTORY"
+	echo "Created local wallust directory at $WALLUST_DIRECTORY"
+else
+	echo "Found existing local wallust directory at $WALLUST_DIRECTORY"
+fi
 # Create the hyprland scripts directory if doesn't already exist
 if [ ! -d "$SCRIPTS_DIRECTORY" ]; then
 	mkdir "$SCRIPTS_DIRECTORY"
@@ -154,6 +162,9 @@ oh-my-posh font install JetBrainsMono
 # Copy default wallpaper directory with default background to user's directory
 cp wallpaper/ ~/ -r -v
 cp hyprland_confs/waypaper_conf/config.ini "$WAYPAPER_DIRECTORY" -v
+# Copy wallust directory to user's directory
+cp hyprland_confs/wallust "$WALLUST_DIRECTORY" -r -v
+# Copy hyprland scripts directory to user's hyprland config directory
 cp personal_scripts/*.sh "$SCRIPTS_DIRECTORY" -v
 
 waypaper --wallpaper ~/wallpaper/default.jpg
