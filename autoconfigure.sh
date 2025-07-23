@@ -142,9 +142,9 @@ else
 fi
 
 # Copy the hyprland configs to the hyprland directory on the user's device
-cp hyprland_confs/confs/new_confs/*.conf "$HYPRLAND_DIRECTORY" -v
+cp hyprland_confs/confs/*.conf "$HYPRLAND_DIRECTORY" -v
 # Copy the hyprland configs to the hyprland config directory on the user's device
-cp hyprland_confs/confs/new_confs/conf/*.conf "$HYPR_CONF_DIRECTORY" -v
+cp hyprland_confs/confs/conf/*.conf "$HYPR_CONF_DIRECTORY" -v
 # Copy the kitty configs to the kitty config directory on the user's device
 cp hyprland_confs/kitty/*.conf "$KITTY_DIRECTORY" -v
 # Copy the waybar configs to the waybar config directory on the user's device
