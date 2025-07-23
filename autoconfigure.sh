@@ -6,7 +6,6 @@ WAYBAR_DIRECTORY=~/.config/waybar
 SHELL_FASTFETCH_DIRECTORY=~/.config/fast_fetch_shell
 WAYPAPER_DIRECTORY=~/.config/waypaper
 SCRIPTS_DIRECTORY=~/.config/hypr/scripts
-WALLUST_DIRECTORY=~/.config/wallust
 YAY_DIRECTORY=~/.cache/yay
 PARU_DIRECTORY=~/.cache/paru
 
@@ -39,7 +38,7 @@ elif [ -d "$YAY_DIRECTORY" ]; then
 	echo "Finished installing hyprland configuration packages"
 
 	yay -S kitty oh-my-posh-bin bash-completion \
-       	zsh-completions fastfetch wallust python-pywal16 --noconfirm --needed
+       	zsh-completions fastfetch python-pywal16 --noconfirm --needed
 	echo "[Finished installing shell configuration packages]"
 
 	yay -S networkmanager tor tor-browser-bin wireshark-cli \
@@ -71,7 +70,7 @@ elif [	-d "$PARU_DIRECTORY" ]; then
 	echo "Finished installing hyprland configuration packages"
 
 	paru -S kitty oh-my-posh-bin bash-completion \
-       	zsh-completions fastfetch wallust --noconfirm --needed
+       	zsh-completions fastfetch --noconfirm --needed
 	echo "[Finished installing shell configuration packages]"
 
 	paru -S networkmanager tor tor-browser-bin wireshark-cli \
@@ -119,13 +118,6 @@ if [ ! -d "$SHELL_FASTFETCH_DIRECTORY" ]; then
 else
 	echo "Found existing local fastfetch shell config directory at $SHELL_FASTFETCH_DIRECTORY"
 fi
-# Create wallust directory in the user's directory if doesn't already exist
-if [ ! -d "$WALLUST_DIRECTORY" ]; then
-	mkdir "$WALLUST_DIRECTORY"
-	echo "Created local wallust directory at $WALLUST_DIRECTORY"
-else
-	echo "Found existing local wallust directory at $WALLUST_DIRECTORY"
-fi
 # Create the waypaper directory if doesn't already exist
 if [ ! -d "$WAYPAPER_DIRECTORY" ]; then
 	mkdir "$WAYPAPER_DIRECTORY"
@@ -156,8 +148,6 @@ cp ~/MyArchConfig/confs/terminal_conf/shells/bashrc/bash_conf ~/.bashrc -v
 cp ~/MyArchConfig/confs/terminal_conf/shells/zshrc/zsh_conf ~/.zshrc -v
 # Copy the fastfetch shell config to the fastfetch shell config directory on the user's device
 cp ~/MyArchConfig/confs/terminal_conf/fast_fetch_conf/default.* "$SHELL_FASTFETCH_DIRECTORY" -v
-# Copy wallust directory to user's directory
-cp ~/MyArchConfig/confs/terminal_conf/wallust "$WALLUST_DIRECTORY" -r -v
 # Install oh-my-posh font
 oh-my-posh font install JetBrainsMono
 # Copy default wallpaper directory with default background to user's directory
