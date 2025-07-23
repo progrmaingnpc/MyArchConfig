@@ -57,7 +57,7 @@ window#waybar {
 #workspaces button:hover {
     background: orange;
     color: white;
-    border: 2px solid yellow;
+    border: 2px solid white;
 }
 
 /* If workspaces is the leftmost module, omit left margin */
