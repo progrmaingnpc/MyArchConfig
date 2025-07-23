@@ -23,7 +23,7 @@ window#waybar:hover {
 }
 
 #custom-appmenu {
-    background: transparent;
+    background: red;
     font-size: 20px;
     box-shadow: none;
     text-shadow: none;
@@ -41,7 +41,7 @@ window#waybar:hover {
 }
 
 #workspaces button {
-    background: transparent;
+    background: red;
     box-shadow: none;
     text-shadow: none;
     font-size: 20px;
@@ -88,7 +88,7 @@ window#waybar.empty #window {
 }
 
 #clock {
-    background: transparent;
+    background: red;
     font-size: 20px;
     box-shadow: none;
     text-shadow: none;
@@ -107,7 +107,7 @@ window#waybar.empty #window {
 }
 
 #cpu {
-    background: transparent;
+    background: red;
     box-shadow: none;
     text-shadow: none;
     padding: 0px;
@@ -125,7 +125,7 @@ window#waybar.empty #window {
 }
 
 #memory {
-    background: transparent;
+    background: red;
     box-shadow: none;
     text-shadow: none;
     padding: 0px;
@@ -143,7 +143,7 @@ window#waybar.empty #window {
 }
 
 #disk {
-    background: transparent;
+    background: red;
     box-shadow: none;
     text-shadow: none;
     padding: 0px;
@@ -176,7 +176,7 @@ window#waybar.empty #window {
 }
 
 #network {
-    background: transparent;
+    background: red;
     box-shadow: none;
     text-shadow: none;
     padding: 0px;
@@ -203,7 +203,7 @@ window#waybar.empty #window {
 }
 
 #pulseaudio {
-    background: transparent;
+    background: red;
     box-shadow: none;
     text-shadow: none;
     padding: 0px;
@@ -226,7 +226,7 @@ window#waybar.empty #window {
 }
 
 #idle_inhibitor {
-    background: transparent;
+    background: red;
     box-shadow: none;
     text-shadow: none;
     padding: 0px;
