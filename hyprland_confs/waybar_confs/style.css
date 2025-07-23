@@ -55,7 +55,6 @@ window#waybar:hover {
 #workspaces button.active {
     background: white;
     color: red;
-    border: 2px solid red;
 }
 
 #workspaces button:hover {
