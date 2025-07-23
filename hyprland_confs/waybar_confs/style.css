@@ -49,12 +49,12 @@ window#waybar {
 }
 
 #workspaces button.active {
-    color: white;
+    color: orange;
 }
 
 #workspaces button:hover {
     background: transparent;
-    color: orange;
+    color: white;
 }
 
 /* If workspaces is the leftmost module, omit left margin */
