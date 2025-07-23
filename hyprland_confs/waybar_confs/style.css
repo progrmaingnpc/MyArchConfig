@@ -28,7 +28,7 @@ window#waybar:hover {
     box-shadow: none;
     text-shadow: none;
     padding: 0px;
-    border-radius: 25px 0px 10px 25px;
+    border-radius: 25px 0px 25px 25px;
     margin: 0px 3px 0px 0px;
     padding: 1px 25px 1px 10px;
     border: 2px solid white;
