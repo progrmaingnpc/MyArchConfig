@@ -37,11 +37,10 @@ window#waybar:hover {
 
 #custom-appmenu:hover {
     color: red;
-    background: white;
 }
 
 #workspaces button {
-    background: red;
+    background: transparent;
     box-shadow: none;
     text-shadow: none;
     font-size: 20px;
@@ -53,7 +52,6 @@ window#waybar:hover {
 }
 
 #workspaces button.active {
-    background: white;
     color: red;
 }
 
@@ -88,7 +86,7 @@ window#waybar.empty #window {
 }
 
 #clock {
-    background: red;
+    background: transparent;
     font-size: 20px;
     box-shadow: none;
     text-shadow: none;
@@ -102,12 +100,11 @@ window#waybar.empty #window {
 }
 
 #clock:hover {
-    background: white;
     color: red;
 }
 
 #cpu {
-    background: red;
+    background: transparent;
     box-shadow: none;
     text-shadow: none;
     padding: 0px;
@@ -120,12 +117,11 @@ window#waybar.empty #window {
 }
 
 #cpu:hover {
-    background: white;
     color: red;
 }
 
 #memory {
-    background: red;
+    background: transparent;
     box-shadow: none;
     text-shadow: none;
     padding: 0px;
@@ -138,12 +134,11 @@ window#waybar.empty #window {
 }
 
 #memory:hover {
-    background: white;
     color: red;
 }
 
 #disk {
-    background: red;
+    background: transparent;
     box-shadow: none;
     text-shadow: none;
     padding: 0px;
@@ -156,7 +151,6 @@ window#waybar.empty #window {
 }
 
 #disk:hover {
-    background: white;
     color: red;
 }
 
@@ -171,12 +165,11 @@ window#waybar.empty #window {
 }
 
 #backlight:hover {
-    background: white;
     color: red;
 }
 
 #network {
-    background: red;
+    background: transparent;
     box-shadow: none;
     text-shadow: none;
     padding: 0px;
@@ -198,12 +191,11 @@ window#waybar.empty #window {
 }
 
 #network:hover {
-    background: white;
     color: red;
 }
 
 #pulseaudio {
-    background: red;
+    background: transparent;
     box-shadow: none;
     text-shadow: none;
     padding: 0px;
@@ -217,7 +209,6 @@ window#waybar.empty #window {
 
 /* you can set a style on hover for any module like this */
 #pulseaudio:hover {
-    background: white;
     color: red;
 }
 
@@ -226,7 +217,7 @@ window#waybar.empty #window {
 }
 
 #idle_inhibitor {
-    background: red;
+    background: transparent;
     box-shadow: none;
     text-shadow: none;
     padding: 0px;
@@ -243,7 +234,6 @@ window#waybar.empty #window {
 }
 
 #idle_inhibitor:hover {
-    background: white;
     color: red;
 }
 
