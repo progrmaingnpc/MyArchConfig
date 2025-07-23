@@ -42,7 +42,7 @@ elif [ -d "$YAY_DIRECTORY" ]; then
 	echo "[Finished installing shell configuration packages]"
 
 	yay -S networkmanager tor tor-browser-bin wireshark-cli \
-        wireshark-qt rustup postgresql zed --noconfirm --needed
+        wireshark-qt postgresql zed --noconfirm --needed
 	echo "[Finished installing basic apps]"
 
 	yay -S xdg-desktop-portal xdg-desktop-portal-hyprland \
