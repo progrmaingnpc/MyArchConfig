@@ -88,6 +88,7 @@ window#waybar.empty #window {
 }
 
 #clock {
+    background: white;
     font-size: 20px;
     box-shadow: none;
     text-shadow: none;
@@ -101,10 +102,12 @@ window#waybar.empty #window {
 }
 
 #clock:hover {
+    background: red;
     color: white;
 }
 
 #cpu {
+    background: white;
     box-shadow: none;
     text-shadow: none;
     padding: 0px;
@@ -117,10 +120,12 @@ window#waybar.empty #window {
 }
 
 #cpu:hover {
+    background: red;
     color: white;
 }
 
 #memory {
+    background: white;
     box-shadow: none;
     text-shadow: none;
     padding: 0px;
@@ -133,6 +138,7 @@ window#waybar.empty #window {
 }
 
 #memory:hover {
+    background: red;
     color: white;
 }
 
@@ -167,6 +173,7 @@ window#waybar.empty #window {
 }
 
 #network {
+    background: white;
     box-shadow: none;
     text-shadow: none;
     padding: 0px;
@@ -188,10 +195,12 @@ window#waybar.empty #window {
 }
 
 #network:hover {
+    background: red;
     color: white;
 }
 
 #pulseaudio {
+    background: white;
     box-shadow: none;
     text-shadow: none;
     padding: 0px;
@@ -205,6 +214,7 @@ window#waybar.empty #window {
 
 /* you can set a style on hover for any module like this */
 #pulseaudio:hover {
+    background: red;
     color: white;
 }
 
@@ -213,6 +223,7 @@ window#waybar.empty #window {
 }
 
 #idle_inhibitor {
+    background: white;
     box-shadow: none;
     text-shadow: none;
     padding: 0px;
@@ -229,6 +240,7 @@ window#waybar.empty #window {
 }
 
 #idle_inhibitor:hover {
+    background: red;
     color: white;
 }
 
