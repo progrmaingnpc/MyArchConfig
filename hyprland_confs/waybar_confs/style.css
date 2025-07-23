@@ -36,6 +36,7 @@ window#waybar {
 #custom-appmenu:hover {
     color: white;
     background: red;
+    border: 2px solid white;
 }
 
 #workspaces button {
