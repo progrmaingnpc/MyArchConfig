@@ -70,11 +70,11 @@ elif [	-d "$PARU_DIRECTORY" ]; then
 	echo "Finished installing hyprland configuration packages"
 
 	paru -S kitty oh-my-posh-bin bash-completion \
-       	zsh-completions fastfetch --noconfirm --needed
+       	zsh-completions fastfetch python-pywal16 --noconfirm --needed
 	echo "[Finished installing shell configuration packages]"
 
 	paru -S networkmanager tor tor-browser-bin wireshark-cli \
-       	wireshark-qt rustup postgresql zed --noconfirm --needed
+       	wireshark-qt postgresql zed --noconfirm --needed
 	echo "[Finished installing basic apps]"
 
 	paru -S xdg-desktop-portal xdg-desktop-portal-hyprland \
@@ -140,6 +140,7 @@ cp ~/MyArchConfig/confs/hyprland_confs/conf/*.conf "$HYPR_CONF_DIRECTORY" -v
 # Copy the waybar configs to the waybar config directory on the user's device
 cp ~/MyArchConfig/confs/waybar_confs/*.jsonc "$WAYBAR_DIRECTORY" -v
 cp ~/MyArchConfig/confs/waybar_confs/*.css "$WAYBAR_DIRECTORY" -v
+cp ~/MyArchConfig/confs/waybar_confs/*.xml "$WAYBAR_DIRECTORY" -v
 # Copy the kitty configs to the kitty config directory on the user's device
 cp ~/MyArchConfig/confs/terminal_conf/kitty/*.conf "$KITTY_DIRECTORY" -v
 # Copy the bash config file to the user's .bashrc file
