@@ -15,7 +15,7 @@
 window#waybar {
     background: transparent;
     border: 3px solid white;
-    border-radius: 25px;
+    border-radius: 25px 25px 25px 5px;
 }
 
 window#waybar:hover {
