@@ -3,7 +3,8 @@
 #
 
 # If not running interactively, don't do anything
-wallust -q run ~/wallpaper/default.jpg
+#wallust -q run ~/wallpaper/default.jpg
+wal -R
 eval "$(oh-my-posh init bash --config /usr/share/oh-my-posh/themes/negligible.omp.json)"
 fastfetch --config ~/.config/fast_fetch_shell/default.jsonc --logo-type kitty-direct --logo ~/.config/fast_fetch_shell/default.png
 
