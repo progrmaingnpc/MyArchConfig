@@ -42,7 +42,7 @@ elif [ -d "$YAY_DIRECTORY" ]; then
 	echo "[Finished installing shell configuration packages]"
 
 	yay -S networkmanager tor tor-browser-bin wireshark-cli \
-        wireshark-qt postgresql zed pavucontrol --noconfirm --needed
+        wireshark-qt postgresql zed pavucontrol power-profiles-daemon --noconfirm --needed
 	echo "[Finished installing basic apps]"
 
 	yay -S xdg-desktop-portal xdg-desktop-portal-hyprland \
@@ -74,7 +74,7 @@ elif [	-d "$PARU_DIRECTORY" ]; then
 	echo "[Finished installing shell configuration packages]"
 
 	paru -S networkmanager tor tor-browser-bin wireshark-cli \
-       	wireshark-qt postgresql zed pavucontrol --noconfirm --needed
+       	wireshark-qt postgresql zed pavucontrol power-profiles-daemon --noconfirm --needed
 	echo "[Finished installing basic apps]"
 
 	paru -S xdg-desktop-portal xdg-desktop-portal-hyprland \
