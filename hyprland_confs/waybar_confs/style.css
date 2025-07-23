@@ -23,7 +23,7 @@ window#waybar:hover {
 }
 
 #custom-appmenu {
-    background: red;
+    background: transparent;
     font-size: 20px;
     box-shadow: none;
     text-shadow: none;
@@ -41,7 +41,7 @@ window#waybar:hover {
 }
 
 #workspaces button {
-    background: red;
+    background: transparent;
     box-shadow: none;
     text-shadow: none;
     font-size: 20px;
@@ -88,7 +88,7 @@ window#waybar.empty #window {
 }
 
 #clock {
-    background: red;
+    background: transparent;
     font-size: 20px;
     box-shadow: none;
     text-shadow: none;
@@ -99,7 +99,6 @@ window#waybar.empty #window {
     padding-left: 3px;
     color: white;
     border: 2px solid white;
-    border-radius: 5px;
 }
 
 #clock:hover {
@@ -108,7 +107,7 @@ window#waybar.empty #window {
 }
 
 #cpu {
-    background: red;
+    background: transparent;
     box-shadow: none;
     text-shadow: none;
     padding: 0px;
@@ -126,7 +125,7 @@ window#waybar.empty #window {
 }
 
 #memory {
-    background: red;
+    background: transparent;
     box-shadow: none;
     text-shadow: none;
     padding: 0px;
@@ -144,7 +143,7 @@ window#waybar.empty #window {
 }
 
 #disk {
-    background: red;
+    background: transparent;
     box-shadow: none;
     text-shadow: none;
     padding: 0px;
@@ -177,7 +176,7 @@ window#waybar.empty #window {
 }
 
 #network {
-    background: red;
+    background: transparent;
     box-shadow: none;
     text-shadow: none;
     padding: 0px;
@@ -204,7 +203,7 @@ window#waybar.empty #window {
 }
 
 #pulseaudio {
-    background: red;
+    background: transparent;
     box-shadow: none;
     text-shadow: none;
     padding: 0px;
@@ -227,7 +226,7 @@ window#waybar.empty #window {
 }
 
 #idle_inhibitor {
-    background: red;
+    background: transparent;
     box-shadow: none;
     text-shadow: none;
     padding: 0px;
