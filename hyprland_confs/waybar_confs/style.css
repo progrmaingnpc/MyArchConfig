@@ -36,6 +36,7 @@ window#waybar:hover {
 }
 
 #custom-appmenu:hover {
+    background: white;
     color: red;
 }
 
