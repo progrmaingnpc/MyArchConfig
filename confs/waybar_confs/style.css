@@ -293,17 +293,14 @@ window#waybar.empty #window {
 
 #power-profiles-daemon.performance {
     background-color: #f53c3c;
-    color: #ffffff;
 }
 
 #power-profiles-daemon.balanced {
     background-color: #2980b9;
-    color: #ffffff;
 }
 
 #power-profiles-daemon.power-saver {
     background-color: #2ecc71;
-    color: #000000;
 }
 
 #power-profiles-daemon:hover {
@@ -311,15 +308,37 @@ window#waybar.empty #window {
 }
 
 #wireplumber {
-    color: #fff0f5;
+    background: transparent;
+    box-shadow: none;
+    text-shadow: none;
+    padding: 0px;
+    border-radius: 5px;
+    margin: 0px 3px 0px 3px;
+    padding-right: 15px;
+    padding-left: 4px;
+    color: white;
+    border: 2px solid white;
 }
 
 #wireplumber.muted {
     color: #f53c3c;
 }
 
+#wireplumber:hover {
+    background: red;
+}
+
 #custom-media {
-    color: #2a5c45;
+    background: transparent;
+    box-shadow: none;
+    text-shadow: none;
+    padding: 0px;
+    border-radius: 5px;
+    margin: 0px 3px 0px 3px;
+    padding-right: 15px;
+    padding-left: 4px;
+    color: white;
+    border: 2px solid white;
     min-width: 100px;
 }
 
@@ -331,25 +350,54 @@ window#waybar.empty #window {
     color: #ffa000;
 }
 
+#custom-media:hover {
+    background: red;
+}
+
 #temperature {
-    color: #f0932b;
+    background: transparent;
+    box-shadow: none;
+    text-shadow: none;
+    padding: 0px;
+    border-radius: 5px;
+    margin: 0px 3px 0px 3px;
+    padding-right: 15px;
+    padding-left: 4px;
+    color: white;
+    border: 2px solid white;
 }
 
 #temperature.critical {
     color: #eb4d4b;
 }
 
+#temperature:hover {
+    background: red;
+}
+
 #language {
-    background: #00b093;
-    color: #740864;
+    background: transparent;
+    box-shadow: none;
+    text-shadow: none;
+    border-radius: 5px;
+    color: white;
+    border: 2px solid white;
     padding: 0 5px;
     margin: 0 5px;
     min-width: 16px;
 }
 
+#language:hover {
+    background: red;
+}
+
 #keyboard-state {
-    background: #97e1ad;
-    color: #000000;
+    background: transparent;
+    box-shadow: none;
+    text-shadow: none;
+    border-radius: 5px;
+    color: white;
+    border: 2px solid white;
     padding: 0 0px;
     margin: 0 5px;
     min-width: 16px;
@@ -363,12 +411,29 @@ window#waybar.empty #window {
     background: rgba(0, 0, 0, 0.2);
 }
 
+#keyboard-state:hover {
+    background: red;
+}
+
 #scratchpad {
-    background: rgba(0, 0, 0, 0.2);
+    background: transparent;
+    box-shadow: none;
+    text-shadow: none;
+    padding: 0px;
+    border-radius: 5px;
+    margin: 0px 3px 0px 3px;
+    padding-right: 15px;
+    padding-left: 4px;
+    color: white;
+    border: 2px solid white;
 }
 
 #scratchpad.empty {
     background-color: transparent;
+}
+
+#scratchpad:hover {
+    background: red;
 }
 
 #privacy {
@@ -377,7 +442,13 @@ window#waybar.empty #window {
 
 #privacy-item {
     padding: 0 5px;
+    background: transparent;
+    box-shadow: none;
+    text-shadow: none;
+    border-radius: 5px;
+    margin: 0px 3px 0px 3px;
     color: white;
+    border: 2px solid white;
 }
 
 #privacy-item.screenshare {
@@ -390,4 +461,8 @@ window#waybar.empty #window {
 
 #privacy-item.audio-out {
     color: #0069d4;
+}
+
+#privacy-item:hover {
+    background: red;
 }
