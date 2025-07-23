@@ -34,7 +34,6 @@ window#waybar {
 #custom-appmenu:hover {
     color: red;
     background: white;
-    border: 2px solid red;
 }
 
 #workspaces button {
@@ -58,7 +57,6 @@ window#waybar {
 #workspaces button:hover {
     background: orange;
     color: red;
-    border: 2px solid red;
 }
 
 /* If workspaces is the leftmost module, omit left margin */
@@ -103,7 +101,6 @@ window#waybar.empty #window {
 #clock:hover {
     background: white;
     color: red;
-    border: 2px solid red;
 }
 
 #cpu {
@@ -122,7 +119,6 @@ window#waybar.empty #window {
 #cpu:hover {
     background: white;
     color: red;
-    border: 2px solid red;
 }
 
 #memory {
@@ -141,7 +137,6 @@ window#waybar.empty #window {
 #memory:hover {
     background: white;
     color: red;
-    border: 2px solid red;
 }
 
 #disk {
@@ -160,7 +155,6 @@ window#waybar.empty #window {
 #disk:hover {
     background: white;
     color: red;
-    border: 2px solid red;
 }
 
 #backlight {
@@ -176,7 +170,6 @@ window#waybar.empty #window {
 #backlight:hover {
     background: white;
     color: red;
-    border: 2px solid red;
 }
 
 #network {
@@ -204,7 +197,6 @@ window#waybar.empty #window {
 #network:hover {
     background: white;
     color: red;
-    border: 2px solid red;
 }
 
 #pulseaudio {
@@ -224,7 +216,6 @@ window#waybar.empty #window {
 #pulseaudio:hover {
     background: white;
     color: red;
-    border: 2px solid red;
 }
 
 #pulseaudio.muted {
@@ -251,7 +242,6 @@ window#waybar.empty #window {
 #idle_inhibitor:hover {
     background: white;
     color: red;
-    border: 2px solid red;
 }
 
 #tray {
