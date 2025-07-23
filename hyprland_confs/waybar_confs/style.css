@@ -239,7 +239,7 @@ window#waybar.empty #window {
 }
 
 #idle_inhibitor.activated {
-    color: #ff0000;
+    color: white;
 }
 
 #idle_inhibitor:hover {
