@@ -39,7 +39,7 @@ elif [ -d "$YAY_DIRECTORY" ]; then
 	echo "Finished installing hyprland configuration packages"
 
 	yay -S kitty oh-my-posh-bin bash-completion \
-       	zsh-completions fastfetch wallust --noconfirm --needed
+       	zsh-completions fastfetch wallust python-pywal16 --noconfirm --needed
 	echo "[Finished installing shell configuration packages]"
 
 	yay -S networkmanager tor tor-browser-bin wireshark-cli \
