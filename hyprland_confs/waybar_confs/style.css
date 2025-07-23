@@ -21,6 +21,7 @@ window#waybar {
 }
 
 #custom-appmenu {
+    background: white;
     font-size: 20px;
     box-shadow: none;
     text-shadow: none;
@@ -34,10 +35,11 @@ window#waybar {
 
 #custom-appmenu:hover {
     color: white;
+    background: red;
 }
 
 #workspaces button {
-    background: transparent;
+    background: white;
     box-shadow: none;
     text-shadow: none;
     font-size: 20px;
