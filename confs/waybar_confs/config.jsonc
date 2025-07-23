@@ -208,6 +208,7 @@
     "tooltip": true,
     "menu": "on-click",
     "menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
+    "on-click-right": "hyprlock",
     "menu-actions": {
       "shutdown": "shutdown",
       "reboot": "reboot",
