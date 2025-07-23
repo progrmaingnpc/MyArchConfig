@@ -14,7 +14,7 @@ alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 PS1='[\u@\h \W]\$ '
 
-wal -i $(tail ~/.cache/swww/* --lines=1)
+wal -i $(tail ~/.cache/swww/* --lines=1) -q -e
 
 (cat ~/.cache/wal/sequences &)
 cat ~/.cache/wal/sequences
