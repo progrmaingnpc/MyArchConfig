@@ -21,7 +21,7 @@ window#waybar {
 }
 
 #custom-appmenu {
-    background: darkblue;
+    background: navy;
     font-size: 20px;
     box-shadow: none;
     text-shadow: none;
@@ -39,7 +39,7 @@ window#waybar {
 }
 
 #workspaces button {
-    background: darkblue;
+    background: navy;
     box-shadow: none;
     text-shadow: none;
     font-size: 20px;
@@ -88,7 +88,7 @@ window#waybar.empty #window {
 }
 
 #clock {
-    background: darkblue;
+    background: navy;
     font-size: 20px;
     box-shadow: none;
     text-shadow: none;
@@ -107,7 +107,7 @@ window#waybar.empty #window {
 }
 
 #cpu {
-    background: darkblue;
+    background: navy;
     box-shadow: none;
     text-shadow: none;
     padding: 0px;
@@ -125,7 +125,7 @@ window#waybar.empty #window {
 }
 
 #memory {
-    background: darkblue;
+    background: navy;
     box-shadow: none;
     text-shadow: none;
     padding: 0px;
@@ -173,7 +173,7 @@ window#waybar.empty #window {
 }
 
 #network {
-    background: darkblue;
+    background: navy;
     box-shadow: none;
     text-shadow: none;
     padding: 0px;
@@ -200,7 +200,7 @@ window#waybar.empty #window {
 }
 
 #pulseaudio {
-    background: darkblue;
+    background: navy;
     box-shadow: none;
     text-shadow: none;
     padding: 0px;
@@ -223,7 +223,7 @@ window#waybar.empty #window {
 }
 
 #idle_inhibitor {
-    background: darkblue;
+    background: navy;
     box-shadow: none;
     text-shadow: none;
     padding: 0px;
