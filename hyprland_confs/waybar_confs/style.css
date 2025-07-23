@@ -18,7 +18,7 @@ window#waybar {
     border-radius: 25px;
 }
 
-window:hover {
+window#waybar:hover {
     border: 3px solid red;
 }
 
