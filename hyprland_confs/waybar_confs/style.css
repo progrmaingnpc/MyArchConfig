@@ -21,7 +21,7 @@ window#waybar {
 }
 
 #custom-appmenu {
-    background: white;
+    background: red;
     font-size: 20px;
     box-shadow: none;
     text-shadow: none;
@@ -29,14 +29,14 @@ window#waybar {
     border-radius: 3px;
     margin: 0px 3px 0px 0px;
     padding: 1px 25px 1px 10px;
-    border: 2px solid red;
-    color: red;
+    border: 2px solid white;
+    color: white;
 }
 
 #custom-appmenu:hover {
-    color: white;
-    background: red;
-    border: 2px solid white;
+    color: red;
+    background: white;
+    border: 2px solid red;
 }
 
 #workspaces button {
