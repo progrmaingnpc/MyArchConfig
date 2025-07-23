@@ -21,7 +21,7 @@ window#waybar {
 }
 
 #custom-appmenu {
-    background: black;
+    background: white;
     font-size: 20px;
     box-shadow: none;
     text-shadow: none;
@@ -29,8 +29,8 @@ window#waybar {
     border-radius: 3px;
     margin: 0px 3px 0px 0px;
     padding: 1px 25px 1px 10px;
-    border: 2px solid #ff0000;
-    color: #ff0000;
+    border: 2px solid red;
+    color: red;
 }
 
 #custom-appmenu:hover {
@@ -40,27 +40,27 @@ window#waybar {
 }
 
 #workspaces button {
-    background: black;
+    background: red;
     box-shadow: none;
     text-shadow: none;
     font-size: 20px;
     padding: 0px;
     margin: 1px 0px 1px 0px;
     padding: 1px 10px 1px 10px;
-    border: 2px solid #ff0000;
-    color: #ff0000;
+    border: 2px solid white;
+    color: white;
 }
 
 #workspaces button.active {
-    background: red;
-    color: white;
-    border: 2px solid white;
+    background: white;
+    color: red;
+    border: 2px solid red;
 }
 
 #workspaces button:hover {
     background: orange;
-    color: white;
-    border: 2px solid white;
+    color: red;
+    border: 2px solid red;
 }
 
 /* If workspaces is the leftmost module, omit left margin */
@@ -89,7 +89,7 @@ window#waybar.empty #window {
 }
 
 #clock {
-    background: black;
+    background: red;
     font-size: 20px;
     box-shadow: none;
     text-shadow: none;
@@ -98,18 +98,18 @@ window#waybar.empty #window {
     margin: 0px 3px 0px 3px;
     padding-right: 3px;
     padding-left: 3px;
-    color: #ff0000;
-    border: 2px solid #ff0000;
-}
-
-#clock:hover {
-    background: red;
     color: white;
     border: 2px solid white;
 }
 
+#clock:hover {
+    background: white;
+    color: red;
+    border: 2px solid red;
+}
+
 #cpu {
-    background: black;
+    background: red;
     box-shadow: none;
     text-shadow: none;
     padding: 0px;
@@ -117,18 +117,18 @@ window#waybar.empty #window {
     margin: 0px 3px 0px 3px;
     padding-right: 10px;
     padding-left: 3px;
-    color: #ff0000;
-    border: 2px solid #ff0000;
-}
-
-#cpu:hover {
-    background: red;
     color: white;
     border: 2px solid white;
 }
 
+#cpu:hover {
+    background: white;
+    color: red;
+    border: 2px solid red;
+}
+
 #memory {
-    background: black;
+    background: red;
     box-shadow: none;
     text-shadow: none;
     padding: 0px;
@@ -136,17 +136,18 @@ window#waybar.empty #window {
     margin: 0px 3px 0px 3px;
     padding-right: 12px;
     padding-left: 4px;
-    color: #ff0000;
-    border: 2px solid #ff0000;
-}
-
-#memory:hover {
-    background: red;
     color: white;
     border: 2px solid white;
 }
 
+#memory:hover {
+    background: white;
+    color: red;
+    border: 2px solid red;
+}
+
 #disk {
+    background: red;
     box-shadow: none;
     text-shadow: none;
     padding: 0px;
@@ -154,13 +155,14 @@ window#waybar.empty #window {
     margin: 0px 3px 0px 3px;
     padding-right: 4px;
     padding-left: 4px;
-    color: #ff0000;
-    border: 2px solid #ff0000;
+    color: white;
+    border: 2px solid white;
 }
 
 #disk:hover {
-    color: white;
-    border: 2px solid white;
+    background: white;
+    color: red;
+    border: 2px solid red;
 }
 
 #backlight {
@@ -174,12 +176,13 @@ window#waybar.empty #window {
 }
 
 #backlight:hover {
-    color: white;
-    border: 2px solid white;
+    background: white;
+    color: red;
+    border: 2px solid red;
 }
 
 #network {
-    background: black;
+    background: red;
     box-shadow: none;
     text-shadow: none;
     padding: 0px;
@@ -187,8 +190,8 @@ window#waybar.empty #window {
     margin: 0px 3px 0px 3px;
     padding-right: 4px;
     padding-left: 4px;
-    color: #ff0000;
-    border: 2px solid #ff0000;
+    color: white;
+    border: 2px solid white;
 }
 
 #network.disconnected {
@@ -201,13 +204,13 @@ window#waybar.empty #window {
 }
 
 #network:hover {
-    background: red;
-    color: white;
-    border: 2px solid white;
+    background: white;
+    color: red;
+    border: 2px solid red;
 }
 
 #pulseaudio {
-    background: black;
+    background: red;
     box-shadow: none;
     text-shadow: none;
     padding: 0px;
@@ -215,15 +218,15 @@ window#waybar.empty #window {
     margin: 0px 3px 0px 3px;
     padding-right: 12px;
     padding-left: 4px;
-    color: #ff0000;
-    border: 2px solid #ff0000;
+    color: white;
+    border: 2px solid white;
 }
 
 /* you can set a style on hover for any module like this */
 #pulseaudio:hover {
-    background: red;
-    color: white;
-    border: 2px solid white;
+    background: white;
+    color: red;
+    border: 2px solid red;
 }
 
 #pulseaudio.muted {
@@ -231,7 +234,7 @@ window#waybar.empty #window {
 }
 
 #idle_inhibitor {
-    background: black;
+    background: red;
     box-shadow: none;
     text-shadow: none;
     padding: 0px;
@@ -239,8 +242,8 @@ window#waybar.empty #window {
     margin: 0px 3px 0px 3px;
     padding-right: 12px;
     padding-left: 4px;
-    color: #ff0000;
-    border: 2px solid #ff0000;
+    color: white;
+    border: 2px solid white;
 }
 
 #idle_inhibitor.activated {
@@ -248,9 +251,9 @@ window#waybar.empty #window {
 }
 
 #idle_inhibitor:hover {
-    background: red;
-    color: white;
-    border: 2px solid white;
+    background: white;
+    color: red;
+    border: 2px solid red;
 }
 
 #tray {
