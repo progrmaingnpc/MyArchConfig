@@ -166,11 +166,10 @@
   "network": {
     // "interface": "wlp2*", // (Optional) To force the use of this interface
     "format-wifi": " {essid} ({signalStrength}%)",
-    "format-ethernet": " {ipaddr}/{cidr}",
+    "format-ethernet": " {ifname} {ipaddr}/{cidr}",
     "tooltip-format": " {ifname} via {gwaddr}",
     "format-linked": " {ifname} (No IP)",
     "format-disconnected": "Disconnected ⚠",
-    "format-alt": "{ifname}: {ipaddr}/{cidr}",
     "on-click-left": "nm-connection-editor",
     "on-click-right": "~/.config/hypr/scripts/nmapplet.sh toggle",
   },
