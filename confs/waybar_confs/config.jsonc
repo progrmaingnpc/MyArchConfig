@@ -170,7 +170,7 @@
     "tooltip-format": " {ifname} via {gwaddr}",
     "format-linked": " {ifname} (No IP)",
     "format-disconnected": "Disconnected ⚠",
-    "on-click-left": "nm-connection-editor",
+    "on-click": "nm-connection-editor",
     "on-click-right": "~/.config/hypr/scripts/nmapplet.sh toggle",
   },
   "pulseaudio": {
