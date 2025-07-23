@@ -102,7 +102,7 @@ window#waybar.empty #window {
 }
 
 #clock:hover {
-    color: red;
+    background: red;
 }
 
 #cpu {
@@ -119,7 +119,7 @@ window#waybar.empty #window {
 }
 
 #cpu:hover {
-    color: red;
+    background: red;
 }
 
 #memory {
@@ -136,7 +136,7 @@ window#waybar.empty #window {
 }
 
 #memory:hover {
-    color: red;
+    background: red;
 }
 
 #disk {
@@ -153,7 +153,7 @@ window#waybar.empty #window {
 }
 
 #disk:hover {
-    color: red;
+    background: red;
 }
 
 #backlight {
@@ -167,7 +167,7 @@ window#waybar.empty #window {
 }
 
 #backlight:hover {
-    color: red;
+    background: red;
 }
 
 #network {
@@ -193,7 +193,7 @@ window#waybar.empty #window {
 }
 
 #network:hover {
-    color: red;
+    background: red;
 }
 
 #pulseaudio {
@@ -211,7 +211,7 @@ window#waybar.empty #window {
 
 /* you can set a style on hover for any module like this */
 #pulseaudio:hover {
-    color: red;
+    background: red;
 }
 
 #pulseaudio.muted {
@@ -236,7 +236,7 @@ window#waybar.empty #window {
 }
 
 #idle_inhibitor:hover {
-    color: red;
+    background: red;
 }
 
 #tray {
