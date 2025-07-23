@@ -279,7 +279,16 @@ window#waybar.empty #window {
 }
 
 #power-profiles-daemon {
+    background: transparent;
+    box-shadow: none;
+    text-shadow: none;
+    padding: 0px;
+    border-radius: 5px;
+    margin: 0px 3px 0px 3px;
     padding-right: 15px;
+    padding-left: 4px;
+    color: white;
+    border: 2px solid white;
 }
 
 #power-profiles-daemon.performance {
@@ -295,6 +304,10 @@ window#waybar.empty #window {
 #power-profiles-daemon.power-saver {
     background-color: #2ecc71;
     color: #000000;
+}
+
+#power-profiles-daemon:hover {
+    background: red;
 }
 
 #wireplumber {
