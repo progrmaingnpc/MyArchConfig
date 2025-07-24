@@ -28,13 +28,13 @@ elif [ -d "$YAY_DIRECTORY" ]; then
 		hyprgraphics hyprpolkitagent hyprsysteminfo hyprsunset wlogout --noconfirm --needed
 	echo "[Successfully installed basic utilities for hyprland]"
 
-	yay -S swww waybar waypaper aquamarine swaync nautilus btop hardinfo2 --noconfirm --needed
+	yay -S swww waybar waypaper aquamarine swaync nautilus btop hardinfo2 libnotify --noconfirm --needed
 	echo "[Successfully installed file system management packages]"
 
 	yay -S nwg-look nwg-dock-hyprland --noconfirm --needed
 	echo "[Successfully installed dock for hyprland]"
 
-	yay -S wl-clipboard qt5-wayland otf-font-awesome rofi-wayland --noconfirm --needed
+	yay -S wl-clipboard qt5-wayland qt6-wayland qt6ct otf-font-awesome rofi-wayland --noconfirm --needed
 	echo "Finished installing hyprland configuration packages"
 
 	yay -S kitty zsh oh-my-posh-bin bash-completion \
@@ -49,6 +49,10 @@ elif [ -d "$YAY_DIRECTORY" ]; then
        	xdg-desktop-portal-gtk xdg-desktop-portal-wlr xdg-desktop-portal-lxqt \
         xdg-desktop-portal-kde xdg-desktop-portal-gnome --noconfirm --needed
 	echo "[Finished installing xdg-desktop packages]"
+
+	yay -S gtk4 papirus-icon-theme breeze noto-fonts noto-fonts-emoji libadwaita \
+	    noto-fonts-cjk noto-fonts-extra --noconfirm --needed
+	echo "[Successfully installed gtk esthetic packages]"
 elif [	-d "$PARU_DIRECTORY" ]; then
 	echo "There is a paru cache at $PARU_DIRECTORY"
 	paru -Syu
@@ -60,13 +64,13 @@ elif [	-d "$PARU_DIRECTORY" ]; then
 	    hyprgraphics hyprpolkitagent hyprsysteminfo hyprsunset wlogout --noconfirm --needed
 	echo "[Successfully installed basic utilities for hyprland]"
 
-	paru -S swww waybar waypaper aquamarine swaync nautilus btop hardinfo2 --noconfirm --needed
+	paru -S swww waybar waypaper aquamarine swaync nautilus btop hardinfo2 libnotify --noconfirm --needed
 	echo "[Successfully installed file system management packages]"
 
 	paru -S nwg-look nwg-dock-hyprland --noconfirm --needed
 	echo "[Successfully installed dock for hyprland]"
 
-	paru -S wl-clipboard qt5-wayland otf-font-awesome rofi-wayland --noconfirm --needed
+	paru -S wl-clipboard qt5-wayland qt6-wayland qt6ct otf-font-awesome rofi-wayland --noconfirm --needed
 	echo "Finished installing hyprland configuration packages"
 
 	paru -S kitty zsh oh-my-posh-bin bash-completion \
@@ -81,6 +85,10 @@ elif [	-d "$PARU_DIRECTORY" ]; then
        	xdg-desktop-portal-gtk xdg-desktop-portal-wlr xdg-desktop-portal-lxqt \
        	xdg-desktop-portal-kde xdg-desktop-portal-gnome --noconfirm --needed
 	echo "[Finished installing xdg-desktop packages]"
+
+	paru -S gtk4 papirus-icon-theme breeze noto-fonts noto-fonts-emoji libadwaita \
+	    noto-fonts-cjk noto-fonts-extra --noconfirm --needed
+	echo "[Successfully installed gtk esthetic packages]"
 fi
 
 # Create the hyprland directory (hypr) if it doesn't already exist
