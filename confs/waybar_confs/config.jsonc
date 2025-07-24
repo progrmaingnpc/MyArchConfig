@@ -140,7 +140,7 @@
   },
   "cpu": {
     "format": "{usage}% ",
-    "tooltip": false,
+    "tooltip": true,
     "on-click": "htop",
   },
   "memory": {
