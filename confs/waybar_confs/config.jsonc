@@ -140,8 +140,8 @@
   },
   "cpu": {
     "format": "{usage}% ",
-    "tooltip": true,
-    "on-click": "btop",
+    "tooltip": false,
+    "on-click": "~/.config/hypr/scripts/proc_manager.sh",
   },
   "memory": {
     "format": "{}% ",
