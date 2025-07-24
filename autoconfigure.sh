@@ -158,5 +158,6 @@ cp ~/MyArchConfig/confs/waypaper_conf/config.ini "$WAYPAPER_DIRECTORY" -v
 # Copy hyprland scripts directory to user's hyprland config directory
 cp ~/MyArchConfig/scripts/*.sh "$SCRIPTS_DIRECTORY" -v
 
+wal -i ~/wallpaper/default.jpg
 waypaper --wallpaper ~/wallpaper/default.jpg
 sudo usermod -aG wireshark $USER
