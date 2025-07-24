@@ -141,7 +141,7 @@
   "cpu": {
     "format": "{usage}% ",
     "tooltip": false,
-    "on-click": "~/.config/hypr/scripts/proc_manager.sh",
+    "on-click-right": "~/.config/hypr/scripts/proc_manager.sh toggle",
   },
   "memory": {
     "format": "{}% ",
