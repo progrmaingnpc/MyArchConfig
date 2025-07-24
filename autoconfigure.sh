@@ -162,9 +162,9 @@ waypaper --wallpaper ~/wallpaper/default.jpg
 sudo usermod -aG wireshark $USER
 
 # Create the hyprland directory (hypr) if it doesn't already exist
-if [ "$SHELL" != "/usr/bin/zsh" ]; then
+if [ "$SHELL" != $(which zsh) ]; then
     sudo chsh -s $(which zsh) $USER
-    echo "[Changed the default shell from $SHELL=>zsh]"
+    echo "[Changed the default shell from $SHELL=>$(which zsh)]"
 else
 	echo "[The default shell is zsh]"
 fi
