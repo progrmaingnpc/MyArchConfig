@@ -55,8 +55,12 @@ window#waybar:hover {
     background: red;
 }
 
-#workspaces button:hover {
+#workspaces button.active:hover {
     background: orange;
+}
+
+#workspaces button:hover {
+    background: red;
 }
 
 /* If workspaces is the leftmost module, omit left margin */
