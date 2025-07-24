@@ -1,1 +1,1 @@
-btop
+kitty btop
