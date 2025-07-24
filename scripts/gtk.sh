@@ -43,6 +43,6 @@ if [ -f ~/.config/hypr/conf/cursor.conf ]; then
 fi
 
 # Update gsettings for open any terminal
-gsettings set com.github.stunkymonkey.nautilus-open-any-terminal terminal "$terminal"
-gsettings set com.github.stunkymonkey.nautilus-open-any-terminal use-generic-terminal-name "true"
-gsettings set com.github.stunkymonkey.nautilus-open-any-terminal keybindings "<Ctrl><Alt>t"
+#gsettings set com.github.stunkymonkey.nautilus-open-any-terminal terminal "$terminal"
+#gsettings set com.github.stunkymonkey.nautilus-open-any-terminal use-generic-terminal-name "true"
+#gsettings set com.github.stunkymonkey.nautilus-open-any-terminal keybindings "<Ctrl><Alt>t"
