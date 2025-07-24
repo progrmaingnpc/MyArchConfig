@@ -226,7 +226,7 @@
     "escape": true,
   },
   "custom/power": {
-    "format": "⏻ ",
+    "format": "⏻",
     "tooltip": true,
     "on-click": "wlogout", // Menu file in resources folder
     "on-click-right": "hyprlock",
