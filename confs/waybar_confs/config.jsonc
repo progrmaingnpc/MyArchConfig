@@ -94,13 +94,13 @@
     "tooltip-format": "MPD (connected)",
     "tooltip-format-disconnected": "MPD (disconnected)",
   },
-  "idle_inhibitor": {
-    "format": "{icon}",
-    "format-icons": {
-      "activated": "",
-      "deactivated": "",
-    },
-  },
+  //"idle_inhibitor": {
+  //  "format": "{icon}",
+  //  "format-icons": {
+  //    "activated": "",
+  //    "deactivated": "",
+  //  },
+  //},
   "tray": {
     "icon-size": 21,
     "spacing": 10,
