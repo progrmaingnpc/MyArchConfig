@@ -228,8 +228,7 @@
   "custom/power": {
     "format": "⏻ ",
     "tooltip": true,
-    "menu": "on-click",
-    "menu-file": "~/.config/hypr/scripts/power_menu.sh", // Menu file in resources folder
+    "on-click": "~/.config/hypr/scripts/power_menu.sh", // Menu file in resources folder
     "on-click-right": "hyprlock",
     "menu-actions": {
       "shutdown": "shutdown",
