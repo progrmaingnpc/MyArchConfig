@@ -25,7 +25,7 @@ elif [ -d "$YAY_DIRECTORY" ]; then
 
 	yay -S hypridle hyprpicker hyprland-qt-support hyprland-qtutils \
 		hyprcursor hyprutils hyprlang hyprwayland-scanner \
-		hyprgraphics hyprpolkitagent hyprsysteminfo hyprsunset --noconfirm --needed
+		hyprgraphics hyprpolkitagent hyprsysteminfo hyprsunset wlogout --noconfirm --needed
 	echo "[Successfully installed basic utilities for hyprland]"
 
 	yay -S swww waybar waypaper aquamarine swaync nautilus --noconfirm --needed
@@ -57,7 +57,7 @@ elif [	-d "$PARU_DIRECTORY" ]; then
 
 	paru -S hypridle hyprpicker hyprland-qt-support hyprland-qtutils \
 	    hyprcursor hyprutils hyprlang hyprwayland-scanner \
-	    hyprgraphics hyprpolkitagent hyprsysteminfo hyprsunset --noconfirm --needed
+	    hyprgraphics hyprpolkitagent hyprsysteminfo hyprsunset wlogout --noconfirm --needed
 	echo "[Successfully installed basic utilities for hyprland]"
 
 	paru -S swww waybar waypaper aquamarine swaync nautilus --noconfirm --needed

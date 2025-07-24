@@ -489,7 +489,7 @@ window#waybar.empty #window {
 }
 
 #custom-power {
-    background: transparent;
+    background: red;
     box-shadow: none;
     text-shadow: none;
     padding: 0px;
@@ -502,5 +502,6 @@ window#waybar.empty #window {
 }
 
 #custom-power:hover {
-    background: red;
+    color: red;
+    background: white;
 }
