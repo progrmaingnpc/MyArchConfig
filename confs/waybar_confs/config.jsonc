@@ -119,6 +119,21 @@
     "format": " {:%I:%M %p}",
     "format-alt": " {0:%a %d %b} | {0:%d-%m-%Y}",
   },
+  "group/hardware": {
+    "orientation": "horizontal",
+    "drawer": {
+      "transition-duration": 500,
+      "transition-left-to-right": false,
+      "modules": [
+        "custom/hardware-wrap",
+        "cpu",
+        "memory",
+        "temperature",
+        "backlight",
+        "power-profiles-daemon",
+      ],
+    },
+  },
   "custom/hardware-wrap": {
     "format": "Hardware",
     "tooltip-format": "Hardware group",
@@ -152,21 +167,6 @@
       "performance": "",
       "balanced": "",
       "power-saver": "",
-    },
-  },
-  "group/hardware": {
-    "orientation": "horizontal",
-    "drawer": {
-      "transition-duration": 300,
-      "transition-left-to-right": false,
-      "modules": [
-        "custom/hardware-wrap",
-        "cpu",
-        "memory",
-        "temperature",
-        "power-profiles-daemon",
-        "backlight",
-      ],
     },
   },
   "battery": {
