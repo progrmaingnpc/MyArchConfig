@@ -228,7 +228,7 @@
   "custom/power": {
     "format": "⏻ ",
     "tooltip": true,
-    "on-click": "~/.config/hypr/scripts/power_menu.sh", // Menu file in resources folder
+    "on-click": "wlogout", // Menu file in resources folder
     "on-click-right": "hyprlock",
     "menu-actions": {
       "shutdown": "shutdown",
