@@ -219,7 +219,7 @@ window#waybar.empty #window {
     color: #90b1b1;
 }
 
-#idle_inhibitor {
+#custom-hypridle {
     background: transparent;
     box-shadow: none;
     text-shadow: none;
@@ -232,11 +232,11 @@ window#waybar.empty #window {
     border: 2px solid white;
 }
 
-#idle_inhibitor.activated {
+#custom-hypridle.activated {
     color: white;
 }
 
-#idle_inhibitor:hover {
+#custom-hypridle:hover {
     background: red;
 }
 

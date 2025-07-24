@@ -16,7 +16,7 @@
   "modules-center": ["clock"],
   "modules-right": [
     "mpd",
-    "idle_inhibitor",
+    "custom/hypridle",
     "pulseaudio",
     "network",
     "power-profiles-daemon",
@@ -94,13 +94,15 @@
     "tooltip-format": "MPD (connected)",
     "tooltip-format-disconnected": "MPD (disconnected)",
   },
-  //"idle_inhibitor": {
-  //  "format": "{icon}",
-  //  "format-icons": {
-  //    "activated": "",
-  //    "deactivated": "",
-  //  },
-  //},
+  "custom/hypridle": {
+    "format": "",
+    "return-type": "json",
+    "escape": true,
+    "exec-on-event": true,
+    "interval": 60,
+    "exec": "~/.config/hypr/scripts/hypridle.sh status",
+    "on-click": "~/.config/hypr/scripts/hypridle.sh toggle",
+  },
   "tray": {
     "icon-size": 21,
     "spacing": 10,
