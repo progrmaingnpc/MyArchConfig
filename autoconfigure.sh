@@ -140,7 +140,6 @@ cp ~/MyArchConfig/confs/hyprland_confs/conf/*.conf "$HYPR_CONF_DIRECTORY" -v
 # Copy the waybar configs to the waybar config directory on the user's device
 cp ~/MyArchConfig/confs/waybar_confs/*.jsonc "$WAYBAR_DIRECTORY" -v
 cp ~/MyArchConfig/confs/waybar_confs/*.css "$WAYBAR_DIRECTORY" -v
-cp ~/MyArchConfig/confs/waybar_confs/*.xml "$WAYBAR_DIRECTORY" -v
 # Copy the kitty configs to the kitty config directory on the user's device
 cp ~/MyArchConfig/confs/terminal_conf/kitty/*.conf "$KITTY_DIRECTORY" -v
 # Copy the bash config file to the user's .bashrc file
@@ -161,4 +160,13 @@ cp ~/MyArchConfig/scripts/*.sh "$SCRIPTS_DIRECTORY" -v
 wal -i ~/wallpaper/default.jpg
 waypaper --wallpaper ~/wallpaper/default.jpg
 sudo usermod -aG wireshark $USER
-sudo chsh -s /bin/zsh $USER
+
+# Create the hyprland directory (hypr) if it doesn't already exist
+if [ "$SHELL" != "/usr/bin/zsh" ]; then
+    sudo chsh -s $(which zsh) $USER
+    echo "[Changed the default shell from $SHELL=>zsh]"
+else
+	echo "[The default shell is zsh]"
+fi
+
+echo "[Please restart to allow all changes to take effect]"
