@@ -161,3 +161,4 @@ cp ~/MyArchConfig/scripts/*.sh "$SCRIPTS_DIRECTORY" -v
 wal -i ~/wallpaper/default.jpg
 waypaper --wallpaper ~/wallpaper/default.jpg
 sudo usermod -aG wireshark $USER
+sudo chsh -s /bin/zsh $USER
