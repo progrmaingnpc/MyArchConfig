@@ -141,7 +141,7 @@
   "cpu": {
     "format": "{usage}% ",
     "tooltip": true,
-    "on-click": "htop",
+    "on-click": "btop",
   },
   "memory": {
     "format": "{}% ",

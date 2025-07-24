@@ -28,7 +28,7 @@ elif [ -d "$YAY_DIRECTORY" ]; then
 		hyprgraphics hyprpolkitagent hyprsysteminfo hyprsunset wlogout --noconfirm --needed
 	echo "[Successfully installed basic utilities for hyprland]"
 
-	yay -S swww waybar waypaper aquamarine swaync nautilus htop --noconfirm --needed
+	yay -S swww waybar waypaper aquamarine swaync nautilus btop --noconfirm --needed
 	echo "[Successfully installed file system management packages]"
 
 	yay -S nwg-look nwg-dock-hyprland --noconfirm --needed
@@ -60,7 +60,7 @@ elif [	-d "$PARU_DIRECTORY" ]; then
 	    hyprgraphics hyprpolkitagent hyprsysteminfo hyprsunset wlogout --noconfirm --needed
 	echo "[Successfully installed basic utilities for hyprland]"
 
-	paru -S swww waybar waypaper aquamarine swaync nautilus htop --noconfirm --needed
+	paru -S swww waybar waypaper aquamarine swaync nautilus btop --noconfirm --needed
 	echo "[Successfully installed file system management packages]"
 
 	paru -S nwg-look nwg-dock-hyprland --noconfirm --needed
