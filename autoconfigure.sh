@@ -37,7 +37,7 @@ elif [ -d "$YAY_DIRECTORY" ]; then
 	yay -S wl-clipboard qt5-wayland otf-font-awesome rofi-wayland --noconfirm --needed
 	echo "Finished installing hyprland configuration packages"
 
-	yay -S kitty oh-my-posh-bin bash-completion \
+	yay -S kitty zsh oh-my-posh-bin bash-completion \
        	zsh-completions fastfetch python-pywal16 --noconfirm --needed
 	echo "[Finished installing shell configuration packages]"
 
@@ -69,7 +69,7 @@ elif [	-d "$PARU_DIRECTORY" ]; then
 	paru -S wl-clipboard qt5-wayland otf-font-awesome rofi-wayland --noconfirm --needed
 	echo "Finished installing hyprland configuration packages"
 
-	paru -S kitty oh-my-posh-bin bash-completion \
+	paru -S kitty zsh oh-my-posh-bin bash-completion \
        	zsh-completions fastfetch python-pywal16 --noconfirm --needed
 	echo "[Finished installing shell configuration packages]"
 
