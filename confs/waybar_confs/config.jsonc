@@ -138,11 +138,11 @@
     "format": "Hardware",
     "tooltip-format": "Hardware group",
     "on-click": "~/.config/hypr/scripts/hardware_manager.sh toggle",
-    "on-click-right": "~/.config/hypr/scripts/proc_manager.sh toggle",
   },
   "cpu": {
     "format": "{usage}% ",
     "tooltip": false,
+    "on-click": "~/.config/hypr/scripts/proc_manager.sh toggle",
   },
   "memory": {
     "format": "{}% ",
