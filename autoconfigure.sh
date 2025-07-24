@@ -31,7 +31,7 @@ elif [ -d "$YAY_DIRECTORY" ]; then
 	yay -S swww waybar waypaper aquamarine swaync nautilus btop hardinfo2 libnotify --noconfirm --needed
 	echo "[Successfully installed file system management packages]"
 
-	yay -S nwg-look nwg-dock-hyprland --noconfirm --needed
+	yay -S nwg-look nwg-dock-hyprland grim slurp --noconfirm --needed
 	echo "[Successfully installed dock for hyprland]"
 
 	yay -S wl-clipboard qt5-wayland qt6-wayland qt6ct otf-font-awesome rofi-wayland --noconfirm --needed
@@ -67,7 +67,7 @@ elif [	-d "$PARU_DIRECTORY" ]; then
 	paru -S swww waybar waypaper aquamarine swaync nautilus btop hardinfo2 libnotify --noconfirm --needed
 	echo "[Successfully installed file system management packages]"
 
-	paru -S nwg-look nwg-dock-hyprland --noconfirm --needed
+	paru -S nwg-look nwg-dock-hyprland grim slurp --noconfirm --needed
 	echo "[Successfully installed dock for hyprland]"
 
 	paru -S wl-clipboard qt5-wayland qt6-wayland qt6ct otf-font-awesome rofi-wayland --noconfirm --needed
