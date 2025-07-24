@@ -19,10 +19,12 @@
     "custom/hypridle",
     "pulseaudio",
     "network",
-    "power-profiles-daemon",
+    "group/hardware",
+    "custom/hardware-wrap",
     "cpu",
     "memory",
     "temperature",
+    "power-profiles-daemon",
     "backlight",
     "keyboard-state",
     "sway/language",
@@ -117,6 +119,25 @@
     "format": " {:%I:%M %p}",
     "format-alt": " {0:%a %d %b} | {0:%d-%m-%Y}",
   },
+  "group/hardware": {
+    "orientation": "horizontal",
+    "drawer": {
+      "transition-duration": 300,
+      "transition-left-to-right": false,
+      "modules": [
+        "custom/hardware-wrap",
+        "cpu",
+        "memory",
+        "temperature",
+        "backlight",
+        "power-profiles-daemon",
+      ],
+    },
+  },
+  "custom/hardware-wrap": {
+    "format": "Hardware",
+    "tooltip-format": "Hardware group",
+  },
   "cpu": {
     "format": "{usage}% ",
     "tooltip": false,
@@ -137,6 +158,17 @@
     "format": "{percent}% {icon}",
     "format-icons": ["", "", "", "", "", "", "", "", ""],
   },
+  "power-profiles-daemon": {
+    "format": "{icon}",
+    "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+    "tooltip": true,
+    "format-icons": {
+      "default": "",
+      "performance": "",
+      "balanced": "",
+      "power-saver": "",
+    },
+  },
   "battery": {
     "states": {
       //"good": 95,
@@ -154,17 +186,6 @@
   },
   "battery#bat2": {
     "bat": "BAT2",
-  },
-  "power-profiles-daemon": {
-    "format": "{icon}",
-    "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
-    "tooltip": true,
-    "format-icons": {
-      "default": "",
-      "performance": "",
-      "balanced": "",
-      "power-saver": "",
-    },
   },
   "network": {
     // "interface": "wlp2*", // (Optional) To force the use of this interface
