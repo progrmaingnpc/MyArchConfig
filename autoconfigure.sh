@@ -177,4 +177,13 @@ else
 	echo "[The default shell is zsh]"
 fi
 
+# Check if the user loves candy :)
+sed -n '/ILoveCandy/q 0;$q 1' /etc/pacman.conf
+if [ "$?" != 0 ]; then
+    sudo sed -i `/Misc options/a ILoveCandy` /etc/pacman.conf
+    echo "[NOW YOU HAVE CANDY, HURRAY!!]"
+else
+    echo "[I LOVE CANDY]"
+fi
+
 echo "[Please restart to allow all changes to take effect]"
