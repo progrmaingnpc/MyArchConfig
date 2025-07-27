@@ -10,9 +10,9 @@ vim.opt.expandtab = true
 vim.opt.shiftwidth = 4
 vim.opt.autoindent = true
 vim.opt.number = true
+--[=====[
 vim.opt.wildmode = longest, list
 vim.filetype.plugin.indent = on
---[=====[
 " set cc=80                   " set an 80 column border for good coding style
 syntax on                   " syntax highlighting
 set mouse=a                 " enable mouse click
