@@ -55,10 +55,10 @@ elif [ -d "$YAY_DIRECTORY" ]; then
 	    noto-fonts-cjk noto-fonts-extra --noconfirm --needed
 	echo "[Successfully installed gtk esthetic packages]"
 
-	yay -S vim neovim
+	yay -S vim neovim --noconfirm --needed
 	echo "[Succesfully installed neovim and vim]"
 
-	yay -S lua luarocks
+	yay -S lua luarocks --noconfirm --needed
 	echo "[Successfully instally lua packages for neovim configuration]"
 elif [	-d "$PARU_DIRECTORY" ]; then
 	echo "There is a paru cache at $PARU_DIRECTORY"
@@ -97,10 +97,10 @@ elif [	-d "$PARU_DIRECTORY" ]; then
 	    noto-fonts-cjk noto-fonts-extra --noconfirm --needed
 	echo "[Successfully installed gtk esthetic packages]"
 
-	paru -S vim neovim
+	paru -S vim neovim --noconfirm --needed
 	echo "[Succesfully installed neovim and vim]"
 
-	paru -S lua luarocks
+	paru -S lua luarocks --noconfirm --needed
 	echo "[Successfully instally lua packages for neovim configuration]"
 fi
 
