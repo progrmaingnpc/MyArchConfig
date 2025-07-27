@@ -198,7 +198,7 @@ cp ~/MyArchConfig/scripts/*.sh "$SCRIPTS_DIRECTORY" -v
 # Copy neovim config file to the user's neovim config directory
 cp ~/MyArchConfig/confs/nvim_confs/init.lua "$NVIM_DIRECTORY"
 # Copy neovim lua config files to the user's neovim lua config directory
-cp ~/MyArchConfig/confs/nvim_confs/lua_confs/*.lua "$NVIM_DIRECTORY/lua"
+cp ~/MyArchConfig/confs/nvim_confs/lua/*.lua "$NVIM_DIRECTORY/lua"
 
 wal -i ~/wallpaper/default.jpg
 waypaper --wallpaper ~/wallpaper/default.jpg

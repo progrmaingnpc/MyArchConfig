@@ -1,5 +1,5 @@
-require("lua_confs.keymaps")
-require("lua_confs.options")
+require("lua.keymaps")
+require("lua.options")
 return {
     Lua = {
         runtime = {
