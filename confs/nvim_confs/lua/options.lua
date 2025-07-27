@@ -15,8 +15,10 @@ vim.opt.mouse = "a"
 vim.syntax = "on"
 vim.opt.wildmenu = true
 vim.opt.wildmode = "list:longest,list:full"
+vim.opt.filetype.plugin.indent = "on"
+vim.filetype.plugin = "on"
 --[=====[
-vim.filetype.plugin.indent = "on"
+
 vim.opt.wildmode = longest, list
 " set cc=80                   " set an 80 column border for good coding style
 set clipboard=unnamedplus   " using system clipboard

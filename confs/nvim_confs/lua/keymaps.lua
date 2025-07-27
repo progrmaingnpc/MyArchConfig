@@ -1,1 +1,1 @@
-vim.keymap.set('n', '<Leader>w', '<cmd>echo "Example 1"<cr>')
+vim.keymap.set('n', '<Leader>ex1', '<cmd>echo "Example 1"<cr>')
