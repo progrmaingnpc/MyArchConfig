@@ -10,16 +10,19 @@ vim.opt.expandtab = true
 vim.opt.shiftwidth = 4
 vim.opt.autoindent = true
 vim.opt.number = true
+vim.opt.ttyfast = true
+vim.opt.mouse = "a"
+vim.syntax = "on"
+
+vim.filetype.plugin.indent = "on"
+vim.opt.wildmenu = true
+vim.opt.wildmode = "list:longest,list:full"
 --[=====[
 vim.opt.wildmode = longest, list
-vim.filetype.plugin.indent = on
 " set cc=80                   " set an 80 column border for good coding style
-syntax on                   " syntax highlighting
-set mouse=a                 " enable mouse click
 set clipboard=unnamedplus   " using system clipboard
 filetype plugin on
 " set cursorline              " highlight current cursorline
-set ttyfast                 " Speed up scrolling in Vim
 " set spell                 " enable spell check (may need to download language package)
 " set swapfile = false          " disable creating swap file
 " set backupdir=~/.cache/vim " Directory to store backup files.
