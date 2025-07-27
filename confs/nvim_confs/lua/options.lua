@@ -15,7 +15,7 @@ vim.opt.mouse = "a"
 vim.syntax = "on"
 vim.opt.wildmenu = true
 vim.opt.wildmode = "list:longest,list:full"
-
+vim.opt.swapfile = false
 --[=====[
 vim.opt.filetype.plugin.indent = "on"
 vim.filetype.plugin = "on"
@@ -24,7 +24,6 @@ set clipboard=unnamedplus   " using system clipboard
 filetype plugin on
 " set cursorline              " highlight current cursorline
 " set spell                 " enable spell check (may need to download language package)
-" set swapfile = false          " disable creating swap file
 " set backupdir=~/.cache/vim " Directory to store backup files.
 
 hi NonText ctermbg=none guibg=NONE
