@@ -1,5 +1,5 @@
 " Include lua configuration modules
-lua require('lua/init')
+lua require('lua/init.lua')
 " Options
 set nocompatible            " disable compatibility to old-time vi
 set showmatch               " show matching
