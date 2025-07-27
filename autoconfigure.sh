@@ -8,6 +8,7 @@ WAYPAPER_DIRECTORY=~/.config/waypaper
 SCRIPTS_DIRECTORY=~/.config/hypr/scripts
 YAY_DIRECTORY=~/.cache/yay
 PARU_DIRECTORY=~/.cache/paru
+NVIM_DIRECTORY=~/.config/nvim
 
 sudo pacman -Syu
 sudo pacman -S git --noconfirm --needed
@@ -31,7 +32,7 @@ elif [ -d "$YAY_DIRECTORY" ]; then
 	yay -S swww waybar waypaper aquamarine swaync nautilus btop hardinfo2 libnotify --noconfirm --needed
 	echo "[Successfully installed file system management packages]"
 
-	yay -S nwg-look nwg-dock-hyprland grim slurp --noconfirm --needed
+	yay -S nwg-look nwg-dock-hyprland grim slurp wl-clipboard --noconfirm --needed
 	echo "[Successfully installed dock for hyprland]"
 
 	yay -S wl-clipboard qt5-wayland qt6-wayland qt6ct otf-font-awesome rofi-wayland --noconfirm --needed
@@ -53,6 +54,12 @@ elif [ -d "$YAY_DIRECTORY" ]; then
 	yay -S gtk4 papirus-icon-theme breeze noto-fonts noto-fonts-emoji libadwaita \
 	    noto-fonts-cjk noto-fonts-extra --noconfirm --needed
 	echo "[Successfully installed gtk esthetic packages]"
+
+	yay -S vim neovim
+	echo "[Succesfully installed neovim and vim]"
+
+	yay -S lua luarocks
+	echo "[Successfully instally lua packages for neovim configuration]"
 elif [	-d "$PARU_DIRECTORY" ]; then
 	echo "There is a paru cache at $PARU_DIRECTORY"
 	paru -Syu
@@ -67,7 +74,7 @@ elif [	-d "$PARU_DIRECTORY" ]; then
 	paru -S swww waybar waypaper aquamarine swaync nautilus btop hardinfo2 libnotify --noconfirm --needed
 	echo "[Successfully installed file system management packages]"
 
-	paru -S nwg-look nwg-dock-hyprland grim slurp --noconfirm --needed
+	paru -S nwg-look nwg-dock-hyprland grim slurp wl-clipboard --noconfirm --needed
 	echo "[Successfully installed dock for hyprland]"
 
 	paru -S wl-clipboard qt5-wayland qt6-wayland qt6ct otf-font-awesome rofi-wayland --noconfirm --needed
@@ -89,6 +96,12 @@ elif [	-d "$PARU_DIRECTORY" ]; then
 	paru -S gtk4 papirus-icon-theme breeze noto-fonts noto-fonts-emoji libadwaita \
 	    noto-fonts-cjk noto-fonts-extra --noconfirm --needed
 	echo "[Successfully installed gtk esthetic packages]"
+
+	paru -S vim neovim
+	echo "[Succesfully installed neovim and vim]"
+
+	paru -S lua luarocks
+	echo "[Successfully instally lua packages for neovim configuration]"
 fi
 
 # Create the hyprland directory (hypr) if it doesn't already exist
@@ -140,6 +153,24 @@ if [ ! -d "$SCRIPTS_DIRECTORY" ]; then
 else
 	echo "Found existing local scripts directory at $SCRIPTS_DIRECTORY"
 fi
+# Create the neovim directory if it doesn't already exist
+if [ ! -d "$NVIM_DIRECTORY" ]; then
+	mkdir "$NVIM_DIRECTORY"
+	echo "Created neovim directory at $NVIM_DIRECTORY"
+else
+	echo "Found existing neovim directory at $NVIM_DIRECTORY"
+fi
+# Create the neovim lua configs directory if it doesn't already exist
+if [ ! -d "$NVIM_DIRECTORY/lua" ]; then
+	mkdir "$NVIM_DIRECTORY/lua"
+	echo "Created neovim lua directory at $NVIM_DIRECTORY/lua"
+else
+	echo "Found existing neovim lua directory at $NVIM_DIRECTORY/lua"
+fi
+
+# Configure luarocks to use the user directory by default for lua package management
+luarocks config local_by_default true
+luarocks install stdlib --local
 
 # Copy the hyprland configs to the hyprland directory on the user's device
 cp ~/MyArchConfig/confs/hyprland_confs/*.conf "$HYPRLAND_DIRECTORY" -v
@@ -160,10 +191,14 @@ cp ~/MyArchConfig/confs/terminal_conf/fast_fetch_conf/default.* "$SHELL_FASTFETC
 oh-my-posh font install JetBrainsMono
 # Copy default wallpaper directory with default background to user's directory
 cp ~/MyArchConfig/wallpaper/ ~/ -r -v
-# Copy waypaper config to user's directory
+# Copy waypaper config to user's wallpaper directory
 cp ~/MyArchConfig/confs/waypaper_conf/config.ini "$WAYPAPER_DIRECTORY" -v
 # Copy hyprland scripts directory to user's hyprland config directory
 cp ~/MyArchConfig/scripts/*.sh "$SCRIPTS_DIRECTORY" -v
+# Copy neovim config files to the user's neovim config directory
+cp ~/MyArchConfig/confs/nvim_confs/*.vim "$NVIM_DIRECTORY"
+# Copy neovim lua config files to the user's neovim lua config directory
+cp ~/MyArchConfig/confs/nvim_confs/lua_confs/*.lua "$NVIM_DIRECTORY/lua"
 
 wal -i ~/wallpaper/default.jpg
 waypaper --wallpaper ~/wallpaper/default.jpg
