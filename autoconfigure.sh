@@ -195,8 +195,8 @@ cp ~/MyArchConfig/wallpaper/ ~/ -r -v
 cp ~/MyArchConfig/confs/waypaper_conf/config.ini "$WAYPAPER_DIRECTORY" -v
 # Copy hyprland scripts directory to user's hyprland config directory
 cp ~/MyArchConfig/scripts/*.sh "$SCRIPTS_DIRECTORY" -v
-# Copy neovim config files to the user's neovim config directory
-cp ~/MyArchConfig/confs/nvim_confs/*.vim "$NVIM_DIRECTORY"
+# Copy neovim config file to the user's neovim config directory
+cp ~/MyArchConfig/confs/nvim_confs/init.lua "$NVIM_DIRECTORY"
 # Copy neovim lua config files to the user's neovim lua config directory
 cp ~/MyArchConfig/confs/nvim_confs/lua_confs/*.lua "$NVIM_DIRECTORY/lua"
 
