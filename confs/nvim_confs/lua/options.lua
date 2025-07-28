@@ -1,7 +1,7 @@
 vim.opt.compatible = false
 vim.opt.showmatch = true
 vim.opt.ignorecase = true
-vim.opt.mouse = v
+vim.opt.mouse = "v"
 vim.opt.hlsearch = true
 vim.opt.incsearch = true
 vim.opt.tabstop = 4
@@ -16,6 +16,7 @@ vim.syntax = "on"
 vim.opt.wildmenu = true
 vim.opt.wildmode = "list:longest,list:full"
 vim.opt.swapfile = false
+vim.opt.winborder = "rounded"
 --[=====[
 vim.opt.filetype.plugin.indent = "on"
 vim.filetype.plugin = "on"
