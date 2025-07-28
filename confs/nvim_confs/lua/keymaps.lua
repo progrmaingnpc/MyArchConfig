@@ -6,4 +6,4 @@ vim.keymap.set({ 'n', 'v' }, '<C-x>', '"+d')
 vim.keymap.set({ 'n', 'v' }, '<C-c>', '"+y')
 -- Multicursor
 -- Select all by filter
-vim.keymap.set({ 'n', 'v' }, '<Leader>e', ':%s')
+vim.keymap.set({ 'n', 'v' }, '<Leader>e', ':%s/')
