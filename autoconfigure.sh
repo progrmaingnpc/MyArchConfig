@@ -9,6 +9,7 @@ SCRIPTS_DIRECTORY=~/.config/hypr/scripts
 YAY_DIRECTORY=~/.cache/yay
 PARU_DIRECTORY=~/.cache/paru
 NVIM_DIRECTORY=~/.config/nvim
+TMUX_DIRECTORY=~/.config/tmux
 
 sudo pacman -Syu
 sudo pacman -S git --noconfirm --needed
@@ -59,7 +60,10 @@ elif [ -d "$YAY_DIRECTORY" ]; then
 	echo "[Succesfully installed neovim and vim]"
 
 	yay -S lua luarocks --noconfirm --needed
-	echo "[Successfully instally lua packages for neovim configuration]"
+	echo "[Successfully installed lua packages for neovim configuration]"
+
+	yay -S tmux --noconfirm --needed
+	echo "[Successfully installed tmux]"
 elif [	-d "$PARU_DIRECTORY" ]; then
 	echo "There is a paru cache at $PARU_DIRECTORY"
 	paru -Syu
@@ -101,7 +105,10 @@ elif [	-d "$PARU_DIRECTORY" ]; then
 	echo "[Succesfully installed neovim and vim]"
 
 	paru -S lua luarocks --noconfirm --needed
-	echo "[Successfully instally lua packages for neovim configuration]"
+	echo "[Successfully installed lua packages for neovim configuration]"
+
+	paru -S tmux --noconfirm --needed
+	echo "[Successfully installed tmux]"
 fi
 
 # Create the hyprland directory (hypr) if it doesn't already exist
@@ -167,6 +174,13 @@ if [ ! -d "$NVIM_DIRECTORY/lua" ]; then
 else
 	echo "Found existing neovim lua directory at $NVIM_DIRECTORY/lua"
 fi
+# Create the tmux config directory if it doesn't already exist
+if [ ! -d "$TMUX_DIRECTORY" ]; then
+	mkdir "$TMUX_DIRECTORY"
+	echo "Created tmux directory at $TMUX_DIRECTORY"
+else
+	echo "Found existing tmux directory at $TMUX_DIRECTORY"
+fi
 
 # Configure luarocks to use the user directory by default for lua package management
 luarocks config local_by_default true
@@ -196,9 +210,11 @@ cp ~/MyArchConfig/confs/waypaper_conf/config.ini "$WAYPAPER_DIRECTORY" -v
 # Copy hyprland scripts directory to user's hyprland config directory
 cp ~/MyArchConfig/scripts/*.sh "$SCRIPTS_DIRECTORY" -v
 # Copy neovim config file to the user's neovim config directory
-cp ~/MyArchConfig/confs/nvim_confs/init.lua "$NVIM_DIRECTORY"
+cp ~/MyArchConfig/confs/nvim_confs/init.lua "$NVIM_DIRECTORY" -v
 # Copy neovim lua config files to the user's neovim lua config directory
-cp ~/MyArchConfig/confs/nvim_confs/lua/*.lua "$NVIM_DIRECTORY/lua"
+cp ~/MyArchConfig/confs/nvim_confs/lua/*.lua "$NVIM_DIRECTORY/lua" -v
+# Copy tmux config files to the user's tmux config directory
+cp ~/MyArchConfig/confs/tmux_confs/*.conf "$TMUX_DIRECTORY" -v
 
 wal -i ~/wallpaper/default.jpg
 waypaper --wallpaper ~/wallpaper/default.jpg
