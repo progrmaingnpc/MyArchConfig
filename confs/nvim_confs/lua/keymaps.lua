@@ -13,4 +13,3 @@ vim.keymap.set({ 'n', 'v' }, '<C-c>', '"+y')
 vim.keymap.set({ 'n', 'v' }, '<Leader>e', ':%s/')
 --[=====[ Code navigation --]=====]
 vim.keymap.set({ 'n', 'v' }, '<Leader>t', ':ij ')
-vim.keymap.set({ 'n', 'v' }, '<Leader>a', ':1;//;/ ')
