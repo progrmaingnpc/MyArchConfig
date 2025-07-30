@@ -268,7 +268,9 @@ window#waybar.empty #window {
     margin: 3px 3px 3px 3px;
     padding-right: 4px;
     padding-left: 4px;
-    color: #ff0000;
+    color: white;
+    border: 2px solid white;
+    background: transparent;
 }
 
 #tray > .passive {
@@ -278,6 +280,10 @@ window#waybar.empty #window {
 #tray > .needs-attention {
     -gtk-icon-effect: highlight;
     background-color: #eb4d4b;
+}
+
+#tray:hover {
+    background: red;
 }
 
 #battery {
@@ -306,6 +312,10 @@ window#waybar.empty #window {
     animation-timing-function: steps(12);
     animation-iteration-count: infinite;
     animation-direction: alternate;
+}
+
+#battery:hover {
+    background: orange;
 }
 
 #power-profiles-daemon {
