@@ -1,1 +1,1 @@
-vim.fn.setreg('c', '0i-- This is a comment<Esc>j')
+vim.fn.setreg('c', '0i-- This is a comment<Esc>ij')
