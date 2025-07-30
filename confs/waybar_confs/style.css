@@ -281,20 +281,26 @@ window#waybar.empty #window {
 }
 
 #battery {
-    background-color: #ffffff;
-    color: #000000;
+    padding: 0px;
+    border-radius: 5px;
+    margin: 0px 3px 0px 3px;
+    padding-right: 4px;
+    padding-left: 4px;
+    color: white;
+    border: 2px solid white;
+    background-color: red;
 }
 
 #battery.charging,
 #battery.plugged {
-    color: #ffffff;
-    background-color: #26a65b;
+    color: white;
+    background-color: red;
 }
 
 /* Using steps() instead of linear as a timing function to limit cpu usage */
 #battery.critical:not(.charging) {
     background-color: #f53c3c;
-    color: #ffffff;
+    color: white;
     animation-name: blink;
     animation-duration: 0.5s;
     animation-timing-function: steps(12);
