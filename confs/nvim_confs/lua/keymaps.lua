@@ -22,4 +22,4 @@ vim.keymap.set({ 'n', 'v' }, '<Leader>t', ':ij ')
 --[=====[ Listings--]=====]
 -- List all recorded registers entered by the user
 vim.keymap.set({ 'n', 'v' }, '<Leader>1', ':reg')
-vim.fn.setreg("h", "^[I:<80>kb'<80>kr<80>kr<80>kr'<80>kd<80>kl<80>kl<80>kl^['")
+vim.fn.setreg("t", "^[I:<80>kb'<80>kr<80>kr<80>kr'<80>kd<80>kl<80>kl<80>kl^['")
