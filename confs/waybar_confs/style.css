@@ -184,6 +184,8 @@ window#waybar.empty #window {
     padding: 0px;
     border-radius: 5px;
     margin: 0px 3px 0px 3px;
+    padding-right: 4px;
+    padding-left: 4px;
     color: white;
     border: 2px solid white;
 }
