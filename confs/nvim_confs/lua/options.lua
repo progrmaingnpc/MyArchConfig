@@ -17,7 +17,7 @@ vim.opt.wildmenu = true
 vim.opt.wildmode = "list:longest,list:full"
 vim.opt.swapfile = false
 vim.opt.winborder = "rounded"
-vim.opt.cc = 80
+vim.opt.cc = "80"
 vim.opt.backupdir = "~/.cache/vim"
 --[=====[
 vim.opt.filetype.plugin.indent = "on"
