@@ -17,15 +17,15 @@ vim.opt.wildmenu = true
 vim.opt.wildmode = "list:longest,list:full"
 vim.opt.swapfile = false
 vim.opt.winborder = "rounded"
+vim.opt.cc = 80
+vim.opt.backupdir = "~/.cache/vim"
 --[=====[
 vim.opt.filetype.plugin.indent = "on"
 vim.filetype.plugin = "on"
-" set cc=80                   " set an 80 column border for good coding style
 set clipboard=unnamedplus   " using system clipboard
 filetype plugin on
 " set cursorline              " highlight current cursorline
 " set spell                 " enable spell check (may need to download language package)
-" set backupdir=~/.cache/vim " Directory to store backup files.
 
 hi NonText ctermbg=none guibg=NONE
 hi Normal guibg=NONE ctermbg=NONE
