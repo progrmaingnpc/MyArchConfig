@@ -10,6 +10,7 @@ YAY_DIRECTORY=~/.cache/yay
 PARU_DIRECTORY=~/.cache/paru
 NVIM_DIRECTORY=~/.config/nvim
 TMUX_DIRECTORY=~/.config/tmux
+NWG_DOCK_DIRECTORY=~/.config/nwg-dock-hyprland
 
 sudo pacman -Syu
 sudo pacman -S git --noconfirm --needed
@@ -181,6 +182,13 @@ if [ ! -d "$TMUX_DIRECTORY" ]; then
 else
 	echo "Found existing tmux directory at $TMUX_DIRECTORY"
 fi
+# Create the nwg-dock config directory if it doesn't already exist
+if [ ! -d "$NWG_DOCK_DIRECTORY" ]; then
+	mkdir "$NWG_DOCK_DIRECTORY"
+	echo "Created nwg-dock directory at $NWG_DOCK_DIRECTORY"
+else
+	echo "Found existing nwg-dock directory at $NWG_DOCK_DIRECTORY"
+fi
 
 # Configure luarocks to use the user directory by default for lua package management
 luarocks config local_by_default true
@@ -215,6 +223,8 @@ cp ~/MyArchConfig/confs/nvim_confs/init.lua "$NVIM_DIRECTORY" -v
 cp ~/MyArchConfig/confs/nvim_confs/lua/*.lua "$NVIM_DIRECTORY/lua" -v
 # Copy tmux config files to the user's tmux config directory
 cp ~/MyArchConfig/confs/tmux_confs/*.conf "$TMUX_DIRECTORY" -v
+# Copy nwg-dock config files to the user's nwg-dock config directory
+cp ~/MyArchConfig/confs/nwg_dock_conf/*.css "$NWG_DOCK_DIRECTORY" -v
 
 wal -i ~/wallpaper/default.jpg
 waypaper --wallpaper ~/wallpaper/default.jpg
