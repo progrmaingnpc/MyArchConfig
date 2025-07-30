@@ -178,13 +178,14 @@ window#waybar.empty #window {
 }
 
 #backlight {
+    background: transparent;
     box-shadow: none;
     text-shadow: none;
     padding: 0px;
     border-radius: 5px;
     margin: 0px 3px 0px 3px;
-    color: #ff0000;
-    border: 2px solid #ff0000;
+    color: white;
+    border: 2px solid white;
 }
 
 #backlight:hover {
