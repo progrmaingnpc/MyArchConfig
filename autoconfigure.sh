@@ -16,7 +16,7 @@ CURRENT_DIR=$(pwd)
 sudo pacman -Syu
 sudo pacman -S git --noconfirm --needed
 echo "$CURRENT_DIR"
-#exit
+
 # Install the yay AUR manager if there isn't one
 if [[ ! -d "$YAY_DIRECTORY" ]] && [[ ! -d "$PARU_DIRECTORY" ]]; then
 	git clone https://aur.archlinux.org/yay.git $HOME/yay
