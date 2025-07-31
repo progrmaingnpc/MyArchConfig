@@ -207,7 +207,8 @@ luarocks install stdlib --local
 # Copy the hyprland configs to the hyprland directory on the user's device
 cp $CURRENT_DIR/confs/hyprland_confs/*.conf "$HYPRLAND_DIRECTORY" -v
 # Copy the hyprland configs to the hyprland config directory on the user's device
-cp $CURRENT_DIR/confs/hyprland_confs/conf/*.conf "$HYPR_CONF_DIRECTORY" -v
+cp $CURRENT_DIR/confs/hyprland_confs/conf "$HYPRLAND_DIRECTORY" -r -v
+#cp $CURRENT_DIR/confs/hyprland_confs/conf/*.conf "$HYPR_CONF_DIRECTORY" -v
 # Copy the waybar configs to the waybar config directory on the user's device
 cp $CURRENT_DIR/confs/waybar_confs/*.jsonc "$WAYBAR_DIRECTORY" -v
 cp $CURRENT_DIR/confs/waybar_confs/*.css "$WAYBAR_DIRECTORY" -v
