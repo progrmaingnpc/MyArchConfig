@@ -1,11 +1,9 @@
 #!/bin/bash
 HYPRLAND_DIRECTORY=~/.config/hypr
-HYPR_CONF_DIRECTORY=~/.config/hypr/conf
 KITTY_DIRECTORY=~/.config/kitty
 WAYBAR_DIRECTORY=~/.config/waybar
 SHELL_FASTFETCH_DIRECTORY=~/.config/fast_fetch_shell
 WAYPAPER_DIRECTORY=~/.config/waypaper
-SCRIPTS_DIRECTORY=~/.config/hypr/scripts
 YAY_DIRECTORY=~/.cache/yay
 PARU_DIRECTORY=~/.cache/paru
 NVIM_DIRECTORY=~/.config/nvim
@@ -129,13 +127,6 @@ if [ ! -d "$HYPRLAND_DIRECTORY" ]; then
 else
 	echo "Found existing local hyprland directory at $HYPRLAND_DIRECTORY"
 fi
-# Create the conf directory if doesn't already exist
-if [ ! -d "$HYPR_CONF_DIRECTORY" ]; then
-	mkdir "$HYPR_CONF_DIRECTORY"
-	echo "Created local hyprland config directory at $HYPR_CONF_DIRECTORY"
-else
-	echo "Found existing local hyprland config directory at $HYPR_CONF_DIRECTORY"
-fi
 # Create the waybar directory if doesn't already exist
 if [ ! -d "$WAYBAR_DIRECTORY" ]; then
 	mkdir "$WAYBAR_DIRECTORY"
@@ -163,13 +154,6 @@ if [ ! -d "$WAYPAPER_DIRECTORY" ]; then
 	echo "Created local waypaper directory at $WAYPAPER_DIRECTORY"
 else
 	echo "Found existing local waypaper directory at $WAYPAPER_DIRECTORY"
-fi
-# Create the hyprland scripts directory if doesn't already exist
-if [ ! -d "$SCRIPTS_DIRECTORY" ]; then
-	mkdir "$SCRIPTS_DIRECTORY"
-	echo "Created local scripts directory at $SCRIPTS_DIRECTORY"
-else
-	echo "Found existing local scripts directory at $SCRIPTS_DIRECTORY"
 fi
 # Create the neovim directory if it doesn't already exist
 if [ ! -d "$NVIM_DIRECTORY" ]; then
@@ -208,7 +192,8 @@ luarocks install stdlib --local
 cp $CURRENT_DIR/confs/hyprland_confs/*.conf "$HYPRLAND_DIRECTORY" -v
 # Copy the hyprland configs to the hyprland config directory on the user's device
 cp $CURRENT_DIR/confs/hyprland_confs/conf "$HYPRLAND_DIRECTORY" -r -v
-#cp $CURRENT_DIR/confs/hyprland_confs/conf/*.conf "$HYPR_CONF_DIRECTORY" -v
+# # Copy hyprland scripts directory to user's hyprland config directory
+cp $CURRENT_DIR/scripts "$HYPRLAND_DIRECTORY" -r -v
 # Copy the waybar configs to the waybar config directory on the user's device
 cp $CURRENT_DIR/confs/waybar_confs/*.jsonc "$WAYBAR_DIRECTORY" -v
 cp $CURRENT_DIR/confs/waybar_confs/*.css "$WAYBAR_DIRECTORY" -v
@@ -226,8 +211,6 @@ oh-my-posh font install JetBrainsMono
 cp $CURRENT_DIR/wallpaper/ ~/ -r -v
 # Copy waypaper config to user's wallpaper directory
 cp $CURRENT_DIR/confs/waypaper_conf/config.ini "$WAYPAPER_DIRECTORY" -v
-# Copy hyprland scripts directory to user's hyprland config directory
-cp $CURRENT_DIR/scripts/*.sh "$SCRIPTS_DIRECTORY" -v
 # Copy neovim config file to the user's neovim config directory
 cp $CURRENT_DIR/confs/nvim_confs/init.lua "$NVIM_DIRECTORY" -v
 # Copy neovim lua config files to the user's neovim lua config directory
