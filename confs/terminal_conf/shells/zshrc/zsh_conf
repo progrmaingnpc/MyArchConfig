@@ -1,0 +1,10 @@
+HISTFILE=~/.zsh_history
+SAVEHIST=1000
+
+wal -i $(tail ~/.cache/swww/* --lines=1) -q -e
+fastfetch --config ~/.config/fast_fetch_shell/default.jsonc --logo-type kitty-direct --logo ~/.config/fast_fetch_shell/default.png
+eval "$(oh-my-posh init zsh --config /usr/share/oh-my-posh/themes/negligible.omp.json)"
+
+(cat ~/.cache/wal/sequences &)
+cat ~/.cache/wal/sequences
+source ~/.cache/wal/colors-tty.sh
