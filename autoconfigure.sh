@@ -1,11 +1,11 @@
 #!/bin/bash
+YAY_DIRECTORY=~/.cache/yay
+PARU_DIRECTORY=~/.cache/paru
 HYPRLAND_DIRECTORY=~/.config/hypr
 KITTY_DIRECTORY=~/.config/kitty
 WAYBAR_DIRECTORY=~/.config/waybar
 SHELL_FASTFETCH_DIRECTORY=~/.config/fast_fetch_shell
 WAYPAPER_DIRECTORY=~/.config/waypaper
-YAY_DIRECTORY=~/.cache/yay
-PARU_DIRECTORY=~/.cache/paru
 NVIM_DIRECTORY=~/.config/nvim
 TMUX_DIRECTORY=~/.config/tmux
 NWG_DOCK_DIRECTORY=~/.config/nwg-dock-hyprland
@@ -43,11 +43,11 @@ if [ -d "$YAY_DIRECTORY" ]; then
 	echo "Finished installing hyprland configuration packages"
 
 	yay -S kitty zsh oh-my-posh-bin bash-completion \
-       	zsh-completions fastfetch python-pywal16 --noconfirm --needed
+       	zsh-completions fastfetch python-pywal16 postgresql --noconfirm --needed
 	echo "[Finished installing shell configuration packages]"
 
 	yay -S networkmanager tor tor-browser-bin wireshark-cli \
-        wireshark-qt postgresql zed pavucontrol power-profiles-daemon brave-bin --noconfirm --needed
+        wireshark-qt zed pavucontrol power-profiles-daemon brave-bin --noconfirm --needed
 	echo "[Finished installing basic apps]"
 
 	yay -S xdg-desktop-portal xdg-desktop-portal-hyprland \
@@ -91,11 +91,11 @@ elif [	-d "$PARU_DIRECTORY" ]; then
 	echo "Finished installing hyprland configuration packages"
 
 	paru -S kitty zsh oh-my-posh-bin bash-completion \
-       	zsh-completions fastfetch python-pywal16 --noconfirm --needed
+       	zsh-completions fastfetch python-pywal16 postgresql --noconfirm --needed
 	echo "[Finished installing shell configuration packages]"
 
 	paru -S networkmanager tor tor-browser-bin wireshark-cli \
-       	wireshark-qt postgresql zed pavucontrol power-profiles-daemon brave-bin --noconfirm --needed
+       	wireshark-qt zed pavucontrol power-profiles-daemon brave-bin --noconfirm --needed
 	echo "[Finished installing basic apps]"
 
 	paru -S xdg-desktop-portal xdg-desktop-portal-hyprland \
@@ -177,10 +177,6 @@ else
 	echo "Found existing nwg-dock directory at $NWG_DOCK_DIRECTORY"
 fi
 
-# Configure luarocks to use the user directory by default for lua package management
-luarocks config local_by_default true
-luarocks install stdlib --local
-
 # Copy the hyprland configs to the hyprland directory on the user's device
 cp $CURRENT_DIR/confs/hyprland_confs/*.conf "$HYPRLAND_DIRECTORY" -v
 # Copy the hyprland configs to the hyprland config directory on the user's device
@@ -198,8 +194,6 @@ cp $CURRENT_DIR/confs/terminal_conf/shells/bashrc/bash_conf ~/.bashrc -v
 cp $CURRENT_DIR/confs/terminal_conf/shells/zshrc/zsh_conf ~/.zshrc -v
 # Copy the fastfetch shell config to the fastfetch shell config directory on the user's device
 cp $CURRENT_DIR/confs/terminal_conf/fast_fetch_conf/default.* "$SHELL_FASTFETCH_DIRECTORY" -v
-# Install oh-my-posh font
-oh-my-posh font install JetBrainsMono
 # Copy default wallpaper directory with default background to user's directory
 cp $CURRENT_DIR/wallpaper/ ~/ -r -v
 # Copy waypaper config to user's wallpaper directory
@@ -213,8 +207,16 @@ cp $CURRENT_DIR/confs/tmux_confs/*.conf "$TMUX_DIRECTORY" -v
 # Copy nwg-dock config files to the user's nwg-dock config directory
 cp $CURRENT_DIR/confs/nwg_dock_conf/*.css "$NWG_DOCK_DIRECTORY" -v
 
+# Configure luarocks to use the user directory by default for lua package management
+luarocks config local_by_default true
+luarocks install stdlib --local
+# Install oh-my-posh font
+oh-my-posh font install JetBrainsMono
+# Set shell color scheme according to default wallpaper
 wal -i ~/wallpaper/default.jpg
+# Display the default wallpaper
 waypaper --wallpaper ~/wallpaper/default.jpg
+# Make add current user to wireshark group (to allow running wireshark in promiscuous mode)
 sudo usermod -aG wireshark $USER
 
 # Create the hyprland directory (hypr) if it doesn't already exist
