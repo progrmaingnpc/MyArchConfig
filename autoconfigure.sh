@@ -9,6 +9,7 @@ WAYPAPER_DIRECTORY=~/.config/waypaper
 NVIM_DIRECTORY=~/.config/nvim
 TMUX_DIRECTORY=~/.config/tmux
 NWG_DOCK_DIRECTORY=~/.config/nwg-dock-hyprland
+GTK_THEMES_DIR=~/.themes
 CURRENT_DIR=$(pwd)
 
 sudo pacman -Syu
@@ -176,7 +177,13 @@ if [ ! -d "$NWG_DOCK_DIRECTORY" ]; then
 else
 	echo "Found existing nwg-dock directory at $NWG_DOCK_DIRECTORY"
 fi
-
+# Create the gtk themes directory if it doesn't already exist
+if [ ! -d "$GTK_THEMES_DIR" ]; then
+	mkdir "$GTK_THEMES_DIR"
+	echo "Created nwg-dock directory at $GTK_THEMES_DIR"
+else
+	echo "Found existing nwg-dock directory at $GTK_THEMES_DIR"
+fi
 # Copy the hyprland configs to the hyprland directory on the user's device
 cp $CURRENT_DIR/confs/hyprland_confs/*.conf "$HYPRLAND_DIRECTORY" -v
 # Copy the hyprland configs to the hyprland config directory on the user's device
