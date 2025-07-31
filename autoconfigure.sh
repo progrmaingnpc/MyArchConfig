@@ -180,9 +180,9 @@ fi
 # Create the gtk themes directory if it doesn't already exist
 if [ ! -d "$GTK_THEMES_DIR" ]; then
 	mkdir "$GTK_THEMES_DIR"
-	echo "Created nwg-dock directory at $GTK_THEMES_DIR"
+	echo "Created gtk directory at $GTK_THEMES_DIR"
 else
-	echo "Found existing nwg-dock directory at $GTK_THEMES_DIR"
+	echo "Found existing gtk directory at $GTK_THEMES_DIR"
 fi
 # Copy the hyprland configs to the hyprland directory on the user's device
 cp $CURRENT_DIR/confs/hyprland_confs/*.conf "$HYPRLAND_DIRECTORY" -v
