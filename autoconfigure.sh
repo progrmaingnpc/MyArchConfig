@@ -1,11 +1,9 @@
 #!/bin/bash
 HYPRLAND_DIRECTORY=~/.config/hypr
-HYPR_CONF_DIRECTORY=~/.config/hypr/conf
 KITTY_DIRECTORY=~/.config/kitty
 WAYBAR_DIRECTORY=~/.config/waybar
 SHELL_FASTFETCH_DIRECTORY=~/.config/fast_fetch_shell
 WAYPAPER_DIRECTORY=~/.config/waypaper
-SCRIPTS_DIRECTORY=~/.config/hypr/scripts
 YAY_DIRECTORY=~/.cache/yay
 PARU_DIRECTORY=~/.cache/paru
 NVIM_DIRECTORY=~/.config/nvim
@@ -35,7 +33,7 @@ if [ -d "$YAY_DIRECTORY" ]; then
 		hyprgraphics hyprpolkitagent hyprsysteminfo hyprsunset wlogout --noconfirm --needed
 	echo "[Successfully installed basic utilities for hyprland]"
 
-	yay -S swww waybar waypaper aquamarine swaync nautilus btop hardinfo2 libnotify --noconfirm --needed
+	yay -S swww waybar waypaper aquamarine swaync nautilus btop hardinfo2 libnotify jq --noconfirm --needed
 	echo "[Successfully installed file system management packages]"
 
 	yay -S nwg-look nwg-dock-hyprland grim slurp wl-clipboard --noconfirm --needed
@@ -83,7 +81,7 @@ elif [	-d "$PARU_DIRECTORY" ]; then
 	    hyprgraphics hyprpolkitagent hyprsysteminfo hyprsunset wlogout --noconfirm --needed
 	echo "[Successfully installed basic utilities for hyprland]"
 
-	paru -S swww waybar waypaper aquamarine swaync nautilus btop hardinfo2 libnotify --noconfirm --needed
+	paru -S swww waybar waypaper aquamarine swaync nautilus btop hardinfo2 libnotify jq --noconfirm --needed
 	echo "[Successfully installed file system management packages]"
 
 	paru -S nwg-look nwg-dock-hyprland grim slurp wl-clipboard --noconfirm --needed
@@ -129,13 +127,6 @@ if [ ! -d "$HYPRLAND_DIRECTORY" ]; then
 else
 	echo "Found existing local hyprland directory at $HYPRLAND_DIRECTORY"
 fi
-# Create the conf directory if doesn't already exist
-if [ ! -d "$HYPR_CONF_DIRECTORY" ]; then
-	mkdir "$HYPR_CONF_DIRECTORY"
-	echo "Created local hyprland config directory at $HYPR_CONF_DIRECTORY"
-else
-	echo "Found existing local hyprland config directory at $HYPR_CONF_DIRECTORY"
-fi
 # Create the waybar directory if doesn't already exist
 if [ ! -d "$WAYBAR_DIRECTORY" ]; then
 	mkdir "$WAYBAR_DIRECTORY"
@@ -164,26 +155,12 @@ if [ ! -d "$WAYPAPER_DIRECTORY" ]; then
 else
 	echo "Found existing local waypaper directory at $WAYPAPER_DIRECTORY"
 fi
-# Create the hyprland scripts directory if doesn't already exist
-if [ ! -d "$SCRIPTS_DIRECTORY" ]; then
-	mkdir "$SCRIPTS_DIRECTORY"
-	echo "Created local scripts directory at $SCRIPTS_DIRECTORY"
-else
-	echo "Found existing local scripts directory at $SCRIPTS_DIRECTORY"
-fi
 # Create the neovim directory if it doesn't already exist
 if [ ! -d "$NVIM_DIRECTORY" ]; then
 	mkdir "$NVIM_DIRECTORY"
 	echo "Created neovim directory at $NVIM_DIRECTORY"
 else
 	echo "Found existing neovim directory at $NVIM_DIRECTORY"
-fi
-# Create the neovim lua configs directory if it doesn't already exist
-if [ ! -d "$NVIM_DIRECTORY/lua" ]; then
-	mkdir "$NVIM_DIRECTORY/lua"
-	echo "Created neovim lua directory at $NVIM_DIRECTORY/lua"
-else
-	echo "Found existing neovim lua directory at $NVIM_DIRECTORY/lua"
 fi
 # Create the tmux config directory if it doesn't already exist
 if [ ! -d "$TMUX_DIRECTORY" ]; then
@@ -207,7 +184,9 @@ luarocks install stdlib --local
 # Copy the hyprland configs to the hyprland directory on the user's device
 cp $CURRENT_DIR/confs/hyprland_confs/*.conf "$HYPRLAND_DIRECTORY" -v
 # Copy the hyprland configs to the hyprland config directory on the user's device
-cp $CURRENT_DIR/confs/hyprland_confs/conf/*.conf "$HYPR_CONF_DIRECTORY" -v
+cp $CURRENT_DIR/confs/hyprland_confs/conf "$HYPRLAND_DIRECTORY" -r -v
+# # Copy hyprland scripts directory to user's hyprland config directory
+cp $CURRENT_DIR/scripts "$HYPRLAND_DIRECTORY" -r -v
 # Copy the waybar configs to the waybar config directory on the user's device
 cp $CURRENT_DIR/confs/waybar_confs/*.jsonc "$WAYBAR_DIRECTORY" -v
 cp $CURRENT_DIR/confs/waybar_confs/*.css "$WAYBAR_DIRECTORY" -v
@@ -225,12 +204,10 @@ oh-my-posh font install JetBrainsMono
 cp $CURRENT_DIR/wallpaper/ ~/ -r -v
 # Copy waypaper config to user's wallpaper directory
 cp $CURRENT_DIR/confs/waypaper_conf/config.ini "$WAYPAPER_DIRECTORY" -v
-# Copy hyprland scripts directory to user's hyprland config directory
-cp $CURRENT_DIR/scripts/*.sh "$SCRIPTS_DIRECTORY" -v
 # Copy neovim config file to the user's neovim config directory
 cp $CURRENT_DIR/confs/nvim_confs/init.lua "$NVIM_DIRECTORY" -v
 # Copy neovim lua config files to the user's neovim lua config directory
-cp $CURRENT_DIR/confs/nvim_confs/lua/*.lua "$NVIM_DIRECTORY/lua" -v
+cp $CURRENT_DIR/confs/nvim_confs/lua "$NVIM_DIRECTORY" -r -v
 # Copy tmux config files to the user's tmux config directory
 cp $CURRENT_DIR/confs/tmux_confs/*.conf "$TMUX_DIRECTORY" -v
 # Copy nwg-dock config files to the user's nwg-dock config directory
