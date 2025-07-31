@@ -13,6 +13,8 @@ My Arch Linux Hyprland config
 
 
 ### Installation ###
+```
 git clone https://github.com/progrmaingnpc/MyArchConfig.git
 cd MyArchConfig
 ./autoconfigure.sh
+```
