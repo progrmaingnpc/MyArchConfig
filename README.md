@@ -1,7 +1,7 @@
 # MyArchConfig
 My Arch Linux Hyprland config
 
-<img src="https://github.com/progrmaingnpc/MyArchConfig/myconfiguration.png" style="border:0">
+<img src="https://github.com/progrmaingnpc/MyArchConfig/blob/main/myconfiguration.png" style="border:0">
 
 ## NOTES
 1. My script does not backup your previous hyprland config files and hyprland related config files, make sure to move them to another directory, to avoid accidently losing them. If you have files with the same name as the ones in the project's directories please back them up, because they would be replaced with the project's config files
