@@ -1,11 +1,11 @@
 #!/bin/bash
+YAY_DIRECTORY=~/.cache/yay
+PARU_DIRECTORY=~/.cache/paru
 HYPRLAND_DIRECTORY=~/.config/hypr
 KITTY_DIRECTORY=~/.config/kitty
 WAYBAR_DIRECTORY=~/.config/waybar
 SHELL_FASTFETCH_DIRECTORY=~/.config/fast_fetch_shell
 WAYPAPER_DIRECTORY=~/.config/waypaper
-YAY_DIRECTORY=~/.cache/yay
-PARU_DIRECTORY=~/.cache/paru
 NVIM_DIRECTORY=~/.config/nvim
 TMUX_DIRECTORY=~/.config/tmux
 NWG_DOCK_DIRECTORY=~/.config/nwg-dock-hyprland
