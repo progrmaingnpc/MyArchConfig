@@ -11,10 +11,12 @@ PARU_DIRECTORY=~/.cache/paru
 NVIM_DIRECTORY=~/.config/nvim
 TMUX_DIRECTORY=~/.config/tmux
 NWG_DOCK_DIRECTORY=~/.config/nwg-dock-hyprland
+CURRENT_DIR=$(pwd)
 
 sudo pacman -Syu
 sudo pacman -S git --noconfirm --needed
-
+echo "$CURRENT_DIR"
+#exit
 # Install the yay AUR manager if there isn't one
 if [[ ! -d "$YAY_DIRECTORY" ]] && [[ ! -d "$PARU_DIRECTORY" ]]; then
 	git clone https://aur.archlinux.org/yay.git $HOME/yay
@@ -195,36 +197,36 @@ luarocks config local_by_default true
 luarocks install stdlib --local
 
 # Copy the hyprland configs to the hyprland directory on the user's device
-cp ~/MyArchConfig/confs/hyprland_confs/*.conf "$HYPRLAND_DIRECTORY" -v
+cp $CURRENT_DIR/confs/hyprland_confs/*.conf "$HYPRLAND_DIRECTORY" -v
 # Copy the hyprland configs to the hyprland config directory on the user's device
-cp ~/MyArchConfig/confs/hyprland_confs/conf/*.conf "$HYPR_CONF_DIRECTORY" -v
+cp $CURRENT_DIR/confs/hyprland_confs/conf/*.conf "$HYPR_CONF_DIRECTORY" -v
 # Copy the waybar configs to the waybar config directory on the user's device
-cp ~/MyArchConfig/confs/waybar_confs/*.jsonc "$WAYBAR_DIRECTORY" -v
-cp ~/MyArchConfig/confs/waybar_confs/*.css "$WAYBAR_DIRECTORY" -v
+cp $CURRENT_DIR/confs/waybar_confs/*.jsonc "$WAYBAR_DIRECTORY" -v
+cp $CURRENT_DIR/confs/waybar_confs/*.css "$WAYBAR_DIRECTORY" -v
 # Copy the kitty configs to the kitty config directory on the user's device
-cp ~/MyArchConfig/confs/terminal_conf/kitty/*.conf "$KITTY_DIRECTORY" -v
+cp $CURRENT_DIR/confs/terminal_conf/kitty/*.conf "$KITTY_DIRECTORY" -v
 # Copy the bash config file to the user's .bashrc file
-cp ~/MyArchConfig/confs/terminal_conf/shells/bashrc/bash_conf ~/.bashrc -v
+cp $CURRENT_DIR/confs/terminal_conf/shells/bashrc/bash_conf ~/.bashrc -v
 # Copy the zsh config file to the user's .zshrc file
-cp ~/MyArchConfig/confs/terminal_conf/shells/zshrc/zsh_conf ~/.zshrc -v
+cp $CURRENT_DIR/confs/terminal_conf/shells/zshrc/zsh_conf ~/.zshrc -v
 # Copy the fastfetch shell config to the fastfetch shell config directory on the user's device
-cp ~/MyArchConfig/confs/terminal_conf/fast_fetch_conf/default.* "$SHELL_FASTFETCH_DIRECTORY" -v
+cp $CURRENT_DIR/confs/terminal_conf/fast_fetch_conf/default.* "$SHELL_FASTFETCH_DIRECTORY" -v
 # Install oh-my-posh font
 oh-my-posh font install JetBrainsMono
 # Copy default wallpaper directory with default background to user's directory
-cp ~/MyArchConfig/wallpaper/ ~/ -r -v
+cp $CURRENT_DIR/wallpaper/ ~/ -r -v
 # Copy waypaper config to user's wallpaper directory
-cp ~/MyArchConfig/confs/waypaper_conf/config.ini "$WAYPAPER_DIRECTORY" -v
+cp $CURRENT_DIR/confs/waypaper_conf/config.ini "$WAYPAPER_DIRECTORY" -v
 # Copy hyprland scripts directory to user's hyprland config directory
-cp ~/MyArchConfig/scripts/*.sh "$SCRIPTS_DIRECTORY" -v
+cp $CURRENT_DIR/scripts/*.sh "$SCRIPTS_DIRECTORY" -v
 # Copy neovim config file to the user's neovim config directory
-cp ~/MyArchConfig/confs/nvim_confs/init.lua "$NVIM_DIRECTORY" -v
+cp $CURRENT_DIR/confs/nvim_confs/init.lua "$NVIM_DIRECTORY" -v
 # Copy neovim lua config files to the user's neovim lua config directory
-cp ~/MyArchConfig/confs/nvim_confs/lua/*.lua "$NVIM_DIRECTORY/lua" -v
+cp $CURRENT_DIR/confs/nvim_confs/lua/*.lua "$NVIM_DIRECTORY/lua" -v
 # Copy tmux config files to the user's tmux config directory
-cp ~/MyArchConfig/confs/tmux_confs/*.conf "$TMUX_DIRECTORY" -v
+cp $CURRENT_DIR/confs/tmux_confs/*.conf "$TMUX_DIRECTORY" -v
 # Copy nwg-dock config files to the user's nwg-dock config directory
-cp ~/MyArchConfig/confs/nwg_dock_conf/*.css "$NWG_DOCK_DIRECTORY" -v
+cp $CURRENT_DIR/confs/nwg_dock_conf/*.css "$NWG_DOCK_DIRECTORY" -v
 
 wal -i ~/wallpaper/default.jpg
 waypaper --wallpaper ~/wallpaper/default.jpg
