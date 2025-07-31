@@ -162,13 +162,6 @@ if [ ! -d "$NVIM_DIRECTORY" ]; then
 else
 	echo "Found existing neovim directory at $NVIM_DIRECTORY"
 fi
-# Create the neovim lua configs directory if it doesn't already exist
-if [ ! -d "$NVIM_DIRECTORY/lua" ]; then
-	mkdir "$NVIM_DIRECTORY/lua"
-	echo "Created neovim lua directory at $NVIM_DIRECTORY/lua"
-else
-	echo "Found existing neovim lua directory at $NVIM_DIRECTORY/lua"
-fi
 # Create the tmux config directory if it doesn't already exist
 if [ ! -d "$TMUX_DIRECTORY" ]; then
 	mkdir "$TMUX_DIRECTORY"
@@ -214,7 +207,7 @@ cp $CURRENT_DIR/confs/waypaper_conf/config.ini "$WAYPAPER_DIRECTORY" -v
 # Copy neovim config file to the user's neovim config directory
 cp $CURRENT_DIR/confs/nvim_confs/init.lua "$NVIM_DIRECTORY" -v
 # Copy neovim lua config files to the user's neovim lua config directory
-cp $CURRENT_DIR/confs/nvim_confs/lua/*.lua "$NVIM_DIRECTORY/lua" -v
+cp $CURRENT_DIR/confs/nvim_confs/lua "$NVIM_DIRECTORY" -r -v
 # Copy tmux config files to the user's tmux config directory
 cp $CURRENT_DIR/confs/tmux_confs/*.conf "$TMUX_DIRECTORY" -v
 # Copy nwg-dock config files to the user's nwg-dock config directory
