@@ -43,11 +43,11 @@ if [ -d "$YAY_DIRECTORY" ]; then
 	echo "Finished installing hyprland configuration packages"
 
 	yay -S kitty zsh oh-my-posh-bin bash-completion \
-       	zsh-completions fastfetch python-pywal16 --noconfirm --needed
+       	zsh-completions fastfetch python-pywal16 postgresql --noconfirm --needed
 	echo "[Finished installing shell configuration packages]"
 
 	yay -S networkmanager tor tor-browser-bin wireshark-cli \
-        wireshark-qt postgresql zed pavucontrol power-profiles-daemon brave-bin --noconfirm --needed
+        wireshark-qt zed pavucontrol power-profiles-daemon brave-bin --noconfirm --needed
 	echo "[Finished installing basic apps]"
 
 	yay -S xdg-desktop-portal xdg-desktop-portal-hyprland \
@@ -91,11 +91,11 @@ elif [	-d "$PARU_DIRECTORY" ]; then
 	echo "Finished installing hyprland configuration packages"
 
 	paru -S kitty zsh oh-my-posh-bin bash-completion \
-       	zsh-completions fastfetch python-pywal16 --noconfirm --needed
+       	zsh-completions fastfetch python-pywal16 postgresql --noconfirm --needed
 	echo "[Finished installing shell configuration packages]"
 
 	paru -S networkmanager tor tor-browser-bin wireshark-cli \
-       	wireshark-qt postgresql zed pavucontrol power-profiles-daemon brave-bin --noconfirm --needed
+       	wireshark-qt zed pavucontrol power-profiles-daemon brave-bin --noconfirm --needed
 	echo "[Finished installing basic apps]"
 
 	paru -S xdg-desktop-portal xdg-desktop-portal-hyprland \
