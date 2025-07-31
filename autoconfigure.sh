@@ -67,6 +67,9 @@ if [ -d "$YAY_DIRECTORY" ]; then
 	yay -S lua luarocks --noconfirm --needed
 	echo "[Successfully installed lua packages for neovim configuration]"
 
+	yay -S pipes.sh cava neo-matrix --noconfirm --needed
+	echo "[Successfully installed ricing apps]"
+
 	yay -S tmux --noconfirm --needed
 	echo "[Successfully installed tmux]"
 elif [	-d "$PARU_DIRECTORY" ]; then
@@ -111,6 +114,9 @@ elif [	-d "$PARU_DIRECTORY" ]; then
 
 	paru -S lua luarocks --noconfirm --needed
 	echo "[Successfully installed lua packages for neovim configuration]"
+
+	paru -S pipes.sh cava neo-matrix --noconfirm --needed
+	echo "[Successfully installed ricing apps]"
 
 	paru -S tmux --noconfirm --needed
 	echo "[Successfully installed tmux]"
