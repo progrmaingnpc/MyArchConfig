@@ -1,7 +1,7 @@
-# MyArchConfig
+### MyArchConfig ###
 My Arch Linux Hyprland config
 
-### NOTES ###
+## NOTES
 1. My script does not backup your previous hyprland and hyprland related config files, make sure to move them it to another directory
   to avoid accidently losing it. If you have files with the same name as the ones in:
   a. confs.
@@ -12,7 +12,7 @@ My Arch Linux Hyprland config
   I did not test it on other platforms.
 
 
-### Installation ###
+## Installation
 ```
 git clone https://github.com/progrmaingnpc/MyArchConfig.git
 cd MyArchConfig
