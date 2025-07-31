@@ -22,6 +22,8 @@ if [[ ! -d "$YAY_DIRECTORY" ]] && [[ ! -d "$PARU_DIRECTORY" ]]; then
 	git clone https://aur.archlinux.org/yay.git $HOME/yay
 	makepkg -si --dir $HOME/yay
 	echo "Installing yay at $HOME/yay"
+fi
+
 if [ -d "$YAY_DIRECTORY" ]; then
 	echo "There is a yay cache at $YAY_DIRECTORY"
 	yay -Syu
