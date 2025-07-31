@@ -55,7 +55,7 @@ if [ -d "$YAY_DIRECTORY" ]; then
         xdg-desktop-portal-kde xdg-desktop-portal-gnome --noconfirm --needed
 	echo "[Finished installing xdg-desktop packages]"
 
-	yay -S gtk4 papirus-icon-theme breeze noto-fonts noto-fonts-emoji libadwaita \
+	yay -S gtk4 gtk2 papirus-icon-theme breeze noto-fonts noto-fonts-emoji libadwaita \
 	    noto-fonts-cjk noto-fonts-extra --noconfirm --needed
 	echo "[Successfully installed gtk esthetic packages]"
 
@@ -103,7 +103,7 @@ elif [	-d "$PARU_DIRECTORY" ]; then
        	xdg-desktop-portal-kde xdg-desktop-portal-gnome --noconfirm --needed
 	echo "[Finished installing xdg-desktop packages]"
 
-	paru -S gtk4 papirus-icon-theme breeze noto-fonts noto-fonts-emoji libadwaita \
+	paru -S gtk4 gtk2 papirus-icon-theme breeze noto-fonts noto-fonts-emoji libadwaita \
 	    noto-fonts-cjk noto-fonts-extra --noconfirm --needed
 	echo "[Successfully installed gtk esthetic packages]"
 
