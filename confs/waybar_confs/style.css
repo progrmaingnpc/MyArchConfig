@@ -18,10 +18,6 @@ window#waybar {
     border: 3px solid red;
 }
 
-window#waybar:hover {
-    border: 3px solid red;
-}
-
 #custom-appmenu {
     background: red;
     font-size: 20px;
@@ -98,7 +94,7 @@ window#waybar:hover {
     box-shadow: none;
     text-shadow: none;
     padding: 0px;
-    border-radius: 5px;
+    border-radius: 25px;
     margin: 4px 3px 4px 3px;
     padding-right: 3px;
     padding-left: 3px;
@@ -114,7 +110,7 @@ window#waybar:hover {
     box-shadow: none;
     text-shadow: none;
     padding: 0px;
-    border-radius: 5px;
+    border-radius: 25px;
     margin: 4px 3px 4px 3px;
     padding-right: 4px;
     padding-left: 4px;
