@@ -127,7 +127,7 @@ window#waybar {
     padding-right: 10px;
     padding-left: 3px;
     color: gold;
-    border: 2px solid yellow;
+    border: 2px solid darkgoldenrod;
 }
 
 #cpu:hover {
@@ -144,7 +144,7 @@ window#waybar {
     padding-right: 12px;
     padding-left: 4px;
     color: gold;
-    border: 2px solid yellow;
+    border: 2px solid darkgoldenrod;
 }
 
 #memory:hover {
@@ -161,7 +161,7 @@ window#waybar {
     padding-right: 4px;
     padding-left: 4px;
     color: gold;
-    border: 2px solid yellow;
+    border: 2px solid darkgoldenrod;
 }
 
 #disk:hover {
@@ -178,7 +178,7 @@ window#waybar {
     padding-right: 4px;
     padding-left: 4px;
     color: gold;
-    border: 2px solid yellow;
+    border: 2px solid darkgoldenrod;
 }
 
 #backlight:hover {
@@ -215,7 +215,7 @@ window#waybar {
     padding-right: 12px;
     padding-left: 4px;
     color: gold;
-    border: 2px solid yellow;
+    border: 2px solid darkgoldenrod;
 }
 
 /* you can set a style on hover for any module like this */
@@ -237,7 +237,7 @@ window#waybar {
     padding-right: 12px;
     padding-left: 4px;
     color: gold;
-    border: 2px solid yellow;
+    border: 2px solid darkgoldenrod;
 }
 
 #custom-hypridle.activated {
@@ -257,7 +257,7 @@ window#waybar {
     padding-right: 4px;
     padding-left: 4px;
     color: gold;
-    border: 2px solid yellow;
+    border: 2px solid darkgoldenrod;
 }
 
 #tray:hover {
@@ -314,7 +314,7 @@ window#waybar {
     padding-right: 15px;
     padding-left: 4px;
     color: gold;
-    border: 2px solid yellow;
+    border: 2px solid darkgoldenrod;
 }
 
 #power-profiles-daemon:hover {
@@ -331,7 +331,7 @@ window#waybar {
     padding-right: 15px;
     padding-left: 4px;
     color: gold;
-    border: 2px solid yellow;
+    border: 2px solid darkgoldenrod;
 }
 
 #wireplumber.muted {
@@ -353,7 +353,7 @@ window#waybar {
     padding-left: 4px;
     color: gold;
     min-width: 100px;
-    border: 2px solid yellow;
+    border: 2px solid darkgoldenrod;
 }
 
 #custom-media.custom-spotify {
@@ -378,7 +378,7 @@ window#waybar {
     padding-right: 15px;
     padding-left: 4px;
     color: gold;
-    border: 2px solid yellow;
+    border: 2px solid darkgoldenrod;
 }
 
 #temperature.critical {
@@ -398,7 +398,7 @@ window#waybar {
     padding: 0 5px;
     margin: 8px 3px 8px 3px;
     min-width: 16px;
-    border: 2px solid yellow;
+    border: 2px solid darkgoldenrod;
 }
 
 #language:hover {
@@ -414,7 +414,7 @@ window#waybar {
     padding: 0 0px;
     margin: 8px 3px 8px 3px;
     min-width: 16px;
-    border: 2px solid yellow;
+    border: 2px solid darkgoldenrod;
 }
 
 #keyboard-state > label {
@@ -439,7 +439,7 @@ window#waybar {
     padding-right: 15px;
     padding-left: 4px;
     color: gold;
-    border: 2px solid yellow;
+    border: 2px solid darkgoldenrod;
 }
 
 #scratchpad.empty {
@@ -462,7 +462,7 @@ window#waybar {
     border-radius: 25px;
     margin: 8px 3px 8px 3px;
     color: gold;
-    border: 2px solid yellow;
+    border: 2px solid darkgoldenrod;
 }
 
 #privacy-item.screenshare {
