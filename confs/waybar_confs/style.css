@@ -1,5 +1,5 @@
 * {
-    /* `otf-font-awesome` is required to be installed for icons */
+    /* `otf-font-awesome` is requigold to be installed for icons */
     border: none;
     border-radius: 0px;
     font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;
@@ -15,56 +15,52 @@
 window#waybar {
     background: black;
     border-radius: 25px;
-    border: 3px solid red;
+    border: 1px solid gold;
 }
 
 #custom-appmenu {
-    background: red;
+    background: gold;
     font-size: 20px;
     box-shadow: none;
     text-shadow: none;
     padding: 0px;
-    border-radius: 25px 0px 25px 25px;
+    border-radius: 50px;
     margin: 0px 3px 0px 0px;
     padding: 1px 35px 1px 25px;
-    /*
-    border: 2px solid white;
-    */
-    color: white;
+    color: black;
 }
 
 #custom-appmenu:hover {
-    background: orange;
+    background: white;
 }
 
 #workspaces {
-    background: black;
-    margin: 4px 18px 4px 1px;
+    background: darkgoldenrod;
+    margin: 8px 18px 8px 1px;
     padding: 0px 2px;
     border-radius: 25px;
 }
 
 #workspaces button {
-    background: red;
-    font-size: 20px;
-    margin: 4px 1px 4px 1px;
+    background: black;
+    font-size: 12px;
+    margin: 2px 1px 2px 1px;
     padding: 1px 10px 1px 10px;
     border-radius: 25px;
-    color: white;
+    color: gold;
 }
 
 #workspaces button.active {
-    border: 2px solid white;
-    background: red;
+    color: black;
+    background: gold;
 }
 
 #workspaces button.active:hover {
-    background: orange;
+    background: white;
 }
 
 #workspaces button:hover {
-    border: 2px solid white;
-    background: orange;
+    background: white;
 }
 
 /* If workspaces is the leftmost module, omit left margin */
@@ -81,7 +77,7 @@ window#waybar {
     margin: 4px 15px 4px 0px;
     padding: 2px 10px 0px 10px;
     border-radius: 25px;
-    color: white;
+    color: gold;
     font-size: 16px;
     font-weight: normal;
     opacity: 1;
@@ -89,7 +85,7 @@ window#waybar {
 }
 
 #clock {
-    background: red;
+    background: gold;
     font-size: 20px;
     box-shadow: none;
     text-shadow: none;
@@ -98,15 +94,15 @@ window#waybar {
     margin: 8px 3px 8px 3px;
     padding-right: 3px;
     padding-left: 3px;
-    color: white;
+    color: black;
 }
 
 #clock:hover {
-    background: orange;
+    background: white;
 }
 
 #custom-hardware-wrap {
-    background: red;
+    background: gold;
     box-shadow: none;
     text-shadow: none;
     padding: 0px;
@@ -114,15 +110,15 @@ window#waybar {
     margin: 8px 3px 8px 3px;
     padding-right: 4px;
     padding-left: 4px;
-    color: white;
+    color: black;
 }
 
 #custom-hardware-wrap:hover {
-    background: orange;
+    background: white;
 }
 
 #cpu {
-    background: red;
+    background: black;
     box-shadow: none;
     text-shadow: none;
     padding: 0px;
@@ -130,16 +126,16 @@ window#waybar {
     margin: 8px 3px 8px 3px;
     padding-right: 10px;
     padding-left: 3px;
-    color: white;
+    color: gold;
+    border: 2px solid yellow;
 }
 
 #cpu:hover {
-    border: 2px solid white;
-    background: orange;
+    background: white;
 }
 
 #memory {
-    background: red;
+    background: black;
     box-shadow: none;
     text-shadow: none;
     padding: 0px;
@@ -147,16 +143,16 @@ window#waybar {
     margin: 8px 3px 8px 3px;
     padding-right: 12px;
     padding-left: 4px;
-    color: white;
+    color: gold;
+    border: 2px solid yellow;
 }
 
 #memory:hover {
-    border: 2px solid white;
-    background: orange;
+    background: white;
 }
 
 #disk {
-    background: red;
+    background: black;
     box-shadow: none;
     text-shadow: none;
     padding: 0px;
@@ -164,16 +160,16 @@ window#waybar {
     margin: 8px 3px 8px 3px;
     padding-right: 4px;
     padding-left: 4px;
-    color: white;
+    color: gold;
+    border: 2px solid yellow;
 }
 
 #disk:hover {
-    border: 2px solid white;
-    background: orange;
+    background: white;
 }
 
 #backlight {
-    background: red;
+    background: black;
     box-shadow: none;
     text-shadow: none;
     padding: 0px;
@@ -181,24 +177,22 @@ window#waybar {
     margin: 8px 3px 8px 3px;
     padding-right: 4px;
     padding-left: 4px;
-    color: white;
+    color: gold;
+    border: 2px solid yellow;
 }
 
 #backlight:hover {
-    border: 2px solid white;
-    background: orange;
+    background: white;
 }
 
 #network {
-    box-shadow: none;
-    text-shadow: none;
     padding: 0px;
     border-radius: 25px;
     margin: 8px 3px 8px 3px;
     padding-right: 4px;
     padding-left: 4px;
-    color: white;
-    background: red;
+    color: black;
+    background: gold;
 }
 
 #network.disconnected {
@@ -208,12 +202,11 @@ window#waybar {
 }
 
 #network:hover {
-    border: 2px solid white;
-    background: orange;
+    background: white;
 }
 
 #pulseaudio {
-    background: red;
+    background: black;
     box-shadow: none;
     text-shadow: none;
     padding: 0px;
@@ -221,13 +214,13 @@ window#waybar {
     margin: 8px 3px 8px 3px;
     padding-right: 12px;
     padding-left: 4px;
-    color: white;
+    color: gold;
+    border: 2px solid yellow;
 }
 
 /* you can set a style on hover for any module like this */
 #pulseaudio:hover {
-    border: 2px solid white;
-    background: orange;
+    background: white;
 }
 
 #pulseaudio.muted {
@@ -235,7 +228,7 @@ window#waybar {
 }
 
 #custom-hypridle {
-    background: red;
+    background: black;
     box-shadow: none;
     text-shadow: none;
     padding: 0px;
@@ -243,20 +236,19 @@ window#waybar {
     margin: 8px 3px 8px 3px;
     padding-right: 12px;
     padding-left: 4px;
-    color: white;
+    color: gold;
+    border: 2px solid yellow;
 }
 
 #custom-hypridle.activated {
-    border: 2px solid white;
 }
 
 #custom-hypridle:hover {
-    border: 2px solid white;
-    background: orange;
+    background: white;
 }
 
 #tray {
-    background: red;
+    background: black;
     box-shadow: none;
     text-shadow: none;
     padding: 0px;
@@ -264,12 +256,12 @@ window#waybar {
     margin: 8px 3px 8px 3px;
     padding-right: 4px;
     padding-left: 4px;
-    color: white;
+    color: gold;
+    border: 2px solid yellow;
 }
 
 #tray:hover {
-    border: 2px solid white;
-    background: orange;
+    background: white;
 }
 
 #tray > .passive {
@@ -287,20 +279,20 @@ window#waybar {
     margin: 8px 3px 8px 3px;
     padding-right: 8px;
     padding-left: 4px;
-    color: white;
-    background-color: red;
+    color: black;
+    background-color: gold;
 }
 
 #battery.charging,
 #battery.plugged {
-    color: white;
-    background-color: red;
+    color: gold;
+    background-color: gold;
 }
 
 /* Using steps() instead of linear as a timing function to limit cpu usage */
 #battery.critical:not(.charging) {
     background-color: #f53c3c;
-    color: white;
+    color: gold;
     animation-name: blink;
     animation-duration: 0.5s;
     animation-timing-function: steps(12);
@@ -309,11 +301,11 @@ window#waybar {
 }
 
 #battery:hover {
-    background: orange;
+    background: white;
 }
 
 #power-profiles-daemon {
-    background: red;
+    background: black;
     box-shadow: none;
     text-shadow: none;
     padding: 0px;
@@ -321,28 +313,16 @@ window#waybar {
     margin: 8px 3px 8px 3px;
     padding-right: 15px;
     padding-left: 4px;
-    color: white;
-}
-
-#power-profiles-daemon.performance {
-    background-color: #f53c3c;
-}
-
-#power-profiles-daemon.balanced {
-    background-color: #2980b9;
-}
-
-#power-profiles-daemon.power-saver {
-    background-color: #2ecc71;
+    color: gold;
+    border: 2px solid yellow;
 }
 
 #power-profiles-daemon:hover {
-    border: 2px solid white;
-    background: orange;
+    background: white;
 }
 
 #wireplumber {
-    background: red;
+    background: black;
     box-shadow: none;
     text-shadow: none;
     padding: 0px;
@@ -350,7 +330,8 @@ window#waybar {
     margin: 8px 3px 8px 3px;
     padding-right: 15px;
     padding-left: 4px;
-    color: white;
+    color: gold;
+    border: 2px solid yellow;
 }
 
 #wireplumber.muted {
@@ -358,12 +339,11 @@ window#waybar {
 }
 
 #wireplumber:hover {
-    border: 2px solid white;
-    background: orange;
+    background: white;
 }
 
 #custom-media {
-    background: red;
+    background: black;
     box-shadow: none;
     text-shadow: none;
     padding: 0px;
@@ -371,8 +351,9 @@ window#waybar {
     margin: 8px 3px 8px 3px;
     padding-right: 15px;
     padding-left: 4px;
-    color: white;
+    color: gold;
     min-width: 100px;
+    border: 2px solid yellow;
 }
 
 #custom-media.custom-spotify {
@@ -384,12 +365,11 @@ window#waybar {
 }
 
 #custom-media:hover {
-    border: 2px solid white;
-    background: orange;
+    background: white;
 }
 
 #temperature {
-    background: red;
+    background: black;
     box-shadow: none;
     text-shadow: none;
     padding: 0px;
@@ -397,7 +377,8 @@ window#waybar {
     margin: 8px 3px 8px 3px;
     padding-right: 15px;
     padding-left: 4px;
-    color: white;
+    color: gold;
+    border: 2px solid yellow;
 }
 
 #temperature.critical {
@@ -405,35 +386,35 @@ window#waybar {
 }
 
 #temperature:hover {
-    border: 2px solid white;
-    background: orange;
+    background: white;
 }
 
 #language {
-    background: red;
+    background: black;
     box-shadow: none;
     text-shadow: none;
     border-radius: 25px;
-    color: white;
+    color: gold;
     padding: 0 5px;
     margin: 8px 3px 8px 3px;
     min-width: 16px;
+    border: 2px solid yellow;
 }
 
 #language:hover {
-    border: 2px solid white;
-    background: orange;
+    background: white;
 }
 
 #keyboard-state {
-    background: red;
+    background: gold;
     box-shadow: none;
     text-shadow: none;
     border-radius: 25px;
-    color: white;
+    color: gold;
     padding: 0 0px;
     margin: 8px 3px 8px 3px;
     min-width: 16px;
+    border: 2px solid yellow;
 }
 
 #keyboard-state > label {
@@ -445,12 +426,11 @@ window#waybar {
 }
 
 #keyboard-state:hover {
-    border: 2px solid white;
-    background: orange;
+    background: white;
 }
 
 #scratchpad {
-    background: red;
+    background: black;
     box-shadow: none;
     text-shadow: none;
     padding: 0px;
@@ -458,7 +438,8 @@ window#waybar {
     margin: 8px 3px 8px 3px;
     padding-right: 15px;
     padding-left: 4px;
-    color: white;
+    color: gold;
+    border: 2px solid yellow;
 }
 
 #scratchpad.empty {
@@ -466,8 +447,7 @@ window#waybar {
 }
 
 #scratchpad:hover {
-    border: 2px solid white;
-    background: orange;
+    background: white;
 }
 
 #privacy {
@@ -475,13 +455,14 @@ window#waybar {
 }
 
 #privacy-item {
-    background: red;
+    background: black;
     padding: 0 5px;
     box-shadow: none;
     text-shadow: none;
     border-radius: 25px;
     margin: 8px 3px 8px 3px;
-    color: white;
+    color: gold;
+    border: 2px solid yellow;
 }
 
 #privacy-item.screenshare {
@@ -497,12 +478,11 @@ window#waybar {
 }
 
 #privacy-item:hover {
-    border: 2px solid white;
-    background: orange;
+    background: white;
 }
 
 #custom-notifications {
-    background: red;
+    background: gold;
     box-shadow: none;
     text-shadow: none;
     padding: 0px;
@@ -510,29 +490,25 @@ window#waybar {
     margin: 8px 3px 8px 3px;
     padding-right: 12px;
     padding-left: 4px;
-    color: white;
+    color: black;
 }
 
 #custom-notifications:hover {
-    border: 2px solid white;
-    background: orange;
+    background: white;
 }
 
 #custom-power {
-    background: red;
+    background: gold;
     box-shadow: none;
     text-shadow: none;
-    padding: 0px;
-    border-radius: 0px 25px 25px 0px;
+    border-radius: 100%;
     margin: 0px;
-    padding-right: 12px;
-    padding-left: 4px;
-    color: white;
-    /*
-    border: 2px solid white;
-    */
+    font-size: 20px;
+    padding-right: 20px;
+    padding-left: 20px;
+    color: black;
 }
 
 #custom-power:hover {
-    background: orange;
+    background: white;
 }
