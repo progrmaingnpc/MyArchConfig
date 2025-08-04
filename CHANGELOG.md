@@ -1,3 +1,3 @@
-0. Added a CHANGELOG file to make writing release notes easier
-1. Changed default wallpaper
-2. Fixed battery component in waybar
+1. New look for waybar
+2. New look for hyprland dock
+3. New border color for shell

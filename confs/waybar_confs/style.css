@@ -1,5 +1,5 @@
 * {
-    /* `otf-font-awesome` is required to be installed for icons */
+    /* `otf-font-awesome` is requigold to be installed for icons */
     border: none;
     border-radius: 0px;
     font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;
@@ -13,54 +13,54 @@
 }
 
 window#waybar {
-    background: transparent;
-    border: 3px solid white;
-    border-radius: 25px 25px 25px 25px;
-}
-
-window#waybar:hover {
-    border: 3px solid red;
+    background: black;
+    border-radius: 25px;
+    border: 1px solid gold;
 }
 
 #custom-appmenu {
-    background: red;
+    background: gold;
     font-size: 20px;
     box-shadow: none;
     text-shadow: none;
     padding: 0px;
-    border-radius: 25px 0px 25px 25px;
+    border-radius: 50px;
     margin: 0px 3px 0px 0px;
-    padding: 1px 25px 1px 10px;
-    border: 2px solid white;
-    color: white;
+    padding: 1px 35px 1px 25px;
+    color: black;
 }
 
 #custom-appmenu:hover {
-    background: orange;
+    background: white;
+}
+
+#workspaces {
+    background: darkgoldenrod;
+    margin: 8px 18px 8px 1px;
+    padding: 0px 2px;
+    border-radius: 25px;
 }
 
 #workspaces button {
-    background: transparent;
-    box-shadow: none;
-    text-shadow: none;
-    font-size: 20px;
-    padding: 0px;
-    margin: 1px 0px 1px 0px;
+    background: black;
+    font-size: 12px;
+    margin: 2px 1px 2px 1px;
     padding: 1px 10px 1px 10px;
-    border: 2px solid white;
-    color: white;
+    border-radius: 25px;
+    color: gold;
 }
 
 #workspaces button.active {
-    background: red;
+    color: black;
+    background: gold;
 }
 
 #workspaces button.active:hover {
-    background: orange;
+    background: white;
 }
 
 #workspaces button:hover {
-    background: red;
+    background: white;
 }
 
 /* If workspaces is the leftmost module, omit left margin */
@@ -74,168 +74,153 @@ window#waybar:hover {
 }
 
 #window {
-    margin: 3px 15px 3px 0px;
+    margin: 4px 15px 4px 0px;
     padding: 2px 10px 0px 10px;
-    border-radius: 5px 5px 5px 5px;
-    color: white;
+    border-radius: 25px;
+    color: gold;
     font-size: 16px;
     font-weight: normal;
     opacity: 1;
     text-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
 }
 
-window#waybar.empty #window {
-    background-color: transparent;
-}
-
 #clock {
-    background: transparent;
+    background: gold;
     font-size: 20px;
     box-shadow: none;
     text-shadow: none;
     padding: 0px;
-    border-radius: 5px;
-    margin: 0px 3px 0px 3px;
+    border-radius: 25px;
+    margin: 8px 3px 8px 3px;
     padding-right: 3px;
     padding-left: 3px;
-    color: white;
-    border: 2px solid white;
+    color: black;
 }
 
 #clock:hover {
-    background: red;
+    background: white;
 }
 
 #custom-hardware-wrap {
-    background: red;
+    background: gold;
     box-shadow: none;
     text-shadow: none;
     padding: 0px;
-    border-radius: 5px;
-    margin-top: 3px;
-    margin-bottom: 3px;
-    margin-right: 6px;
-    margin-left: 6px;
+    border-radius: 25px;
+    margin: 8px 3px 8px 3px;
     padding-right: 4px;
     padding-left: 4px;
-    color: white;
-    border: 2px solid white;
+    color: black;
 }
 
 #custom-hardware-wrap:hover {
-    background: orange;
+    background: white;
 }
 
 #cpu {
-    background: transparent;
+    background: black;
     box-shadow: none;
     text-shadow: none;
     padding: 0px;
-    border-radius: 5px;
-    margin: 0px 3px 0px 3px;
+    border-radius: 25px;
+    margin: 8px 3px 8px 3px;
     padding-right: 10px;
     padding-left: 3px;
-    color: white;
-    border: 2px solid white;
+    color: gold;
+    border: 2px solid darkgoldenrod;
 }
 
 #cpu:hover {
-    background: red;
+    background: white;
 }
 
 #memory {
-    background: transparent;
+    background: black;
     box-shadow: none;
     text-shadow: none;
     padding: 0px;
-    border-radius: 5px;
-    margin: 0px 3px 0px 3px;
+    border-radius: 25px;
+    margin: 8px 3px 8px 3px;
     padding-right: 12px;
     padding-left: 4px;
-    color: white;
-    border: 2px solid white;
+    color: gold;
+    border: 2px solid darkgoldenrod;
 }
 
 #memory:hover {
-    background: red;
+    background: white;
 }
 
 #disk {
-    background: transparent;
+    background: black;
     box-shadow: none;
     text-shadow: none;
     padding: 0px;
-    border-radius: 5px;
-    margin: 0px 3px 0px 3px;
+    border-radius: 25px;
+    margin: 8px 3px 8px 3px;
     padding-right: 4px;
     padding-left: 4px;
-    color: white;
-    border: 2px solid white;
+    color: gold;
+    border: 2px solid darkgoldenrod;
 }
 
 #disk:hover {
-    background: red;
+    background: white;
 }
 
 #backlight {
-    background: transparent;
+    background: black;
     box-shadow: none;
     text-shadow: none;
     padding: 0px;
-    border-radius: 5px;
-    margin: 0px 3px 0px 3px;
+    border-radius: 25px;
+    margin: 8px 3px 8px 3px;
     padding-right: 4px;
     padding-left: 4px;
-    color: white;
-    border: 2px solid white;
+    color: gold;
+    border: 2px solid darkgoldenrod;
 }
 
 #backlight:hover {
-    background: red;
+    background: white;
 }
 
 #network {
-    background: transparent;
-    box-shadow: none;
-    text-shadow: none;
     padding: 0px;
-    border-radius: 5px;
-    margin: 0px 3px 0px 3px;
+    border-radius: 25px;
+    margin: 8px 3px 8px 3px;
     padding-right: 4px;
     padding-left: 4px;
-    color: white;
-    border: 2px solid white;
+    color: black;
+    background: gold;
 }
 
 #network.disconnected {
     box-shadow: none;
     text-shadow: none;
-    padding: 0px;
-    border-radius: 5px;
-    margin: 0px 3px 0px 3px;
     color: #f53c3c;
 }
 
 #network:hover {
-    background: red;
+    background: white;
 }
 
 #pulseaudio {
-    background: transparent;
+    background: black;
     box-shadow: none;
     text-shadow: none;
     padding: 0px;
-    border-radius: 5px;
-    margin: 0px 3px 0px 3px;
+    border-radius: 25px;
+    margin: 8px 3px 8px 3px;
     padding-right: 12px;
     padding-left: 4px;
-    color: white;
-    border: 2px solid white;
+    color: gold;
+    border: 2px solid darkgoldenrod;
 }
 
 /* you can set a style on hover for any module like this */
 #pulseaudio:hover {
-    background: red;
+    background: white;
 }
 
 #pulseaudio.muted {
@@ -243,37 +228,40 @@ window#waybar.empty #window {
 }
 
 #custom-hypridle {
-    background: transparent;
+    background: black;
     box-shadow: none;
     text-shadow: none;
     padding: 0px;
-    border-radius: 5px;
-    margin: 0px 3px 0px 3px;
+    border-radius: 25px;
+    margin: 8px 3px 8px 3px;
     padding-right: 12px;
     padding-left: 4px;
-    color: white;
-    border: 2px solid white;
+    color: gold;
+    border: 2px solid darkgoldenrod;
 }
 
 #custom-hypridle.activated {
-    color: white;
 }
 
 #custom-hypridle:hover {
-    background: red;
+    background: white;
 }
 
 #tray {
+    background: black;
     box-shadow: none;
     text-shadow: none;
     padding: 0px;
-    border-radius: 5px;
-    margin: 3px 3px 3px 3px;
+    border-radius: 25px;
+    margin: 8px 3px 8px 3px;
     padding-right: 4px;
     padding-left: 4px;
-    color: white;
-    border: 2px solid white;
-    background: transparent;
+    color: gold;
+    border: 2px solid darkgoldenrod;
+}
+
+#tray:hover {
+    background: white;
 }
 
 #tray > .passive {
@@ -285,31 +273,26 @@ window#waybar.empty #window {
     background-color: #eb4d4b;
 }
 
-#tray:hover {
-    background: red;
-}
-
 #battery {
     padding: 0px;
-    border-radius: 5px;
-    margin: 0px 3px 0px 3px;
+    border-radius: 25px;
+    margin: 8px 3px 8px 3px;
     padding-right: 8px;
     padding-left: 4px;
-    color: white;
-    border: 2px solid white;
-    background-color: red;
+    color: black;
+    background-color: gold;
 }
 
 #battery.charging,
 #battery.plugged {
-    color: white;
-    background-color: red;
+    color: gold;
+    background-color: gold;
 }
 
 /* Using steps() instead of linear as a timing function to limit cpu usage */
 #battery.critical:not(.charging) {
     background-color: #f53c3c;
-    color: white;
+    color: gold;
     animation-name: blink;
     animation-duration: 0.5s;
     animation-timing-function: steps(12);
@@ -318,49 +301,37 @@ window#waybar.empty #window {
 }
 
 #battery:hover {
-    background: orange;
+    background: white;
 }
 
 #power-profiles-daemon {
-    background: transparent;
+    background: black;
     box-shadow: none;
     text-shadow: none;
     padding: 0px;
-    border-radius: 5px;
-    margin: 0px 3px 0px 3px;
+    border-radius: 25px;
+    margin: 8px 3px 8px 3px;
     padding-right: 15px;
     padding-left: 4px;
-    color: white;
-    border: 2px solid white;
-}
-
-#power-profiles-daemon.performance {
-    background-color: #f53c3c;
-}
-
-#power-profiles-daemon.balanced {
-    background-color: #2980b9;
-}
-
-#power-profiles-daemon.power-saver {
-    background-color: #2ecc71;
+    color: gold;
+    border: 2px solid darkgoldenrod;
 }
 
 #power-profiles-daemon:hover {
-    background: red;
+    background: white;
 }
 
 #wireplumber {
-    background: transparent;
+    background: black;
     box-shadow: none;
     text-shadow: none;
     padding: 0px;
-    border-radius: 5px;
-    margin: 0px 3px 0px 3px;
+    border-radius: 25px;
+    margin: 8px 3px 8px 3px;
     padding-right: 15px;
     padding-left: 4px;
-    color: white;
-    border: 2px solid white;
+    color: gold;
+    border: 2px solid darkgoldenrod;
 }
 
 #wireplumber.muted {
@@ -368,21 +339,21 @@ window#waybar.empty #window {
 }
 
 #wireplumber:hover {
-    background: red;
+    background: white;
 }
 
 #custom-media {
-    background: transparent;
+    background: black;
     box-shadow: none;
     text-shadow: none;
     padding: 0px;
-    border-radius: 5px;
-    margin: 0px 3px 0px 3px;
+    border-radius: 25px;
+    margin: 8px 3px 8px 3px;
     padding-right: 15px;
     padding-left: 4px;
-    color: white;
-    border: 2px solid white;
+    color: gold;
     min-width: 100px;
+    border: 2px solid darkgoldenrod;
 }
 
 #custom-media.custom-spotify {
@@ -394,20 +365,20 @@ window#waybar.empty #window {
 }
 
 #custom-media:hover {
-    background: red;
+    background: white;
 }
 
 #temperature {
-    background: transparent;
+    background: black;
     box-shadow: none;
     text-shadow: none;
     padding: 0px;
-    border-radius: 5px;
-    margin: 0px 3px 0px 3px;
+    border-radius: 25px;
+    margin: 8px 3px 8px 3px;
     padding-right: 15px;
     padding-left: 4px;
-    color: white;
-    border: 2px solid white;
+    color: gold;
+    border: 2px solid darkgoldenrod;
 }
 
 #temperature.critical {
@@ -415,35 +386,35 @@ window#waybar.empty #window {
 }
 
 #temperature:hover {
-    background: red;
+    background: white;
 }
 
 #language {
-    background: transparent;
+    background: black;
     box-shadow: none;
     text-shadow: none;
-    border-radius: 5px;
-    color: white;
-    border: 2px solid white;
+    border-radius: 25px;
+    color: gold;
     padding: 0 5px;
-    margin: 0 5px;
+    margin: 8px 3px 8px 3px;
     min-width: 16px;
+    border: 2px solid darkgoldenrod;
 }
 
 #language:hover {
-    background: red;
+    background: white;
 }
 
 #keyboard-state {
-    background: transparent;
+    background: gold;
     box-shadow: none;
     text-shadow: none;
-    border-radius: 5px;
-    color: white;
-    border: 2px solid white;
+    border-radius: 25px;
+    color: gold;
     padding: 0 0px;
-    margin: 0 5px;
+    margin: 8px 3px 8px 3px;
     min-width: 16px;
+    border: 2px solid darkgoldenrod;
 }
 
 #keyboard-state > label {
@@ -455,28 +426,28 @@ window#waybar.empty #window {
 }
 
 #keyboard-state:hover {
-    background: red;
+    background: white;
 }
 
 #scratchpad {
-    background: transparent;
+    background: black;
     box-shadow: none;
     text-shadow: none;
     padding: 0px;
-    border-radius: 5px;
-    margin: 0px 3px 0px 3px;
+    border-radius: 25px;
+    margin: 8px 3px 8px 3px;
     padding-right: 15px;
     padding-left: 4px;
-    color: white;
-    border: 2px solid white;
+    color: gold;
+    border: 2px solid darkgoldenrod;
 }
 
 #scratchpad.empty {
-    background-color: transparent;
+    background-color: black;
 }
 
 #scratchpad:hover {
-    background: red;
+    background: white;
 }
 
 #privacy {
@@ -484,14 +455,14 @@ window#waybar.empty #window {
 }
 
 #privacy-item {
+    background: black;
     padding: 0 5px;
-    background: transparent;
     box-shadow: none;
     text-shadow: none;
-    border-radius: 5px;
-    margin: 0px 3px 0px 3px;
-    color: white;
-    border: 2px solid white;
+    border-radius: 25px;
+    margin: 8px 3px 8px 3px;
+    color: gold;
+    border: 2px solid darkgoldenrod;
 }
 
 #privacy-item.screenshare {
@@ -507,40 +478,37 @@ window#waybar.empty #window {
 }
 
 #privacy-item:hover {
-    background: red;
+    background: white;
 }
 
 #custom-notifications {
-    background: transparent;
+    background: gold;
     box-shadow: none;
     text-shadow: none;
     padding: 0px;
-    border-radius: 3px;
-    margin: 0px 3px 0px 3px;
+    border-radius: 25px;
+    margin: 8px 3px 8px 3px;
     padding-right: 12px;
     padding-left: 4px;
-    color: white;
-    border: 2px solid white;
+    color: black;
 }
 
 #custom-notifications:hover {
-    background: red;
+    background: white;
 }
 
 #custom-power {
-    background: red;
+    background: gold;
     box-shadow: none;
     text-shadow: none;
-    padding: 0px;
-    border-radius: 0px 25px 25px 0px;
-    margin: 0px 3px 0px 3px;
-    padding-right: 12px;
-    padding-left: 4px;
-    color: white;
-    border: 2px solid white;
+    border-radius: 100%;
+    margin: 0px;
+    font-size: 20px;
+    padding-right: 20px;
+    padding-left: 20px;
+    color: black;
 }
 
 #custom-power:hover {
-    color: red;
     background: white;
 }
