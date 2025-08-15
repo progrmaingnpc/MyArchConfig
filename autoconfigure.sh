@@ -32,9 +32,6 @@ elif [	-d "$PARU_DIRECTORY" ]; then
 	echo "There is a paru cache at $PARU_DIRECTORY"
 fi
 
-#echo $AUR_MANAGER -Syu
-#$AUR_MANAGER -Syu
-#exit
 $AUR_MANAGER -Syu
 
 $AUR_MANAGER -S hyprland hyprpaper hyprlock --noconfirm --needed
