@@ -33,6 +33,7 @@ elif [	-d "$PARU_DIRECTORY" ]; then
 fi
 
 echo $AUR_MANAGER -Syu
+$(AUR_MANAGER -Syu)
 exit
 
 AUR_MANAGER -Syu
