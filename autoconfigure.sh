@@ -24,16 +24,16 @@ if [[ ! -d "$YAY_DIRECTORY" ]] && [[ ! -d "$PARU_DIRECTORY" ]]; then
 fi
 
 if [ -d "$YAY_DIRECTORY" ]; then
-    AUR_MANAGER=yay
+    AUR_MANAGER=$(yay)
 	echo "There is a yay cache at $YAY_DIRECTORY"
 
 elif [	-d "$PARU_DIRECTORY" ]; then
-    AUR_MANAGER=paru
+    AUR_MANAGER=$(paru)
 	echo "There is a paru cache at $PARU_DIRECTORY"
 fi
 
-echo $AUR_MANAGER -Syu
-$(AUR_MANAGER) -Syu
+#echo $AUR_MANAGER -Syu
+$AUR_MANAGER -Syu
 exit
 
 AUR_MANAGER -Syu
