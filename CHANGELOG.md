@@ -1,3 +1,3 @@
-1. New look for waybar
-2. New look for hyprland dock
-3. New border color for shell
+1. Updated and improvised the autoconfigure script
+2. Fixed autocomplete in zsh shell
+3. Fixed an edge case in autoconfigure script

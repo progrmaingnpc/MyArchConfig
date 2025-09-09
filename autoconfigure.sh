@@ -1,6 +1,4 @@
 #!/bin/bash
-YAY_DIRECTORY=~/.cache/yay
-PARU_DIRECTORY=~/.cache/paru
 HYPRLAND_DIRECTORY=~/.config/hypr
 KITTY_DIRECTORY=~/.config/kitty
 WAYBAR_DIRECTORY=~/.config/waybar
@@ -17,109 +15,73 @@ sudo pacman -S git --noconfirm --needed
 echo "$CURRENT_DIR"
 
 # Install the yay AUR manager if there isn't one
-if [[ ! -d "$YAY_DIRECTORY" ]] && [[ ! -d "$PARU_DIRECTORY" ]]; then
-	git clone https://aur.archlinux.org/yay.git $HOME/yay
+if ! command -v paru &> /dev/null && ! command -v yay &> /dev/null; then
+    echo "[No AUR manager installed, installing yay]"
+    git clone https://aur.archlinux.org/yay.git $HOME/yay
 	makepkg -si --dir $HOME/yay
-	echo "Installing yay at $HOME/yay"
+	echo "Yay has been installed at $HOME/yay"
 fi
 
-if [ -d "$YAY_DIRECTORY" ]; then
-	echo "There is a yay cache at $YAY_DIRECTORY"
-	yay -Syu
-
-	yay -S hyprland hyprpaper hyprlock --noconfirm --needed
-
-	yay -S hypridle hyprpicker hyprland-qt-support hyprland-qtutils \
-		hyprcursor hyprutils hyprlang hyprwayland-scanner \
-		hyprgraphics hyprpolkitagent hyprsysteminfo hyprsunset wlogout --noconfirm --needed
-	echo "[Successfully installed basic utilities for hyprland]"
-
-	yay -S swww waybar waypaper aquamarine swaync nautilus btop htop hardinfo2 libnotify jq --noconfirm --needed
-	echo "[Successfully installed file system management packages]"
-
-	yay -S nwg-look nwg-dock-hyprland grim slurp wl-clipboard --noconfirm --needed
-	echo "[Successfully installed dock for hyprland]"
-
-	yay -S wl-clipboard qt5-wayland qt6-wayland qt6ct otf-font-awesome rofi-wayland --noconfirm --needed
-	echo "Finished installing hyprland configuration packages"
-
-	yay -S kitty zsh oh-my-posh-bin bash-completion \
-       	zsh-completions fastfetch python-pywal16 postgresql --noconfirm --needed
-	echo "[Finished installing shell configuration packages]"
-
-	yay -S networkmanager tor tor-browser-bin wireshark-cli \
-        wireshark-qt zed pavucontrol power-profiles-daemon brave-bin discord --noconfirm --needed
-	echo "[Finished installing basic apps]"
-
-	yay -S xdg-desktop-portal xdg-desktop-portal-hyprland \
-       	xdg-desktop-portal-gtk xdg-desktop-portal-wlr xdg-desktop-portal-lxqt \
-        xdg-desktop-portal-kde xdg-desktop-portal-gnome --noconfirm --needed
-	echo "[Finished installing xdg-desktop packages]"
-
-	yay -S gtk4 gtk2 papirus-icon-theme breeze noto-fonts noto-fonts-emoji libadwaita \
-	    noto-fonts-cjk noto-fonts-extra --noconfirm --needed
-	echo "[Successfully installed gtk esthetic packages]"
-
-	yay -S vim neovim --noconfirm --needed
-	echo "[Succesfully installed neovim and vim]"
-
-	yay -S lua luarocks --noconfirm --needed
-	echo "[Successfully installed lua packages for neovim configuration]"
-
-	yay -S pipes.sh cava neo-matrix --noconfirm --needed
-	echo "[Successfully installed ricing apps]"
-
-	yay -S tmux --noconfirm --needed
-	echo "[Successfully installed tmux]"
-elif [	-d "$PARU_DIRECTORY" ]; then
-	echo "There is a paru cache at $PARU_DIRECTORY"
-	paru -Syu
-
-	paru -S hyprland hyprpaper hyprlock --noconfirm --needed
-
-	paru -S hypridle hyprpicker hyprland-qt-support hyprland-qtutils \
-	    hyprcursor hyprutils hyprlang hyprwayland-scanner \
-	    hyprgraphics hyprpolkitagent hyprsysteminfo hyprsunset wlogout --noconfirm --needed
-	echo "[Successfully installed basic utilities for hyprland]"
-
-	paru -S swww waybar waypaper aquamarine swaync nautilus btop htop hardinfo2 libnotify jq --noconfirm --needed
-	echo "[Successfully installed file system management packages]"
-
-	paru -S nwg-look nwg-dock-hyprland grim slurp wl-clipboard --noconfirm --needed
-	echo "[Successfully installed dock for hyprland]"
-
-	paru -S wl-clipboard qt5-wayland qt6-wayland qt6ct otf-font-awesome rofi-wayland --noconfirm --needed
-	echo "Finished installing hyprland configuration packages"
-
-	paru -S kitty zsh oh-my-posh-bin bash-completion \
-       	zsh-completions fastfetch python-pywal16 postgresql --noconfirm --needed
-	echo "[Finished installing shell configuration packages]"
-
-	paru -S networkmanager tor tor-browser-bin wireshark-cli \
-       	wireshark-qt zed pavucontrol power-profiles-daemon brave-bin discord --noconfirm --needed
-	echo "[Finished installing basic apps]"
-
-	paru -S xdg-desktop-portal xdg-desktop-portal-hyprland \
-       	xdg-desktop-portal-gtk xdg-desktop-portal-wlr xdg-desktop-portal-lxqt \
-       	xdg-desktop-portal-kde xdg-desktop-portal-gnome --noconfirm --needed
-	echo "[Finished installing xdg-desktop packages]"
-
-	paru -S gtk4 gtk2 papirus-icon-theme breeze noto-fonts noto-fonts-emoji libadwaita \
-	    noto-fonts-cjk noto-fonts-extra --noconfirm --needed
-	echo "[Successfully installed gtk esthetic packages]"
-
-	paru -S vim neovim --noconfirm --needed
-	echo "[Succesfully installed neovim and vim]"
-
-	paru -S lua luarocks --noconfirm --needed
-	echo "[Successfully installed lua packages for neovim configuration]"
-
-	paru -S pipes.sh cava neo-matrix --noconfirm --needed
-	echo "[Successfully installed ricing apps]"
-
-	paru -S tmux --noconfirm --needed
-	echo "[Successfully installed tmux]"
+if command -v yay &> /dev/null; then
+    AUR_MANAGER=yay
+    echo "Yay is installed."
+else
+    echo "[Yay not installed]"
 fi
+
+if command -v paru &> /dev/null; then
+    AUR_MANAGER=paru
+    echo "Paru is installed."
+else
+    echo "[Paru not installed]"
+fi
+
+$AUR_MANAGER -Syu
+
+$AUR_MANAGER -S hyprland hyprpaper hyprlock --noconfirm --needed
+
+$AUR_MANAGER -S hypridle hyprpicker hyprland-qt-support hyprland-qtutils \
+	hyprcursor hyprutils hyprlang hyprwayland-scanner \
+	hyprgraphics hyprpolkitagent hyprsysteminfo hyprsunset wlogout --noconfirm --needed
+echo "[Successfully installed basic utilities for hyprland]"
+
+$AUR_MANAGER -S swww waybar waypaper aquamarine swaync nautilus btop htop hardinfo2 libnotify jq --noconfirm --needed
+echo "[Successfully installed file system management packages]"
+
+$AUR_MANAGER -S nwg-look nwg-dock-hyprland grim slurp wl-clipboard --noconfirm --needed
+echo "[Successfully installed dock for hyprland]"
+
+$AUR_MANAGER -S wl-clipboard qt5-wayland qt6-wayland qt6ct otf-font-awesome rofi-wayland --noconfirm --needed
+echo "Finished installing hyprland configuration packages"
+
+$AUR_MANAGER -S kitty zsh oh-my-posh-bin bash-completion \
+   	zsh-completions fastfetch python-pywal16 postgresql --noconfirm --needed
+echo "[Finished installing shell configuration packages]"
+
+$AUR_MANAGER -S networkmanager tor tor-browser-bin wireshark-cli \
+    wireshark-qt zed pavucontrol power-profiles-daemon brave-bin discord --noconfirm --needed
+echo "[Finished installing basic apps]"
+
+$AUR_MANAGER -S xdg-desktop-portal xdg-desktop-portal-hyprland \
+   	xdg-desktop-portal-gtk xdg-desktop-portal-wlr xdg-desktop-portal-lxqt \
+    xdg-desktop-portal-kde xdg-desktop-portal-gnome --noconfirm --needed
+echo "[Finished installing xdg-desktop packages]"
+
+$AUR_MANAGER -S gtk4 gtk2 papirus-icon-theme breeze noto-fonts noto-fonts-emoji libadwaita \
+    noto-fonts-cjk noto-fonts-extra --noconfirm --needed
+echo "[Successfully installed gtk esthetic packages]"
+
+$AUR_MANAGER -S vim neovim --noconfirm --needed
+echo "[Succesfully installed neovim and vim]"
+
+$AUR_MANAGER -S lua luarocks --noconfirm --needed
+echo "[Successfully installed lua packages for neovim configuration]"
+
+$AUR_MANAGER -S pipes.sh cava neo-matrix --noconfirm --needed
+echo "[Successfully installed ricing apps]"
+
+$AUR_MANAGER -S tmux --noconfirm --needed
+echo "[Successfully installed tmux]"
 
 # Create the hyprland directory (hypr) if it doesn't already exist
 if [ ! -d "$HYPRLAND_DIRECTORY" ]; then
