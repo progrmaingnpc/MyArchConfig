@@ -1,6 +1,6 @@
 #!/bin/bash
-YAY_DIRECTORY=~/.cache/yay
-PARU_DIRECTORY=~/.cache/paru
+#YAY_DIRECTORY=~/.cache/yay
+#PARU_DIRECTORY=~/.cache/paru
 HYPRLAND_DIRECTORY=~/.config/hypr
 KITTY_DIRECTORY=~/.config/kitty
 WAYBAR_DIRECTORY=~/.config/waybar
@@ -17,22 +17,33 @@ sudo pacman -S git --noconfirm --needed
 echo "$CURRENT_DIR"
 
 # Install the yay AUR manager if there isn't one
-if [[ ! -d "$YAY_DIRECTORY" ]] && [[ ! -d "$PARU_DIRECTORY" ]]; then
-	git clone https://aur.archlinux.org/yay.git $HOME/yay
+#if [[ ! -d "$YAY_DIRECTORY" ]] && [[ ! -d "$PARU_DIRECTORY" ]]; then
+#	git clone https://aur.archlinux.org/yay.git $HOME/yay
+#	makepkg -si --dir $HOME/yay
+#	echo "Installing yay at $HOME/yay"
+#fi
+
+if ! command -v paru &> /dev/null && ! command -v yay &> /dev/null; then
+    echo "[No AUR manager installed, installing yay]"
+    git clone https://aur.archlinux.org/yay.git $HOME/yay
 	makepkg -si --dir $HOME/yay
-	AUR_MANAGER=yay
-	echo "Installing yay at $HOME/yay"
+	echo "Yay has been installed at $HOME/yay"
 fi
 
-if [ -d "$YAY_DIRECTORY" ]; then
-    AUR_MANAGER=yay
-	echo "There is a yay cache at $YAY_DIRECTORY"
-
-elif [	-d "$PARU_DIRECTORY" ]; then
+if command -v yay &> /dev/null; then
     AUR_MANAGER=paru
-	echo "There is a paru cache at $PARU_DIRECTORY"
+    echo "Yay is installed."
+else
+    echo "[Yay not installed]"
 fi
 
+if command -v paru &> /dev/null; then
+    AUR_MANAGER=paru
+    echo "Paru is installed."
+else
+    echo "[Paru not installed]"
+fi
+pause
 $AUR_MANAGER -Syu
 
 $AUR_MANAGER -S hyprland hyprpaper hyprlock --noconfirm --needed
