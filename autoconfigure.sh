@@ -25,15 +25,11 @@ fi
 if command -v yay &> /dev/null; then
     AUR_MANAGER=yay
     echo "Yay is installed."
-else
-    echo "[Yay not installed]"
 fi
 
 if command -v paru &> /dev/null; then
     AUR_MANAGER=paru
     echo "Paru is installed."
-else
-    echo "[Paru not installed]"
 fi
 
 $AUR_MANAGER -Syu
@@ -57,6 +53,9 @@ echo "Finished installing hyprland configuration packages"
 $AUR_MANAGER -S kitty zsh oh-my-posh-bin bash-completion \
    	zsh-completions fastfetch python-pywal16 postgresql --noconfirm --needed
 echo "[Finished installing shell configuration packages]"
+
+# Import keys required to install the Tor browser
+gpg --keyserver hkps://keys.openpgp.org --recv-keys EF6E286DDA85EA2A4BA7DE684E2C6E8793298290
 
 $AUR_MANAGER -S networkmanager tor tor-browser-bin wireshark-cli \
     wireshark-qt zed pavucontrol power-profiles-daemon brave-bin discord --noconfirm --needed
