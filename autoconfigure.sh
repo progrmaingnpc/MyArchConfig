@@ -25,15 +25,11 @@ fi
 if command -v yay &> /dev/null; then
     AUR_MANAGER=yay
     echo "Yay is installed."
-else
-    echo "[Yay not installed]"
 fi
 
 if command -v paru &> /dev/null; then
     AUR_MANAGER=paru
     echo "Paru is installed."
-else
-    echo "[Paru not installed]"
 fi
 
 $AUR_MANAGER -Syu
