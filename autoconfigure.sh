@@ -20,6 +20,7 @@ echo "$CURRENT_DIR"
 if [[ ! -d "$YAY_DIRECTORY" ]] && [[ ! -d "$PARU_DIRECTORY" ]]; then
 	git clone https://aur.archlinux.org/yay.git $HOME/yay
 	makepkg -si --dir $HOME/yay
+	AUR_MANAGER=yay
 	echo "Installing yay at $HOME/yay"
 fi
 
