@@ -54,6 +54,9 @@ $AUR_MANAGER -S kitty zsh oh-my-posh-bin bash-completion \
    	zsh-completions fastfetch python-pywal16 postgresql --noconfirm --needed
 echo "[Finished installing shell configuration packages]"
 
+# Import keys required to install the Tor browser
+gpg --keyserver hkps://keys.openpgp.org --recv-keys EF6E286DDA85EA2A4BA7DE684E2C6E8793298290
+
 $AUR_MANAGER -S networkmanager tor tor-browser-bin wireshark-cli \
     wireshark-qt zed pavucontrol power-profiles-daemon brave-bin discord --noconfirm --needed
 echo "[Finished installing basic apps]"
