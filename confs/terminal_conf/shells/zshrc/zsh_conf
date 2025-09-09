@@ -9,3 +9,5 @@ eval "$(oh-my-posh init zsh --config /usr/share/oh-my-posh/themes/negligible.omp
 (cat ~/.cache/wal/sequences &)
 cat ~/.cache/wal/sequences
 source ~/.cache/wal/colors-tty.sh
+autoload -Uz compinit
+compinit
