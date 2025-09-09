@@ -43,7 +43,7 @@ if command -v paru &> /dev/null; then
 else
     echo "[Paru not installed]"
 fi
-pause
+exit
 $AUR_MANAGER -Syu
 
 $AUR_MANAGER -S hyprland hyprpaper hyprlock --noconfirm --needed
