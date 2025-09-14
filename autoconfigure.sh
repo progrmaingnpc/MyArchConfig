@@ -82,8 +82,8 @@ echo "[Successfully installed ricing apps]"
 $AUR_MANAGER -S tmux --noconfirm --needed
 echo "[Successfully installed tmux]"
 
-$AUR_MANAGER -S kwallet-pam kwalletmanager
-echo "[Successfully installed kwallet]"
+$AUR_MANAGER -S kwallet-pam kwalletmanager kleopatra
+echo "[Successfully installed kwallet and kleopatra]"
 
 # Create the hyprland directory (hypr) if it doesn't already exist
 if [ ! -d "$HYPRLAND_DIRECTORY" ]; then
