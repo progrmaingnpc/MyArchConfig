@@ -1,3 +1,1 @@
-1. Fixed bug after hyprland update
-2. Added kwallet for auto login in browsers
-3. Added kleopatra for key-pair management
+1. fixed background not loading with swww
