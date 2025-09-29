@@ -14,12 +14,12 @@ sudo pacman -Syu
 sudo pacman -S git --noconfirm --needed
 echo "$CURRENT_DIR"
 
-# Install the yay AUR manager if there isn't one
+# Install the paru AUR manager if there isn't one
 if ! command -v paru &> /dev/null && ! command -v yay &> /dev/null; then
-    echo "[No AUR manager installed, installing yay]"
-    git clone https://aur.archlinux.org/yay.git $HOME/yay
-	makepkg -si --dir $HOME/yay
-	echo "Yay has been installed at $HOME/yay"
+    echo "[No AUR manager installed, installing paru]"
+    git clone https://aur.archlinux.org/paru.git $HOME/paru
+	makepkg -si --dir $HOME/paru
+	echo "Yay has been installed at $HOME/paru"
 fi
 
 if command -v yay &> /dev/null; then
