@@ -19,7 +19,6 @@ if ! command -v paru &> /dev/null && ! command -v yay &> /dev/null; then
     echo "[No AUR manager installed, installing paru]"
     git clone https://aur.archlinux.org/paru.git $HOME/paru
 	makepkg -si --dir $HOME/paru
-	sudo pacman -S bat
 	echo "Yay has been installed at $HOME/paru"
 fi
 
