@@ -3,3 +3,4 @@
 3. Replaced default AUR manager(yay) with paru
 4. replaced kwallet with gnome-keyring
 5. made hardware module open from right-to-left
+6. added fonts

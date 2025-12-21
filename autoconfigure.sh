@@ -85,6 +85,9 @@ echo "[Successfully installed tmux]"
 $AUR_MANAGER -S gnome-keyring kleopatra
 echo "[Successfully installed kwallet and kleopatra]"
 
+$AUR_MANAGER -S ttf-dejavu ttf-liberation noto-fonts noto-fonts-emoji ttf-font-awesome nerd-fonts
+echo "[Successfully installed fonts]"
+
 # Create the hyprland directory (hypr) if it doesn't already exist
 if [ ! -d "$HYPRLAND_DIRECTORY" ]; then
 	mkdir "$HYPRLAND_DIRECTORY"
