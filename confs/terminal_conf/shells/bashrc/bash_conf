@@ -3,7 +3,7 @@
 #
 
 # If not running interactively, don't do anything
-wal -i $(tail ~/.cache/swww/* --lines=1) -q -e
+wal -i "$(cut -b 11- .cache/swww/*)" -q -e
 eval "$(oh-my-posh init bash --config /usr/share/oh-my-posh/themes/negligible.omp.json)"
 fastfetch --config ~/.config/fast_fetch_shell/default.jsonc --logo-type kitty-direct --logo ~/.config/fast_fetch_shell/default.png
 

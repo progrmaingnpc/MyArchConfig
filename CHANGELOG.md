@@ -1,1 +1,7 @@
-1. Fixed bug after hyprland update
+1. fixed background not loading with swww
+2. fixed shell color scheme not loading in shell
+3. Replaced default AUR manager(yay) with paru
+4. replaced kwallet with gnome-keyring
+5. made hardware module open from right-to-left
+6. added fonts
+7. Replaced deprecated windowrulev2 with windowrule

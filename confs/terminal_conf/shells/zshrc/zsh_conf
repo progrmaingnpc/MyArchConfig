@@ -2,7 +2,7 @@ HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
 
-wal -i $(tail ~/.cache/swww/* --lines=1) -q -e
+wal -i "$(cut -b 11- .cache/swww/*)" -q -e
 fastfetch --config ~/.config/fast_fetch_shell/default.jsonc --logo-type kitty-direct --logo ~/.config/fast_fetch_shell/default.png
 eval "$(oh-my-posh init zsh --config /usr/share/oh-my-posh/themes/negligible.omp.json)"
 

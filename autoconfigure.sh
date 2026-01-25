@@ -14,12 +14,12 @@ sudo pacman -Syu
 sudo pacman -S git --noconfirm --needed
 echo "$CURRENT_DIR"
 
-# Install the yay AUR manager if there isn't one
+# Install the paru AUR manager if there isn't one
 if ! command -v paru &> /dev/null && ! command -v yay &> /dev/null; then
-    echo "[No AUR manager installed, installing yay]"
-    git clone https://aur.archlinux.org/yay.git $HOME/yay
-	makepkg -si --dir $HOME/yay
-	echo "Yay has been installed at $HOME/yay"
+    echo "[No AUR manager installed, installing paru]"
+    git clone https://aur.archlinux.org/paru.git $HOME/paru
+	makepkg -si --dir $HOME/paru
+	echo "Yay has been installed at $HOME/paru"
 fi
 
 if command -v yay &> /dev/null; then
@@ -81,6 +81,12 @@ echo "[Successfully installed ricing apps]"
 
 $AUR_MANAGER -S tmux --noconfirm --needed
 echo "[Successfully installed tmux]"
+
+$AUR_MANAGER -S gnome-keyring kleopatra
+echo "[Successfully installed kwallet and kleopatra]"
+
+$AUR_MANAGER -S ttf-dejavu ttf-liberation noto-fonts noto-fonts-emoji ttf-font-awesome nerd-fonts
+echo "[Successfully installed fonts]"
 
 # Create the hyprland directory (hypr) if it doesn't already exist
 if [ ! -d "$HYPRLAND_DIRECTORY" ]; then
