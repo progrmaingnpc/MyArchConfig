@@ -4,3 +4,4 @@
 4. replaced kwallet with gnome-keyring
 5. made hardware module open from right-to-left
 6. added fonts
+7. Replaced deprecated windowrulev2 with windowrule
