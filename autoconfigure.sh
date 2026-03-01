@@ -83,7 +83,7 @@ $AUR_MANAGER -S tmux --noconfirm --needed
 echo "[Successfully installed tmux]"
 
 $AUR_MANAGER -S gnome-keyring kleopatra
-echo "[Successfully installed kwallet and kleopatra]"
+echo "[Successfully installed keyring and kleopatra]"
 
 $AUR_MANAGER -S ttf-dejavu ttf-liberation noto-fonts noto-fonts-emoji ttf-font-awesome nerd-fonts
 echo "[Successfully installed fonts]"
