@@ -36,9 +36,9 @@ $AUR_MANAGER -Syu
 
 $AUR_MANAGER -S hyprland hyprpaper hyprlock --noconfirm --needed
 
-$AUR_MANAGER -S hypridle hyprpicker hyprland-qt-support hyprland-qtutils \
-	hyprcursor hyprutils hyprlang hyprwayland-scanner \
-	hyprgraphics hyprpolkitagent hyprsysteminfo hyprsunset wlogout --noconfirm --needed
+$AUR_MANAGER -S hypridle hyprpicker hyprland-qt-support hyprland-guiutils \
+	hyprcursor hyprutils hyprlang hyprwayland-scanner hyprpwcenter hyprshutdown \
+	hyprgraphics hyprpolkitagent hyprsysteminfo hyprsunset hyprqt6engine wlogout --noconfirm --needed
 echo "[Successfully installed basic utilities for hyprland]"
 
 $AUR_MANAGER -S swww waybar waypaper aquamarine swaync nautilus btop htop hardinfo2 libnotify jq --noconfirm --needed
@@ -51,19 +51,17 @@ $AUR_MANAGER -S wl-clipboard qt5-wayland qt6-wayland qt6ct otf-font-awesome rofi
 echo "Finished installing hyprland configuration packages"
 
 $AUR_MANAGER -S kitty zsh oh-my-posh-bin bash-completion \
-   	zsh-completions fastfetch python-pywal16 postgresql --noconfirm --needed
+   	zsh-completions fastfetch python-pywal postgresql --noconfirm --needed
 echo "[Finished installing shell configuration packages]"
 
 # Import keys required to install the Tor browser
 gpg --keyserver hkps://keys.openpgp.org --recv-keys EF6E286DDA85EA2A4BA7DE684E2C6E8793298290
 
 $AUR_MANAGER -S networkmanager tor tor-browser-bin wireshark-cli \
-    wireshark-qt zed pavucontrol power-profiles-daemon brave-bin discord --noconfirm --needed
+    wireshark-qt zed power-profiles-daemon brave-bin discord --noconfirm --needed
 echo "[Finished installing basic apps]"
 
-$AUR_MANAGER -S xdg-desktop-portal xdg-desktop-portal-hyprland \
-   	xdg-desktop-portal-gtk xdg-desktop-portal-wlr xdg-desktop-portal-lxqt \
-    xdg-desktop-portal-kde xdg-desktop-portal-gnome --noconfirm --needed
+$AUR_MANAGER -S xdg-desktop-portal xdg-desktop-portal-hyprland \ --noconfirm --needed
 echo "[Finished installing xdg-desktop packages]"
 
 $AUR_MANAGER -S gtk4 gtk2 papirus-icon-theme breeze noto-fonts noto-fonts-emoji libadwaita \
@@ -82,10 +80,10 @@ echo "[Successfully installed ricing apps]"
 $AUR_MANAGER -S tmux --noconfirm --needed
 echo "[Successfully installed tmux]"
 
-$AUR_MANAGER -S gnome-keyring kleopatra
-echo "[Successfully installed kwallet and kleopatra]"
+$AUR_MANAGER -S gnome-keyring kleopatra --noconfirm --needed
+echo "[Successfully installed keyring and kleopatra]"
 
-$AUR_MANAGER -S ttf-dejavu ttf-liberation noto-fonts noto-fonts-emoji ttf-font-awesome nerd-fonts
+$AUR_MANAGER -S ttf-dejavu ttf-liberation noto-fonts noto-fonts-emoji ttf-font-awesome ttf-material-symbols-variable nerd-fonts --noconfirm --needed
 echo "[Successfully installed fonts]"
 
 # Create the hyprland directory (hypr) if it doesn't already exist
