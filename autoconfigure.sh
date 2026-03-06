@@ -83,7 +83,7 @@ echo "[Successfully installed tmux]"
 $AUR_MANAGER -S gnome-keyring kleopatra --noconfirm --needed
 echo "[Successfully installed keyring and kleopatra]"
 
-$AUR_MANAGER -S ttf-dejavu ttf-liberation noto-fonts noto-fonts-emoji ttf-font-awesome nerd-fonts --noconfirm --needed
+$AUR_MANAGER -S ttf-dejavu ttf-liberation noto-fonts noto-fonts-emoji ttf-font-awesome ttf-material-symbols-variable nerd-fonts --noconfirm --needed
 echo "[Successfully installed fonts]"
 
 # Create the hyprland directory (hypr) if it doesn't already exist
