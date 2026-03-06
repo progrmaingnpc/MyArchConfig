@@ -217,7 +217,7 @@
       "car": "",
       "default": ["", "", ""],
     },
-    "on-click": "pavucontrol",
+    "on-click": "hyprpwcenter",
   },
   "custom/media": {
     "format": "{icon} {text}",
@@ -257,7 +257,7 @@
     "on-click": "wlogout", // Menu file in resources folder
     "on-click-right": "hyprlock",
     "menu-actions": {
-      "shutdown": "shutdown",
+      "shutdown": "hyprshutdown",
       "reboot": "reboot",
       "suspend": "systemctl suspend",
       "hibernate": "systemctl hibernate",

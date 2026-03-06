@@ -37,7 +37,7 @@ $AUR_MANAGER -Syu
 $AUR_MANAGER -S hyprland hyprpaper hyprlock --noconfirm --needed
 
 $AUR_MANAGER -S hypridle hyprpicker hyprland-qt-support hyprland-guiutils \
-	hyprcursor hyprutils hyprlang hyprwayland-scanner \
+	hyprcursor hyprutils hyprlang hyprwayland-scanner hyprpwcenter hyprshutdown \
 	hyprgraphics hyprpolkitagent hyprsysteminfo hyprsunset wlogout --noconfirm --needed
 echo "[Successfully installed basic utilities for hyprland]"
 
@@ -58,7 +58,7 @@ echo "[Finished installing shell configuration packages]"
 gpg --keyserver hkps://keys.openpgp.org --recv-keys EF6E286DDA85EA2A4BA7DE684E2C6E8793298290
 
 $AUR_MANAGER -S networkmanager tor tor-browser-bin wireshark-cli \
-    wireshark-qt zed pavucontrol power-profiles-daemon brave-bin discord --noconfirm --needed
+    wireshark-qt zed power-profiles-daemon brave-bin discord --noconfirm --needed
 echo "[Finished installing basic apps]"
 
 $AUR_MANAGER -S xdg-desktop-portal xdg-desktop-portal-hyprland \ --noconfirm --needed
