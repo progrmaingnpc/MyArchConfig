@@ -61,9 +61,7 @@ $AUR_MANAGER -S networkmanager tor tor-browser-bin wireshark-cli \
     wireshark-qt zed pavucontrol power-profiles-daemon brave-bin discord --noconfirm --needed
 echo "[Finished installing basic apps]"
 
-$AUR_MANAGER -S xdg-desktop-portal xdg-desktop-portal-hyprland \
-   	xdg-desktop-portal-gtk xdg-desktop-portal-wlr xdg-desktop-portal-lxqt \
-    xdg-desktop-portal-kde xdg-desktop-portal-gnome --noconfirm --needed
+$AUR_MANAGER -S xdg-desktop-portal xdg-desktop-portal-hyprland \ --noconfirm --needed
 echo "[Finished installing xdg-desktop packages]"
 
 $AUR_MANAGER -S gtk4 gtk2 papirus-icon-theme breeze noto-fonts noto-fonts-emoji libadwaita \
