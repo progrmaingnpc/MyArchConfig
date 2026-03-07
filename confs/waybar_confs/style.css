@@ -240,8 +240,10 @@ window#waybar {
     border: 2px solid darkgoldenrod;
 }
 
+/*
 #custom-hypridle.activated {
 }
+*/
 
 #custom-hypridle:hover {
     background: white;
