@@ -48,7 +48,7 @@ echo "[Successfully installed file system management packages]"
 $AUR_MANAGER -S nwg-look nwg-dock-hyprland grim slurp wl-clipboard --noconfirm --needed
 echo "[Successfully installed dock for hyprland]"
 
-$AUR_MANAGER -S wl-clipboard qt5-wayland qt6-wayland qt6ct otf-font-awesome rofi-wayland --noconfirm --needed
+$AUR_MANAGER -S wl-clipboard qt5-wayland qt6-wayland qt6ct otf-font-awesome --noconfirm --needed
 echo "Finished installing hyprland configuration packages"
 
 $AUR_MANAGER -S kitty zsh oh-my-posh-bin bash-completion \
