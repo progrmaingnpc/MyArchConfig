@@ -38,7 +38,7 @@ $AUR_MANAGER -S hyprland hyprpaper hyprlock --noconfirm --needed
 
 $AUR_MANAGER -S hypridle hyprpicker hyprland-qt-support hyprland-guiutils \
 	hyprcursor hyprutils hyprlang hyprwayland-scanner hyprpwcenter hyprshutdown \
-	hyprgraphics hyprpolkitagent hyprsysteminfo hyprsunset hyprqt6engine hyprlauncher \
+	hyprgraphics hyprpolkitagent hyprsunset hyprqt6engine hyprlauncher \
 	wlogout --noconfirm --needed
 echo "[Successfully installed basic utilities for hyprland]"
 
