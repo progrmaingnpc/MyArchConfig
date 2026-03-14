@@ -2,3 +2,4 @@
 2. Adding hyprlauncher + configuration
 3. Replaced rofi with hyprlauncher
 4. Removed hyprsysteminfo
+5. Added ghidra

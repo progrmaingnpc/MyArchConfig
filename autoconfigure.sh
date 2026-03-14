@@ -59,7 +59,7 @@ echo "[Finished installing shell configuration packages]"
 gpg --keyserver hkps://keys.openpgp.org --recv-keys EF6E286DDA85EA2A4BA7DE684E2C6E8793298290
 
 $AUR_MANAGER -S networkmanager tor tor-browser-bin wireshark-cli \
-    wireshark-qt zed power-profiles-daemon brave-bin discord --noconfirm --needed
+    wireshark-qt zed power-profiles-daemon brave-bin discord ghidra --noconfirm --needed
 echo "[Finished installing basic apps]"
 
 $AUR_MANAGER -S xdg-desktop-portal xdg-desktop-portal-hyprland \ --noconfirm --needed
