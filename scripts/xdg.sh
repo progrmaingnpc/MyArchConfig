@@ -8,6 +8,7 @@ _sleep4="1"
 sleep $_sleep4
 
 # Kill all possible running xdg-desktop-portals
+killall -e xdg-desktop-portal-gtk
 killall -e xdg-desktop-portal-hyprland
 killall -e xdg-desktop-portal
 
@@ -19,7 +20,12 @@ systemctl --user stop pipewire
 systemctl --user stop wireplumber
 systemctl --user stop xdg-desktop-portal
 systemctl --user stop xdg-desktop-portal-hyprland
+systemctl --user stop xdg-desktop-portal-gtk
 sleep $_sleep1
+
+# Start xdg-desktop-portal-gtk
+/usr/lib/xdg-desktop-portal-gtk &
+sleep $_sleep4
 
 # Start xdg-desktop-portal-hyprland
 /usr/lib/xdg-desktop-portal-hyprland &
@@ -34,5 +40,6 @@ systemctl --user start pipewire
 systemctl --user start wireplumber
 systemctl --user start xdg-desktop-portal
 systemctl --user start xdg-desktop-portal-hyprland
+systemctl --user start xdg-desktop-portal-gtk
 
 sleep $_sleep3
