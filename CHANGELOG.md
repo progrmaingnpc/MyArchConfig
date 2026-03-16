@@ -4,3 +4,4 @@
 4. Removed hyprsysteminfo
 5. Added ghidra
 6. Added xdg-desktop-portal-gtk
+7. Added base-devel

@@ -11,7 +11,7 @@ GTK_THEMES_DIR=~/.themes
 CURRENT_DIR=$(pwd)
 
 sudo pacman -Syu
-sudo pacman -S git --noconfirm --needed
+sudo pacman -S git base-devel --noconfirm --needed
 echo "$CURRENT_DIR"
 
 # Install the paru AUR manager if there isn't one
@@ -32,7 +32,7 @@ if command -v paru &> /dev/null; then
     echo "Paru is installed."
 fi
 
-$AUR_MANAGER -Syu
+$AUR_MANAGER
 
 $AUR_MANAGER -S hyprland hyprpaper hyprlock --noconfirm --needed
 
