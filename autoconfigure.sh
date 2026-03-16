@@ -11,7 +11,7 @@ GTK_THEMES_DIR=~/.themes
 CURRENT_DIR=$(pwd)
 
 sudo pacman -Syu
-sudo pacman -S git --noconfirm --needed
+sudo pacman -S git base-devel --noconfirm --needed
 echo "$CURRENT_DIR"
 
 # Install the paru AUR manager if there isn't one
@@ -32,13 +32,14 @@ if command -v paru &> /dev/null; then
     echo "Paru is installed."
 fi
 
-$AUR_MANAGER -Syu
+$AUR_MANAGER
 
 $AUR_MANAGER -S hyprland hyprpaper hyprlock --noconfirm --needed
 
 $AUR_MANAGER -S hypridle hyprpicker hyprland-qt-support hyprland-guiutils \
 	hyprcursor hyprutils hyprlang hyprwayland-scanner hyprpwcenter hyprshutdown \
-	hyprgraphics hyprpolkitagent hyprsysteminfo hyprsunset hyprqt6engine wlogout --noconfirm --needed
+	hyprgraphics hyprpolkitagent hyprsunset hyprqt6engine hyprlauncher \
+	wlogout --noconfirm --needed
 echo "[Successfully installed basic utilities for hyprland]"
 
 $AUR_MANAGER -S swww waybar waypaper aquamarine swaync nautilus btop htop hardinfo2 libnotify jq --noconfirm --needed
@@ -47,7 +48,7 @@ echo "[Successfully installed file system management packages]"
 $AUR_MANAGER -S nwg-look nwg-dock-hyprland grim slurp wl-clipboard --noconfirm --needed
 echo "[Successfully installed dock for hyprland]"
 
-$AUR_MANAGER -S wl-clipboard qt5-wayland qt6-wayland qt6ct otf-font-awesome rofi-wayland --noconfirm --needed
+$AUR_MANAGER -S wl-clipboard qt5-wayland qt6-wayland qt6ct otf-font-awesome --noconfirm --needed
 echo "Finished installing hyprland configuration packages"
 
 $AUR_MANAGER -S kitty zsh oh-my-posh-bin bash-completion \
@@ -58,10 +59,10 @@ echo "[Finished installing shell configuration packages]"
 gpg --keyserver hkps://keys.openpgp.org --recv-keys EF6E286DDA85EA2A4BA7DE684E2C6E8793298290
 
 $AUR_MANAGER -S networkmanager tor tor-browser-bin wireshark-cli \
-    wireshark-qt zed power-profiles-daemon brave-bin discord --noconfirm --needed
+    wireshark-qt zed power-profiles-daemon brave-bin discord ghidra --noconfirm --needed
 echo "[Finished installing basic apps]"
 
-$AUR_MANAGER -S xdg-desktop-portal xdg-desktop-portal-hyprland \ --noconfirm --needed
+$AUR_MANAGER -S xdg-desktop-portal xdg-desktop-portal-hyprland xdg-desktop-portal-gtk \ --noconfirm --needed
 echo "[Finished installing xdg-desktop packages]"
 
 $AUR_MANAGER -S gtk4 gtk2 papirus-icon-theme breeze noto-fonts noto-fonts-emoji libadwaita \

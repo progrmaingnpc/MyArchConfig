@@ -1,6 +1,7 @@
-1. fixed problem with brave fullscreen
-2. Removed redundant stuff
-3. Added hyprsunset configuration
-4. Replaced pavucontrol with hyprpwcenter
-5. Fixed shutdown button
-6. Added hyprtoolkit configuration
+1. Fixed hyprqt6engine configuration
+2. Adding hyprlauncher + configuration
+3. Replaced rofi with hyprlauncher
+4. Removed hyprsysteminfo
+5. Added ghidra
+6. Added xdg-desktop-portal-gtk
+7. Added base-devel

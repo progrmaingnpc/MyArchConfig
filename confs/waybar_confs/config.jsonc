@@ -31,7 +31,7 @@
     "format": "{icon}",
     "format-icons": "",
     "rotate": 0,
-    "on-click": "~/.config/hypr/scripts/rofi.sh",
+    "on-click": "~/.config/hypr/scripts/applauncher.sh",
   },
   // Modules configuration
   "hyprland/workspaces": {
