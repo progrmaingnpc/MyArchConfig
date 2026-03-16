@@ -5,3 +5,4 @@
 5. Added ghidra
 6. Added xdg-desktop-portal-gtk
 7. Added base-devel
+8. Added nvidia packages for egl
