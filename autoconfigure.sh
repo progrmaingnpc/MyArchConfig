@@ -62,8 +62,8 @@ $AUR_MANAGER -S networkmanager tor tor-browser-bin wireshark-cli \
     wireshark-qt zed power-profiles-daemon brave-bin discord ghidra --noconfirm --needed
 echo "[Finished installing basic apps]"
 
-$AUR_MANAGER -S nvidia-utils nvidia-dkms --noconfirm --needed
-echo "[Finished installing basic apps]"
+$AUR_MANAGER -S nvidia-utils nvidia-open-dkms --noconfirm --needed
+echo "[Finished installing nvidia packages]"
 
 $AUR_MANAGER -S xdg-desktop-portal xdg-desktop-portal-hyprland xdg-desktop-portal-gtk \ --noconfirm --needed
 echo "[Finished installing xdg-desktop packages]"
