@@ -45,7 +45,7 @@ echo "[Successfully installed basic utilities for hyprland]"
 $AUR_MANAGER -S swww waybar waypaper aquamarine swaync nautilus btop htop hardinfo2 libnotify jq --noconfirm --needed
 echo "[Successfully installed file system management packages]"
 
-$AUR_MANAGER -S nwg-look nwg-dock-hyprland grim slurp wl-clipboard --noconfirm --needed
+$AUR_MANAGER -S nwg-look nwg-dock-hyprland grim slurp wl-clipboard pacman-contrib paccache --noconfirm --needed
 echo "[Successfully installed dock for hyprland]"
 
 $AUR_MANAGER -S wl-clipboard qt5-wayland qt6-wayland qt6ct otf-font-awesome --noconfirm --needed
@@ -62,7 +62,7 @@ $AUR_MANAGER -S networkmanager tor tor-browser-bin wireshark-cli \
     wireshark-qt zed power-profiles-daemon brave-bin discord ghidra --noconfirm --needed
 echo "[Finished installing basic apps]"
 
-$AUR_MANAGER -S nvidia-utils nvidia-open-dkms --noconfirm --needed
+$AUR_MANAGER -S nvidia-utils nvidia-open --noconfirm --needed
 echo "[Finished installing nvidia packages]"
 
 $AUR_MANAGER -S xdg-desktop-portal xdg-desktop-portal-hyprland xdg-desktop-portal-gtk \ --noconfirm --needed
@@ -194,6 +194,9 @@ wal -i ~/wallpaper/default.jpg
 waypaper --wallpaper ~/wallpaper/default.jpg
 # Make add current user to wireshark group (to allow running wireshark in promiscuous mode)
 sudo usermod -aG wireshark $USER
+
+sudo systemctl enable paccache.timer
+sudo systemctl start paccache.timer
 
 # Create the hyprland directory (hypr) if it doesn't already exist
 if [ "$SHELL" != $(which zsh) ]; then
