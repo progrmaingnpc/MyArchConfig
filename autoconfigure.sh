@@ -45,7 +45,7 @@ echo "[Successfully installed basic utilities for hyprland]"
 $AUR_MANAGER -S swww waybar waypaper aquamarine swaync nautilus btop htop hardinfo2 libnotify jq --noconfirm --needed
 echo "[Successfully installed file system management packages]"
 
-$AUR_MANAGER -S nwg-look nwg-dock-hyprland grim slurp wl-clipboard pacman-contrib paccache --noconfirm --needed
+$AUR_MANAGER -S nwg-look nwg-dock-hyprland grim slurp wl-clipboard pacman-contrib --noconfirm --needed
 echo "[Successfully installed dock for hyprland]"
 
 $AUR_MANAGER -S wl-clipboard qt5-wayland qt6-wayland qt6ct otf-font-awesome --noconfirm --needed
