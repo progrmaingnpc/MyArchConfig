@@ -49,7 +49,10 @@ $AUR_MANAGER -S nwg-look nwg-dock-hyprland grim slurp wl-clipboard --noconfirm -
 echo "[Successfully installed dock for hyprland]"
 
 $AUR_MANAGER -S wl-clipboard qt5-wayland qt6-wayland qt6ct otf-font-awesome --noconfirm --needed
-echo "Finished installing hyprland configuration packages"
+echo "[Finished installing hyprland configuration packages]"
+
+$AUR_MANAGER -S gparted ncdu dysk pacman-contrib --noconfirm --needed
+echo "[Finished installing disk and cache management packages]"
 
 $AUR_MANAGER -S kitty zsh oh-my-posh-bin bash-completion \
    	zsh-completions fastfetch python-pywal postgresql --noconfirm --needed
@@ -61,6 +64,9 @@ gpg --keyserver hkps://keys.openpgp.org --recv-keys EF6E286DDA85EA2A4BA7DE684E2C
 $AUR_MANAGER -S networkmanager tor tor-browser-bin wireshark-cli \
     wireshark-qt zed power-profiles-daemon brave-bin discord ghidra --noconfirm --needed
 echo "[Finished installing basic apps]"
+
+$AUR_MANAGER -S nvidia-utils nvidia-open --noconfirm --needed
+echo "[Finished installing nvidia packages]"
 
 $AUR_MANAGER -S xdg-desktop-portal xdg-desktop-portal-hyprland xdg-desktop-portal-gtk \ --noconfirm --needed
 echo "[Finished installing xdg-desktop packages]"
@@ -191,6 +197,9 @@ wal -i ~/wallpaper/default.jpg
 waypaper --wallpaper ~/wallpaper/default.jpg
 # Make add current user to wireshark group (to allow running wireshark in promiscuous mode)
 sudo usermod -aG wireshark $USER
+
+sudo systemctl enable paccache.timer
+sudo systemctl start paccache.timer
 
 # Create the hyprland directory (hypr) if it doesn't already exist
 if [ "$SHELL" != $(which zsh) ]; then
