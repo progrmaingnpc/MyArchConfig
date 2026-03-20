@@ -86,7 +86,11 @@
     "tooltip-format-disconnected": "MPD (disconnected)",
   },
   "custom/hypridle": {
-    "format": "",
+    "format": "{icon}",
+    "format-icons": {
+      "locked": "",
+      "unlocked": "",
+    },
     "return-type": "json",
     "escape": true,
     "exec-on-event": true,
