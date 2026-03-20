@@ -405,30 +405,6 @@ window#waybar {
     background: white;
 }
 
-#keyboard-state {
-    background: gold;
-    box-shadow: none;
-    text-shadow: none;
-    border-radius: 25px;
-    color: gold;
-    padding: 0 0px;
-    margin: 8px 3px 8px 3px;
-    min-width: 16px;
-    border: 2px solid darkgoldenrod;
-}
-
-#keyboard-state > label {
-    padding: 0 5px;
-}
-
-#keyboard-state > label.locked {
-    background: rgba(0, 0, 0, 0.2);
-}
-
-#keyboard-state:hover {
-    background: white;
-}
-
 #scratchpad {
     background: black;
     box-shadow: none;

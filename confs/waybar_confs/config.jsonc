@@ -2,8 +2,6 @@
 {
   "layer": "top", // Waybar at top layer
   "position": "top", // Waybar position (top|bottom|left|right)
-  //"height": 50, // Waybar height (to be removed for auto height)
-  // "width": 1280, // Waybar width
   // Choose the order of the modules
   "modules-left": [
     "custom/appmenu",
@@ -17,7 +15,6 @@
   "modules-right": [
     "mpd",
     "custom/hypridle",
-    "keyboard-state",
     "sway/language",
     "tray",
     "pulseaudio",
@@ -50,15 +47,6 @@
     },
     "persistent-workspaces": {
       "*": 5,
-    },
-  },
-  "keyboard-state": {
-    "numlock": true,
-    "capslock": true,
-    "format": "{name} {icon}",
-    "format-icons": {
-      "locked": "",
-      "unlocked": "",
     },
   },
   "sway/mode": {
