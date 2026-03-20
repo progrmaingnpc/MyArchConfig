@@ -86,17 +86,15 @@
     "tooltip-format-disconnected": "MPD (disconnected)",
   },
   "custom/hypridle": {
-    "format": "{icon}",
-    "format-icons": {
-      "locked": "",
-      "unlocked": "",
-    },
+    "format": "",
     "return-type": "json",
     "escape": true,
     "exec-on-event": true,
     "interval": 60,
     "exec": "~/.config/hypr/scripts/hypridle.sh status",
     "on-click": "~/.config/hypr/scripts/hypridle.sh toggle",
+    "on-scroll-up": "true",
+    "on-scroll-down": "true",
   },
   "tray": {
     "icon-size": 21,
