@@ -18,19 +18,19 @@
 }
 {
     "label" : "shutdown",
-    "action" : "systemctl poweroff",
+    "action" : "hyprshutdown -p 'systemctl poweroff'",
     "text" : "Shutdown",
     "keybind" : "s"
 }
 {
     "label" : "suspend",
-    "action" : "systemctl suspend",
+    "action" : "hyprshutdown -p 'systemctl suspend'",
     "text" : "Suspend",
     "keybind" : "u"
 }
 {
     "label" : "reboot",
-    "action" : "systemctl reboot",
+    "action" : "hyprshutdown -p 'reboot'",
     "text" : "Reboot",
     "keybind" : "r"
 }

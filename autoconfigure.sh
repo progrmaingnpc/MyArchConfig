@@ -213,6 +213,9 @@ sudo usermod -aG wireshark $USER
 sudo systemctl enable paccache.timer
 sudo systemctl start paccache.timer
 
+echo "$USER ALL=(ALL) NOPASSWD: /usr/bin/chvt" | sudo tee /etc/sudoers.d/chvt
+sudo chmod 440 /etc/sudoers.d/chvt
+
 # Create the hyprland directory (hypr) if it doesn't already exist
 if [ "$SHELL" != $(which zsh) ]; then
     sudo chsh -s $(which zsh) $USER
