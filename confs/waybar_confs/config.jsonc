@@ -249,6 +249,7 @@
     "menu-actions": {
       "shutdown": "hyprshutdown",
       "reboot": "reboot",
+      "logout": "hyprlock",
       "suspend": "systemctl suspend",
       "hibernate": "systemctl hibernate",
     },
