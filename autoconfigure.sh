@@ -2,6 +2,7 @@
 HYPRLAND_DIRECTORY=~/.config/hypr
 KITTY_DIRECTORY=~/.config/kitty
 WAYBAR_DIRECTORY=~/.config/waybar
+WLOGOUT_DIRECTORY=~/.config/wlogout
 SHELL_FASTFETCH_DIRECTORY=~/.config/fast_fetch_shell
 WAYPAPER_DIRECTORY=~/.config/waypaper
 NVIM_DIRECTORY=~/.config/nvim
@@ -108,6 +109,13 @@ if [ ! -d "$WAYBAR_DIRECTORY" ]; then
 else
 	echo "Found existing local waybar directory at $WAYBAR_DIRECTORY"
 fi
+# Create the wlogout directory if doesn't already exist
+if [ ! -d "$WLOGOUT_DIRECTORY" ]; then
+	mkdir "$WLOGOUT_DIRECTORY"
+	echo "Created local wlogout directory at $WLOGOUT_DIRECTORY"
+else
+	echo "Found existing local wlogout directory at $WLOGOUT_DIRECTORY"
+fi
 # Create the kitty directory if doesn't already exist
 if [ ! -d "$KITTY_DIRECTORY" ]; then
 	mkdir "$KITTY_DIRECTORY"
@@ -166,6 +174,9 @@ cp $CURRENT_DIR/scripts "$HYPRLAND_DIRECTORY" -r -v
 # Copy the waybar configs to the waybar config directory on the user's device
 cp $CURRENT_DIR/confs/waybar_confs/*.jsonc "$WAYBAR_DIRECTORY" -v
 cp $CURRENT_DIR/confs/waybar_confs/*.css "$WAYBAR_DIRECTORY" -v
+# Copy the wlogout configs to the wlogout config directory on the user's device
+cp $CURRENT_DIR/confs/wlogout_confs/*.css "$WLOGOUT_DIRECTORY" -v
+cp $CURRENT_DIR/confs/wlogout_confs/layout "$WLOGOUT_DIRECTORY" -v
 # Copy the kitty configs to the kitty config directory on the user's device
 cp $CURRENT_DIR/confs/terminal_conf/kitty/*.conf "$KITTY_DIRECTORY" -v
 # Copy the bash config file to the user's .bashrc file
