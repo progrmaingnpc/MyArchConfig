@@ -43,7 +43,7 @@ $AUR_MANAGER -S hypridle hyprpicker hyprland-qt-support hyprland-guiutils \
 	wlogout --noconfirm --needed
 echo "[Successfully installed basic utilities for hyprland]"
 
-$AUR_MANAGER -S awww waybar waypaper aquamarine swaync nautilus btop htop hardinfo2 libnotify jq --noconfirm --needed
+$AUR_MANAGER -S awww waybar waypaper-git aquamarine swaync nautilus btop htop hardinfo2 libnotify jq --noconfirm --needed
 echo "[Successfully installed file system management packages]"
 
 $AUR_MANAGER -S nwg-look nwg-dock-hyprland grim slurp wl-clipboard --noconfirm --needed
