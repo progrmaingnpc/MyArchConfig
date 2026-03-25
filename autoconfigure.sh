@@ -95,6 +95,9 @@ echo "[Successfully installed keyring and kleopatra]"
 $AUR_MANAGER -S ttf-dejavu ttf-liberation noto-fonts noto-fonts-emoji ttf-font-awesome ttf-material-symbols-variable nerd-fonts --noconfirm --needed
 echo "[Successfully installed fonts]"
 
+$AUR_MANAGER -S yazi fd resvg xsel 7zip
+echo "[Successfully installed yazi]"
+
 # Create the hyprland directory (hypr) if it doesn't already exist
 if [ ! -d "$HYPRLAND_DIRECTORY" ]; then
 	mkdir "$HYPRLAND_DIRECTORY"
