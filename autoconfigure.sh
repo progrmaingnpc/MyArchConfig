@@ -1,14 +1,15 @@
 #!/bin/bash
-HYPRLAND_DIRECTORY=~/.config/hypr
-KITTY_DIRECTORY=~/.config/kitty
-WAYBAR_DIRECTORY=~/.config/waybar
-WLOGOUT_DIRECTORY=~/.config/wlogout
-SHELL_FASTFETCH_DIRECTORY=~/.config/fast_fetch_shell
-WAYPAPER_DIRECTORY=~/.config/waypaper
-NVIM_DIRECTORY=~/.config/nvim
-TMUX_DIRECTORY=~/.config/tmux
-NWG_DOCK_DIRECTORY=~/.config/nwg-dock-hyprland
+HYPRLAND_DIR=~/.config/hypr
+KITTY_DIR=~/.config/kitty
+WAYBAR_DIR=~/.config/waybar
+WLOGOUT_DIR=~/.config/wlogout
+SHELL_FASTFETCH_DIR=~/.config/fast_fetch_shell
+WAYPAPER_DIR=~/.config/waypaper
+NVIM_DIR=~/.config/nvim
+TMUX_DIR=~/.config/tmux
+NWG_DOCK_DIR=~/.config/nwg-dock-hyprland
 GTK_THEMES_DIR=~/.themes
+YAZI_DIR=~/.config/yazi
 CURRENT_DIR=$(pwd)
 
 sudo pacman -Syu
@@ -52,7 +53,7 @@ echo "[Successfully installed dock for hyprland]"
 $AUR_MANAGER -S wl-clipboard qt5-wayland qt6-wayland qt6ct otf-font-awesome --noconfirm --needed
 echo "[Finished installing hyprland configuration packages]"
 
-$AUR_MANAGER -S gparted ncdu dysk pacman-contrib --noconfirm --needed
+$AUR_MANAGER -S gparted ncdu dysk pacman-contrib pacseek --noconfirm --needed
 echo "[Finished installing disk and cache management packages]"
 
 $AUR_MANAGER -S kitty zsh oh-my-posh-bin bash-completion \
@@ -99,67 +100,67 @@ $AUR_MANAGER -S yazi fd resvg xsel 7zip
 echo "[Successfully installed yazi]"
 
 # Create the hyprland directory (hypr) if it doesn't already exist
-if [ ! -d "$HYPRLAND_DIRECTORY" ]; then
-	mkdir "$HYPRLAND_DIRECTORY"
-	echo "Created local hyprland directory at $HYPRLAND_DIRECTORY"
+if [ ! -d "$HYPRLAND_DIR" ]; then
+	mkdir "$HYPRLAND_DIR"
+	echo "Created local hyprland directory at $HYPRLAND_DIR"
 else
-	echo "Found existing local hyprland directory at $HYPRLAND_DIRECTORY"
+	echo "Found existing local hyprland directory at $HYPRLAND_DIR"
 fi
 # Create the waybar directory if doesn't already exist
-if [ ! -d "$WAYBAR_DIRECTORY" ]; then
-	mkdir "$WAYBAR_DIRECTORY"
-	echo "Created local waybar directory at $WAYBAR_DIRECTORY"
+if [ ! -d "$WAYBAR_DIR" ]; then
+	mkdir "$WAYBAR_DIR"
+	echo "Created local waybar directory at $WAYBAR_DIR"
 else
-	echo "Found existing local waybar directory at $WAYBAR_DIRECTORY"
+	echo "Found existing local waybar directory at $WAYBAR_DIR"
 fi
 # Create the wlogout directory if doesn't already exist
-if [ ! -d "$WLOGOUT_DIRECTORY" ]; then
-	mkdir "$WLOGOUT_DIRECTORY"
-	echo "Created local wlogout directory at $WLOGOUT_DIRECTORY"
+if [ ! -d "$WLOGOUT_DIR" ]; then
+	mkdir "$WLOGOUT_DIR"
+	echo "Created local wlogout directory at $WLOGOUT_DIR"
 else
-	echo "Found existing local wlogout directory at $WLOGOUT_DIRECTORY"
+	echo "Found existing local wlogout directory at $WLOGOUT_DIR"
 fi
 # Create the kitty directory if doesn't already exist
-if [ ! -d "$KITTY_DIRECTORY" ]; then
-	mkdir "$KITTY_DIRECTORY"
-	echo "Created local kitty directory at $KITTY_DIRECTORY"
+if [ ! -d "$KITTY_DIR" ]; then
+	mkdir "$KITTY_DIR"
+	echo "Created local kitty directory at $KITTY_DIR"
 else
-	echo "Found existing local kitty directory at $KITTY_DIRECTORY"
+	echo "Found existing local kitty directory at $KITTY_DIR"
 fi
 # Create the fastfetch shell config directory if doesn't already exist
-if [ ! -d "$SHELL_FASTFETCH_DIRECTORY" ]; then
-	mkdir "$SHELL_FASTFETCH_DIRECTORY"
-	echo "Created local fastfetch shell config directory at $SHELL_FASTFETCH_DIRECTORY"
+if [ ! -d "$SHELL_FASTFETCH_DIR" ]; then
+	mkdir "$SHELL_FASTFETCH_DIR"
+	echo "Created local fastfetch shell config directory at $SHELL_FASTFETCH_DIR"
 else
-	echo "Found existing local fastfetch shell config directory at $SHELL_FASTFETCH_DIRECTORY"
+	echo "Found existing local fastfetch shell config directory at $SHELL_FASTFETCH_DIR"
 fi
 # Create the waypaper directory if doesn't already exist
-if [ ! -d "$WAYPAPER_DIRECTORY" ]; then
-	mkdir "$WAYPAPER_DIRECTORY"
-	echo "Created local waypaper directory at $WAYPAPER_DIRECTORY"
+if [ ! -d "$WAYPAPER_DIR" ]; then
+	mkdir "$WAYPAPER_DIR"
+	echo "Created local waypaper directory at $WAYPAPER_DIR"
 else
-	echo "Found existing local waypaper directory at $WAYPAPER_DIRECTORY"
+	echo "Found existing local waypaper directory at $WAYPAPER_DIR"
 fi
 # Create the neovim directory if it doesn't already exist
-if [ ! -d "$NVIM_DIRECTORY" ]; then
-	mkdir "$NVIM_DIRECTORY"
-	echo "Created neovim directory at $NVIM_DIRECTORY"
+if [ ! -d "$NVIM_DIR" ]; then
+	mkdir "$NVIM_DIR"
+	echo "Created neovim directory at $NVIM_DIR"
 else
-	echo "Found existing neovim directory at $NVIM_DIRECTORY"
+	echo "Found existing neovim directory at $NVIM_DIR"
 fi
 # Create the tmux config directory if it doesn't already exist
-if [ ! -d "$TMUX_DIRECTORY" ]; then
-	mkdir "$TMUX_DIRECTORY"
-	echo "Created tmux directory at $TMUX_DIRECTORY"
+if [ ! -d "$TMUX_DIR" ]; then
+	mkdir "$TMUX_DIR"
+	echo "Created tmux directory at $TMUX_DIR"
 else
-	echo "Found existing tmux directory at $TMUX_DIRECTORY"
+	echo "Found existing tmux directory at $TMUX_DIR"
 fi
 # Create the nwg-dock config directory if it doesn't already exist
-if [ ! -d "$NWG_DOCK_DIRECTORY" ]; then
-	mkdir "$NWG_DOCK_DIRECTORY"
-	echo "Created nwg-dock directory at $NWG_DOCK_DIRECTORY"
+if [ ! -d "$NWG_DOCK_DIR" ]; then
+	mkdir "$NWG_DOCK_DIR"
+	echo "Created nwg-dock directory at $NWG_DOCK_DIR"
 else
-	echo "Found existing nwg-dock directory at $NWG_DOCK_DIRECTORY"
+	echo "Found existing nwg-dock directory at $NWG_DOCK_DIR"
 fi
 # Create the gtk themes directory if it doesn't already exist
 if [ ! -d "$GTK_THEMES_DIR" ]; then
@@ -168,39 +169,47 @@ if [ ! -d "$GTK_THEMES_DIR" ]; then
 else
 	echo "Found existing gtk directory at $GTK_THEMES_DIR"
 fi
+# Create the yazi config directory if it doesn't already exist
+if [ ! -d "$YAZI_DIR" ]; then
+	mkdir "$YAZI_DIR"
+	echo "Created yazi directory at $YAZI_DIR"
+else
+	echo "Found existing yazi directory at $YAZI_DIR"
+fi
 # Copy the hyprland configs to the hyprland directory on the user's device
-cp $CURRENT_DIR/confs/hyprland_confs/*.conf "$HYPRLAND_DIRECTORY" -v
+cp $CURRENT_DIR/confs/hyprland_confs/*.conf "$HYPRLAND_DIR" -v
 # Copy the hyprland configs to the hyprland config directory on the user's device
-cp $CURRENT_DIR/confs/hyprland_confs/conf "$HYPRLAND_DIRECTORY" -r -v
+cp $CURRENT_DIR/confs/hyprland_confs/conf "$HYPRLAND_DIR" -r -v
 # # Copy hyprland scripts directory to user's hyprland config directory
-cp $CURRENT_DIR/scripts "$HYPRLAND_DIRECTORY" -r -v
+cp $CURRENT_DIR/scripts "$HYPRLAND_DIR" -r -v
 # Copy the waybar configs to the waybar config directory on the user's device
-cp $CURRENT_DIR/confs/waybar_confs/*.jsonc "$WAYBAR_DIRECTORY" -v
-cp $CURRENT_DIR/confs/waybar_confs/*.css "$WAYBAR_DIRECTORY" -v
+cp $CURRENT_DIR/confs/waybar_confs/*.jsonc "$WAYBAR_DIR" -v
+cp $CURRENT_DIR/confs/waybar_confs/*.css "$WAYBAR_DIR" -v
 # Copy the wlogout configs to the wlogout config directory on the user's device
-cp $CURRENT_DIR/confs/wlogout_confs/*.css "$WLOGOUT_DIRECTORY" -v
-cp $CURRENT_DIR/confs/wlogout_confs/layout "$WLOGOUT_DIRECTORY" -v
+cp $CURRENT_DIR/confs/wlogout_confs/*.css "$WLOGOUT_DIR" -v
+cp $CURRENT_DIR/confs/wlogout_confs/layout "$WLOGOUT_DIR" -v
 # Copy the kitty configs to the kitty config directory on the user's device
-cp $CURRENT_DIR/confs/terminal_conf/kitty/*.conf "$KITTY_DIRECTORY" -v
+cp $CURRENT_DIR/confs/terminal_conf/kitty/*.conf "$KITTY_DIR" -v
 # Copy the bash config file to the user's .bashrc file
 cp $CURRENT_DIR/confs/terminal_conf/shells/bashrc/bash_conf ~/.bashrc -v
 # Copy the zsh config file to the user's .zshrc file
 cp $CURRENT_DIR/confs/terminal_conf/shells/zshrc/zsh_conf ~/.zshrc -v
 # Copy the fastfetch shell config to the fastfetch shell config directory on the user's device
-cp $CURRENT_DIR/confs/terminal_conf/fast_fetch_conf/default.* "$SHELL_FASTFETCH_DIRECTORY" -v
+cp $CURRENT_DIR/confs/terminal_conf/fast_fetch_conf/default.* "$SHELL_FASTFETCH_DIR" -v
 # Copy default wallpaper directory with default background to user's directory
 cp $CURRENT_DIR/wallpaper/ ~/ -r -v
 # Copy waypaper config to user's wallpaper directory
-cp $CURRENT_DIR/confs/waypaper_conf/config.ini "$WAYPAPER_DIRECTORY" -v
+cp $CURRENT_DIR/confs/waypaper_conf/config.ini "$WAYPAPER_DIR" -v
 # Copy neovim config file to the user's neovim config directory
-cp $CURRENT_DIR/confs/nvim_confs/init.lua "$NVIM_DIRECTORY" -v
+cp $CURRENT_DIR/confs/nvim_confs/init.lua "$NVIM_DIR" -v
 # Copy neovim lua config files to the user's neovim lua config directory
-cp $CURRENT_DIR/confs/nvim_confs/lua "$NVIM_DIRECTORY" -r -v
+cp $CURRENT_DIR/confs/nvim_confs/lua "$NVIM_DIR" -r -v
 # Copy tmux config files to the user's tmux config directory
-cp $CURRENT_DIR/confs/tmux_confs/*.conf "$TMUX_DIRECTORY" -v
+cp $CURRENT_DIR/confs/tmux_confs/*.conf "$TMUX_DIR" -v
 # Copy nwg-dock config files to the user's nwg-dock config directory
-cp $CURRENT_DIR/confs/nwg_dock_conf/*.css "$NWG_DOCK_DIRECTORY" -v
-
+cp $CURRENT_DIR/confs/nwg_dock_conf/*.css "$NWG_DOCK_DIR" -v
+# Copy yazi config files to the user's yazi config directory
+cp $CURRENT_DIR/confs/yazi_conf/*.toml "$YAZI_DIR" -v
 # Configure luarocks to use the user directory by default for lua package management
 luarocks config local_by_default true
 luarocks install stdlib --local
@@ -212,13 +221,12 @@ wal -i ~/wallpaper/default.jpg
 waypaper --wallpaper ~/wallpaper/default.jpg
 # Make add current user to wireshark group (to allow running wireshark in promiscuous mode)
 sudo usermod -aG wireshark $USER
-
+# Enable paccache
 sudo systemctl enable paccache.timer
 sudo systemctl start paccache.timer
-
+# Allow chvt without sudo, to allow hyprshutdown to properly work
 echo "$USER ALL=(ALL) NOPASSWD: /usr/bin/chvt" | sudo tee /etc/sudoers.d/chvt
 sudo chmod 440 /etc/sudoers.d/chvt
-
 # Create the hyprland directory (hypr) if it doesn't already exist
 if [ "$SHELL" != $(which zsh) ]; then
     sudo chsh -s $(which zsh) $USER
@@ -226,7 +234,6 @@ if [ "$SHELL" != $(which zsh) ]; then
 else
 	echo "[The default shell is zsh]"
 fi
-
 # Check if the user loves candy :)
 sed -n '/ILoveCandy/q 0;$q 1' /etc/pacman.conf
 if [ "$?" != 0 ]; then
@@ -235,5 +242,4 @@ if [ "$?" != 0 ]; then
 else
     echo "[I LOVE CANDY]"
 fi
-
 echo "[Please restart to allow all changes to take effect]"
