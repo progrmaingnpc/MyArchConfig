@@ -53,8 +53,11 @@ echo "[Successfully installed dock for hyprland]"
 $AUR_MANAGER -S wl-clipboard qt5-wayland qt6-wayland qt6ct otf-font-awesome --noconfirm --needed
 echo "[Finished installing hyprland configuration packages]"
 
-$AUR_MANAGER -S gparted ncdu dysk pacman-contrib pacseek --noconfirm --needed
+$AUR_MANAGER -S gparted ncdu dysk pacman-contrib --noconfirm --needed
 echo "[Finished installing disk and cache management packages]"
+
+$AUR_MANAGER -S pacseek reflector --noconfirm --needed
+echo "[Finished installing package management tools]"
 
 $AUR_MANAGER -S kitty zsh oh-my-posh-bin bash-completion \
    	zsh-completions fastfetch python-pywal postgresql --noconfirm --needed
@@ -224,6 +227,15 @@ sudo usermod -aG wireshark $USER
 # Enable paccache
 sudo systemctl enable paccache.timer
 sudo systemctl start paccache.timer
+## TODO: Add command to receive user input for countries to receive mirrors from,
+## Details:
+##   - If no input, skip reflector setup
+##   - Check validity of user input
+##   - If there are countries for reflector in /etc/xdg/reflector/reflector.conf, use them instead of
+##     prompting the user for input
+##   - Replace old config with the new one
+# Enable reflector
+sudo systemctl enable --now reflector.timer
 # Allow chvt without sudo, to allow hyprshutdown to properly work
 echo "$USER ALL=(ALL) NOPASSWD: /usr/bin/chvt" | sudo tee /etc/sudoers.d/chvt
 sudo chmod 440 /etc/sudoers.d/chvt

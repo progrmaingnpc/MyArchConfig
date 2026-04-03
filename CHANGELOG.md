@@ -6,3 +6,4 @@
 6. Added yazi
 7. Replace waypaper with waypaper-git, cause only waypaper-git currently can use awww
 8. Added pacseek
+9. Added reflector config
