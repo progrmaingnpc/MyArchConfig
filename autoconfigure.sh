@@ -229,7 +229,6 @@ sudo systemctl enable paccache.timer
 sudo systemctl start paccache.timer
 ## TODO: Add command to receive +user input for countries to receive mirrors from,
 ## Details:
-##   - If no input, skip reflector setup
 ##   - Check validity of user input
 ##   - If there are countries for reflector in /etc/xdg/reflector/reflector.conf, use them instead of
 ##     prompting the user for input
@@ -243,8 +242,6 @@ if [ -n "$countries" ]; then
 else
     echo "[No countries provided, skipping reflector setup]"
 fi
-# Enable reflector
-sudo systemctl enable --now reflector.timer
 # Allow chvt without sudo, to allow hyprshutdown to properly work
 echo "$USER ALL=(ALL) NOPASSWD: /usr/bin/chvt" | sudo tee /etc/sudoers.d/chvt
 sudo chmod 440 /etc/sudoers.d/chvt
