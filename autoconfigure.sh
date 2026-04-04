@@ -227,17 +227,17 @@ sudo usermod -aG wireshark $USER
 # Enable paccache
 sudo systemctl enable paccache.timer
 sudo systemctl start paccache.timer
-## TODO: Add command to receive user input for countries to receive mirrors from,
+## TODO: Add command to receive +user input for countries to receive mirrors from,
 ## Details:
 ##   - If no input, skip reflector setup
 ##   - Check validity of user input
 ##   - If there are countries for reflector in /etc/xdg/reflector/reflector.conf, use them instead of
 ##     prompting the user for input
 ##   - Replace old config with the new one
+reflector --list-countries
 read -p "Enter the countries you want to receive mirrors from (comma-separated): " -r countries
 if [ -n "$countries" ]; then
     echo "Countries: $countries"
-   # echo "country $countries" |
     sudo sed -i '21s/.*/--country '"$countries"'/' /etc/xdg/reflector/reflector.conf
     sudo systemctl enable --now reflector.timer
 else
