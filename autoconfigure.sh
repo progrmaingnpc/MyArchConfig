@@ -238,7 +238,7 @@ read -p "Enter the countries you want to receive mirrors from (comma-separated):
 if [ -n "$countries" ]; then
     echo "Countries: $countries"
    # echo "country $countries" |
-    sudo sed -i '21s/.*/--country $countries/' /etc/xdg/reflector/reflector.conf
+    sudo sed -i '21s/.*/--country '"$countries"'/' /etc/xdg/reflector/reflector.conf
     sudo systemctl enable --now reflector.timer
 else
     echo "[No countries provided, skipping reflector setup]"
