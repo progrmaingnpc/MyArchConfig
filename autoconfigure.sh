@@ -234,12 +234,11 @@ sudo systemctl start paccache.timer
 ##   - If there are countries for reflector in /etc/xdg/reflector/reflector.conf, use them instead of
 ##     prompting the user for input
 ##   - Replace old config with the new one
-echo "Enter the countries you want to receive mirrors from (comma-separated): "
-read -r countries
+read -p "Enter the countries you want to receive mirrors from (comma-separated): " -r countries
 if [ -n "$countries" ]; then
     echo "Countries: $countries"
    # echo "country $countries" |
-    sudo sed -i '21s/--country/--country $countries/' /etc/xdg/reflector/reflector.conf
+    sudo sed -i '21s/.*/--country $countries/' /etc/xdg/reflector/reflector.conf
     sudo systemctl enable --now reflector.timer
 else
     echo "[No countries provided, skipping reflector setup]"
