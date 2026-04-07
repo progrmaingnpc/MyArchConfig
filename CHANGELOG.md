@@ -7,3 +7,4 @@
 7. Replace waypaper with waypaper-git, cause only waypaper-git currently can use awww
 8. Added pacseek
 9. Added reflector config
+10. Made wal colors load first in shell

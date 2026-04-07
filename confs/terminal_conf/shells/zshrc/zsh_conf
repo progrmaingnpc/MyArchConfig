@@ -2,12 +2,12 @@ HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
 
+(cat ~/.cache/wal/sequences &)
+cat ~/.cache/wal/sequences
 wal -i "$(cut -b 11- .cache/awww/*)" -q -e
 fastfetch --config ~/.config/fast_fetch_shell/default.jsonc --logo-type kitty-direct --logo ~/.config/fast_fetch_shell/default.png
 eval "$(oh-my-posh init zsh --config /usr/share/oh-my-posh/themes/negligible.omp.json)"
 
-(cat ~/.cache/wal/sequences &)
-cat ~/.cache/wal/sequences
 source ~/.cache/wal/colors-tty.sh
 autoload -Uz compinit
 compinit
