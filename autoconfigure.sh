@@ -116,9 +116,11 @@ echo "[Successfully installed VM related stuff]"
 $AUR_MANAGER -S wine winetricks --noconfirm --needed
 echo "[Successfully installed wine]"
 
-
 $AUR_MANAGER -S dioxus-cli libayatana-appindicator xdotool webkit2gtk-4.1 sqlite --noconfirm --needed
 echo "[Successfully installed dioxus-cli]"
+
+$AUR_MANAGER -S bitwarden trash-cli --noconfirm --needed
+echo "[Successfully installed bitwarden]"
 
 # Create the hyprland directory (hypr) if it doesn't already exist
 if [ ! -d "$HYPRLAND_DIR" ]; then
