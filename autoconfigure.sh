@@ -122,6 +122,9 @@ echo "[Successfully installed dioxus-cli]"
 $AUR_MANAGER -S bitwarden trash-cli --noconfirm --needed
 echo "[Successfully installed bitwarden]"
 
+$AUR_MANAGER -S bind whois --noconfirm --needed
+echo "[Successfully installed networking utilities]"
+
 # Create the hyprland directory (hypr) if it doesn't already exist
 if [ ! -d "$HYPRLAND_DIR" ]; then
 	mkdir "$HYPRLAND_DIR"
