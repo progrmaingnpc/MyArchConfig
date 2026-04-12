@@ -258,6 +258,9 @@ sudo systemctl start paccache.timer
 # Enable libvirtd
 sudo systemctl enable --now libvirtd
 sudo usermod -aG libvirt $USER
+# Clear old logs
+sudo journalctl --vacuum-size=100M
+sudo journalctl --vacuum-time=1week
 ## TODO: Add command to receive +user input for countries to receive mirrors from,
 ## Details:
 ##   - Check validity of user input
