@@ -55,7 +55,7 @@ echo "[Successfully installed dock for hyprland]"
 $AUR_MANAGER -S wl-clipboard qt5-wayland qt6-wayland qt6ct otf-font-awesome --noconfirm --needed
 echo "[Finished installing hyprland configuration packages]"
 
-$AUR_MANAGER -S gparted ncdu dysk pacman-contrib --noconfirm --needed
+$AUR_MANAGER -S gparted xorg-xhost ncdu dysk pacman-contrib --noconfirm --needed
 echo "[Finished installing disk and cache management packages]"
 
 $AUR_MANAGER -S pacseek reflector --noconfirm --needed
