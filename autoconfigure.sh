@@ -49,7 +49,7 @@ echo "[Successfully installed basic utilities for hyprland]"
 $AUR_MANAGER -S awww waybar waypaper-git aquamarine swaync nautilus btop htop hardinfo2 libnotify jq --noconfirm --needed
 echo "[Successfully installed file system management packages]"
 
-$AUR_MANAGER -S nwg-look nwg-dock-hyprland grim slurp wl-clipboard --noconfirm --needed
+$AUR_MANAGER -S nwg-look nwg-dock-hyprland grimblast-git slurp wl-clipboard --noconfirm --needed
 echo "[Successfully installed dock for hyprland]"
 
 $AUR_MANAGER -S wl-clipboard qt5-wayland qt6-wayland qt6ct otf-font-awesome --noconfirm --needed
@@ -107,7 +107,7 @@ echo "[Successfully installed yazi]"
 $AUR_MANAGER -S zig rustup dioxus-cli sccache docker docker-compose --noconfirm --needed
 echo "[Successfully installed programming related stuff]"
 
-$AUR_MANAGER -S make cmake sfml gdb wolfssl --noconfirm --needed
+$AUR_MANAGER -S make cmake clang sfml gdb wolfssl --noconfirm --needed
 echo "[Successfully installed C\C++ related stuff]"
 
 $AUR_MANAGER -S qemu-full virt-manager dnsmasq --noconfirm --needed
@@ -115,6 +115,10 @@ echo "[Successfully installed VM related stuff]"
 
 $AUR_MANAGER -S wine winetricks --noconfirm --needed
 echo "[Successfully installed wine]"
+
+
+$AUR_MANAGER -S dioxus-cli libayatana-appindicator xdotool webkit2gtk-4.1 sqlite --noconfirm --needed
+echo "[Successfully installed dioxus-cli]"
 
 # Create the hyprland directory (hypr) if it doesn't already exist
 if [ ! -d "$HYPRLAND_DIR" ]; then
@@ -261,6 +265,8 @@ sudo usermod -aG libvirt $USER
 # Clear old logs
 sudo journalctl --vacuum-size=100M
 sudo journalctl --vacuum-time=1week
+#Update xdg directories
+xdg-user-dirs-update
 ## TODO: Add command to receive +user input for countries to receive mirrors from,
 ## Details:
 ##   - Check validity of user input
@@ -288,6 +294,8 @@ else
 fi
 # Dark mode so you won't become blind ;)
 gsettings set org.gnome.desktop.interface color-scheme prefer-dark
+# Enable ssh agent
+eval `ssh-agent -s`
 # Check if the user loves candy :)
 sed -n '/ILoveCandy/q 0;$q 1' /etc/pacman.conf
 if [ "$?" != 0 ]; then
