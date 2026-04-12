@@ -10,28 +10,30 @@ TMUX_DIR=~/.config/tmux
 NWG_DOCK_DIR=~/.config/nwg-dock-hyprland
 GTK_THEMES_DIR=~/.themes
 YAZI_DIR=~/.config/yazi
+CARGO_DIR=~/.cargo
 CURRENT_DIR=$(pwd)
 
 sudo pacman -Syu
-sudo pacman -S git base-devel --noconfirm --needed
+sudo pacman -S git base-devel github-cli --noconfirm --needed
 echo "$CURRENT_DIR"
 
 # Install the paru AUR manager if there isn't one
 if ! command -v paru &> /dev/null && ! command -v yay &> /dev/null; then
     echo "[No AUR manager installed, installing paru]"
     git clone https://aur.archlinux.org/paru.git $HOME/paru
-	makepkg -si --dir $HOME/paru
-	echo "Yay has been installed at $HOME/paru"
+    makepkg -si --dir $HOME/paru
+    echo "Paru has been installed at $HOME/paru"
 fi
 
 if command -v yay &> /dev/null; then
     AUR_MANAGER=yay
     echo "Yay is installed."
-fi
-
-if command -v paru &> /dev/null; then
+elif command -v paru &> /dev/null; then
     AUR_MANAGER=paru
     echo "Paru is installed."
+else 
+    echo "Failed to install an AUR"
+    exit
 fi
 
 $AUR_MANAGER
@@ -41,7 +43,7 @@ $AUR_MANAGER -S hyprland hyprpaper hyprlock --noconfirm --needed
 $AUR_MANAGER -S hypridle hyprpicker hyprland-qt-support hyprland-guiutils \
 	hyprcursor hyprutils hyprlang hyprwayland-scanner hyprpwcenter hyprshutdown \
 	hyprgraphics hyprpolkitagent hyprsunset hyprqt6engine hyprlauncher \
-	wlogout --noconfirm --needed
+	wlogout blueman --noconfirm --needed
 echo "[Successfully installed basic utilities for hyprland]"
 
 $AUR_MANAGER -S awww waybar waypaper-git aquamarine swaync nautilus btop htop hardinfo2 libnotify jq --noconfirm --needed
@@ -101,6 +103,18 @@ echo "[Successfully installed fonts]"
 
 $AUR_MANAGER -S yazi fd resvg xsel 7zip --noconfirm --needed
 echo "[Successfully installed yazi]"
+
+$AUR_MANAGER -S zig rustup dioxus-cli sccache docker docker-compose --noconfirm --needed
+echo "[Successfully installed programming related stuff]"
+
+$AUR_MANAGER -S make cmake sfml gdb wolfssl --noconfirm --needed
+echo "[Successfully installed C\C++ related stuff]"
+
+$AUR_MANAGER -S qemu-full virt-manager dnsmasq --noconfirm --needed
+echo "[Successfully installed VM related stuff]"
+
+$AUR_MANAGER -S wine winetricks --noconfirm --needed
+echo "[Successfully installed wine]"
 
 # Create the hyprland directory (hypr) if it doesn't already exist
 if [ ! -d "$HYPRLAND_DIR" ]; then
@@ -179,6 +193,13 @@ if [ ! -d "$YAZI_DIR" ]; then
 else
 	echo "Found existing yazi directory at $YAZI_DIR"
 fi
+# Create the cargo config directory if it doesn't already exist
+if [ ! -d "$CARGO_DIR" ]; then
+	mkdir "$CARGO_DIR"
+	echo "Created cargo directory at $CARGO_DIR"
+else
+	echo "Found existing cargo directory at $CARGO_DIR"
+fi
 # Copy the hyprland configs to the hyprland directory on the user's device
 cp $CURRENT_DIR/confs/hyprland_confs/*.conf "$HYPRLAND_DIR" -v
 # Copy the hyprland configs to the hyprland config directory on the user's device
@@ -213,6 +234,13 @@ cp $CURRENT_DIR/confs/tmux_confs/*.conf "$TMUX_DIR" -v
 cp $CURRENT_DIR/confs/nwg_dock_conf/*.css "$NWG_DOCK_DIR" -v
 # Copy yazi config files to the user's yazi config directory
 cp $CURRENT_DIR/confs/yazi_conf/*.toml "$YAZI_DIR" -v
+# Copy cargo config files to the user's cargo config directory
+cp $CURRENT_DIR/confs/cargo_conf/*.toml "$CARGO_DIR" -v
+#Setup rustup
+rustup toolchain install stable
+export RUSTC_WRAPPER=sccache
+rustup component add rust-analyzer
+rustup component add rust-src
 # Configure luarocks to use the user directory by default for lua package management
 luarocks config local_by_default true
 luarocks install stdlib --local
@@ -222,11 +250,14 @@ oh-my-posh font install JetBrainsMono
 wal -i ~/wallpaper/default.jpg
 # Display the default wallpaper
 waypaper --wallpaper ~/wallpaper/default.jpg
-# Make add current user to wireshark group (to allow running wireshark in promiscuous mode)
+# Add current user to wireshark group (to allow running wireshark in promiscuous mode)
 sudo usermod -aG wireshark $USER
 # Enable paccache
 sudo systemctl enable paccache.timer
 sudo systemctl start paccache.timer
+# Enable libvirtd
+sudo systemctl enable --now libvirtd
+sudo usermod -aG libvirt $USER
 ## TODO: Add command to receive +user input for countries to receive mirrors from,
 ## Details:
 ##   - Check validity of user input
@@ -252,6 +283,8 @@ if [ "$SHELL" != $(which zsh) ]; then
 else
 	echo "[The default shell is zsh]"
 fi
+# Dark mode so you won't become blind ;)
+gsettings set org.gnome.desktop.interface color-scheme prefer-dark
 # Check if the user loves candy :)
 sed -n '/ILoveCandy/q 0;$q 1' /etc/pacman.conf
 if [ "$?" != 0 ]; then
