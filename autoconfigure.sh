@@ -265,8 +265,12 @@ sudo usermod -aG libvirt $USER
 # Clear old logs
 sudo journalctl --vacuum-size=100M
 sudo journalctl --vacuum-time=1week
-#Update xdg directories
+# Update xdg directories
 xdg-user-dirs-update
+# Start SSH agent for gnome keyring
+#systemctl --user enable gcr-ssh-agent.socket
+#export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/gcr/ssh
+eval `ssh-agent -s`
 ## TODO: Add command to receive +user input for countries to receive mirrors from,
 ## Details:
 ##   - Check validity of user input
@@ -294,8 +298,6 @@ else
 fi
 # Dark mode so you won't become blind ;)
 gsettings set org.gnome.desktop.interface color-scheme prefer-dark
-# Enable ssh agent
-eval `ssh-agent -s`
 # Check if the user loves candy :)
 sed -n '/ILoveCandy/q 0;$q 1' /etc/pacman.conf
 if [ "$?" != 0 ]; then
