@@ -282,6 +282,7 @@ eval `ssh-agent -s`
 ##   - If there are countries for reflector in /etc/xdg/reflector/reflector.conf, use them instead of
 ##     prompting the user for input
 ##   - Replace old config with the new one
+##   - Make installation of certain libraries and apps optional
 reflector --list-countries
 read -p "Enter the countries you want to receive mirrors from (comma-separated): " -r countries
 if [ -n "$countries" ]; then
