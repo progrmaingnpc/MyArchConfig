@@ -31,7 +31,7 @@ if command -v yay &> /dev/null; then
 elif command -v paru &> /dev/null; then
     AUR_MANAGER=paru
     echo "Paru is installed."
-else 
+else
     echo "Failed to install an AUR"
     exit
 fi
@@ -255,8 +255,6 @@ luarocks config local_by_default true
 luarocks install stdlib --local
 # Install oh-my-posh font
 oh-my-posh font install JetBrainsMono
-# Set shell color scheme according to default wallpaper
-wal -i ~/wallpaper/default.jpg
 # Display the default wallpaper
 waypaper --wallpaper ~/wallpaper/default.jpg
 # Add current user to wireshark group (to allow running wireshark in promiscuous mode)

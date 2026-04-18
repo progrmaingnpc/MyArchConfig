@@ -3,15 +3,12 @@
 #
 
 # If not running interactively, don't do anything
-(cat ~/.cache/wal/sequences &)
-cat ~/.cache/wal/sequences
-wal -i "$(cut -b 11- .cache/awww/*)" -q -e
 eval "$(oh-my-posh init bash --config /usr/share/oh-my-posh/themes/negligible.omp.json)"
 fastfetch --config ~/.config/fast_fetch_shell/default.jsonc --logo-type kitty-direct --logo ~/.config/fast_fetch_shell/default.png
+cat "$HOME/.cache/wal/sequences"
 
 [[ $- != *i* ]] && return
 
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 PS1='[\u@\h \W]\$ '
-source ~/.cache/wal/colors-tty.sh
