@@ -65,14 +65,6 @@ $AUR_MANAGER -S kitty zsh oh-my-posh-bin bash-completion \
    	zsh-completions fastfetch python-pywal postgresql --noconfirm --needed
 echo "[Finished installing shell configuration packages]"
 
-# Import keys required to install the Tor browser
-gpg --keyserver hkps://keys.openpgp.org --recv-keys EF6E286DDA85EA2A4BA7DE684E2C6E8793298290
-
-$AUR_MANAGER -S networkmanager tor tor-browser-bin wireshark-cli \
-    wireshark-qt zed power-profiles-daemon brave-bin discord ghidra \
-    signal-desktop --noconfirm --needed
-echo "[Finished installing basic apps]"
-
 $AUR_MANAGER -S nvidia-utils nvidia-open --noconfirm --needed
 echo "[Finished installing nvidia packages]"
 
@@ -104,26 +96,74 @@ echo "[Successfully installed fonts]"
 $AUR_MANAGER -S yazi fd resvg xsel 7zip --noconfirm --needed
 echo "[Successfully installed yazi]"
 
-$AUR_MANAGER -S zig rustup dioxus-cli sccache docker docker-compose --noconfirm --needed
-echo "[Successfully installed programming related stuff]"
+$AUR_MANAGER -S power-profiles-daemon --noconfirm --needed
+echo "[Successfully installed power profiles daemon]"
 
-$AUR_MANAGER -S make cmake clang sfml gdb wolfssl --noconfirm --needed
-echo "[Successfully installed C\C++ related stuff]"
-
-$AUR_MANAGER -S qemu-full virt-manager dnsmasq --noconfirm --needed
-echo "[Successfully installed VM related stuff]"
-
-$AUR_MANAGER -S wine winetricks --noconfirm --needed
-echo "[Successfully installed wine]"
-
-$AUR_MANAGER -S dioxus-cli libayatana-appindicator xdotool webkit2gtk-4.1 sqlite --noconfirm --needed
-echo "[Successfully installed dioxus-cli]"
-
-$AUR_MANAGER -S bitwarden trash-cli --noconfirm --needed
-echo "[Successfully installed bitwarden]"
-
-$AUR_MANAGER -S bind whois sequoia-sq qbittorrent --noconfirm --needed
+$AUR_MANAGER -S bind whois sequoia-sq networkmanager --noconfirm --needed
 echo "[Successfully installed networking utilities]"
+
+read -p "Would you like to install some of the apps I used?" -r install_opt
+if [[ $install_opt == "y" || $install_opt == "Y" || $install_opt == "Yes" || $install_opt == "yes" ]]; then
+    # Import keys required to install the Tor browser
+    gpg --keyserver hkps://keys.openpgp.org --recv-keys EF6E286DDA85EA2A4BA7DE684E2C6E8793298290
+    $AUR_MANAGER -S tor tor-browser-bin wireshark-cli \
+        wireshark-qt zed brave-bin discord ghidra \
+        signal-desktop qbittorrent --noconfirm --needed
+    echo "[Finished installing basic apps]"
+
+    # Add current user to wireshark group (to allow running wireshark in promiscuous mode)
+    sudo usermod -aG wireshark $USER
+fi
+
+read -p "Would you like to install some libraries\programming related packages I use?" -r install_opt
+if [[ $install_opt == "y" || $install_opt == "Y" || $install_opt == "Yes" || $install_opt == "yes" ]]; then
+    $AUR_MANAGER -S zig rustup sccache docker docker-compose --noconfirm --needed
+    echo "[Successfully installed programming related stuff]"
+
+    $AUR_MANAGER -S make cmake clang sfml gdb wolfssl --noconfirm --needed
+    echo "[Successfully installed C\C++ related stuff]"
+
+    $AUR_MANAGER -S dioxus-cli libayatana-appindicator xdotool webkit2gtk-4.1 sqlite --noconfirm --needed
+    echo "[Successfully installed dioxus-cli]"
+
+    # Create the cargo config directory if it doesn't already exist
+    if [ ! -d "$CARGO_DIR" ]; then
+        mkdir "$CARGO_DIR"
+        echo "Created cargo directory at $CARGO_DIR"
+    else
+        echo "Found existing cargo directory at $CARGO_DIR"
+    fi
+    # Copy cargo config files to the user's cargo config directory
+    cp $CURRENT_DIR/confs/cargo_conf/*.toml "$CARGO_DIR" -v
+
+    #Setup rustup
+    rustup toolchain install stable
+    rustup component add rust-analyzer
+    rustup component add rust-src
+    export RUSTC_WRAPPER=sccache
+fi
+
+read -p "Would you like to install QEMU?" -r install_opt
+if [[ $install_opt == "y" || $install_opt == "Y" || $install_opt == "Yes" || $install_opt == "yes" ]]; then
+    $AUR_MANAGER -S qemu-full virt-manager dnsmasq --noconfirm --needed
+    echo "[Successfully installed VM related stuff]"
+
+    # Enable libvirtd
+    sudo systemctl enable --now libvirtd
+    sudo usermod -aG libvirt $USER
+fi
+
+read -p "Would you like to install WINE?" -r install_opt
+if [[ $install_opt == "y" || $install_opt == "Y" || $install_opt == "Yes" || $install_opt == "yes" ]]; then
+    $AUR_MANAGER -S wine winetricks --noconfirm --needed
+    echo "[Successfully installed wine]"
+fi
+
+read -p "Would you like to install bitwarden?" -r install_opt
+if [[ $install_opt == "y" || $install_opt == "Y" || $install_opt == "Yes" || $install_opt == "yes" ]]; then
+    $AUR_MANAGER -S bitwarden trash-cli --noconfirm --needed
+    echo "[Successfully installed bitwarden]"
+fi
 
 # Create the hyprland directory (hypr) if it doesn't already exist
 if [ ! -d "$HYPRLAND_DIR" ]; then
@@ -202,13 +242,6 @@ if [ ! -d "$YAZI_DIR" ]; then
 else
 	echo "Found existing yazi directory at $YAZI_DIR"
 fi
-# Create the cargo config directory if it doesn't already exist
-if [ ! -d "$CARGO_DIR" ]; then
-	mkdir "$CARGO_DIR"
-	echo "Created cargo directory at $CARGO_DIR"
-else
-	echo "Found existing cargo directory at $CARGO_DIR"
-fi
 # Copy the hyprland configs to the hyprland directory on the user's device
 cp $CURRENT_DIR/confs/hyprland_confs/*.conf "$HYPRLAND_DIR" -v
 # Copy the hyprland configs to the hyprland config directory on the user's device
@@ -243,13 +276,6 @@ cp $CURRENT_DIR/confs/tmux_confs/*.conf "$TMUX_DIR" -v
 cp $CURRENT_DIR/confs/nwg_dock_conf/*.css "$NWG_DOCK_DIR" -v
 # Copy yazi config files to the user's yazi config directory
 cp $CURRENT_DIR/confs/yazi_conf/*.toml "$YAZI_DIR" -v
-# Copy cargo config files to the user's cargo config directory
-cp $CURRENT_DIR/confs/cargo_conf/*.toml "$CARGO_DIR" -v
-#Setup rustup
-rustup toolchain install stable
-export RUSTC_WRAPPER=sccache
-rustup component add rust-analyzer
-rustup component add rust-src
 # Configure luarocks to use the user directory by default for lua package management
 luarocks config local_by_default true
 luarocks install stdlib --local
@@ -257,25 +283,17 @@ luarocks install stdlib --local
 oh-my-posh font install JetBrainsMono
 # Display the default wallpaper
 waypaper --wallpaper ~/wallpaper/default.jpg
-# Add current user to wireshark group (to allow running wireshark in promiscuous mode)
-sudo usermod -aG wireshark $USER
 # Enable paccache
 sudo systemctl enable paccache.timer
 sudo systemctl start paccache.timer
-# Enable libvirtd
-sudo systemctl enable --now libvirtd
-sudo usermod -aG libvirt $USER
 # Clear old logs
 sudo journalctl --vacuum-size=100M
 sudo journalctl --vacuum-time=1week
 # Update xdg directories
 xdg-user-dirs-update
 # Start SSH agent for gnome keyring
-#systemctl --user enable gcr-ssh-agent.socket
-#export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/gcr/ssh
 eval `ssh-agent -s`
-## TODO: Add command to receive +user input for countries to receive mirrors from,
-## Details:
+## TODO:
 ##   - Check validity of user input
 ##   - If there are countries for reflector in /etc/xdg/reflector/reflector.conf, use them instead of
 ##     prompting the user for input
