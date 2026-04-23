@@ -55,8 +55,11 @@ echo "[Successfully installed dock for hyprland]"
 $AUR_MANAGER -S wl-clipboard qt5-wayland qt6-wayland qt6ct otf-font-awesome --noconfirm --needed
 echo "[Finished installing hyprland configuration packages]"
 
-$AUR_MANAGER -S gparted xorg-xhost ncdu dysk pacman-contrib --noconfirm --needed
+$AUR_MANAGER -S gparted ntfs-3g gpart dosfstools mtools xorg-xhost ncdu dysk pacman-contrib --noconfirm --needed
 echo "[Finished installing disk and cache management packages]"
+
+$AUR_MANAGER -S fwupd --noconfirm --needed
+echo "[Finished installing fwupd for firmware management]"
 
 $AUR_MANAGER -S pacseek reflector --noconfirm --needed
 echo "[Finished installing package management tools]"
@@ -71,7 +74,7 @@ echo "[Finished installing nvidia packages]"
 $AUR_MANAGER -S xdg-desktop-portal xdg-desktop-portal-hyprland xdg-desktop-portal-gtk \ --noconfirm --needed
 echo "[Finished installing xdg-desktop packages]"
 
-$AUR_MANAGER -S gtk4 papirus-icon-theme breeze noto-fonts noto-fonts-emoji libadwaita \
+$AUR_MANAGER -S gtk4 gtk3 papirus-icon-theme breeze noto-fonts noto-fonts-emoji libadwaita \
     noto-fonts-cjk noto-fonts-extra --noconfirm --needed
 echo "[Successfully installed gtk esthetic packages]"
 
