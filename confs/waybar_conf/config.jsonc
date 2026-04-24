@@ -28,7 +28,7 @@
     "format": "{icon}",
     "format-icons": "",
     "rotate": 0,
-    "on-click": "~/.config/hypr/scripts/applauncher.sh",
+    "on-click": "walker",
   },
   // Modules configuration
   "hyprland/workspaces": {
