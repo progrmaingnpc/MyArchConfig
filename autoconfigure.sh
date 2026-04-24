@@ -111,7 +111,7 @@ if [[ $install_opt == "y" || $install_opt == "Y" || $install_opt == "Yes" || $in
     # Import keys required to install the Tor browser
     gpg --keyserver hkps://keys.openpgp.org --recv-keys EF6E286DDA85EA2A4BA7DE684E2C6E8793298290
     $AUR_MANAGER -S tor tor-browser-bin wireshark-cli \
-        wireshark-qt zed brave-bin discord ghidra \
+        wireshark-qt zed helium-browser-bin discord ghidra \
         signal-desktop qbittorrent --noconfirm --needed
     echo "[Finished installing basic apps]"
 
