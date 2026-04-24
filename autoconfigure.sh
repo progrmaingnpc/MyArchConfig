@@ -11,6 +11,7 @@ NWG_DOCK_DIR=~/.config/nwg-dock-hyprland
 GTK_THEMES_DIR=~/.themes
 YAZI_DIR=~/.config/yazi
 CARGO_DIR=~/.cargo
+WALKER_DIR=~/.config/walker
 CURRENT_DIR=$(pwd)
 
 sudo pacman -Syu
@@ -51,6 +52,9 @@ echo "[Successfully installed file system management packages]"
 
 $AUR_MANAGER -S nwg-look nwg-dock-hyprland grimblast-git slurp wl-clipboard --noconfirm --needed
 echo "[Successfully installed dock for hyprland]"
+
+$AUR_MANAGER -S elephant elephant-desktopapplications walker --noconfirm --needed
+echo "[Successfully installed walker]"
 
 $AUR_MANAGER -S wl-clipboard qt5-wayland qt6-wayland qt6ct otf-font-awesome --noconfirm --needed
 echo "[Finished installing hyprland configuration packages]"
@@ -246,18 +250,25 @@ if [ ! -d "$YAZI_DIR" ]; then
 else
 	echo "Found existing yazi directory at $YAZI_DIR"
 fi
+# Create the walker config directory if it doesn't already exist
+if [ ! -d "$WALKER_DIR" ]; then
+	mkdir "$WALKER_DIR"
+	echo "Created walker directory at $WALKER_DIR"
+else
+	echo "Found existing walker directory at $WALKER_DIR"
+fi
 # Copy the hyprland configs to the hyprland directory on the user's device
-cp $CURRENT_DIR/confs/hyprland_confs/*.conf "$HYPRLAND_DIR" -v
+cp $CURRENT_DIR/confs/hyprland_conf/*.conf "$HYPRLAND_DIR" -v
 # Copy the hyprland configs to the hyprland config directory on the user's device
-cp $CURRENT_DIR/confs/hyprland_confs/conf "$HYPRLAND_DIR" -r -v
+cp $CURRENT_DIR/confs/hyprland_conf/conf "$HYPRLAND_DIR" -r -v
 # # Copy hyprland scripts directory to user's hyprland config directory
 cp $CURRENT_DIR/scripts "$HYPRLAND_DIR" -r -v
 # Copy the waybar configs to the waybar config directory on the user's device
-cp $CURRENT_DIR/confs/waybar_confs/*.jsonc "$WAYBAR_DIR" -v
-cp $CURRENT_DIR/confs/waybar_confs/*.css "$WAYBAR_DIR" -v
+cp $CURRENT_DIR/confs/waybar_conf/*.jsonc "$WAYBAR_DIR" -v
+cp $CURRENT_DIR/confs/waybar_conf/*.css "$WAYBAR_DIR" -v
 # Copy the wlogout configs to the wlogout config directory on the user's device
-cp $CURRENT_DIR/confs/wlogout_confs/*.css "$WLOGOUT_DIR" -v
-cp $CURRENT_DIR/confs/wlogout_confs/layout "$WLOGOUT_DIR" -v
+cp $CURRENT_DIR/confs/wlogout_conf/*.css "$WLOGOUT_DIR" -v
+cp $CURRENT_DIR/confs/wlogout_conf/layout "$WLOGOUT_DIR" -v
 # Copy the kitty configs to the kitty config directory on the user's device
 cp $CURRENT_DIR/confs/terminal_conf/kitty/*.conf "$KITTY_DIR" -v
 # Copy the bash config file to the user's .bashrc file
@@ -271,15 +282,18 @@ cp $CURRENT_DIR/wallpaper/ ~/ -r -v
 # Copy waypaper config to user's wallpaper directory
 cp $CURRENT_DIR/confs/waypaper_conf/config.ini "$WAYPAPER_DIR" -v
 # Copy neovim config file to the user's neovim config directory
-cp $CURRENT_DIR/confs/nvim_confs/init.lua "$NVIM_DIR" -v
+cp $CURRENT_DIR/confs/nvim_conf/init.lua "$NVIM_DIR" -v
 # Copy neovim lua config files to the user's neovim lua config directory
-cp $CURRENT_DIR/confs/nvim_confs/lua "$NVIM_DIR" -r -v
+cp $CURRENT_DIR/confs/nvim_conf/lua "$NVIM_DIR" -r -v
 # Copy tmux config files to the user's tmux config directory
-cp $CURRENT_DIR/confs/tmux_confs/*.conf "$TMUX_DIR" -v
+cp $CURRENT_DIR/confs/tmux_conf/*.conf "$TMUX_DIR" -v
 # Copy nwg-dock config files to the user's nwg-dock config directory
 cp $CURRENT_DIR/confs/nwg_dock_conf/*.css "$NWG_DOCK_DIR" -v
 # Copy yazi config files to the user's yazi config directory
 cp $CURRENT_DIR/confs/yazi_conf/*.toml "$YAZI_DIR" -v
+# Copy walker config files to the user's walker config directory
+cp $CURRENT_DIR/confs/walker_conf/*.toml "$WALKER_DIR" -v
+cp $CURRENT_DIR/confs/walker_conf/themes "$WALKER_DIR" -r -v
 # Configure luarocks to use the user directory by default for lua package management
 luarocks config local_by_default true
 luarocks install stdlib --local
