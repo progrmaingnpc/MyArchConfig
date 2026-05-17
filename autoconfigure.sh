@@ -125,7 +125,7 @@ fi
 
 read -p "Would you like to install some libraries\programming related packages I use?" -r install_opt
 if [[ $install_opt == "y" || $install_opt == "Y" || $install_opt == "Yes" || $install_opt == "yes" ]]; then
-    $AUR_MANAGER -S zig rustup sccache docker docker-compose --noconfirm --needed
+    $AUR_MANAGER -S zig rustup sccache docker docker-compose docker-credential-secretservice --noconfirm --needed
     echo "[Successfully installed programming related stuff]"
 
     $AUR_MANAGER -S make cmake clang sfml gdb wolfssl --noconfirm --needed
