@@ -7,7 +7,9 @@ Rectangle {
     id: walkerLauncher
     width: 30
     height: 30
-    color: "transparent"
+    radius: 15
+    color: launcherMouseArea.containsMouse ? "black" : "black"
+
     // Optional Process element to run Walker in the background if needed
     Process {
         id: walkerProcess
@@ -20,13 +22,15 @@ Rectangle {
         color: "transparent"
 
         Text {
-            color: "#FFD700"
+            color: "gold"
             text: "" // Or use an Icon component if you have an icon theme
             anchors.centerIn: parent
         }
 
         MouseArea {
+            id: launcherMouseArea
             anchors.fill: parent
+            hoverEnabled: true
             onClicked: {
                 // This will trigger the command defined in the Process element
                 walkerProcess.startDetached();

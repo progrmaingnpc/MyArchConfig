@@ -12,6 +12,7 @@ GTK_THEMES_DIR=~/.themes
 YAZI_DIR=~/.config/yazi
 CARGO_DIR=~/.cargo
 WALKER_DIR=~/.config/walker
+QUICKSHELL_DIR=~/.config/quickshell
 CURRENT_DIR=$(pwd)
 
 sudo pacman -Syu
@@ -257,6 +258,13 @@ if [ ! -d "$WALKER_DIR" ]; then
 else
 	echo "Found existing walker directory at $WALKER_DIR"
 fi
+# Create the quickshell config directory if it doesn't already exist
+if [ ! -d "$QUICKSHELL_DIR" ]; then
+	mkdir "$QUICKSHELL_DIR"
+	echo "Created quickshell directory at $QUICKSHELL_DIR"
+else
+	echo "Found existing quickshell directory at $QUICKSHELL_DIR"
+fi
 # Copy the hyprland configs to the hyprland directory on the user's device
 cp $CURRENT_DIR/confs/hyprland_conf/*.conf "$HYPRLAND_DIR" -v
 # Copy the hyprland configs to the hyprland config directory on the user's device
@@ -294,6 +302,7 @@ cp $CURRENT_DIR/confs/yazi_conf/*.toml "$YAZI_DIR" -v
 # Copy walker config files to the user's walker config directory
 cp $CURRENT_DIR/confs/walker_conf/*.toml "$WALKER_DIR" -v
 cp $CURRENT_DIR/confs/walker_conf/themes "$WALKER_DIR" -r -v
+cp $CURRENT_DIR/confs/quickshell_conf/* "$QUICKSHELL_DIR" -r -v
 # Configure luarocks to use the user directory by default for lua package management
 luarocks config local_by_default true
 luarocks install stdlib --local
