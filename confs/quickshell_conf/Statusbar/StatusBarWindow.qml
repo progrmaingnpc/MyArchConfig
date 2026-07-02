@@ -67,23 +67,9 @@ PanelWindow {
             anchors.verticalCenter: parent.verticalCenter
         }
 
-        MemoryModule {
-            id: memory
-            anchors.right: battery.left
-            anchors.rightMargin: 10
-            anchors.verticalCenter: parent.verticalCenter
-        }
-
-        CpuModule {
-            id: cpu
-            anchors.right: memory.left
-            anchors.rightMargin: 10
-            anchors.verticalCenter: parent.verticalCenter
-        }
-
         NetworkModule {
             id: network
-            anchors.right: cpu.left
+            anchors.right: battery.left
             anchors.rightMargin: 10
             anchors.verticalCenter: parent.verticalCenter
         }
@@ -94,8 +80,21 @@ PanelWindow {
             anchors.rightMargin: 10
             anchors.verticalCenter: parent.verticalCenter
         }
+
+        MemoryModule {
+            id: memory
+            anchors.right: audio.left
+            anchors.rightMargin: 10
+            anchors.verticalCenter: parent.verticalCenter
+        }
+
+        CpuModule {
+            id: cpu
+            anchors.right: memory.left
+            anchors.rightMargin: 10
+            anchors.verticalCenter: parent.verticalCenter
+        }
     }
-    //}
 
     CalendarWindow {
         anchor.item: clock
