@@ -67,9 +67,16 @@ PanelWindow {
             anchors.verticalCenter: parent.verticalCenter
         }
 
+        PowerProfilesModule {
+            id: powerProfiles
+            anchors.right: battery.left
+            anchors.rightMargin: 10
+            anchors.verticalCenter: parent.verticalCenter
+        }
+
         NetworkModule {
             id: network
-            anchors.right: battery.left
+            anchors.right: powerProfiles.left
             anchors.rightMargin: 10
             anchors.verticalCenter: parent.verticalCenter
         }
