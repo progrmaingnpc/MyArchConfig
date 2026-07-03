@@ -9,7 +9,7 @@ PopupWindow {
 
     anchor.item: anchorItem
     anchor.edges: Edges.Bottom | Edges.Right
-    anchor.gravity: Edges.Bottom | Edges.Left
+    anchor.gravity: Edges.Bottom | Edges.Center
     anchor.margins.top: 8
 
     implicitWidth: 320
