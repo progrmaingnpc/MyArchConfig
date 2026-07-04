@@ -20,7 +20,8 @@ Rectangle {
         const values = {};
         for (const line of lines) {
             const match = line.match(/^(\w+):\s+(\d+)/);
-            if (match) values[match[1]] = Number(match[2]);
+            if (match)
+                values[match[1]] = Number(match[2]);
         }
         if (values.MemTotal > 0 && values.MemAvailable !== undefined) {
             memoryRoot.pct = Math.round((1 - values.MemAvailable / values.MemTotal) * 100);
@@ -39,6 +40,6 @@ Rectangle {
         id: label
         anchors.centerIn: parent
         color: "gold"
-        text: memoryRoot.pct + "%"
+        text: memoryRoot.pct + "% "
     }
 }
