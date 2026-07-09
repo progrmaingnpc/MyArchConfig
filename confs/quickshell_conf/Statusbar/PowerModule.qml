@@ -1,4 +1,5 @@
 import QtQuick
+import "../Power"
 
 Rectangle {
     id: powerRoot
@@ -20,5 +21,11 @@ Rectangle {
     MouseArea {
         anchors.fill: parent
         onClicked: powerRoot.open = !powerRoot.open
+    }
+
+    PowerMenu {
+        anchorItem: powerRoot
+        visible: powerRoot.open
+        onPowerOptionSelected: powerRoot.open = false
     }
 }

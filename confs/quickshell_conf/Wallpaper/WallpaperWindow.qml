@@ -4,9 +4,17 @@ import Qt.labs.folderlistmodel
 import Quickshell
 import Quickshell.Io
 
-FloatingWindow {
+PopupWindow {
     id: root
-    title: "Wallpaper Picker"
+
+    property var anchorItem: null
+    signal wallpaperSelected()
+    anchor.item: anchorItem
+    anchor.rect.x: anchorItem ? 0 : 0
+    anchor.rect.y: anchorItem ? anchorItem.height : 0
+    anchor.edges: Edges.Bottom
+    anchor.gravity: Edges.Bottom
+
     implicitWidth: 700
     implicitHeight: 500
     color: "black"
@@ -30,7 +38,6 @@ FloatingWindow {
         cellHeight: 140
         model: wallpapers
         clip: true
-
         delegate: Rectangle {
             width: 194
             height: 124
@@ -38,7 +45,6 @@ FloatingWindow {
             color: "transparent"
             border.width: 2
             border.color: thumbMouse.containsMouse ? "gold" : "transparent"
-
             Image {
                 anchors.fill: parent
                 anchors.margins: 4
@@ -46,7 +52,6 @@ FloatingWindow {
                 fillMode: Image.PreserveAspectCrop
                 asynchronous: true
             }
-
             Text {
                 anchors.bottom: parent.bottom
                 anchors.left: parent.left
@@ -57,7 +62,6 @@ FloatingWindow {
                 style: Text.Outline
                 styleColor: "black"
             }
-
             MouseArea {
                 id: thumbMouse
                 anchors.fill: parent
@@ -65,6 +69,7 @@ FloatingWindow {
                 onClicked: {
                     applyProcess.command = ["waypaper", "--wallpaper", filePath];
                     applyProcess.startDetached();
+                    root.wallpaperSelected()  // close the picker after selecting
                 }
             }
         }

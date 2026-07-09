@@ -6,7 +6,7 @@ PopupWindow {
     id: root
 
     property Item anchorItem
-
+    signal powerOptionSelected()
     anchor.item: anchorItem
     anchor.edges: Edges.Bottom | Edges.Right
     anchor.gravity: Edges.Bottom | Edges.Left
@@ -59,7 +59,7 @@ PopupWindow {
                     onClicked: {
                         actionProcess.command = ["sh", "-c", modelData.cmd];
                         actionProcess.startDetached();
-                        root.visible = false;
+                        root.powerOptionSelected()
                     }
                 }
             }

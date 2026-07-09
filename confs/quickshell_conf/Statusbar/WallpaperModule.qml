@@ -1,5 +1,6 @@
 import QtQuick
 import Quickshell
+import "../Wallpaper"          // <-- add this
 
 Rectangle {
     id: wallpaperRoot
@@ -8,6 +9,7 @@ Rectangle {
     radius: 15
     color: "transparent"
 
+    property bool open: false
     Text {
         anchors.centerIn: parent
         color: "gold"
@@ -16,9 +18,13 @@ Rectangle {
         font.weight: Font.Black
         text: "\uf03e"
     }
-
     MouseArea {
         anchors.fill: parent
-        onClicked: Quickshell.execDetached(["qs", "-p", Quickshell.shellPath("Wallpaper")])
+        onClicked: wallpaperRoot.open = !wallpaperRoot.open
+    }
+    WallpaperWindow {
+        anchorItem: wallpaperRoot
+        visible: wallpaperRoot.open       // binding stays intact now
+        onWallpaperSelected: wallpaperRoot.open = false
     }
 }
