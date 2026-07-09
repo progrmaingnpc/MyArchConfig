@@ -3,7 +3,6 @@ import Quickshell.Wayland
 import Quickshell.Hyprland
 import Quickshell.Io
 import QtQuick
-import "../Calender"
 import "../Notifications"
 import "../Power"
 import "../Network"
@@ -101,11 +100,6 @@ PanelWindow {
             anchors.rightMargin: 10
             anchors.verticalCenter: parent.verticalCenter
         }
-    }
-
-    CalendarWindow {
-        anchor.item: clock
-        visible: clock.hovered
     }
 
     NotificationsWindow {

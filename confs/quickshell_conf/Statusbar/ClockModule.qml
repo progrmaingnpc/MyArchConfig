@@ -1,5 +1,6 @@
 import Quickshell
 import QtQuick
+import "../Calendar"
 
 Rectangle {
     id: clockRoot
@@ -8,6 +9,7 @@ Rectangle {
     radius: 15
     color: "transparent"
 
+    property bool open: false
     property bool showDate: false
     readonly property alias hovered: clockMouseArea.containsMouse
 
@@ -27,5 +29,42 @@ Rectangle {
         anchors.fill: parent
         hoverEnabled: true
         onClicked: clockRoot.showDate = !clockRoot.showDate
+    }
+
+    // debounce: only close if, after a short delay, neither
+    // the trigger nor the popup is hovered anymore
+    Timer {
+        id: closeTimer
+        interval: 200
+        onTriggered: {
+            if (!triggerHover.hovered && !calendarPopup.popupHovered)
+                clockRoot.open = false
+        }
+    }
+
+    HoverHandler {
+        id: triggerHover
+        onHoveredChanged: {
+            if (hovered) {
+                closeTimer.stop()
+                clockRoot.open = true
+            } else {
+                closeTimer.restart()
+            }
+        }
+    }
+
+    CalendarWindow {
+        id: calendarPopup
+        anchor.item: clockRoot
+        visible: clockRoot.open
+
+        onPopupHoveredChanged: {
+            if (popupHovered) {
+                closeTimer.stop()
+            } else {
+                closeTimer.restart()
+            }
+        }
     }
 }

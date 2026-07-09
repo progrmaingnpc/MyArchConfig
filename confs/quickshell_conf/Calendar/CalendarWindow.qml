@@ -13,6 +13,9 @@ PopupWindow {
     anchor.gravity: Edges.Bottom
     anchor.margins.top: 8
 
+    // expose whether the mouse is currently over the popup
+    property alias popupHovered: hoverHandler.hovered
+
     property var today: new Date()
     property int viewYear: today.getFullYear()
     property int viewMonth: today.getMonth()
@@ -23,8 +26,8 @@ PopupWindow {
     readonly property var dayNames: ["Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"]
 
     function buildDays() {
-        const firstDay = new Date(viewYear, viewMonth, 1).getDay() // 0 Sun..6 Sat
-        const offset = (firstDay + 6) % 7 // Monday-first offset
+        const firstDay = new Date(viewYear, viewMonth, 1).getDay()
+        const offset = (firstDay + 6) % 7
         const daysInMonth = new Date(viewYear, viewMonth + 1, 0).getDate()
         const cells = []
         for (let i = 0; i < offset; i++) cells.push(0)
@@ -55,6 +58,12 @@ PopupWindow {
     }
 
     Component.onCompleted: days = buildDays()
+
+    // covers the whole popup, purely for hover tracking — doesn't
+    // intercept clicks meant for the buttons/cells below it
+    HoverHandler {
+        id: hoverHandler
+    }
 
     Column {
         anchors.fill: parent
@@ -108,10 +117,8 @@ PopupWindow {
 
         Grid {
             columns: 7
-
             Repeater {
                 model: root.dayNames
-
                 Text {
                     width: root.cellSize
                     height: 20
@@ -125,10 +132,8 @@ PopupWindow {
 
         Grid {
             columns: 7
-
             Repeater {
                 model: root.days
-
                 Rectangle {
                     width: root.cellSize
                     height: root.cellSize
