@@ -58,7 +58,7 @@ PopupWindow {
                 width: track.width * bar.vol
                 height: track.height
                 radius: track.radius
-                color: "yellow"
+                color: "Gold"
             }
         }
 
