@@ -11,9 +11,10 @@ PopupWindow {
     property Item anchorItem
 
     anchor.item: anchorItem
-    anchor.edges: Edges.Bottom | Edges.Right
-    anchor.gravity: Edges.Bottom | Edges.Left
-    anchor.margins.top: 8
+    anchor.rect.x: (anchorItem ? (anchorItem.width - root.implicitWidth) / 2 : 0)
+    anchor.rect.y: anchorItem ? anchorItem.height : 0
+    anchor.edges: Edges.Top | Edges.Left
+    anchor.gravity: Edges.Bottom | Edges.Right
 
     implicitWidth: 340
     implicitHeight: Math.min(560, Math.max(160, content.implicitHeight + 20))
