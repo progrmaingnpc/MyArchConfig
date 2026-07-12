@@ -7,6 +7,30 @@ import Quickshell.Services.Pipewire
 PopupWindow {
     id: popup
 
+    property var cards: []
+
+    Process {
+        id: cardsProcess
+        command: ["pactl", "-f", "json", "list", "cards"]
+        stdout: StdioCollector { id: cardsCollector }
+        onExited: {
+            try {
+                popup.cards = JSON.parse(cardsCollector.text)
+            } catch (e) {
+                popup.cards = []
+            }
+        }
+    }
+
+    Process {
+        id: setProfileProcess
+        onExited: cardsProcess.running = true   // refresh the list once the switch lands
+    }
+
+    onCurrentTabChanged: {
+        if (currentTab === 3) cardsProcess.running = true
+    }
+
     property var anchorItem: null
         anchor.item: anchorItem
         anchor.rect.x: anchorItem ? 0 : 0
@@ -310,7 +334,7 @@ PopupWindow {
         id: configTab
         Column {
             width: content.width
-            spacing: 8
+            spacing: 14
 
             Text { text: "Default Output"; color: "gold"; font.pixelSize: 11 }
             Text {
@@ -339,6 +363,138 @@ PopupWindow {
                     anchors.fill: parent
                     onClicked: Quickshell.execDetached(["systemctl", "--user", "restart", "wireplumber"])
                 }
+            }
+
+            Text { text: "Device Profiles"; color: "gold"; font.pixelSize: 11; font.bold: true }
+
+            Repeater {
+                model: popup.cards
+                delegate: Column {
+                    width: content.width
+                    spacing: 4
+
+                    readonly property string cardName: modelData.name
+                    readonly property string cardLabel:
+                        (modelData.properties && modelData.properties["device.description"])
+                            ? modelData.properties["device.description"]
+                            : modelData.name
+                    readonly property string activeProfile: modelData.active_profile
+                    readonly property var otherProfiles: {
+                        let names = []
+                        for (const key in modelData.profiles) {
+                            if (key === activeProfile) continue
+                            if (modelData.profiles[key].available !== false)
+                                names.push(key)
+                        }
+                        return names
+                    }
+
+                    property bool dropdownOpen: false
+
+                    Text {
+                        text: cardLabel
+                        color: "gold"
+                        font.pixelSize: 11
+                        font.bold: true
+                        elide: Text.ElideRight
+                        width: parent.width
+                    }
+
+                    // ---- currently selected profile: click to open/close the list ----
+                    Rectangle {
+                        width: parent.width
+                        height: 28
+                        radius: 4
+                        color: "gold"
+                        border.color: "gold"
+
+                        Row {
+                            anchors.fill: parent
+                            anchors.leftMargin: 8
+                            anchors.rightMargin: 8
+                            Text {
+                                width: parent.width - 16
+                                height: parent.height
+                                verticalAlignment: Text.AlignVCenter
+                                elide: Text.ElideRight
+                                text: activeProfile || "none"
+                                color: "black"
+                                font.pixelSize: 11
+                                font.bold: true
+                            }
+                        }
+
+                        // little caret to signal it's expandable
+                        Text {
+                            anchors.right: parent.right
+                            anchors.rightMargin: 8
+                            anchors.verticalCenter: parent.verticalCenter
+                            text: dropdownOpen ? "▲" : "▼"
+                            color: "black"
+                            font.pixelSize: 9
+                        }
+
+                        MouseArea {
+                            anchors.fill: parent
+                            onClicked: dropdownOpen = !dropdownOpen
+                        }
+                    }
+
+                    // ---- dropdown: every OTHER available profile ----
+                    Column {
+                        width: parent.width
+                        spacing: 2
+                        visible: dropdownOpen
+                        height: visible ? implicitHeight : 0
+                        clip: true
+
+                        Repeater {
+                            model: otherProfiles
+                            delegate: Rectangle {
+                                width: parent.width
+                                height: 26
+                                radius: 4
+                                color: optionMouse.containsMouse ? "#333333" : "black"
+                                border.color: "gold"
+                                border.width: 1
+
+                                Text {
+                                    anchors.left: parent.left
+                                    anchors.leftMargin: 8
+                                    anchors.verticalCenter: parent.verticalCenter
+                                    text: modelData
+                                    color: "gold"
+                                    font.pixelSize: 10
+                                }
+
+                                MouseArea {
+                                    id: optionMouse
+                                    anchors.fill: parent
+                                    hoverEnabled: true
+                                    onClicked: {
+                                        setProfileProcess.command = ["pactl", "set-card-profile", cardName, modelData]
+                                        setProfileProcess.running = true
+                                        dropdownOpen = false
+                                    }
+                                }
+                            }
+                        }
+
+                        Text {
+                            visible: otherProfiles.length === 0
+                            text: "No other profiles available"
+                            color: "#666666"
+                            font.pixelSize: 9
+                        }
+                    }
+                }
+            }
+
+            Text {
+                visible: popup.cards.length === 0
+                text: "No cards found (is pactl / pipewire-pulse installed?)"
+                color: "#666666"
+                font.pixelSize: 10
             }
         }
     }
