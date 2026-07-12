@@ -405,7 +405,7 @@ PopupWindow {
                         width: parent.width
                         height: 28
                         radius: 4
-                        color: "gold"
+                        color: "black"
                         border.color: "gold"
 
                         Row {
@@ -418,7 +418,7 @@ PopupWindow {
                                 verticalAlignment: Text.AlignVCenter
                                 elide: Text.ElideRight
                                 text: activeProfile || "none"
-                                color: "black"
+                                color: "gold"
                                 font.pixelSize: 11
                                 font.bold: true
                             }
