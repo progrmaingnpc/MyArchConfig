@@ -9,3 +9,5 @@
 9. Added reflector config
 10. Made wal colors load first in shell
 11. Added statusbar, built with quickshell
+12. Converted all .conf configurations to .lua
+13. Added cool animations

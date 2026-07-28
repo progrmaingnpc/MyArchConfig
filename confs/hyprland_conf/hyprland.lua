@@ -1,0 +1,16 @@
+---@module 'hl'
+
+require("conf/monitors")
+require("conf/autostart")
+require("conf/environment_variables")
+require("conf/permissions")
+require("conf/general")
+require("conf/decorations")
+require("conf/animations")
+require("conf/dwindle_layout")
+require("conf/master_layout")
+require("conf/misc")
+require("conf/keyboard")
+require("conf/keybindings")
+require("conf/workspace_rules")
+require("conf/window_rules")

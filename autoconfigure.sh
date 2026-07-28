@@ -266,6 +266,8 @@ else
 	echo "Found existing quickshell directory at $QUICKSHELL_DIR"
 fi
 # Copy the hyprland configs to the hyprland directory on the user's device
+cp $CURRENT_DIR/confs/hyprland_conf/*.lua "$HYPRLAND_DIR" -v
+# Copy the hyprland configs to the hyprland directory on the user's device
 cp $CURRENT_DIR/confs/hyprland_conf/*.conf "$HYPRLAND_DIR" -v
 # Copy the hyprland configs to the hyprland config directory on the user's device
 cp $CURRENT_DIR/confs/hyprland_conf/conf "$HYPRLAND_DIR" -r -v
