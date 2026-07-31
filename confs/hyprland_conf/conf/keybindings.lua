@@ -97,14 +97,6 @@ hl.bind(mainMod .. " + " .. "M", function()
         hl.dispatch(hl.dsp.window.fullscreen_state({ internal = 1, client = 0, action = "set" }))
     end
 end)
---hl.bind(mainMod .. " + " .. "F", function()
---    hl.dispatch(hl.dsp.window.fullscreen_state({ internal = 2, client = 0, action = "set" }))
---end)
---hl.bind(mainMod .. " + " .. "F", hl.dsp.window.fullscreen({ mode = 0 }))
--- Toggle real fullscreen
-
---hl.bind(mainMod .. " + " .. "M", hl.dsp.window.fullscreen({ mode = 1 }))
--- Toggle maximize
 
 -- Switch workspaces n [0 <= n <= 9]
 hl.bind(mainMod .. " + " .. 1, hl.dsp.focus({ workspace = 1 }))
