@@ -42,8 +42,7 @@ Rectangle {
                     id: workspaceMouseArea
                     anchors.fill: parent
                     hoverEnabled: true
-                    onClicked: Hyprland.dispatch("workspace " + (index + 1))
-                }
+                    onClicked: Hyprland.dispatch('hl.dsp.focus({ workspace = "' + (index + 1) + '" })')                }
             }
         }
 

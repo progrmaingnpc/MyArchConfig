@@ -8,54 +8,30 @@
 
 local SCRIPTS_DIRECTORY = "~/.config/hypr/scripts"
 
--- Start XDG services
-
-
--- Start Polkit
-
-
--- Start the notification app
-
-
--- Load GTK settings
-
-
--- Start hypridle
-
-
--- Start Quickshell
-
-
--- Start blue-light filter
-
-
--- Start wallpaper handlers
-
-
--- start pywal restart
-
-
--- Start the hyprland dock
-
-
--- Start elephant
-
-
--- Start walker service
-
-
--- Autostart
 hl.on("hyprland.start", function()
+    -- Start XDG services
     hl.exec_cmd("~/.config/hypr/scripts/xdg.sh")
+    -- Start Polkit
     hl.exec_cmd("systemctl --user start hyprpolkitagent")
+    -- Start the notification app
     hl.exec_cmd("swaync")
+    -- Load GTK settings
     hl.exec_cmd("~/.config/hypr/scripts/gtk.sh")
+    -- Start hypridle
     hl.exec_cmd("hypridle")
+    -- Start Quickshell
     hl.exec_cmd("qs &")
+    -- Start blue-light filter
     hl.exec_cmd("hyprsunset")
+    -- Start wallpaper handlers
     hl.exec_cmd("hyprpaper & awww-daemon")
+    -- start pywal restart
     hl.exec_cmd("~/.config/hypr/scripts/wal.sh")
+    -- Start the hyprland dock
     hl.exec_cmd("nwg-dock-hyprland -x")
+    -- Start elephant
     hl.exec_cmd("elephant")
+    -- Start walker service
     hl.exec_cmd("walker --gapplication-service")
+    -- Autostart
 end)
