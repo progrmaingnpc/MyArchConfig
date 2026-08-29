@@ -14,7 +14,7 @@ Rectangle {
     Text {
         anchors.centerIn: parent
         text: "\uf0f3"
-        color: "gold"
+        color: "white"
         font.pixelSize: 15
     }
 

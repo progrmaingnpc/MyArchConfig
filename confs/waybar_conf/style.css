@@ -1,5 +1,5 @@
 * {
-    /* `otf-font-awesome` is requigold to be installed for icons */
+    /* `otf-font-awesome` is requiwhite to be installed for icons */
     border: none;
     border-radius: 0px;
     font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;
@@ -15,11 +15,11 @@
 window#waybar {
     background: black;
     border-radius: 25px;
-    border: 1px solid gold;
+    border: 1px solid white;
 }
 
 #custom-appmenu {
-    background: gold;
+    background: white;
     font-size: 20px;
     box-shadow: none;
     text-shadow: none;
@@ -35,7 +35,7 @@ window#waybar {
 }
 
 #workspaces {
-    background: darkgoldenrod;
+    background: darkwhiteenrod;
     margin: 8px 18px 8px 1px;
     padding: 0px 2px;
     border-radius: 25px;
@@ -47,12 +47,12 @@ window#waybar {
     margin: 2px 1px 2px 1px;
     padding: 1px 10px 1px 10px;
     border-radius: 25px;
-    color: gold;
+    color: white;
 }
 
 #workspaces button.active {
     color: black;
-    background: gold;
+    background: white;
 }
 
 #workspaces button.active:hover {
@@ -77,7 +77,7 @@ window#waybar {
     margin: 4px 15px 4px 0px;
     padding: 2px 10px 0px 10px;
     border-radius: 25px;
-    color: gold;
+    color: white;
     font-size: 16px;
     font-weight: normal;
     opacity: 1;
@@ -85,7 +85,7 @@ window#waybar {
 }
 
 #clock {
-    background: gold;
+    background: white;
     font-size: 20px;
     box-shadow: none;
     text-shadow: none;
@@ -102,7 +102,7 @@ window#waybar {
 }
 
 #custom-hardware-wrap {
-    background: gold;
+    background: white;
     box-shadow: none;
     text-shadow: none;
     padding: 0px;
@@ -126,8 +126,8 @@ window#waybar {
     margin: 8px 3px 8px 3px;
     padding-right: 10px;
     padding-left: 3px;
-    color: gold;
-    border: 2px solid darkgoldenrod;
+    color: white;
+    border: 2px solid darkwhiteenrod;
 }
 
 #cpu:hover {
@@ -143,8 +143,8 @@ window#waybar {
     margin: 8px 3px 8px 3px;
     padding-right: 12px;
     padding-left: 4px;
-    color: gold;
-    border: 2px solid darkgoldenrod;
+    color: white;
+    border: 2px solid darkwhiteenrod;
 }
 
 #memory:hover {
@@ -160,8 +160,8 @@ window#waybar {
     margin: 8px 3px 8px 3px;
     padding-right: 4px;
     padding-left: 4px;
-    color: gold;
-    border: 2px solid darkgoldenrod;
+    color: white;
+    border: 2px solid darkwhiteenrod;
 }
 
 #disk:hover {
@@ -177,8 +177,8 @@ window#waybar {
     margin: 8px 3px 8px 3px;
     padding-right: 4px;
     padding-left: 4px;
-    color: gold;
-    border: 2px solid darkgoldenrod;
+    color: white;
+    border: 2px solid darkwhiteenrod;
 }
 
 #backlight:hover {
@@ -192,7 +192,7 @@ window#waybar {
     padding-right: 4px;
     padding-left: 4px;
     color: black;
-    background: gold;
+    background: white;
 }
 
 #network.disconnected {
@@ -214,8 +214,8 @@ window#waybar {
     margin: 8px 3px 8px 3px;
     padding-right: 12px;
     padding-left: 4px;
-    color: gold;
-    border: 2px solid darkgoldenrod;
+    color: white;
+    border: 2px solid darkwhiteenrod;
 }
 
 /* you can set a style on hover for any module like this */
@@ -236,8 +236,8 @@ window#waybar {
     margin: 8px 3px 8px 3px;
     padding-right: 12px;
     padding-left: 4px;
-    color: gold;
-    border: 2px solid darkgoldenrod;
+    color: white;
+    border: 2px solid darkwhiteenrod;
 }
 
 /*
@@ -258,8 +258,8 @@ window#waybar {
     margin: 8px 3px 8px 3px;
     padding-right: 4px;
     padding-left: 4px;
-    color: gold;
-    border: 2px solid darkgoldenrod;
+    color: white;
+    border: 2px solid darkwhiteenrod;
 }
 
 #tray:hover {
@@ -282,12 +282,12 @@ window#waybar {
     padding-right: 8px;
     padding-left: 4px;
     color: black;
-    background-color: gold;
+    background-color: white;
 }
 
 #battery.charging,
 #battery.plugged {
-    background-color: gold;
+    background-color: white;
 }
 
 /* Using steps() instead of linear as a timing function to limit cpu usage */
@@ -313,8 +313,8 @@ window#waybar {
     margin: 8px 3px 8px 3px;
     padding-right: 15px;
     padding-left: 4px;
-    color: gold;
-    border: 2px solid darkgoldenrod;
+    color: white;
+    border: 2px solid darkwhiteenrod;
 }
 
 #power-profiles-daemon:hover {
@@ -330,8 +330,8 @@ window#waybar {
     margin: 8px 3px 8px 3px;
     padding-right: 15px;
     padding-left: 4px;
-    color: gold;
-    border: 2px solid darkgoldenrod;
+    color: white;
+    border: 2px solid darkwhiteenrod;
 }
 
 #wireplumber.muted {
@@ -351,9 +351,9 @@ window#waybar {
     margin: 8px 3px 8px 3px;
     padding-right: 15px;
     padding-left: 4px;
-    color: gold;
+    color: white;
     min-width: 100px;
-    border: 2px solid darkgoldenrod;
+    border: 2px solid darkwhiteenrod;
 }
 
 #custom-media.custom-spotify {
@@ -377,8 +377,8 @@ window#waybar {
     margin: 8px 3px 8px 3px;
     padding-right: 15px;
     padding-left: 4px;
-    color: gold;
-    border: 2px solid darkgoldenrod;
+    color: white;
+    border: 2px solid darkwhiteenrod;
 }
 
 #temperature.critical {
@@ -394,11 +394,11 @@ window#waybar {
     box-shadow: none;
     text-shadow: none;
     border-radius: 25px;
-    color: gold;
+    color: white;
     padding: 0 5px;
     margin: 8px 3px 8px 3px;
     min-width: 16px;
-    border: 2px solid darkgoldenrod;
+    border: 2px solid darkwhiteenrod;
 }
 
 #language:hover {
@@ -414,8 +414,8 @@ window#waybar {
     margin: 8px 3px 8px 3px;
     padding-right: 15px;
     padding-left: 4px;
-    color: gold;
-    border: 2px solid darkgoldenrod;
+    color: white;
+    border: 2px solid darkwhiteenrod;
 }
 
 #scratchpad.empty {
@@ -437,8 +437,8 @@ window#waybar {
     text-shadow: none;
     border-radius: 25px;
     margin: 8px 3px 8px 3px;
-    color: gold;
-    border: 2px solid darkgoldenrod;
+    color: white;
+    border: 2px solid darkwhiteenrod;
 }
 
 #privacy-item.screenshare {
@@ -458,7 +458,7 @@ window#waybar {
 }
 
 #custom-notifications {
-    background: gold;
+    background: white;
     box-shadow: none;
     text-shadow: none;
     padding: 0px;
@@ -474,7 +474,7 @@ window#waybar {
 }
 
 #custom-power {
-    background: gold;
+    background: white;
     box-shadow: none;
     text-shadow: none;
     border-radius: 100%;

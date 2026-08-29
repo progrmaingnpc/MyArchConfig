@@ -44,7 +44,7 @@ PopupWindow {
             radius: 6
             color: "transparent"
             border.width: 2
-            border.color: thumbMouse.containsMouse ? "gold" : "transparent"
+            border.color: thumbMouse.containsMouse ? "white" : "transparent"
             Image {
                 anchors.fill: parent
                 anchors.margins: 4
@@ -57,7 +57,7 @@ PopupWindow {
                 anchors.left: parent.left
                 anchors.margins: 6
                 text: fileName
-                color: "gold"
+                color: "white"
                 font.bold: true
                 style: Text.Outline
                 styleColor: "black"

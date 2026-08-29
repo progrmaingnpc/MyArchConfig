@@ -20,7 +20,7 @@ hl.config({
         allow_tearing = false,
         layout = "dwindle",
         col = {
-            active_border = { colors = { "rgba(ffd700ff)", "rgba(ffd700ff)" }, angle = 45 },
+            active_border = { colors = { "rgba(ffffffff)", "rgba(ffffffff)" }, angle = 45 },
             inactive_border = "rgba(595959aa)",
         },
     },

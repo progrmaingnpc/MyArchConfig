@@ -19,7 +19,7 @@ Rectangle {
     }
 
     Text {
-        color: "gold"
+        color: "white"
         anchors.centerIn: parent
         text: clockRoot.showDate ? Qt.formatDateTime(clock.date, "dd/MM/yyyy") : Qt.formatDateTime(clock.date, "hh:mm AP")
     }

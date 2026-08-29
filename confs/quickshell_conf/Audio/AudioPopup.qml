@@ -82,7 +82,7 @@ PopupWindow {
                 width: track.width * bar.vol
                 height: track.height
                 radius: track.radius
-                color: "Gold"
+                color: "white"
             }
         }
 
@@ -122,7 +122,7 @@ PopupWindow {
                 anchors.verticalCenter: parent.verticalCenter
                 anchors.leftMargin: 4
                 text: node ? (node.description || node.name) : ""
-                color: "gold"
+                color: "white"
                 font.pixelSize: 11
                 elide: Text.ElideRight
                 width: parent.width - 50
@@ -132,7 +132,7 @@ PopupWindow {
                 anchors.verticalCenter: parent.verticalCenter
                 anchors.rightMargin: 4
                 text: (node && node.audio) ? Math.round(node.audio.volume * 100) + "%" : ""
-                color: "gold"
+                color: "white"
                 font.pixelSize: 11
             }
 
@@ -168,8 +168,8 @@ PopupWindow {
                 height: 36
                 radius: 6
                 property bool enabled_: popup.source && popup.source.audio ? !popup.source.audio.muted : false
-                color: enabled_ ? "gold" : "black"
-                border.color: "gold"
+                color: enabled_ ? "white" : "black"
+                border.color: "white"
                 border.width: 1
 
                 Text {
@@ -177,7 +177,7 @@ PopupWindow {
                     font.family: "Font Awesome 7 Free"
                     font.weight: Font.Black
                     text: "\uf130"
-                    color: parent.enabled_ ? "black" : "gold"
+                    color: parent.enabled_ ? "black" : "white"
                 }
 
                 MouseArea {
@@ -194,8 +194,8 @@ PopupWindow {
                 height: 36
                 radius: 6
                 property bool enabled_: popup.sink && popup.sink.audio ? !popup.sink.audio.muted : false
-                color: enabled_ ? "gold" : "black"
-                border.color: "gold"
+                color: enabled_ ? "white" : "black"
+                border.color: "white"
                 border.width: 1
 
                 Text {
@@ -203,7 +203,7 @@ PopupWindow {
                     font.family: "Font Awesome 7 Free"
                     font.weight: Font.Black
                     text: "\uf028"
-                    color: parent.enabled_ ? "black" : "gold"
+                    color: parent.enabled_ ? "black" : "white"
                 }
 
                 MouseArea {
@@ -227,15 +227,15 @@ PopupWindow {
                     width: content.width / 5
                     height: 30
                     property bool active: popup.currentTab === index
-                    color: active ? "gold" : "black"
-                    border.color: "gold"
+                    color: active ? "white" : "black"
+                    border.color: "white"
                     border.width: 1
 
                     Text {
                         anchors.centerIn: parent
                         text: modelData
                         font.pixelSize: 9
-                        color: parent.active ? "black" : "gold"
+                        color: parent.active ? "black" : "white"
                     }
 
                     MouseArea {
@@ -336,15 +336,15 @@ PopupWindow {
             width: content.width
             spacing: 14
 
-            Text { text: "Default Output"; color: "gold"; font.pixelSize: 11 }
+            Text { text: "Default Output"; color: "white"; font.pixelSize: 11 }
             Text {
                 text: popup.sink ? (popup.sink.description || popup.sink.name) : "none"
-                color: "gold"; font.pixelSize: 11; font.bold: true
+                color: "white"; font.pixelSize: 11; font.bold: true
             }
-            Text { text: "Default Input"; color: "gold"; font.pixelSize: 11 }
+            Text { text: "Default Input"; color: "white"; font.pixelSize: 11 }
             Text {
                 text: popup.source ? (popup.source.description || popup.source.name) : "none"
-                color: "gold"; font.pixelSize: 11; font.bold: true
+                color: "white"; font.pixelSize: 11; font.bold: true
             }
 
             Rectangle {
@@ -352,11 +352,11 @@ PopupWindow {
                 height: 30
                 radius: 4
                 color: "black"
-                border.color: "gold"
+                border.color: "white"
                 Text {
                     anchors.centerIn: parent
                     text: "Restart WirePlumber"
-                    color: "gold"
+                    color: "white"
                     font.pixelSize: 11
                 }
                 MouseArea {
@@ -365,7 +365,7 @@ PopupWindow {
                 }
             }
 
-            Text { text: "Device Profiles"; color: "gold"; font.pixelSize: 11; font.bold: true }
+            Text { text: "Device Profiles"; color: "white"; font.pixelSize: 11; font.bold: true }
 
             Repeater {
                 model: popup.cards
@@ -393,7 +393,7 @@ PopupWindow {
 
                     Text {
                         text: cardLabel
-                        color: "gold"
+                        color: "white"
                         font.pixelSize: 11
                         font.bold: true
                         elide: Text.ElideRight
@@ -406,7 +406,7 @@ PopupWindow {
                         height: 28
                         radius: 4
                         color: "black"
-                        border.color: "gold"
+                        border.color: "white"
 
                         Row {
                             anchors.fill: parent
@@ -418,7 +418,7 @@ PopupWindow {
                                 verticalAlignment: Text.AlignVCenter
                                 elide: Text.ElideRight
                                 text: activeProfile || "none"
-                                color: "gold"
+                                color: "white"
                                 font.pixelSize: 11
                                 font.bold: true
                             }
@@ -455,7 +455,7 @@ PopupWindow {
                                 height: 26
                                 radius: 4
                                 color: optionMouse.containsMouse ? "#333333" : "black"
-                                border.color: "gold"
+                                border.color: "white"
                                 border.width: 1
 
                                 Text {
@@ -463,7 +463,7 @@ PopupWindow {
                                     anchors.leftMargin: 8
                                     anchors.verticalCenter: parent.verticalCenter
                                     text: modelData
-                                    color: "gold"
+                                    color: "white"
                                     font.pixelSize: 10
                                 }
 
@@ -525,7 +525,7 @@ PopupWindow {
                     property var dstItem: graphRoot.nodeItems[modelData.target.id]
                     visible: !!srcItem && !!dstItem
                     height: 2
-                    color: "gold"
+                    color: "white"
                     opacity: 0.6
                     x: visible ? srcItem.x + srcItem.width / 2 : 0
                     y: visible ? srcItem.y + srcItem.height / 2 : 0
@@ -551,7 +551,7 @@ PopupWindow {
                     height: 26
                     radius: 4
                     color: "black"
-                    border.color: "gold"
+                    border.color: "white"
                     border.width: 1
 
                     Component.onCompleted: {
@@ -564,7 +564,7 @@ PopupWindow {
                     Text {
                         anchors.centerIn: parent
                         text: (modelData.description || modelData.name).slice(0, 15)
-                        color: "gold"
+                        color: "white"
                         font.pixelSize: 9
                         elide: Text.ElideRight
                         width: parent.width - 6

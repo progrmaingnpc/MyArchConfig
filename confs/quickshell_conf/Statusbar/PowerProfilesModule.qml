@@ -17,7 +17,7 @@ Rectangle {
 
     Text {
         anchors.centerIn: parent
-        color: "gold"
+        color: "white"
         font.family: "Font Awesome 7 Free"
         font.weight: Font.Black
         font.pixelSize: 15

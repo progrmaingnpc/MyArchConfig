@@ -42,12 +42,12 @@ PopupWindow {
                 width: root.buttonSize
                 height: root.buttonSize
                 radius: width / 2
-                color: buttonMouse.containsMouse ? "gold" : "black"
+                color: buttonMouse.containsMouse ? "white" : "black"
 
                 Text {
                     anchors.centerIn: parent
                     text: modelData.label
-                    color: buttonMouse.containsMouse ? "black" : "gold"
+                    color: buttonMouse.containsMouse ? "black" : "white"
                     font.pixelSize: modelData.label.length > 2 ? 9 : 16
                     font.bold: true
                 }

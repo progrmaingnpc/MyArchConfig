@@ -39,7 +39,7 @@ PopupWindow {
                     id: summary
                     width: parent.width
                     text: modelData.summary
-                    color: "gold"
+                    color: "white"
                     font.bold: true
                     elide: Text.ElideRight
                 }
@@ -48,7 +48,7 @@ PopupWindow {
                     id: body
                     width: parent.width
                     text: modelData.body
-                    color: "gold"
+                    color: "white"
                     wrapMode: Text.WordWrap
                     maximumLineCount: 3
                     elide: Text.ElideRight
@@ -60,7 +60,7 @@ PopupWindow {
                 anchors.right: parent.right
                 anchors.margins: 6
                 text: "x"
-                color: "gold"
+                color: "white"
                 font.bold: true
 
                 MouseArea {
@@ -76,6 +76,6 @@ PopupWindow {
         anchors.centerIn: parent
         visible: list.count === 0
         text: "No notifications"
-        color: "gold"
+        color: "white"
     }
 }

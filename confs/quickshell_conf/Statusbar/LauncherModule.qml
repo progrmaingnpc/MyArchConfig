@@ -22,7 +22,7 @@ Rectangle {
         color: "transparent"
 
         Text {
-            color: "gold"
+            color: "white"
             text: "" // Or use an Icon component if you have an icon theme
             anchors.centerIn: parent
         }

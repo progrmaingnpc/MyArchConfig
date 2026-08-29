@@ -27,13 +27,13 @@ Rectangle {
                 height: 26
                 radius: 13
 
-                // Active: gold bg / black text | Inactive: black bg / gold text
-                color: (content.activeId === index + 1) ? "gold" : (workspaceMouseArea.containsMouse ? "white" : "black")
+                // Active: white bg / black text | Inactive: black bg / white text
+                color: (content.activeId === index + 1) ? "white" : (workspaceMouseArea.containsMouse ? "white" : "black")
 
                 Text {
                     anchors.centerIn: parent
                     text: content.romanMap[index]
-                    color: (content.activeId === index + 1) ? "black" : "gold"
+                    color: (content.activeId === index + 1) ? "black" : "white"
                     font.bold: true
                 }
 
@@ -54,7 +54,7 @@ Rectangle {
 
             // Only visible if active workspace is between 6 and 10
             visible: content.activeId >= 6 && content.activeId <= 10
-            color: "gold" // Always gold when visible because it IS the active workspace
+            color: "white" // Always white when visible because it IS the active workspace
 
             Text {
                 anchors.centerIn: parent

@@ -39,7 +39,7 @@ Rectangle {
     Text {
         id: label
         anchors.centerIn: parent
-        color: "gold"
+        color: "white"
         text: memoryRoot.pct + "% "
     }
 }

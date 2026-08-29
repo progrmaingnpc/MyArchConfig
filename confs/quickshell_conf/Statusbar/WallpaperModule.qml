@@ -12,7 +12,7 @@ Rectangle {
     property bool open: false
     Text {
         anchors.centerIn: parent
-        color: "gold"
+        color: "white"
         font.pixelSize: 15
         font.family: "Font Awesome 7 Free"
         font.weight: Font.Black

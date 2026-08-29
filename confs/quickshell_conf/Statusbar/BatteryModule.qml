@@ -29,13 +29,13 @@ Rectangle {
 
         Text {
             anchors.verticalCenter: parent.verticalCenter
-            color: batteryRoot.low ? "#ff5555" : "gold"
+            color: batteryRoot.low ? "#ff5555" : "white"
             text: batteryRoot.pct + "%"
         }
 
         Text {
             anchors.verticalCenter: parent.verticalCenter
-            color: batteryRoot.low ? "#ff5555" : "gold"
+            color: batteryRoot.low ? "#ff5555" : "white"
             font.family: "Font Awesome 7 Free"
             font.weight: Font.Black
             text: batteryRoot.icon
@@ -44,7 +44,7 @@ Rectangle {
         Text {
             visible: batteryRoot.charging
             anchors.verticalCenter: parent.verticalCenter
-            color: "gold"
+            color: "white"
             font.family: "Font Awesome 7 Free"
             font.weight: Font.Black
             font.pixelSize: 11
@@ -54,7 +54,7 @@ Rectangle {
         Text {
             visible: batteryRoot.pluggedIn && !batteryRoot.charging
             anchors.verticalCenter: parent.verticalCenter
-            color: "gold"
+            color: "white"
             font.family: "Font Awesome 7 Free"
             font.weight: Font.Black
             font.pixelSize: 11
@@ -74,7 +74,7 @@ Rectangle {
         Text {
             visible: batteryRoot.saver
             anchors.verticalCenter: parent.verticalCenter
-            color: "gold"
+            color: "white"
             font.family: "Font Awesome 7 Free"
             font.weight: Font.Black
             font.pixelSize: 11

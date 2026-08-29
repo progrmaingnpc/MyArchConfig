@@ -78,7 +78,7 @@ PopupWindow {
                 width: root.cellSize
                 height: 24
                 text: "<"
-                color: "gold"
+                color: "white"
                 font.bold: true
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
@@ -94,7 +94,7 @@ PopupWindow {
                 height: 24
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
-                color: "gold"
+                color: "white"
                 font.bold: true
                 text: root.monthNames[root.viewMonth] + " " + root.viewYear
             }
@@ -103,7 +103,7 @@ PopupWindow {
                 width: root.cellSize
                 height: 24
                 text: ">"
-                color: "gold"
+                color: "white"
                 font.bold: true
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
@@ -123,7 +123,7 @@ PopupWindow {
                     width: root.cellSize
                     height: 20
                     horizontalAlignment: Text.AlignHCenter
-                    color: "gold"
+                    color: "white"
                     font.bold: true
                     text: modelData
                 }
@@ -138,7 +138,7 @@ PopupWindow {
                     width: root.cellSize
                     height: root.cellSize
                     radius: width / 2
-                    color: isToday ? "gold" : "transparent"
+                    color: isToday ? "white" : "transparent"
 
                     property bool isToday: modelData !== 0
                         && root.viewYear === root.today.getFullYear()
@@ -149,7 +149,7 @@ PopupWindow {
                         anchors.centerIn: parent
                         visible: modelData !== 0
                         text: modelData
-                        color: parent.isToday ? "black" : "gold"
+                        color: parent.isToday ? "black" : "white"
                         font.bold: parent.isToday
                     }
                 }
