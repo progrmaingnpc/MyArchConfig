@@ -26,5 +26,5 @@ output_path = '~/.local/state/quickshell/generated/quickshell-colors.json'
 
 [templates.nwg-dock]
 input_path = '~/.config/matugen/templates/style.css'
-output_path = '~/.config/nwg-dock/style.css'
-post_hook = "pkill nwg-dock; nwg-dock-hyprland &"
+output_path = '~/.config/nwg-dock-hyprland/style.css'
+post_hook = "pkill nwg-dock; nwg-dock-hyprland -x &"
