@@ -6,7 +6,7 @@ kitty = true
 gtk_theme = true
 
 [config.wallpaper]
-command = "swww"          # or hyprpaper/swaybg — whatever you use
+command = "awww"          # or hyprpaper/swaybg — whatever you use
 arguments = ["img", "--transition-type", "center"]
 set = true
 
