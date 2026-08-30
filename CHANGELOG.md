@@ -11,3 +11,4 @@
 11. Added statusbar, built with quickshell
 12. Converted all .conf configurations to .lua
 13. Added cool animations
+14. Added matugen config
