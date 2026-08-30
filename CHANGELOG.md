@@ -4,11 +4,10 @@
 4. Removed keyboard state from waybar
 5. Added wlogout config
 6. Added yazi
-7. Replace waypaper with waypaper-git, cause only waypaper-git currently can use awww
-8. Added pacseek
-9. Added reflector config
-10. Made wal colors load first in shell
-11. Added statusbar, built with quickshell
-12. Converted all .conf configurations to .lua
-13. Added cool animations
-14. Added matugen config
+7. Added pacseek
+8. Added reflector config
+9. Made wal colors load first in shell
+10. Added statusbar, built with quickshell
+11. Converted all .conf configurations to .lua
+12. Added cool animations
+13. Added matugen config
