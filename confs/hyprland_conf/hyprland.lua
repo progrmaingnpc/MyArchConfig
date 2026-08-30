@@ -1,5 +1,6 @@
 ---@module 'hl'
-
+package.loaded["colors"] = nil
+require("colors")
 require("conf/monitors")
 require("conf/autostart")
 require("conf/environment_variables")

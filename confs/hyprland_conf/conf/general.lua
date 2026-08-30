@@ -7,7 +7,7 @@
 -- Refer to https://wiki.hyprland.org/Configuring/Variables/
 
 -- https://wiki.hyprland.org/Configuring/Variables/#general
-
+local colors = require("colors")
 hl.config({
     general = {
         gaps_in = 5,
@@ -20,8 +20,8 @@ hl.config({
         allow_tearing = false,
         layout = "dwindle",
         col = {
-            active_border = { colors = { "rgba(ffffffff)", "rgba(ffffffff)" }, angle = 45 },
-            inactive_border = "rgba(595959aa)",
+            active_border = { colors = { colors.primary, colors.primary }, angle = 45 },
+            inactive_border = colors.background,
         },
     },
 })

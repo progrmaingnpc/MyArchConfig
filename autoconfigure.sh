@@ -13,6 +13,7 @@ YAZI_DIR=~/.config/yazi
 CARGO_DIR=~/.cargo
 WALKER_DIR=~/.config/walker
 QUICKSHELL_DIR=~/.config/quickshell
+MATUGEN_DIR=~/.config/matugen
 CURRENT_DIR=$(pwd)
 
 sudo pacman -Syu
@@ -70,7 +71,7 @@ $AUR_MANAGER -S pacseek reflector --noconfirm --needed
 echo "[Finished installing package management tools]"
 
 $AUR_MANAGER -S kitty zsh oh-my-posh-bin bash-completion \
-   	zsh-completions fastfetch python-pywal postgresql --noconfirm --needed
+   	zsh-completions fastfetch python-pywal matugen postgresql --noconfirm --needed
 echo "[Finished installing shell configuration packages]"
 
 $AUR_MANAGER -S nvidia-utils nvidia-open --noconfirm --needed
@@ -265,6 +266,13 @@ if [ ! -d "$QUICKSHELL_DIR" ]; then
 else
 	echo "Found existing quickshell directory at $QUICKSHELL_DIR"
 fi
+# Create the matugen config directory if it doesn't already exist
+if [ ! -d "$MATUGEN_DIR" ]; then
+	mkdir "$MATUGEN_DIR"
+	echo "Created matugen directory at $MATUGEN_DIR"
+else
+	echo "Found existing matugen directory at $MATUGEN_DIR"
+fi
 # Copy the hyprland configs to the hyprland directory on the user's device
 cp $CURRENT_DIR/confs/hyprland_conf/*.lua "$HYPRLAND_DIR" -v
 # Copy the hyprland configs to the hyprland directory on the user's device
@@ -305,6 +313,11 @@ cp $CURRENT_DIR/confs/yazi_conf/*.toml "$YAZI_DIR" -v
 cp $CURRENT_DIR/confs/walker_conf/*.toml "$WALKER_DIR" -v
 cp $CURRENT_DIR/confs/walker_conf/themes "$WALKER_DIR" -r -v
 cp $CURRENT_DIR/confs/quickshell_conf/* "$QUICKSHELL_DIR" -r -v
+cp $CURRENT_DIR/confs/matugen_conf/* "$MATUGEN_DIR" -r -v
+
+mkdir ~/.local/state/quickshell
+mkdir ~/.local/state/quickshell/generated
+
 # Configure luarocks to use the user directory by default for lua package management
 luarocks config local_by_default true
 luarocks install stdlib --local

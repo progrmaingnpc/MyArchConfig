@@ -1,0 +1,30 @@
+[config]
+reload_apps = true
+
+[config.reload_apps_list]
+kitty = true
+gtk_theme = true
+
+[config.wallpaper]
+command = "swww"          # or hyprpaper/swaybg — whatever you use
+arguments = ["img", "--transition-type", "center"]
+set = true
+
+[templates.hyprland]
+input_path = '~/.config/matugen/templates/colors.lua'
+output_path = '~/.config/hypr/colors.lua'
+post_hook = "hyprctl reload"
+
+[templates.kitty]
+input_path = '~/.config/matugen/templates/current-theme.conf'
+output_path = '~/.config/kitty/current-theme.conf'
+post_hook = "kill -SIGUSR1 $(pgrep -x kitty)"
+
+[templates.quickshell]
+input_path = '~/.config/matugen/templates/quickshell-colors.json'
+output_path = '~/.local/state/quickshell/generated/quickshell-colors.json'
+
+[templates.nwg-dock]
+input_path = '~/.config/matugen/templates/style.css'
+output_path = '~/.config/nwg-dock/style.css'
+post_hook = "pkill nwg-dock; nwg-dock-hyprland &"
