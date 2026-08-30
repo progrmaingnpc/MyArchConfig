@@ -8,6 +8,6 @@
 8. Added reflector config
 9. Made wal colors load first in shell
 10. Added statusbar, built with quickshell
-11. Converted all .conf configurations to .lua
+11. Converted all hyprland .conf configurations to .lua
 12. Added cool animations
 13. Added matugen config
