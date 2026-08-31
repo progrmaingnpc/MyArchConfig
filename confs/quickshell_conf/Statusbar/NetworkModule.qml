@@ -19,7 +19,7 @@ Rectangle {
 
     Text {
         anchors.centerIn: parent
-        color: Colors.foreground
+        color: Colors.muted
         font.family: "Font Awesome 7 Free"
         font.weight: Font.Black
         text: networkRoot.icon

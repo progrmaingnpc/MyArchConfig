@@ -5,4 +5,5 @@ return {
     primary    = "rgb({{colors.primary.default.hex_stripped}})",
     accent     = "rgb({{colors.tertiary.default.hex_stripped}})",
     surface    = "rgb({{colors.surface.default.hex_stripped}})",
+    outline    = "rgb({{colors.outline.default.hex_stripped}})",
 }

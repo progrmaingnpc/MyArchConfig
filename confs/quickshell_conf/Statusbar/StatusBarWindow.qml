@@ -16,7 +16,7 @@ PanelWindow {
         right: true
     }
     implicitHeight: 30
-    color: Colors.background
+    color: Colors.surface
 
     Item {
         anchors.fill: parent

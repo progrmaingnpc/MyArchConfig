@@ -7,7 +7,7 @@ import "../"
 
 PopupWindow {
     id: root
-    color: Colors.background
+    color: Colors.surface
 
     property Item anchorItem
 
@@ -110,12 +110,12 @@ PopupWindow {
                     width: (parent.width - 20) / 3
                     height: 32
                     radius: 6
-                    color: Networking.wifiEnabled ? Colors.foreground : Colors.background
+                    color: Networking.wifiEnabled ? Colors.primary : Colors.surface
 
                     Text {
                         anchors.centerIn: parent
                         text: ""
-                        color: Networking.wifiEnabled ? Colors.background : Colors.foreground
+                        color: Networking.wifiEnabled ? Colors.surface : Colors.foreground
                         font.family: "Font Awesome 7 Free"
                         font.weight: Font.Black
                         font.pixelSize: 14
@@ -132,12 +132,12 @@ PopupWindow {
                     width: (parent.width - 20) / 3
                     height: 32
                     radius: 6
-                    color: btEnabled ? Colors.foreground : Colors.background
+                    color: btEnabled ? Colors.primary : Colors.surface
 
                     Text {
                         anchors.centerIn: parent
                         text: "\uf293"
-                        color: parent.btEnabled ? Colors.background : Colors.foreground
+                        color: parent.btEnabled ? Colors.surface : Colors.foreground
                         font.family: "Font Awesome 7 Brands"
                         font.pixelSize: 14
                     }
@@ -155,12 +155,12 @@ PopupWindow {
                     width: (parent.width - 20) / 3
                     height: 32
                     radius: 6
-                    color: root.networkingEnabled ? Colors.foreground : Colors.background
+                    color: root.networkingEnabled ? Colors.primary : Colors.surface
 
                     Text {
                         anchors.centerIn: parent
                         text: ""
-                        color: root.networkingEnabled ? Colors.background : Colors.foreground
+                        color: root.networkingEnabled ? Colors.surface : Colors.foreground
                         font.family: "Font Awesome 7 Free"
                         font.weight: Font.Black
                         font.pixelSize: 14
@@ -183,13 +183,13 @@ PopupWindow {
                 spacing: 4
                 visible: root.wiredDevice !== undefined
 
-                Text { text: "Ethernet"; color: Colors.foreground; font.bold: true; font.pixelSize: 11 }
+                Text { text: "Ethernet"; color: Colors.muted; font.bold: true; font.pixelSize: 11 }
 
                 Rectangle {
                     width: parent.width
                     height: 36
                     radius: 6
-                    color: root.wiredDevice && root.wiredDevice.connected ? Colors.foreground : Colors.background
+                    color: root.wiredDevice && root.wiredDevice.connected ? Colors.primary : Colors.surface
 
                     Row {
                         anchors.fill: parent
@@ -202,14 +202,14 @@ PopupWindow {
                             width: parent.width - 90
                             elide: Text.ElideRight
                             text: root.wiredDevice ? root.wiredDevice.name : ""
-                            color: root.wiredDevice && root.wiredDevice.connected ? Colors.background : Colors.foreground
+                            color: root.wiredDevice && root.wiredDevice.connected ? Colors.surface : Colors.foreground
                             font.bold: !!(root.wiredDevice && root.wiredDevice.connected)
                         }
 
                         Text {
                             anchors.verticalCenter: parent.verticalCenter
                             text: root.wiredDevice && root.wiredDevice.connected ? "Disconnect" : "Connect"
-                            color: root.wiredDevice && root.wiredDevice.connected ? Colors.background : Colors.foreground
+                            color: root.wiredDevice && root.wiredDevice.connected ? Colors.surface : Colors.foreground
                             font.pixelSize: 10
                             font.bold: true
                         }
@@ -234,7 +234,7 @@ PopupWindow {
                 spacing: 4
                 visible: root.wifiDevice !== undefined
 
-                Text { text: "Wi-Fi Networks"; color: Colors.foreground; font.bold: true; font.pixelSize: 11 }
+                Text { text: "Wi-Fi Networks"; color: Colors.muted; font.bold: true; font.pixelSize: 11 }
 
                 Repeater {
                     model: root.networks
@@ -247,7 +247,7 @@ PopupWindow {
                             width: parent.width
                             height: 36
                             radius: 6
-                            color: modelData.connected ? Colors.foreground : Colors.background
+                            color: modelData.connected ? Colors.primary : Colors.surface
 
                             Row {
                                 anchors.fill: parent
@@ -259,7 +259,7 @@ PopupWindow {
                                     anchors.verticalCenter: parent.verticalCenter
                                     width: 34
                                     text: Math.round(modelData.signalStrength * 100) + "%"
-                                    color: modelData.connected ? Colors.background : Colors.foreground
+                                    color: modelData.connected ? Colors.surface : Colors.muted
                                 }
 
                                 Text {
@@ -267,14 +267,14 @@ PopupWindow {
                                     width: parent.width - 140
                                     elide: Text.ElideRight
                                     text: modelData.name
-                                    color: modelData.connected ? Colors.background : Colors.foreground
+                                    color: modelData.connected ? Colors.surface : Colors.foreground
                                     font.bold: modelData.connected
                                 }
 
                                 Text {
                                     anchors.verticalCenter: parent.verticalCenter
                                     text: modelData.connected ? "Disconnect" : ""
-                                    color: Colors.background
+                                    color: Colors.surface
                                     font.pixelSize: 10
                                     font.bold: true
                                 }
@@ -326,14 +326,14 @@ PopupWindow {
                                 width: 60
                                 height: 32
                                 radius: 6
-                                color: Colors.foreground
+                                color: Colors.primary
 
                                 Text {
                                     anchors.centerIn: parent
                                     text: "Connect"
                                     font.pixelSize: 10
                                     font.bold: true
-                                    color: Colors.background
+                                    color: Colors.surface
                                 }
 
                                 MouseArea {
@@ -351,7 +351,7 @@ PopupWindow {
                 Text {
                     visible: root.wifiDevice !== undefined && root.networks.length === 0
                     text: "No WiFi networks found"
-                    color: Colors.foreground
+                    color: Colors.muted
                 }
 
                 Rectangle {
@@ -434,9 +434,9 @@ PopupWindow {
                         width: parent.width
                         height: 32
                         radius: 6
-                        color: Colors.foreground
+                        color: Colors.primary
 
-                        Text { anchors.centerIn: parent; text: "Connect"; font.bold: true; color: Colors.background }
+                        Text { anchors.centerIn: parent; text: "Connect"; font.bold: true; color: Colors.surface }
 
                         MouseArea {
                             anchors.fill: parent
@@ -536,9 +536,9 @@ PopupWindow {
                         width: parent.width
                         height: 32
                         radius: 6
-                        color: Colors.foreground
+                        color: Colors.primary
 
-                        Text { anchors.centerIn: parent; text: "Create"; font.bold: true; color: Colors.background }
+                        Text { anchors.centerIn: parent; text: "Create"; font.bold: true; color: Colors.surface }
 
                         MouseArea {
                             anchors.fill: parent
@@ -560,7 +560,7 @@ PopupWindow {
                 spacing: 4
                 visible: root.vpnConnections.length > 0
 
-                Text { text: "VPN Connections"; color: Colors.foreground; font.bold: true; font.pixelSize: 11 }
+                Text { text: "VPN Connections"; color: Colors.muted; font.bold: true; font.pixelSize: 11 }
 
                 Repeater {
                     model: root.vpnConnections
@@ -569,7 +569,7 @@ PopupWindow {
                         width: content.width
                         height: 36
                         radius: 6
-                        color: modelData.active ? Colors.foreground : Colors.surface
+                        color: modelData.active ? Colors.primary : Colors.surface
 
                         Row {
                             anchors.fill: parent
@@ -582,14 +582,14 @@ PopupWindow {
                                 width: parent.width - 90
                                 elide: Text.ElideRight
                                 text: modelData.name
-                                color: modelData.active ? Colors.background : Colors.foreground
+                                color: modelData.active ? Colors.surface : Colors.foreground
                                 font.bold: modelData.active
                             }
 
                             Text {
                                 anchors.verticalCenter: parent.verticalCenter
                                 text: modelData.active ? "Disconnect" : "Connect"
-                                color: modelData.active ? Colors.background : Colors.foreground
+                                color: modelData.active ? Colors.surface : Colors.foreground
                                 font.pixelSize: 10
                                 font.bold: true
                             }

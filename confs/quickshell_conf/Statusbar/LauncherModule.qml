@@ -9,7 +9,7 @@ Rectangle {
     width: 30
     height: 30
     radius: 15
-    color: launcherMouseArea.containsMouse ? Colors.background : Colors.background
+    color: launcherMouseArea.containsMouse ? Colors.surface : Colors.surface
 
     // Optional Process element to run Walker in the background if needed
     Process {
@@ -23,7 +23,7 @@ Rectangle {
         color: "transparent"
 
         Text {
-            color: Colors.foreground
+            color: launcherMouseArea.containsMouse ? Colors.primary : Colors.muted
             text: "" // Or use an Icon component if you have an icon theme
             anchors.centerIn: parent
         }

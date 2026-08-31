@@ -7,9 +7,9 @@ import "../"
 
 PopupWindow {
     id: root
-
     property var anchorItem: null
     signal wallpaperSelected()
+
     anchor.item: anchorItem
     anchor.rect.x: anchorItem ? 0 : 0
     anchor.rect.y: anchorItem ? anchorItem.height : 0
@@ -18,7 +18,7 @@ PopupWindow {
 
     implicitWidth: 700
     implicitHeight: 500
-    color: Colors.background
+    color: Colors.surface
 
     Process {
         id: applyProcess
@@ -45,7 +45,8 @@ PopupWindow {
             radius: 6
             color: "transparent"
             border.width: 2
-            border.color: thumbMouse.containsMouse ? Colors.outline : "transparent"
+            border.color: thumbMouse.containsMouse ? Colors.primary : "transparent"
+
             Image {
                 anchors.fill: parent
                 anchors.margins: 4
@@ -53,6 +54,7 @@ PopupWindow {
                 fillMode: Image.PreserveAspectCrop
                 asynchronous: true
             }
+
             Text {
                 anchors.bottom: parent.bottom
                 anchors.left: parent.left
@@ -61,8 +63,9 @@ PopupWindow {
                 color: Colors.foreground
                 font.bold: true
                 style: Text.Outline
-                styleColor: Colors.background
+                styleColor: Colors.surface
             }
+
             MouseArea {
                 id: thumbMouse
                 anchors.fill: parent
@@ -70,7 +73,7 @@ PopupWindow {
                 onClicked: {
                     applyProcess.command = ["waypaper", "--wallpaper", filePath];
                     applyProcess.startDetached();
-                    root.wallpaperSelected()  // close the picker after selecting
+                    root.wallpaperSelected()
                 }
             }
         }

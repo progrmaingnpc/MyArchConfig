@@ -35,7 +35,7 @@ Rectangle {
 
         Text {
             anchors.verticalCenter: parent.verticalCenter
-            color: audioRoot.muted ? Colors.accent : Colors.foreground
+            color: audioRoot.muted ? Colors.primary : Colors.foreground
             font.family: "Font Awesome 7 Free"
             font.weight: Font.Black
             text: audioRoot.icon

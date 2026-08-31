@@ -41,7 +41,7 @@ PopupWindow {
 
         implicitWidth: 460
         implicitHeight: content.implicitHeight + 20
-        color: Colors.background
+        color: Colors.surface
 
         readonly property var sink: Pipewire.defaultAudioSink
         readonly property var source: Pipewire.defaultAudioSource
@@ -80,7 +80,7 @@ PopupWindow {
                 width: track.width * bar.vol
                 height: track.height
                 radius: track.radius
-                color: Colors.foreground
+                color: Colors.primary
             }
         }
 
@@ -164,7 +164,7 @@ PopupWindow {
                 height: 36
                 radius: 6
                 property bool enabled_: popup.source && popup.source.audio ? !popup.source.audio.muted : false
-                color: enabled_ ? Colors.foreground : Colors.background
+                color: enabled_ ? Colors.primary : Colors.surface
                 border.color: Colors.outline
                 border.width: 1
 
@@ -173,7 +173,7 @@ PopupWindow {
                     font.family: "Font Awesome 7 Free"
                     font.weight: Font.Black
                     text: "\uf130"
-                    color: parent.enabled_ ? Colors.background : Colors.foreground
+                    color: parent.enabled_ ? Colors.surface : Colors.foreground
                 }
 
                 MouseArea {
@@ -190,7 +190,7 @@ PopupWindow {
                 height: 36
                 radius: 6
                 property bool enabled_: popup.sink && popup.sink.audio ? !popup.sink.audio.muted : false
-                color: enabled_ ? Colors.foreground : Colors.background
+                color: enabled_ ? Colors.primary : Colors.surface
                 border.color: Colors.outline
                 border.width: 1
 
@@ -199,7 +199,7 @@ PopupWindow {
                     font.family: "Font Awesome 7 Free"
                     font.weight: Font.Black
                     text: "\uf028"
-                    color: parent.enabled_ ? Colors.background : Colors.foreground
+                    color: parent.enabled_ ? Colors.surface : Colors.foreground
                 }
 
                 MouseArea {
@@ -222,7 +222,7 @@ PopupWindow {
                     width: content.width / 5
                     height: 30
                     property bool active: popup.currentTab === index
-                    color: active ? Colors.foreground : Colors.background
+                    color: active ? Colors.primary : Colors.surface
                     border.color: Colors.outline
                     border.width: 1
 
@@ -230,7 +230,7 @@ PopupWindow {
                         anchors.centerIn: parent
                         text: modelData
                         font.pixelSize: 9
-                        color: parent.active ? Colors.background : Colors.foreground
+                        color: parent.active ? Colors.surface : Colors.foreground
                     }
 
                     MouseArea {

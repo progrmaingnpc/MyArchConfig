@@ -5,15 +5,14 @@ import "../"
 
 PopupWindow {
     id: root
-
     property Item anchorItem
     signal powerOptionSelected()
+
     anchor.item: anchorItem
     anchor.edges: Edges.Bottom | Edges.Right
     anchor.gravity: Edges.Bottom | Edges.Left
     anchor.margins.top: 8
-
-    color: Colors.background
+    color: Colors.surface
 
     readonly property int buttonSize: 44
     readonly property var actions: [
@@ -38,17 +37,16 @@ PopupWindow {
 
         Repeater {
             model: root.actions
-
             Rectangle {
                 width: root.buttonSize
                 height: root.buttonSize
                 radius: width / 2
-                color: buttonMouse.containsMouse ? Colors.foreground : Colors.background
+                color: buttonMouse.containsMouse ? Colors.primary : Colors.surface
 
                 Text {
                     anchors.centerIn: parent
                     text: modelData.label
-                    color: buttonMouse.containsMouse ? Colors.background : Colors.foreground
+                    color: buttonMouse.containsMouse ? Colors.surface : Colors.foreground
                     font.pixelSize: modelData.label.length > 2 ? 9 : 16
                     font.bold: true
                 }

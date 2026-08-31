@@ -14,7 +14,7 @@ Rectangle {
     Text {
         anchors.centerIn: parent
         text: "⏻"
-        color: Colors.foreground
+        color: Colors.muted
         font.pixelSize: 16
         font.bold: true
     }

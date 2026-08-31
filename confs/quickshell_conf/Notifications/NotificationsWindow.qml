@@ -4,10 +4,9 @@ import "../"
 
 PopupWindow {
     id: root
-    color: Colors.background
+    color: Colors.surface
 
     property Item anchorItem
-
     anchor.item: anchorItem
     anchor.edges: Edges.Bottom | Edges.Right
     anchor.gravity: Edges.Bottom | Edges.Center
@@ -28,7 +27,7 @@ PopupWindow {
             width: list.width
             height: Math.max(56, body.implicitHeight + summary.implicitHeight + 20)
             radius: 8
-            color: Colors.background
+            color: Colors.surfaceVariant
 
             Column {
                 anchors.fill: parent
@@ -49,7 +48,7 @@ PopupWindow {
                     id: body
                     width: parent.width
                     text: modelData.body
-                    color: Colors.foreground
+                    color: Colors.muted
                     wrapMode: Text.WordWrap
                     maximumLineCount: 3
                     elide: Text.ElideRight
@@ -61,7 +60,7 @@ PopupWindow {
                 anchors.right: parent.right
                 anchors.margins: 6
                 text: "x"
-                color: Colors.foreground
+                color: Colors.muted
                 font.bold: true
 
                 MouseArea {
@@ -77,6 +76,6 @@ PopupWindow {
         anchors.centerIn: parent
         visible: list.count === 0
         text: "No notifications"
-        color: Colors.foreground
+        color: Colors.muted
     }
 }

@@ -40,7 +40,7 @@ Rectangle {
     Text {
         id: label
         anchors.centerIn: parent
-        color: Colors.foreground
+        color: Colors.muted
         text: memoryRoot.pct + "% "
     }
 }

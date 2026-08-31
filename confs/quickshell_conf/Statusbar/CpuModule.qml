@@ -48,13 +48,13 @@ Rectangle {
 
         Text {
             anchors.verticalCenter: parent.verticalCenter
-            color: Colors.foreground
+            color: Colors.muted
             text: cpuRoot.pct + "%"
         }
 
         Text {
             anchors.verticalCenter: parent.verticalCenter
-            color: Colors.foreground
+            color: Colors.muted
             font.family: "Font Awesome 7 Free"
             font.weight: Font.Black
             text: "\uf2db"
