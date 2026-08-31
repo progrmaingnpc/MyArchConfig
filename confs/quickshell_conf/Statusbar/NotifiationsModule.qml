@@ -1,4 +1,5 @@
 import QtQuick
+import "../"
 import "../Notifications"
 
 Rectangle {
@@ -14,7 +15,7 @@ Rectangle {
     Text {
         anchors.centerIn: parent
         text: "\uf0f3"
-        color: "white"
+        color: Colors.foreground
         font.pixelSize: 15
     }
 

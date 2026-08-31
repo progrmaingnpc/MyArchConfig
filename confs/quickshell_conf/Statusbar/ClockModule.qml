@@ -1,5 +1,6 @@
 import Quickshell
 import QtQuick
+import "../"
 import "../Calendar"
 
 Rectangle {
@@ -19,7 +20,7 @@ Rectangle {
     }
 
     Text {
-        color: "white"
+        color: Colors.foreground
         anchors.centerIn: parent
         text: clockRoot.showDate ? Qt.formatDateTime(clock.date, "dd/MM/yyyy") : Qt.formatDateTime(clock.date, "hh:mm AP")
     }

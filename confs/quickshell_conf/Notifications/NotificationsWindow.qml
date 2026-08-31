@@ -1,9 +1,10 @@
 import QtQuick
 import Quickshell
+import "../"
 
 PopupWindow {
     id: root
-    color: "black"
+    color: Colors.background
 
     property Item anchorItem
 
@@ -27,7 +28,7 @@ PopupWindow {
             width: list.width
             height: Math.max(56, body.implicitHeight + summary.implicitHeight + 20)
             radius: 8
-            color: "#1a1a1a"
+            color: Colors.background
 
             Column {
                 anchors.fill: parent
@@ -39,7 +40,7 @@ PopupWindow {
                     id: summary
                     width: parent.width
                     text: modelData.summary
-                    color: "white"
+                    color: Colors.foreground
                     font.bold: true
                     elide: Text.ElideRight
                 }
@@ -48,7 +49,7 @@ PopupWindow {
                     id: body
                     width: parent.width
                     text: modelData.body
-                    color: "white"
+                    color: Colors.foreground
                     wrapMode: Text.WordWrap
                     maximumLineCount: 3
                     elide: Text.ElideRight
@@ -60,7 +61,7 @@ PopupWindow {
                 anchors.right: parent.right
                 anchors.margins: 6
                 text: "x"
-                color: "white"
+                color: Colors.foreground
                 font.bold: true
 
                 MouseArea {
@@ -76,6 +77,6 @@ PopupWindow {
         anchors.centerIn: parent
         visible: list.count === 0
         text: "No notifications"
-        color: "white"
+        color: Colors.foreground
     }
 }

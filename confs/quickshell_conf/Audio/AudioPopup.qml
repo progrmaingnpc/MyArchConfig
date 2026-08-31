@@ -41,7 +41,7 @@ PopupWindow {
 
         implicitWidth: 460
         implicitHeight: content.implicitHeight + 20
-        color: Colors.surface
+        color: Colors.background
 
         readonly property var sink: Pipewire.defaultAudioSink
         readonly property var source: Pipewire.defaultAudioSource
@@ -80,7 +80,7 @@ PopupWindow {
                 width: track.width * bar.vol
                 height: track.height
                 radius: track.radius
-                color: Colors.primary
+                color: Colors.foreground
             }
         }
 
@@ -164,7 +164,7 @@ PopupWindow {
                 height: 36
                 radius: 6
                 property bool enabled_: popup.source && popup.source.audio ? !popup.source.audio.muted : false
-                color: enabled_ ? Colors.primary : Colors.surface
+                color: enabled_ ? Colors.foreground : Colors.background
                 border.color: Colors.outline
                 border.width: 1
 
@@ -190,7 +190,7 @@ PopupWindow {
                 height: 36
                 radius: 6
                 property bool enabled_: popup.sink && popup.sink.audio ? !popup.sink.audio.muted : false
-                color: enabled_ ? Colors.primary : Colors.surface
+                color: enabled_ ? Colors.foreground : Colors.background
                 border.color: Colors.outline
                 border.width: 1
 
@@ -222,7 +222,7 @@ PopupWindow {
                     width: content.width / 5
                     height: 30
                     property bool active: popup.currentTab === index
-                    color: active ? Colors.primary : Colors.surface
+                    color: active ? Colors.foreground : Colors.background
                     border.color: Colors.outline
                     border.width: 1
 

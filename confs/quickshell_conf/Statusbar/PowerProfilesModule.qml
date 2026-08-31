@@ -1,5 +1,6 @@
 import QtQuick
 import Quickshell.Services.UPower
+import "../"
 
 Rectangle {
     id: powerProfilesRoot
@@ -17,7 +18,7 @@ Rectangle {
 
     Text {
         anchors.centerIn: parent
-        color: "white"
+        color: Colors.foreground
         font.family: "Font Awesome 7 Free"
         font.weight: Font.Black
         font.pixelSize: 15

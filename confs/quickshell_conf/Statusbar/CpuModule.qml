@@ -1,6 +1,7 @@
 import QtQuick
 import Quickshell
 import Quickshell.Io
+import "../"
 
 Rectangle {
     id: cpuRoot
@@ -47,13 +48,13 @@ Rectangle {
 
         Text {
             anchors.verticalCenter: parent.verticalCenter
-            color: "white"
+            color: Colors.foreground
             text: cpuRoot.pct + "%"
         }
 
         Text {
             anchors.verticalCenter: parent.verticalCenter
-            color: "white"
+            color: Colors.foreground
             font.family: "Font Awesome 7 Free"
             font.weight: Font.Black
             text: "\uf2db"

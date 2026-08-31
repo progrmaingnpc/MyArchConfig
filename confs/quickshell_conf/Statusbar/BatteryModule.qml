@@ -1,5 +1,6 @@
 import QtQuick
 import Quickshell.Services.UPower
+import "../"
 
 Rectangle {
     id: batteryRoot
@@ -29,13 +30,13 @@ Rectangle {
 
         Text {
             anchors.verticalCenter: parent.verticalCenter
-            color: batteryRoot.low ? "#ff5555" : "white"
+            color: batteryRoot.low ? "#ff5555" : Colors.foreground
             text: batteryRoot.pct + "%"
         }
 
         Text {
             anchors.verticalCenter: parent.verticalCenter
-            color: batteryRoot.low ? "#ff5555" : "white"
+            color: batteryRoot.low ? "#ff5555" : Colors.foreground
             font.family: "Font Awesome 7 Free"
             font.weight: Font.Black
             text: batteryRoot.icon
@@ -44,7 +45,7 @@ Rectangle {
         Text {
             visible: batteryRoot.charging
             anchors.verticalCenter: parent.verticalCenter
-            color: "white"
+            color: Colors.foreground
             font.family: "Font Awesome 7 Free"
             font.weight: Font.Black
             font.pixelSize: 11
@@ -54,7 +55,7 @@ Rectangle {
         Text {
             visible: batteryRoot.pluggedIn && !batteryRoot.charging
             anchors.verticalCenter: parent.verticalCenter
-            color: "white"
+            color: Colors.foreground
             font.family: "Font Awesome 7 Free"
             font.weight: Font.Black
             font.pixelSize: 11
@@ -74,7 +75,7 @@ Rectangle {
         Text {
             visible: batteryRoot.saver
             anchors.verticalCenter: parent.verticalCenter
-            color: "white"
+            color: Colors.foreground
             font.family: "Font Awesome 7 Free"
             font.weight: Font.Black
             font.pixelSize: 11

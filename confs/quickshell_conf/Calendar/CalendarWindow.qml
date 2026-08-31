@@ -1,9 +1,10 @@
 import QtQuick
 import Quickshell
+import "../"
 
 PopupWindow {
     id: root
-    color: "black"
+    color: Colors.background
 
     readonly property int cellSize: 32
     implicitWidth: cellSize * 7 + 20
@@ -78,7 +79,7 @@ PopupWindow {
                 width: root.cellSize
                 height: 24
                 text: "<"
-                color: "white"
+                color: Colors.foreground
                 font.bold: true
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
@@ -94,7 +95,7 @@ PopupWindow {
                 height: 24
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
-                color: "white"
+                color: Colors.foreground
                 font.bold: true
                 text: root.monthNames[root.viewMonth] + " " + root.viewYear
             }
@@ -103,7 +104,7 @@ PopupWindow {
                 width: root.cellSize
                 height: 24
                 text: ">"
-                color: "white"
+                color: Colors.foreground
                 font.bold: true
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
@@ -123,7 +124,7 @@ PopupWindow {
                     width: root.cellSize
                     height: 20
                     horizontalAlignment: Text.AlignHCenter
-                    color: "white"
+                    color: Colors.foreground
                     font.bold: true
                     text: modelData
                 }
@@ -138,7 +139,7 @@ PopupWindow {
                     width: root.cellSize
                     height: root.cellSize
                     radius: width / 2
-                    color: isToday ? "white" : "transparent"
+                    color: isToday ? Colors.foreground : "transparent"
 
                     property bool isToday: modelData !== 0
                         && root.viewYear === root.today.getFullYear()
@@ -149,7 +150,7 @@ PopupWindow {
                         anchors.centerIn: parent
                         visible: modelData !== 0
                         text: modelData
-                        color: parent.isToday ? "black" : "white"
+                        color: parent.isToday ? Colors.background : Colors.foreground
                         font.bold: parent.isToday
                     }
                 }

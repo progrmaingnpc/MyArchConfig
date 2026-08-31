@@ -1,5 +1,6 @@
 import QtQuick
 import Quickshell.Io
+import "../"
 
 Rectangle {
     id: memoryRoot
@@ -39,7 +40,7 @@ Rectangle {
     Text {
         id: label
         anchors.centerIn: parent
-        color: "white"
+        color: Colors.foreground
         text: memoryRoot.pct + "% "
     }
 }

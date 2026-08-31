@@ -1,6 +1,7 @@
 import QtQuick
 import Quickshell
 import Quickshell.Networking
+import "../"
 
 Rectangle {
     id: networkRoot
@@ -18,7 +19,7 @@ Rectangle {
 
     Text {
         anchors.centerIn: parent
-        color: "white"
+        color: Colors.foreground
         font.family: "Font Awesome 7 Free"
         font.weight: Font.Black
         text: networkRoot.icon

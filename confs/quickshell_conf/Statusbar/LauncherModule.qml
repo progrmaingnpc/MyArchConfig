@@ -2,13 +2,14 @@ import Quickshell
 import Quickshell.Io
 import QtQuick
 import QtQuick.Layouts
+import "../"
 
 Rectangle {
     id: walkerLauncher
     width: 30
     height: 30
     radius: 15
-    color: launcherMouseArea.containsMouse ? "black" : "black"
+    color: launcherMouseArea.containsMouse ? Colors.background : Colors.background
 
     // Optional Process element to run Walker in the background if needed
     Process {
@@ -22,7 +23,7 @@ Rectangle {
         color: "transparent"
 
         Text {
-            color: "white"
+            color: Colors.foreground
             text: "" // Or use an Icon component if you have an icon theme
             anchors.centerIn: parent
         }

@@ -3,6 +3,7 @@ import Quickshell.Wayland
 import Quickshell.Hyprland
 import Quickshell.Io
 import QtQuick
+import "../"
 import "../Notifications"
 import "../Power"
 import "../Network"
@@ -15,7 +16,7 @@ PanelWindow {
         right: true
     }
     implicitHeight: 30
-    color: "black"
+    color: Colors.background
 
     Item {
         anchors.fill: parent

@@ -25,6 +25,11 @@ input_path = '~/.config/matugen/templates/quickshell-colors.json'
 output_path = '~/.local/state/quickshell/generated/quickshell-colors.json'
 
 [templates.nwg-dock]
-input_path = '~/.config/matugen/templates/style.css'
+input_path = '~/.config/matugen/templates/nwg-style.css'
 output_path = '~/.config/nwg-dock-hyprland/style.css'
 post_hook = "pkill nwg-dock; nwg-dock-hyprland -x &"
+
+[templates.walker]
+input_path = '~/.config/matugen/templates/walker-style.css'
+output_path = '~/.config/walker/themes/default/style.css'
+post_hook = "pkill walker; walker --gapplication-service &"

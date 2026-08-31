@@ -1,6 +1,7 @@
 import QtQuick
 import Quickshell
-import "../Wallpaper"          // <-- add this
+import "../"
+import "../Wallpaper"
 
 Rectangle {
     id: wallpaperRoot
@@ -12,7 +13,7 @@ Rectangle {
     property bool open: false
     Text {
         anchors.centerIn: parent
-        color: "white"
+        color: Colors.foreground
         font.pixelSize: 15
         font.family: "Font Awesome 7 Free"
         font.weight: Font.Black

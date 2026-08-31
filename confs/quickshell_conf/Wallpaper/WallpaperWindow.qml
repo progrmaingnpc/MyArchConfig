@@ -3,6 +3,7 @@ import QtCore
 import Qt.labs.folderlistmodel
 import Quickshell
 import Quickshell.Io
+import "../"
 
 PopupWindow {
     id: root
@@ -17,7 +18,7 @@ PopupWindow {
 
     implicitWidth: 700
     implicitHeight: 500
-    color: "black"
+    color: Colors.background
 
     Process {
         id: applyProcess
@@ -44,7 +45,7 @@ PopupWindow {
             radius: 6
             color: "transparent"
             border.width: 2
-            border.color: thumbMouse.containsMouse ? "white" : "transparent"
+            border.color: thumbMouse.containsMouse ? Colors.outline : "transparent"
             Image {
                 anchors.fill: parent
                 anchors.margins: 4
@@ -57,10 +58,10 @@ PopupWindow {
                 anchors.left: parent.left
                 anchors.margins: 6
                 text: fileName
-                color: "white"
+                color: Colors.foreground
                 font.bold: true
                 style: Text.Outline
-                styleColor: "black"
+                styleColor: Colors.background
             }
             MouseArea {
                 id: thumbMouse

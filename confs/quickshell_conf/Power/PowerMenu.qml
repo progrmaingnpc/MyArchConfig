@@ -1,6 +1,7 @@
 import QtQuick
 import Quickshell
 import Quickshell.Io
+import "../"
 
 PopupWindow {
     id: root
@@ -12,7 +13,7 @@ PopupWindow {
     anchor.gravity: Edges.Bottom | Edges.Left
     anchor.margins.top: 8
 
-    color: "black"
+    color: Colors.background
 
     readonly property int buttonSize: 44
     readonly property var actions: [
@@ -42,12 +43,12 @@ PopupWindow {
                 width: root.buttonSize
                 height: root.buttonSize
                 radius: width / 2
-                color: buttonMouse.containsMouse ? "white" : "black"
+                color: buttonMouse.containsMouse ? Colors.foreground : Colors.background
 
                 Text {
                     anchors.centerIn: parent
                     text: modelData.label
-                    color: buttonMouse.containsMouse ? "black" : "white"
+                    color: buttonMouse.containsMouse ? Colors.background : Colors.foreground
                     font.pixelSize: modelData.label.length > 2 ? 9 : 16
                     font.bold: true
                 }

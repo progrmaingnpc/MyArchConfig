@@ -1,4 +1,5 @@
 import QtQuick
+import "../"
 import "../Power"
 
 Rectangle {
@@ -13,7 +14,7 @@ Rectangle {
     Text {
         anchors.centerIn: parent
         text: "⏻"
-        color: "white"
+        color: Colors.foreground
         font.pixelSize: 16
         font.bold: true
     }

@@ -2,6 +2,7 @@ import QtQuick
 import Quickshell
 import Quickshell.Widgets
 import Quickshell.Hyprland
+import "../"
 
 Rectangle {
     id: workspacesRoot
@@ -28,12 +29,12 @@ Rectangle {
                 radius: 13
 
                 // Active: white bg / black text | Inactive: black bg / white text
-                color: (content.activeId === index + 1) ? "white" : (workspaceMouseArea.containsMouse ? "white" : "black")
+                color: (content.activeId === index + 1) ? Colors.foreground : (workspaceMouseArea.containsMouse ? Colors.foreground: Colors.background)
 
                 Text {
                     anchors.centerIn: parent
                     text: content.romanMap[index]
-                    color: (content.activeId === index + 1) ? "black" : "white"
+                    color: (content.activeId === index + 1) ? Colors.background : Colors.foreground
                     font.bold: true
                 }
 
@@ -54,12 +55,12 @@ Rectangle {
 
             // Only visible if active workspace is between 6 and 10
             visible: content.activeId >= 6 && content.activeId <= 10
-            color: "white" // Always white when visible because it IS the active workspace
+            color: Colors.foreground // Always white when visible because it IS the active workspace
 
             Text {
                 anchors.centerIn: parent
                 text: visible ? content.romanMap[content.activeId - 1] : ""
-                color: "black"
+                color: Colors.background
                 font.bold: true
             }
         }

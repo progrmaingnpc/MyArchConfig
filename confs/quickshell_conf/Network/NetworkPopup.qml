@@ -3,10 +3,11 @@ import Quickshell
 import Quickshell.Networking
 import Quickshell.Bluetooth
 import Quickshell.Io
+import "../"
 
 PopupWindow {
     id: root
-    color: "black"
+    color: Colors.background
 
     property Item anchorItem
 
@@ -109,12 +110,12 @@ PopupWindow {
                     width: (parent.width - 20) / 3
                     height: 32
                     radius: 6
-                    color: Networking.wifiEnabled ? "white" : "#1a1a1a"
+                    color: Networking.wifiEnabled ? Colors.foreground : Colors.background
 
                     Text {
                         anchors.centerIn: parent
                         text: ""
-                        color: Networking.wifiEnabled ? "black" : "white"
+                        color: Networking.wifiEnabled ? Colors.background : Colors.foreground
                         font.family: "Font Awesome 7 Free"
                         font.weight: Font.Black
                         font.pixelSize: 14
@@ -131,12 +132,12 @@ PopupWindow {
                     width: (parent.width - 20) / 3
                     height: 32
                     radius: 6
-                    color: btEnabled ? "white" : "#1a1a1a"
+                    color: btEnabled ? Colors.foreground : Colors.background
 
                     Text {
                         anchors.centerIn: parent
                         text: "\uf293"
-                        color: parent.btEnabled ? "black" : "white"
+                        color: parent.btEnabled ? Colors.background : Colors.foreground
                         font.family: "Font Awesome 7 Brands"
                         font.pixelSize: 14
                     }
@@ -154,12 +155,12 @@ PopupWindow {
                     width: (parent.width - 20) / 3
                     height: 32
                     radius: 6
-                    color: root.networkingEnabled ? "white" : "#1a1a1a"
+                    color: root.networkingEnabled ? Colors.foreground : Colors.background
 
                     Text {
                         anchors.centerIn: parent
                         text: ""
-                        color: root.networkingEnabled ? "black" : "white"
+                        color: root.networkingEnabled ? Colors.background : Colors.foreground
                         font.family: "Font Awesome 7 Free"
                         font.weight: Font.Black
                         font.pixelSize: 14
@@ -182,13 +183,13 @@ PopupWindow {
                 spacing: 4
                 visible: root.wiredDevice !== undefined
 
-                Text { text: "Ethernet"; color: "white"; font.bold: true; font.pixelSize: 11 }
+                Text { text: "Ethernet"; color: Colors.foreground; font.bold: true; font.pixelSize: 11 }
 
                 Rectangle {
                     width: parent.width
                     height: 36
                     radius: 6
-                    color: root.wiredDevice && root.wiredDevice.connected ? "white" : "#1a1a1a"
+                    color: root.wiredDevice && root.wiredDevice.connected ? Colors.foreground : Colors.background
 
                     Row {
                         anchors.fill: parent
@@ -201,14 +202,14 @@ PopupWindow {
                             width: parent.width - 90
                             elide: Text.ElideRight
                             text: root.wiredDevice ? root.wiredDevice.name : ""
-                            color: root.wiredDevice && root.wiredDevice.connected ? "black" : "white"
+                            color: root.wiredDevice && root.wiredDevice.connected ? Colors.background : Colors.foreground
                             font.bold: !!(root.wiredDevice && root.wiredDevice.connected)
                         }
 
                         Text {
                             anchors.verticalCenter: parent.verticalCenter
                             text: root.wiredDevice && root.wiredDevice.connected ? "Disconnect" : "Connect"
-                            color: root.wiredDevice && root.wiredDevice.connected ? "black" : "white"
+                            color: root.wiredDevice && root.wiredDevice.connected ? Colors.background : Colors.foreground
                             font.pixelSize: 10
                             font.bold: true
                         }
@@ -233,7 +234,7 @@ PopupWindow {
                 spacing: 4
                 visible: root.wifiDevice !== undefined
 
-                Text { text: "Wi-Fi Networks"; color: "white"; font.bold: true; font.pixelSize: 11 }
+                Text { text: "Wi-Fi Networks"; color: Colors.foreground; font.bold: true; font.pixelSize: 11 }
 
                 Repeater {
                     model: root.networks
@@ -246,7 +247,7 @@ PopupWindow {
                             width: parent.width
                             height: 36
                             radius: 6
-                            color: modelData.connected ? "white" : "#1a1a1a"
+                            color: modelData.connected ? Colors.foreground : Colors.background
 
                             Row {
                                 anchors.fill: parent
@@ -258,7 +259,7 @@ PopupWindow {
                                     anchors.verticalCenter: parent.verticalCenter
                                     width: 34
                                     text: Math.round(modelData.signalStrength * 100) + "%"
-                                    color: modelData.connected ? "black" : "white"
+                                    color: modelData.connected ? Colors.background : Colors.foreground
                                 }
 
                                 Text {
@@ -266,14 +267,14 @@ PopupWindow {
                                     width: parent.width - 140
                                     elide: Text.ElideRight
                                     text: modelData.name
-                                    color: modelData.connected ? "black" : "white"
+                                    color: modelData.connected ? Colors.background : Colors.foreground
                                     font.bold: modelData.connected
                                 }
 
                                 Text {
                                     anchors.verticalCenter: parent.verticalCenter
                                     text: modelData.connected ? "Disconnect" : ""
-                                    color: "black"
+                                    color: Colors.background
                                     font.pixelSize: 10
                                     font.bold: true
                                 }
@@ -304,12 +305,12 @@ PopupWindow {
                                 width: parent.width - 70
                                 height: 32
                                 radius: 6
-                                color: "#1a1a1a"
+                                color: Colors.surface
 
                                 TextInput {
                                     anchors.fill: parent
                                     anchors.margins: 8
-                                    color: "white"
+                                    color: Colors.foreground
                                     echoMode: TextInput.Password
                                     focus: root.pendingNetwork === modelData
                                     text: root.pskInput
@@ -325,14 +326,14 @@ PopupWindow {
                                 width: 60
                                 height: 32
                                 radius: 6
-                                color: "white"
+                                color: Colors.foreground
 
                                 Text {
                                     anchors.centerIn: parent
                                     text: "Connect"
                                     font.pixelSize: 10
                                     font.bold: true
-                                    color: "black"
+                                    color: Colors.background
                                 }
 
                                 MouseArea {
@@ -350,19 +351,19 @@ PopupWindow {
                 Text {
                     visible: root.wifiDevice !== undefined && root.networks.length === 0
                     text: "No WiFi networks found"
-                    color: "white"
+                    color: Colors.foreground
                 }
 
                 Rectangle {
                     width: parent.width
                     height: 32
                     radius: 6
-                    color: "#1a1a1a"
+                    color: Colors.surface
 
                     Text {
                         anchors.centerIn: parent
                         text: "Connect to Hidden Network..."
-                        color: "white"
+                        color: Colors.foreground
                         font.pixelSize: 11
                     }
 
@@ -384,12 +385,12 @@ PopupWindow {
                         width: parent.width
                         height: 32
                         radius: 6
-                        color: "#1a1a1a"
+                        color: Colors.surface
 
                         TextInput {
                             anchors.fill: parent
                             anchors.margins: 8
-                            color: "white"
+                            color: Colors.foreground
                             text: root.hiddenSsid
                             onTextChanged: root.hiddenSsid = text
                         }
@@ -399,7 +400,7 @@ PopupWindow {
                             anchors.leftMargin: 8
                             anchors.verticalCenter: parent.verticalCenter
                             text: "Network name"
-                            color: "#666666"
+                            color: Colors.muted
                             visible: root.hiddenSsid.length === 0
                         }
                     }
@@ -408,12 +409,12 @@ PopupWindow {
                         width: parent.width
                         height: 32
                         radius: 6
-                        color: "#1a1a1a"
+                        color: Colors.surface
 
                         TextInput {
                             anchors.fill: parent
                             anchors.margins: 8
-                            color: "white"
+                            color: Colors.foreground
                             echoMode: TextInput.Password
                             text: root.hiddenPsk
                             onTextChanged: root.hiddenPsk = text
@@ -424,7 +425,7 @@ PopupWindow {
                             anchors.leftMargin: 8
                             anchors.verticalCenter: parent.verticalCenter
                             text: "Password (blank if open)"
-                            color: "#666666"
+                            color: Colors.muted
                             visible: root.hiddenPsk.length === 0
                         }
                     }
@@ -433,9 +434,9 @@ PopupWindow {
                         width: parent.width
                         height: 32
                         radius: 6
-                        color: "white"
+                        color: Colors.foreground
 
-                        Text { anchors.centerIn: parent; text: "Connect"; font.bold: true; color: "black" }
+                        Text { anchors.centerIn: parent; text: "Connect"; font.bold: true; color: Colors.background }
 
                         MouseArea {
                             anchors.fill: parent
@@ -459,12 +460,12 @@ PopupWindow {
                     width: parent.width
                     height: 32
                     radius: 6
-                    color: "#1a1a1a"
+                    color: Colors.surface
 
                     Text {
                         anchors.centerIn: parent
                         text: "Create New Wi-Fi Network..."
-                        color: "white"
+                        color: Colors.foreground
                         font.pixelSize: 11
                     }
 
@@ -486,12 +487,12 @@ PopupWindow {
                         width: parent.width
                         height: 32
                         radius: 6
-                        color: "#1a1a1a"
+                        color: Colors.surface
 
                         TextInput {
                             anchors.fill: parent
                             anchors.margins: 8
-                            color: "white"
+                            color: Colors.foreground
                             text: root.hotspotName
                             onTextChanged: root.hotspotName = text
                         }
@@ -501,7 +502,7 @@ PopupWindow {
                             anchors.leftMargin: 8
                             anchors.verticalCenter: parent.verticalCenter
                             text: "Hotspot name"
-                            color: "#666666"
+                            color: Colors.muted
                             visible: root.hotspotName.length === 0
                         }
                     }
@@ -510,12 +511,12 @@ PopupWindow {
                         width: parent.width
                         height: 32
                         radius: 6
-                        color: "#1a1a1a"
+                        color: Colors.surface
 
                         TextInput {
                             anchors.fill: parent
                             anchors.margins: 8
-                            color: "white"
+                            color: Colors.foreground
                             echoMode: TextInput.Password
                             text: root.hotspotPsk
                             onTextChanged: root.hotspotPsk = text
@@ -526,7 +527,7 @@ PopupWindow {
                             anchors.leftMargin: 8
                             anchors.verticalCenter: parent.verticalCenter
                             text: "Password (min 8 chars)"
-                            color: "#666666"
+                            color: Colors.muted
                             visible: root.hotspotPsk.length === 0
                         }
                     }
@@ -535,9 +536,9 @@ PopupWindow {
                         width: parent.width
                         height: 32
                         radius: 6
-                        color: "white"
+                        color: Colors.foreground
 
-                        Text { anchors.centerIn: parent; text: "Create"; font.bold: true; color: "black" }
+                        Text { anchors.centerIn: parent; text: "Create"; font.bold: true; color: Colors.background }
 
                         MouseArea {
                             anchors.fill: parent
@@ -559,7 +560,7 @@ PopupWindow {
                 spacing: 4
                 visible: root.vpnConnections.length > 0
 
-                Text { text: "VPN Connections"; color: "white"; font.bold: true; font.pixelSize: 11 }
+                Text { text: "VPN Connections"; color: Colors.foreground; font.bold: true; font.pixelSize: 11 }
 
                 Repeater {
                     model: root.vpnConnections
@@ -568,7 +569,7 @@ PopupWindow {
                         width: content.width
                         height: 36
                         radius: 6
-                        color: modelData.active ? "white" : "#1a1a1a"
+                        color: modelData.active ? Colors.foreground : Colors.surface
 
                         Row {
                             anchors.fill: parent
@@ -581,14 +582,14 @@ PopupWindow {
                                 width: parent.width - 90
                                 elide: Text.ElideRight
                                 text: modelData.name
-                                color: modelData.active ? "black" : "white"
+                                color: modelData.active ? Colors.background : Colors.foreground
                                 font.bold: modelData.active
                             }
 
                             Text {
                                 anchors.verticalCenter: parent.verticalCenter
                                 text: modelData.active ? "Disconnect" : "Connect"
-                                color: modelData.active ? "black" : "white"
+                                color: modelData.active ? Colors.background : Colors.foreground
                                 font.pixelSize: 10
                                 font.bold: true
                             }
@@ -610,12 +611,12 @@ PopupWindow {
                 width: parent.width
                 height: 32
                 radius: 6
-                color: "#1a1a1a"
+                color: Colors.surface
 
                 Text {
                     anchors.centerIn: parent
                     text: "Bluetooth"
-                    color: "white"
+                    color: Colors.foreground
                     font.pixelSize: 11
                 }
 
@@ -633,12 +634,12 @@ PopupWindow {
                     width: (parent.width - 10) / 2
                     height: 32
                     radius: 6
-                    color: "#1a1a1a"
+                    color: Colors.surface
 
                     Text {
                         anchors.centerIn: parent
                         text: "Connection Info"
-                        color: "white"
+                        color: Colors.foreground
                         font.pixelSize: 11
                     }
 
@@ -658,12 +659,12 @@ PopupWindow {
                     width: (parent.width - 10) / 2
                     height: 32
                     radius: 6
-                    color: "#1a1a1a"
+                    color: Colors.surface
 
                     Text {
                         anchors.centerIn: parent
                         text: "Edit Connections"
-                        color: "white"
+                        color: Colors.foreground
                         font.pixelSize: 11
                     }
 
