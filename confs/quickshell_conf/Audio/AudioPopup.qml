@@ -3,6 +3,7 @@ import QtQuick.Controls
 import Quickshell
 import Quickshell.Io
 import Quickshell.Services.Pipewire
+import "../"
 
 PopupWindow {
     id: popup
@@ -24,7 +25,7 @@ PopupWindow {
 
     Process {
         id: setProfileProcess
-        onExited: cardsProcess.running = true   // refresh the list once the switch lands
+        onExited: cardsProcess.running = true
     }
 
     onCurrentTabChanged: {
@@ -40,13 +41,11 @@ PopupWindow {
 
         implicitWidth: 460
         implicitHeight: content.implicitHeight + 20
-        color: "black"
+        color: Colors.surface
 
         readonly property var sink: Pipewire.defaultAudioSink
         readonly property var source: Pipewire.defaultAudioSource
 
-        // every node that has audio properties — needs to be bound before
-        // .audio.muted / .audio.volume can be read or written on it
         readonly property var audioNodes: {
             let n = []
             for (let i = 0; i < Pipewire.nodes.values.length; i++) {
@@ -63,7 +62,6 @@ PopupWindow {
         property int currentTab: 0
         readonly property var tabNames: ["Apps", "Nodes", "Inputs", "Configuration", "Graph"]
 
-    // ---------- Draggable volume bar: click-and-hold anywhere to scrub ----------
     component VolumeBar: Item {
         id: bar
         property var node: null
@@ -76,13 +74,13 @@ PopupWindow {
             id: track
             anchors.fill: parent
             radius: height / 2
-            color: "#333333"
+            color: Colors.surfaceVariant
 
             Rectangle {
                 width: track.width * bar.vol
                 height: track.height
                 radius: track.radius
-                color: "white"
+                color: Colors.primary
             }
         }
 
@@ -103,7 +101,6 @@ PopupWindow {
         }
     }
 
-    // ---------- Reusable row: name + % + volume bar, optional "select as default" ----------
     component NodeRow: Column {
         property var node: null
         property bool selectable: false
@@ -114,7 +111,7 @@ PopupWindow {
         Rectangle {
             width: parent.width
             height: 20
-            color: (selectable && isDefault) ? "#333333" : "transparent"
+            color: (selectable && isDefault) ? Colors.surfaceVariant : "transparent"
             radius: 4
 
             Text {
@@ -122,7 +119,7 @@ PopupWindow {
                 anchors.verticalCenter: parent.verticalCenter
                 anchors.leftMargin: 4
                 text: node ? (node.description || node.name) : ""
-                color: "white"
+                color: Colors.foreground
                 font.pixelSize: 11
                 elide: Text.ElideRight
                 width: parent.width - 50
@@ -132,7 +129,7 @@ PopupWindow {
                 anchors.verticalCenter: parent.verticalCenter
                 anchors.rightMargin: 4
                 text: (node && node.audio) ? Math.round(node.audio.volume * 100) + "%" : ""
-                color: "white"
+                color: Colors.foreground
                 font.pixelSize: 11
             }
 
@@ -158,7 +155,6 @@ PopupWindow {
         anchors.margins: 10
         spacing: 10
 
-        // ---------- Row 1: mic / speaker enable toggles ----------
         Row {
             width: parent.width
             spacing: 8
@@ -168,8 +164,8 @@ PopupWindow {
                 height: 36
                 radius: 6
                 property bool enabled_: popup.source && popup.source.audio ? !popup.source.audio.muted : false
-                color: enabled_ ? "white" : "black"
-                border.color: "white"
+                color: enabled_ ? Colors.primary : Colors.surface
+                border.color: Colors.outline
                 border.width: 1
 
                 Text {
@@ -177,7 +173,7 @@ PopupWindow {
                     font.family: "Font Awesome 7 Free"
                     font.weight: Font.Black
                     text: "\uf130"
-                    color: parent.enabled_ ? "black" : "white"
+                    color: parent.enabled_ ? Colors.background : Colors.foreground
                 }
 
                 MouseArea {
@@ -194,8 +190,8 @@ PopupWindow {
                 height: 36
                 radius: 6
                 property bool enabled_: popup.sink && popup.sink.audio ? !popup.sink.audio.muted : false
-                color: enabled_ ? "white" : "black"
-                border.color: "white"
+                color: enabled_ ? Colors.primary : Colors.surface
+                border.color: Colors.outline
                 border.width: 1
 
                 Text {
@@ -203,7 +199,7 @@ PopupWindow {
                     font.family: "Font Awesome 7 Free"
                     font.weight: Font.Black
                     text: "\uf028"
-                    color: parent.enabled_ ? "black" : "white"
+                    color: parent.enabled_ ? Colors.background : Colors.foreground
                 }
 
                 MouseArea {
@@ -216,7 +212,6 @@ PopupWindow {
             }
         }
 
-        // ---------- Row 2: 5-way segmented tab bar ----------
         Row {
             width: parent.width
             spacing: 0
@@ -227,15 +222,15 @@ PopupWindow {
                     width: content.width / 5
                     height: 30
                     property bool active: popup.currentTab === index
-                    color: active ? "white" : "black"
-                    border.color: "white"
+                    color: active ? Colors.primary : Colors.surface
+                    border.color: Colors.outline
                     border.width: 1
 
                     Text {
                         anchors.centerIn: parent
                         text: modelData
                         font.pixelSize: 9
-                        color: parent.active ? "black" : "white"
+                        color: parent.active ? Colors.background : Colors.foreground
                     }
 
                     MouseArea {
@@ -246,7 +241,6 @@ PopupWindow {
             }
         }
 
-        // ---------- Tab content ----------
         Loader {
             width: parent.width
             sourceComponent: {
@@ -261,7 +255,6 @@ PopupWindow {
         }
     }
 
-    // ---------- 1. Apps: playback stream volume control ----------
     Component {
         id: appsTab
         Column {
@@ -281,7 +274,6 @@ PopupWindow {
         }
     }
 
-    // ---------- 2. Nodes: audio output (sink) device volume control ----------
     Component {
         id: nodesTab
         Column {
@@ -305,7 +297,6 @@ PopupWindow {
         }
     }
 
-    // ---------- 3. Inputs: audio input (source) device volume control ----------
     Component {
         id: inputsTab
         Column {
@@ -329,34 +320,33 @@ PopupWindow {
         }
     }
 
-    // ---------- 4. Configuration ----------
     Component {
         id: configTab
         Column {
             width: content.width
             spacing: 14
 
-            Text { text: "Default Output"; color: "white"; font.pixelSize: 11 }
+            Text { text: "Default Output"; color: Colors.muted; font.pixelSize: 11 }
             Text {
                 text: popup.sink ? (popup.sink.description || popup.sink.name) : "none"
-                color: "white"; font.pixelSize: 11; font.bold: true
+                color: Colors.foreground; font.pixelSize: 11; font.bold: true
             }
-            Text { text: "Default Input"; color: "white"; font.pixelSize: 11 }
+            Text { text: "Default Input"; color: Colors.muted; font.pixelSize: 11 }
             Text {
                 text: popup.source ? (popup.source.description || popup.source.name) : "none"
-                color: "white"; font.pixelSize: 11; font.bold: true
+                color: Colors.foreground; font.pixelSize: 11; font.bold: true
             }
 
             Rectangle {
                 width: parent.width
                 height: 30
                 radius: 4
-                color: "black"
-                border.color: "white"
+                color: Colors.surface
+                border.color: Colors.outline
                 Text {
                     anchors.centerIn: parent
                     text: "Restart WirePlumber"
-                    color: "white"
+                    color: Colors.foreground
                     font.pixelSize: 11
                 }
                 MouseArea {
@@ -365,7 +355,7 @@ PopupWindow {
                 }
             }
 
-            Text { text: "Device Profiles"; color: "white"; font.pixelSize: 11; font.bold: true }
+            Text { text: "Device Profiles"; color: Colors.foreground; font.pixelSize: 11; font.bold: true }
 
             Repeater {
                 model: popup.cards
@@ -393,20 +383,19 @@ PopupWindow {
 
                     Text {
                         text: cardLabel
-                        color: "white"
+                        color: Colors.foreground
                         font.pixelSize: 11
                         font.bold: true
                         elide: Text.ElideRight
                         width: parent.width
                     }
 
-                    // ---- currently selected profile: click to open/close the list ----
                     Rectangle {
                         width: parent.width
                         height: 28
                         radius: 4
-                        color: "black"
-                        border.color: "white"
+                        color: Colors.surface
+                        border.color: Colors.outline
 
                         Row {
                             anchors.fill: parent
@@ -418,19 +407,18 @@ PopupWindow {
                                 verticalAlignment: Text.AlignVCenter
                                 elide: Text.ElideRight
                                 text: activeProfile || "none"
-                                color: "white"
+                                color: Colors.foreground
                                 font.pixelSize: 11
                                 font.bold: true
                             }
                         }
 
-                        // little caret to signal it's expandable
                         Text {
                             anchors.right: parent.right
                             anchors.rightMargin: 8
                             anchors.verticalCenter: parent.verticalCenter
                             text: dropdownOpen ? "▲" : "▼"
-                            color: "black"
+                            color: Colors.muted
                             font.pixelSize: 9
                         }
 
@@ -440,7 +428,6 @@ PopupWindow {
                         }
                     }
 
-                    // ---- dropdown: every OTHER available profile ----
                     Column {
                         width: parent.width
                         spacing: 2
@@ -454,8 +441,8 @@ PopupWindow {
                                 width: parent.width
                                 height: 26
                                 radius: 4
-                                color: optionMouse.containsMouse ? "#333333" : "black"
-                                border.color: "white"
+                                color: optionMouse.containsMouse ? Colors.surfaceVariant : Colors.surface
+                                border.color: Colors.outline
                                 border.width: 1
 
                                 Text {
@@ -463,7 +450,7 @@ PopupWindow {
                                     anchors.leftMargin: 8
                                     anchors.verticalCenter: parent.verticalCenter
                                     text: modelData
-                                    color: "white"
+                                    color: Colors.foreground
                                     font.pixelSize: 10
                                 }
 
@@ -483,7 +470,7 @@ PopupWindow {
                         Text {
                             visible: otherProfiles.length === 0
                             text: "No other profiles available"
-                            color: "#666666"
+                            color: Colors.muted
                             font.pixelSize: 9
                         }
                     }
@@ -493,13 +480,12 @@ PopupWindow {
             Text {
                 visible: popup.cards.length === 0
                 text: "No cards found (is pactl / pipewire-pulse installed?)"
-                color: "#666666"
+                color: Colors.muted
                 font.pixelSize: 10
             }
         }
     }
 
-    // ---------- 5. Graph: draggable PipeWire node graph ----------
     Component {
         id: graphTab
         Item {
@@ -510,9 +496,8 @@ PopupWindow {
 
             property var nodeItems: ({})
 
-            Rectangle { anchors.fill: parent; color: "#111111"; radius: 6 }
+            Rectangle { anchors.fill: parent; color: Colors.surface; radius: 6 }
 
-            // links
             Repeater {
                 model: {
                     let l = []
@@ -525,7 +510,7 @@ PopupWindow {
                     property var dstItem: graphRoot.nodeItems[modelData.target.id]
                     visible: !!srcItem && !!dstItem
                     height: 2
-                    color: "white"
+                    color: Colors.outline
                     opacity: 0.6
                     x: visible ? srcItem.x + srcItem.width / 2 : 0
                     y: visible ? srcItem.y + srcItem.height / 2 : 0
@@ -535,7 +520,6 @@ PopupWindow {
                 }
             }
 
-            // nodes
             Repeater {
                 model: {
                     let n = []
@@ -550,8 +534,8 @@ PopupWindow {
                     width: 100
                     height: 26
                     radius: 4
-                    color: "black"
-                    border.color: "white"
+                    color: Colors.surface
+                    border.color: Colors.outline
                     border.width: 1
 
                     Component.onCompleted: {
@@ -564,7 +548,7 @@ PopupWindow {
                     Text {
                         anchors.centerIn: parent
                         text: (modelData.description || modelData.name).slice(0, 15)
-                        color: "white"
+                        color: Colors.foreground
                         font.pixelSize: 9
                         elide: Text.ElideRight
                         width: parent.width - 6

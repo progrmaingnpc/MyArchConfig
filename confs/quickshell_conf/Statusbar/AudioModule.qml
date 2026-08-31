@@ -2,6 +2,7 @@ import QtQuick
 import Quickshell
 import Quickshell.Services.Pipewire
 import Quickshell.Io
+import "../"
 import "../Audio"
 
 Rectangle {
@@ -25,14 +26,16 @@ Rectangle {
         id: row
         anchors.centerIn: parent
         spacing: 4
+
         Text {
             anchors.verticalCenter: parent.verticalCenter
-            color: "white"
+            color: Colors.foreground
             text: audioRoot.pct + "%"
         }
+
         Text {
             anchors.verticalCenter: parent.verticalCenter
-            color: "white"
+            color: audioRoot.muted ? Colors.accent : Colors.foreground
             font.family: "Font Awesome 7 Free"
             font.weight: Font.Black
             text: audioRoot.icon

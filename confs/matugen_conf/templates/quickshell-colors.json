@@ -2,5 +2,9 @@
   "background": "{{colors.background.default.hex}}",
   "foreground": "{{colors.on_background.default.hex}}",
   "primary": "{{colors.primary.default.hex}}",
-  "accent": "{{colors.tertiary.default.hex}}"
+  "accent": "{{colors.tertiary.default.hex}}",
+  "surface": "{{colors.surface_container.default.hex}}",
+  "surfaceVariant": "{{colors.surface_variant.default.hex}}",
+  "outline": "{{colors.outline.default.hex}}",
+  "muted": "{{colors.on_surface_variant.default.hex}}"
 }
