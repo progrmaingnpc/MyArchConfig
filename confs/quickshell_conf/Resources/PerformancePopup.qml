@@ -63,7 +63,7 @@ PopupWindow {
                     Text {
                         width: parent.width
                         horizontalAlignment: Text.AlignHCenter
-                        text: popup.gpuPct + "%"
+                        text: "Usage " + popup.gpuPct + "%"
                         color: Colors.muted
                         font.pixelSize: 11
                     }
@@ -92,7 +92,7 @@ PopupWindow {
                     Text {
                         width: parent.width
                         horizontalAlignment: Text.AlignHCenter
-                        text: popup.cpuPct + "%"
+                        text: "Usage " + popup.cpuPct + "%"
                         color: Colors.muted
                         font.pixelSize: 11
                     }
@@ -121,7 +121,7 @@ PopupWindow {
                     Text {
                         width: parent.width
                         horizontalAlignment: Text.AlignHCenter
-                        text: popup.diskFreeGB.toFixed(0) + "GB free"
+                        text: "Storage " + popup.diskFreeGB.toFixed(0) + "GB free"
                         color: Colors.muted
                         font.pixelSize: 11
                     }
