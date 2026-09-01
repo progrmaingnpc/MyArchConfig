@@ -17,6 +17,18 @@ Rectangle {
 
     property bool open: false
 
+    // Delay closing to give the mouse time to move onto the popup window
+    Timer {
+        id: closeTimer
+        interval: 150
+        repeat: false
+        onTriggered: {
+            if (!mouseArea.containsMouse && !popupHover.hovered) {
+                networkRoot.open = false;
+            }
+        }
+    }
+
     Text {
         anchors.centerIn: parent
         color: Colors.muted
@@ -26,13 +38,38 @@ Rectangle {
     }
 
     MouseArea {
+        id: mouseArea
         anchors.fill: parent
-        acceptedButtons: Qt.LeftButton | Qt.RightButton
+        hoverEnabled: true
+        acceptedButtons: Qt.RightButton
+
+        onEntered: {
+            closeTimer.stop();
+            networkRoot.open = true;
+        }
+        onExited: closeTimer.restart()
+
         onClicked: (mouse) => {
             if (mouse.button === Qt.RightButton) {
                 Quickshell.execDetached(["nm-connection-editor"]);
-            } else {
-                networkRoot.open = !networkRoot.open;
+            }
+        }
+    }
+
+    NetworkPopup {
+        id: popup
+        anchorItem: networkRoot
+        visible: networkRoot.open
+
+        // Tracks hover on the popup without intercepting clicks or scroll events
+        HoverHandler {
+            id: popupHover
+            onHoveredChanged: {
+                if (hovered) {
+                    closeTimer.stop();
+                } else {
+                    closeTimer.restart();
+                }
             }
         }
     }

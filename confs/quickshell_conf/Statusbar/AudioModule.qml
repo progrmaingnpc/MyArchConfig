@@ -1,60 +1,42 @@
 import QtQuick
 import Quickshell
-import Quickshell.Services.Pipewire
-import Quickshell.Io
+import Quickshell.Networking
 import "../"
-import "../Audio"
 
 Rectangle {
-    id: audioRoot
-    implicitWidth: row.implicitWidth + 12
+    id: networkRoot
+    width: 30
     height: 30
     color: "transparent"
 
-    PwObjectTracker {
-        objects: [Pipewire.defaultAudioSink]
-    }
+    readonly property var devices: Networking.devices ? Networking.devices.values : []
+    readonly property var wiredDevice: devices.find(d => d.type === DeviceType.Wired && d.connected)
+    readonly property var wifiDevice: devices.find(d => d.type === DeviceType.Wifi && d.connected)
 
-    readonly property var sink: Pipewire.defaultAudioSink
-    readonly property bool muted: sink && sink.audio ? sink.audio.muted : false
-    readonly property int pct: sink && sink.audio ? Math.round(sink.audio.volume * 100) : 0
-    readonly property var levelIcons: ["\uf026", "\uf027", "\uf028"]
-    readonly property string icon: muted ? "\uf6a9" : levelIcons[Math.min(2, Math.floor(pct / 34))]
+    readonly property string icon: wiredDevice ? "\uf796" : (wifiDevice ? "\uf1eb" : "\uf071")
+
     property bool open: false
 
-    Row {
-        id: row
+    Text {
         anchors.centerIn: parent
-        spacing: 4
-
-        Text {
-            anchors.verticalCenter: parent.verticalCenter
-            color: Colors.foreground
-            text: audioRoot.pct + "%"
-        }
-
-        Text {
-            anchors.verticalCenter: parent.verticalCenter
-            color: audioRoot.muted ? Colors.primary : Colors.foreground
-            font.family: "Font Awesome 7 Free"
-            font.weight: Font.Black
-            text: audioRoot.icon
-        }
+        color: Colors.muted
+        font.family: "Font Awesome 7 Free"
+        font.weight: Font.Black
+        text: networkRoot.icon
     }
 
     MouseArea {
         anchors.fill: parent
-        onClicked: audioRoot.open = !audioRoot.open
-        onWheel: (wheel) => {
-            if (!audioRoot.sink || !audioRoot.sink.audio) return;
-            const step = 0.05;
-            const delta = wheel.angleDelta.y > 0 ? step : -step;
-            audioRoot.sink.audio.volume = Math.max(0, Math.min(1, audioRoot.sink.audio.volume + delta));
-        }
-    }
+        hoverEnabled: true
+        acceptedButtons: Qt.RightButton
 
-    AudioPopup {
-        anchorItem: audioRoot
-        visible: audioRoot.open
+        onEntered: networkRoot.open = true
+        onExited: networkRoot.open = false
+
+        onClicked: (mouse) => {
+            if (mouse.button === Qt.RightButton) {
+                Quickshell.execDetached(["nm-connection-editor"]);
+            }
+        }
     }
 }
