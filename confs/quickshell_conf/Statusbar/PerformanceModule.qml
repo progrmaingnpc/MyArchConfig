@@ -215,7 +215,6 @@ Item {
         hoverEnabled: true
         onEntered: hoverTimer.restart()
         onExited: leaveTimer.restart()
-        onClicked: Quickshell.execDetached(["kitty", "-e", "btop"])
     }
 
     Timer { id: hoverTimer; interval: 200; onTriggered: perfRoot.popupOpen = true }
