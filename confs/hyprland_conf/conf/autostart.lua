@@ -27,8 +27,6 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("hyprpaper & awww-daemon")
     -- start pywal restart
     hl.exec_cmd("~/.config/hypr/scripts/wal.sh")
-    -- Start the hyprland dock
-    hl.exec_cmd("nwg-dock-hyprland -x")
     -- Start elephant
     hl.exec_cmd("elephant")
     -- Start walker service

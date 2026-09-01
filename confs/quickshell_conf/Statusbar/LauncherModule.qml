@@ -23,7 +23,7 @@ Rectangle {
         color: "transparent"
 
         Text {
-            color: launcherMouseArea.containsMouse ? Colors.primary : Colors.muted
+            color: launcherMouseArea.containsMouse ? Colors.muted : Colors.primary
             text: "" // Or use an Icon component if you have an icon theme
             anchors.centerIn: parent
         }

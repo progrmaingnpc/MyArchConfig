@@ -20,7 +20,7 @@ Rectangle {
     }
 
     Text {
-        color: Colors.muted
+        color: clockMouseArea.containsMouse ? Colors.muted : Colors.primary
         anchors.centerIn: parent
         text: clockRoot.showDate ? Qt.formatDateTime(clock.date, "dd/MM/yyyy") : Qt.formatDateTime(clock.date, "hh:mm AP")
     }

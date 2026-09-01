@@ -7,7 +7,6 @@ SHELL_FASTFETCH_DIR=~/.config/fast_fetch_shell
 WAYPAPER_DIR=~/.config/waypaper
 NVIM_DIR=~/.config/nvim
 TMUX_DIR=~/.config/tmux
-NWG_DOCK_DIR=~/.config/nwg-dock-hyprland
 GTK_THEMES_DIR=~/.themes
 YAZI_DIR=~/.config/yazi
 CARGO_DIR=~/.cargo
@@ -52,8 +51,8 @@ echo "[Successfully installed basic utilities for hyprland]"
 $AUR_MANAGER -S quickshell awww waybar waypaper aquamarine swaync nautilus btop htop hwloc hardinfo2 libnotify jq --noconfirm --needed
 echo "[Successfully installed file system management packages]"
 
-$AUR_MANAGER -S nwg-look nwg-dock-hyprland grimblast-git slurp wl-clipboard --noconfirm --needed
-echo "[Successfully installed dock for hyprland]"
+$AUR_MANAGER -S grimblast-git slurp wl-clipboard --noconfirm --needed
+echo "[Successfully installed grimblast for hyprland]"
 
 $AUR_MANAGER -S elephant elephant-desktopapplications walker --noconfirm --needed
 echo "[Successfully installed walker]"

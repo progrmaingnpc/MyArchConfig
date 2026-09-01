@@ -7,6 +7,7 @@ import "../"
 import "../Notifications"
 import "../Power"
 import "../Network"
+import "../Resources"
 
 PanelWindow {
     id: root
@@ -88,16 +89,9 @@ PanelWindow {
             anchors.verticalCenter: parent.verticalCenter
         }
 
-        MemoryModule {
-            id: memory
+        PerformanceModule {
+            id: performance
             anchors.right: audio.left
-            anchors.rightMargin: 10
-            anchors.verticalCenter: parent.verticalCenter
-        }
-
-        CpuModule {
-            id: cpu
-            anchors.right: memory.left
             anchors.rightMargin: 10
             anchors.verticalCenter: parent.verticalCenter
         }

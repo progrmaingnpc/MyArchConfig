@@ -11,3 +11,4 @@
 11. Converted all hyprland .conf configurations to .lua
 12. Added cool animations
 13. Added matugen config
+14. Removed nwg-dock-hyprland
