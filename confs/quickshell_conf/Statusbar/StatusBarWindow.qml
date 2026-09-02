@@ -6,8 +6,6 @@ import QtQuick
 import "../"
 import "../Notifications"
 import "../Power"
-import "../Network"
-import "../Resources"
 
 PanelWindow {
     id: root
@@ -32,25 +30,6 @@ PanelWindow {
         WorkspacesModule {
             id: workspaces
             anchors.left: launcher.right
-            anchors.leftMargin: 10
-            anchors.verticalCenter: parent.verticalCenter
-        }
-
-        WallpaperModule {
-            id: wallpaper
-            anchors.right: clock.left
-            anchors.rightMargin: 10
-            anchors.verticalCenter: parent.verticalCenter
-        }
-
-        ClockModule {
-            id: clock
-            anchors.centerIn: parent
-        }
-
-        NotifiationsModule {
-            id: notifications
-            anchors.left: clock.right
             anchors.leftMargin: 10
             anchors.verticalCenter: parent.verticalCenter
         }
@@ -89,9 +68,21 @@ PanelWindow {
             anchors.verticalCenter: parent.verticalCenter
         }
 
-        PerformanceModule {
-            id: performance
-            anchors.right: audio.left
+        NotificationsModule {
+            id: notifications
+            anchors.left: clock.right
+            anchors.leftMargin: 10
+            anchors.verticalCenter: parent.verticalCenter
+        }
+
+        ClockModule {
+            id: clock
+            anchors.centerIn: parent
+        }
+
+        DashboardModule {
+            id: dashboard
+            anchors.right: clock.left
             anchors.rightMargin: 10
             anchors.verticalCenter: parent.verticalCenter
         }
@@ -105,10 +96,5 @@ PanelWindow {
     PowerMenu {
         anchorItem: power
         visible: power.open
-    }
-
-    NetworkPopup {
-        anchorItem: network
-        visible: network.open
     }
 }

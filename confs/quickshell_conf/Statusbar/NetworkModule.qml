@@ -2,6 +2,7 @@ import QtQuick
 import Quickshell
 import Quickshell.Networking
 import "../"
+import "../Network"
 
 Rectangle {
     id: networkRoot

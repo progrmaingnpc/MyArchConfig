@@ -6,10 +6,12 @@ import "../"
 
 Rectangle {
     id: workspacesRoot
-    color: "transparent"
     radius: implicitHeight / 2
     implicitWidth: content.implicitWidth + 12
     implicitHeight: content.implicitHeight + 8
+    color: Colors.surfaceContainerLow
+    border.color: Colors.outlineVariant
+    border.width: 1
 
     Row {
         id: content
@@ -28,10 +30,13 @@ Rectangle {
                 color: (content.activeId === index + 1) ? Colors.primary : (workspaceMouseArea.containsMouse ? Colors.surfaceVariant : Colors.surface)
 
                 Text {
+                    font.family: "Cinzel"
+                    font.bold: true
+                    font.pixelSize: 14
+                    font.weight: Font.DemiBold
                     anchors.centerIn: parent
                     text: content.romanMap[index]
                     color: (content.activeId === index + 1) ? Colors.surface : Colors.foreground
-                    font.bold: true
                 }
 
                 MouseArea {
@@ -51,10 +56,13 @@ Rectangle {
             color: Colors.primary
 
             Text {
+                font.family: "Cinzel"
+                font.bold: true
+                font.pixelSize: 14
+                font.weight: Font.DemiBold
                 anchors.centerIn: parent
                 text: visible ? content.romanMap[content.activeId - 1] : ""
                 color: Colors.surface
-                font.bold: true
             }
         }
     }
