@@ -43,7 +43,7 @@ Item {
                 Column {
                     width: (parent.width - 20) / 3
                     spacing: 4
-                    Text { width: parent.width; horizontalAlignment: Text.AlignHCenter; text: root.gpuPct + "%"; color: Colors.muted; font.pixelSize: 11 }
+                    Text { width: parent.width; horizontalAlignment: Text.AlignHCenter; text: root.gpuPct + "% Usage"; color: Colors.muted; font.pixelSize: 11 }
                     PieChart {
                         width: parent.width; height: width
                         value: root.gpuPct
@@ -58,7 +58,7 @@ Item {
                 Column {
                     width: (parent.width - 20) / 3
                     spacing: 4
-                    Text { width: parent.width; horizontalAlignment: Text.AlignHCenter; text: root.cpuPct + "%"; color: Colors.muted; font.pixelSize: 11 }
+                    Text { width: parent.width; horizontalAlignment: Text.AlignHCenter; text: root.cpuPct + "% Usage"; color: Colors.muted; font.pixelSize: 11 }
                     PieChart {
                         width: parent.width; height: width
                         value: root.cpuPct
@@ -73,7 +73,7 @@ Item {
                 Column {
                     width: (parent.width - 20) / 3
                     spacing: 4
-                    Text { width: parent.width; horizontalAlignment: Text.AlignHCenter; text: root.diskUsedGB.toFixed(0) + "GB used"; color: Colors.muted; font.pixelSize: 11 }
+                    Text { width: parent.width; horizontalAlignment: Text.AlignHCenter; text: root.diskUsedGB.toFixed(0) + "GiB Storage"; color: Colors.muted; font.pixelSize: 11 }
                     PieChart {
                         width: parent.width; height: width
                         value: root.memPct
