@@ -77,7 +77,7 @@ Item {
                     PieChart {
                         width: parent.width; height: width
                         value: root.memPct
-                        centerText: root.memUsedGB.toFixed(1) + "GB"
+                        centerText: root.memUsedGB.toFixed(1) + "GiB"
                         valueColor: Colors.primary
                         trackColor: Colors.surfaceVariant
                         textColor: Colors.foreground
