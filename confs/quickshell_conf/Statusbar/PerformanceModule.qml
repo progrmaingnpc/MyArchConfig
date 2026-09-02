@@ -18,6 +18,8 @@ Item {
     property real memUsedGB: 0
     property real memTotalGB: 0
     property real diskFreeGB: 0
+    property real diskTotalGB: 0
+    property real diskUsedGB: 0
     property real swapUsedGB: 0
     property real swapTotalGB: 0
     property var coreLoads: []
@@ -81,13 +83,19 @@ Item {
 
     Process {
         id: diskProc
-        command: ["df", "-B1", "--output=avail", "/"]
+        command: ["df", "-B1", "--output=size,avail", "/"]
         stdout: SplitParser {
             onRead: data => {
                 const lines = data.trim().split("\n");
-                const bytes = parseFloat(lines[lines.length - 1]);
-                if (!isNaN(bytes))
-                    perfRoot.diskFreeGB = bytes / 1073741824;
+                const lastLine = lines[lines.length - 1].trim().split(/\s+/);
+                if (lastLine.length >= 2) {
+                    const totalBytes = parseFloat(lastLine[0]);
+                    const availBytes = parseFloat(lastLine[1]);
+                    if (!isNaN(totalBytes) && !isNaN(availBytes)) {
+                        // Total minus Available matches dysk/btop usage logic
+                        perfRoot.diskUsedGB = (totalBytes - availBytes) / 1000000000;
+                    }
+                }
             }
         }
     }
@@ -233,6 +241,7 @@ Item {
         memPct: perfRoot.memPct
         memUsedGB: perfRoot.memUsedGB
         memTotalGB: perfRoot.memTotalGB
+        diskUsedGB: perfRoot.diskUsedGB
         diskFreeGB: perfRoot.diskFreeGB
         swapUsedGB: perfRoot.swapUsedGB
         swapTotalGB: perfRoot.swapTotalGB

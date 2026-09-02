@@ -14,6 +14,8 @@ PopupWindow {
     property real memUsedGB: 0
     property real memTotalGB: 0
     property real diskFreeGB: 0
+    property real diskTotalGB: 0
+    property real diskUsedGB: 0
     property real swapUsedGB: 0
     property real swapTotalGB: 0
     property var coreLoads: []
@@ -121,7 +123,7 @@ PopupWindow {
                     Text {
                         width: parent.width
                         horizontalAlignment: Text.AlignHCenter
-                        text: "Storage " + popup.diskFreeGB.toFixed(0) + "GB free"
+                        text: "Storage " + popup.diskUsedGB.toFixed(0) + "GB"
                         color: Colors.muted
                         font.pixelSize: 11
                     }
