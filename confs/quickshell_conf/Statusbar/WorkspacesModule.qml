@@ -22,7 +22,7 @@ Rectangle {
         Repeater {
             model: 5
             Rectangle {
-                width: 26
+                width: 32
                 height: 26
                 radius: 13
                 color: (content.activeId === index + 1) ? Colors.primary : (workspaceMouseArea.containsMouse ? Colors.surfaceVariant : Colors.surface)
@@ -44,7 +44,7 @@ Rectangle {
         }
 
         Rectangle {
-            width: 26
+            width: 32
             height: 26
             radius: 13
             visible: content.activeId >= 6 && content.activeId <= 10

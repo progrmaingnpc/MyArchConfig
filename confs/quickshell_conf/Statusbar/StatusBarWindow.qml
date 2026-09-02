@@ -16,7 +16,7 @@ PanelWindow {
         left: true
         right: true
     }
-    implicitHeight: 30
+    implicitHeight: 40
     color: Colors.surface
 
     Item {

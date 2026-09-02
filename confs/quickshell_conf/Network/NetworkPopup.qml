@@ -236,115 +236,146 @@ PopupWindow {
 
                 Text { text: "Wi-Fi Networks"; color: Colors.muted; font.bold: true; font.pixelSize: 11 }
 
-                Repeater {
-                    model: root.networks
+                // Scrollable container showing max 4 items (4 * 36px item + 3 * 4px spacing = 156px)
+                Flickable {
+                    id: wifiFlickable
+                    width: parent.width
+                    height: Math.min(wifiColumn.implicitHeight, 156)
+                    contentWidth: width
+                    contentHeight: wifiColumn.implicitHeight
+                    clip: true
 
-                    delegate: Column {
-                        width: content.width
+                    Column {
+                        id: wifiColumn
+                        width: wifiFlickable.width - (wifiFlickable.contentHeight > wifiFlickable.height ? 8 : 0)
                         spacing: 4
 
-                        Rectangle {
-                            width: parent.width
-                            height: 36
-                            radius: 6
-                            color: modelData.connected ? Colors.primary : Colors.surface
+                        Repeater {
+                            model: root.networks
 
-                            Row {
-                                anchors.fill: parent
-                                anchors.leftMargin: 8
-                                anchors.rightMargin: 8
-                                spacing: 8
+                            delegate: Column {
+                                width: wifiColumn.width
+                                spacing: 4
 
-                                Text {
-                                    anchors.verticalCenter: parent.verticalCenter
-                                    width: 34
-                                    text: Math.round(modelData.signalStrength * 100) + "%"
-                                    color: modelData.connected ? Colors.surface : Colors.muted
+                                Rectangle {
+                                    width: parent.width
+                                    height: 36
+                                    radius: 6
+                                    color: modelData.connected ? Colors.primary : Colors.surface
+
+                                    Row {
+                                        anchors.fill: parent
+                                        anchors.leftMargin: 8
+                                        anchors.rightMargin: 8
+                                        spacing: 8
+
+                                        Text {
+                                            anchors.verticalCenter: parent.verticalCenter
+                                            width: 34
+                                            text: Math.round(modelData.signalStrength * 100) + "%"
+                                            color: modelData.connected ? Colors.surface : Colors.muted
+                                        }
+
+                                        Text {
+                                            anchors.verticalCenter: parent.verticalCenter
+                                            width: parent.width - 140
+                                            elide: Text.ElideRight
+                                            text: modelData.name
+                                            color: modelData.connected ? Colors.surface : Colors.foreground
+                                            font.bold: modelData.connected
+                                        }
+
+                                        Text {
+                                            anchors.verticalCenter: parent.verticalCenter
+                                            text: modelData.connected ? "Disconnect" : ""
+                                            color: Colors.surface
+                                            font.pixelSize: 10
+                                            font.bold: true
+                                        }
+                                    }
+
+                                    MouseArea {
+                                        anchors.fill: parent
+                                        onClicked: {
+                                            if (modelData.connected) {
+                                                modelData.disconnect();
+                                            } else if (modelData.known || modelData.security === WifiSecurityType.Open) {
+                                                modelData.connect();
+                                            } else {
+                                                root.pendingNetwork = modelData;
+                                                root.pskInput = "";
+                                            }
+                                        }
+                                    }
                                 }
 
-                                Text {
-                                    anchors.verticalCenter: parent.verticalCenter
-                                    width: parent.width - 140
-                                    elide: Text.ElideRight
-                                    text: modelData.name
-                                    color: modelData.connected ? Colors.surface : Colors.foreground
-                                    font.bold: modelData.connected
-                                }
+                                Row {
+                                    visible: root.pendingNetwork === modelData
+                                    width: parent.width
+                                    height: visible ? 32 : 0
+                                    spacing: 6
 
-                                Text {
-                                    anchors.verticalCenter: parent.verticalCenter
-                                    text: modelData.connected ? "Disconnect" : ""
-                                    color: Colors.surface
-                                    font.pixelSize: 10
-                                    font.bold: true
-                                }
-                            }
+                                    Rectangle {
+                                        width: parent.width - 70
+                                        height: 32
+                                        radius: 6
+                                        color: Colors.surface
 
-                            MouseArea {
-                                anchors.fill: parent
-                                onClicked: {
-                                    if (modelData.connected) {
-                                        modelData.disconnect();
-                                    } else if (modelData.known || modelData.security === WifiSecurityType.Open) {
-                                        modelData.connect();
-                                    } else {
-                                        root.pendingNetwork = modelData;
-                                        root.pskInput = "";
+                                        TextInput {
+                                            anchors.fill: parent
+                                            anchors.margins: 8
+                                            color: Colors.foreground
+                                            echoMode: TextInput.Password
+                                            focus: root.pendingNetwork === modelData
+                                            text: root.pskInput
+                                            onTextChanged: root.pskInput = text
+                                            onAccepted: {
+                                                modelData.connectWithPsk(root.pskInput);
+                                                root.pendingNetwork = null;
+                                            }
+                                        }
+                                    }
+
+                                    Rectangle {
+                                        width: 60
+                                        height: 32
+                                        radius: 6
+                                        color: Colors.primary
+
+                                        Text {
+                                            anchors.centerIn: parent
+                                            text: "Connect"
+                                            font.pixelSize: 10
+                                            font.bold: true
+                                            color: Colors.surface
+                                        }
+
+                                        MouseArea {
+                                            anchors.fill: parent
+                                            onClicked: {
+                                                modelData.connectWithPsk(root.pskInput);
+                                                root.pendingNetwork = null;
+                                            }
+                                        }
                                     }
                                 }
                             }
                         }
+                    }
 
-                        Row {
-                            visible: root.pendingNetwork === modelData
-                            width: parent.width
-                            height: visible ? 32 : 0
-                            spacing: 6
+                    // Dynamic scrollbar indicator
+                    Rectangle {
+                        id: scrollbar
+                        anchors.right: parent.right
+                        width: 4
+                        visible: wifiFlickable.contentHeight > wifiFlickable.height
+                        height: Math.max(16, wifiFlickable.height * (wifiFlickable.height / wifiFlickable.contentHeight))
 
-                            Rectangle {
-                                width: parent.width - 70
-                                height: 32
-                                radius: 6
-                                color: Colors.surface
-
-                                TextInput {
-                                    anchors.fill: parent
-                                    anchors.margins: 8
-                                    color: Colors.foreground
-                                    echoMode: TextInput.Password
-                                    focus: root.pendingNetwork === modelData
-                                    text: root.pskInput
-                                    onTextChanged: root.pskInput = text
-                                    onAccepted: {
-                                        modelData.connectWithPsk(root.pskInput);
-                                        root.pendingNetwork = null;
-                                    }
-                                }
-                            }
-
-                            Rectangle {
-                                width: 60
-                                height: 32
-                                radius: 6
-                                color: Colors.primary
-
-                                Text {
-                                    anchors.centerIn: parent
-                                    text: "Connect"
-                                    font.pixelSize: 10
-                                    font.bold: true
-                                    color: Colors.surface
-                                }
-
-                                MouseArea {
-                                    anchors.fill: parent
-                                    onClicked: {
-                                        modelData.connectWithPsk(root.pskInput);
-                                        root.pendingNetwork = null;
-                                    }
-                                }
-                            }
-                        }
+                        // Maps contentY directly to the remaining space in the visible track
+                        y: wifiFlickable.contentY + (wifiFlickable.contentY / (wifiFlickable.contentHeight - wifiFlickable.height)) * (wifiFlickable.height - height)
+                        radius: 2
+                        color: Colors.muted
+                        opacity: 0.6
                     }
                 }
 
