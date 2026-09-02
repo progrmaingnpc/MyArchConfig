@@ -29,3 +29,8 @@ post_hook = "pkill qs; qs &"
 input_path = '~/.config/matugen/templates/walker-style.css'
 output_path = '~/.config/walker/themes/default/style.css'
 post_hook = "pkill walker; walker --gapplication-service &"
+
+[templates.hyprtoolkit]
+input_path = '~/.config/matugen/templates/hyprtoolkit.conf'
+output_path = '~/.config/hypr/hyprtoolkit.conf'
+post_hook = "hyprctl reload"
