@@ -7,7 +7,7 @@ Rectangle {
     width: 30
     height: 30
     radius: 15
-    color: "transparent"
+    color: mouseArea.containsMouse ? Colors.surfaceVariant : "transparent"
 
     property bool open: false
     readonly property int count: NotificationsServer.trackedNotifications.values.length
@@ -32,7 +32,9 @@ Rectangle {
     }
 
     MouseArea {
+        id: mouseArea
         anchors.fill: parent
+        hoverEnabled: true
         onClicked: notificationsRoot.open = !notificationsRoot.open
     }
 }

@@ -1,21 +1,20 @@
 import QtQuick
-import Quickshell
-import "../"
+import "../../"
 
-PopupWindow {
+Rectangle {
     id: root
-    color: Colors.surface
+    anchors.fill: parent
+    radius: 12
+    color: Colors.surfaceContainer
+    border.color: Colors.outline
+    border.width: 1
 
-    readonly property int cellSize: 32
-    implicitWidth: cellSize * 7 + 20
-    implicitHeight: cellSize * 8 + 24
+    readonly property int cellSize: 38
+    readonly property int rowCount: Math.ceil(days.length / 7)
 
-    anchor.edges: Edges.Bottom
-    anchor.gravity: Edges.Bottom
-    anchor.margins.top: 8
-
-    // expose whether the mouse is currently over the popup
-    property alias popupHovered: hoverHandler.hovered
+    // Dynamically scale implicit height based on whether month needs 5 or 6 rows
+    implicitWidth: (cellSize * 7) + 20
+    implicitHeight: 28 + 22 + (rowCount * cellSize) + (rowCount * 2) + 20
 
     property var today: new Date()
     property int viewYear: today.getFullYear()
@@ -31,9 +30,13 @@ PopupWindow {
         const offset = (firstDay + 6) % 7
         const daysInMonth = new Date(viewYear, viewMonth + 1, 0).getDate()
         const cells = []
+        
         for (let i = 0; i < offset; i++) cells.push(0)
         for (let d = 1; d <= daysInMonth; d++) cells.push(d)
+        
+        // Pad only to finish the last active row (5 or 6 rows depending on month)
         while (cells.length % 7 !== 0) cells.push(0)
+        
         return cells
     }
 
@@ -49,38 +52,25 @@ PopupWindow {
         days = buildDays()
     }
 
-    onVisibleChanged: {
-        if (visible) {
-            today = new Date()
-            viewYear = today.getFullYear()
-            viewMonth = today.getMonth()
-            days = buildDays()
-        }
-    }
-
     Component.onCompleted: days = buildDays()
-
-    // covers the whole popup, purely for hover tracking — doesn't
-    // intercept clicks meant for the buttons/cells below it
-    HoverHandler {
-        id: hoverHandler
-    }
 
     Column {
         anchors.fill: parent
         anchors.margins: 10
-        spacing: 6
+        spacing: 2
 
+        // Month Navigation Header
         Row {
             width: root.cellSize * 7
-            height: 24
+            height: 28
 
             Text {
                 width: root.cellSize
-                height: 24
+                height: parent.height
                 text: "<"
                 color: Colors.muted
                 font.bold: true
+                font.pixelSize: 13
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
 
@@ -92,20 +82,22 @@ PopupWindow {
 
             Text {
                 width: root.cellSize * 5
-                height: 24
+                height: parent.height
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
-                color: Colors.muted
+                color: Colors.foreground
                 font.bold: true
+                font.pixelSize: 13
                 text: root.monthNames[root.viewMonth] + " " + root.viewYear
             }
 
             Text {
                 width: root.cellSize
-                height: 24
+                height: parent.height
                 text: ">"
                 color: Colors.muted
                 font.bold: true
+                font.pixelSize: 13
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
 
@@ -116,23 +108,28 @@ PopupWindow {
             }
         }
 
+        // Days Header
         Grid {
             columns: 7
             Repeater {
                 model: root.dayNames
                 Text {
                     width: root.cellSize
-                    height: 20
+                    height: 22
                     horizontalAlignment: Text.AlignHCenter
+                    verticalAlignment: Text.AlignVCenter
                     color: Colors.muted
                     font.bold: true
+                    font.pixelSize: 11
                     text: modelData
                 }
             }
         }
 
+        // Days Grid (Adjusts dynamically between 5 and 6 rows)
         Grid {
             columns: 7
+            rowSpacing: 2
             Repeater {
                 model: root.days
                 Rectangle {
@@ -150,8 +147,9 @@ PopupWindow {
                         anchors.centerIn: parent
                         visible: modelData !== 0
                         text: modelData
-                        color: parent.isToday ? Colors.surface : Colors.muted
+                        color: parent.isToday ? Colors.onPrimary : Colors.foreground
                         font.bold: parent.isToday
+                        font.pixelSize: 12
                     }
                 }
             }

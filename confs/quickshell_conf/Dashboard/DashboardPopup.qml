@@ -3,13 +3,14 @@ import Quickshell
 import "../"
 import "Performance"
 import "Wallpaper"
+import "Calendar"
 
 PopupWindow {
     id: popup
     property Item anchorItem
     signal closed()
 
-    property string view: "menu" // "menu" | "wallpapers" | "performance"
+    property string view: "menu" // "menu" | "wallpapers" | "performance" | "calendar"
 
     anchor.item: anchorItem
     anchor.rect.x: 0
@@ -19,11 +20,16 @@ PopupWindow {
 
     color: Colors.surface
 
-    implicitWidth: view === "wallpapers" ? 654 : 340
-    implicitHeight: {
+    implicitWidth: {
+        if (view === "wallpapers") return 654;
+        if (view === "calendar") return 310; // Tightened width for cleaner margins
+        return 420;
+    }
+
+   implicitHeight: {
         if (view === "menu") return 60;
         const loadedHeight = contentLoader.item ? (contentLoader.item.implicitHeight || contentLoader.item.height) : 0;
-        return loadedHeight + 72; // 36px (buttons) + 12px (spacing) + 24px (top/bottom margins)
+        return loadedHeight + 72; // Dynamically wraps whatever size CalendarPopup requests
     }
 
     Behavior on implicitWidth { NumberAnimation { duration: 160; easing.type: Easing.OutCubic } }
@@ -42,36 +48,38 @@ PopupWindow {
 
         // --- Navigation Bar ---
         Row {
+            id: navRow
             width: parent.width
             height: 36
-            spacing: 12
+            spacing: 6
 
             // Wallpapers Button
             Rectangle {
-                width: (parent.width - 12) / 2
+                width: (navRow.width - (navRow.spacing * 2)) / 3
                 height: parent.height
                 radius: 8
-                color: popup.view === "wallpapers" 
-                    ? Colors.primary 
+                color: popup.view === "wallpapers"
+                    ? Colors.primary
                     : (wallpaperMouse.containsMouse ? Colors.surfaceContainerHigh : Colors.surfaceContainer)
 
                 Row {
                     anchors.centerIn: parent
-                    spacing: 8
+                    spacing: 4
 
                     Text {
                         anchors.verticalCenter: parent.verticalCenter
                         text: "\uf03e"
                         font.family: "Font Awesome 7 Free"
                         font.weight: Font.Black
-                        font.pixelSize: 13
+                        font.pixelSize: 11
                         color: popup.view === "wallpapers" ? Colors.onPrimary : Colors.foreground
                     }
                     Text {
                         anchors.verticalCenter: parent.verticalCenter
                         text: "Wallpapers"
                         font.bold: true
-                        font.pixelSize: 12
+                        font.pixelSize: 10
+                        elide: Text.ElideRight
                         color: popup.view === "wallpapers" ? Colors.onPrimary : Colors.foreground
                     }
                 }
@@ -86,30 +94,31 @@ PopupWindow {
 
             // Performance Button
             Rectangle {
-                width: (parent.width - 12) / 2
+                width: (navRow.width - (navRow.spacing * 2)) / 3
                 height: parent.height
                 radius: 8
-                color: popup.view === "performance" 
-                    ? Colors.primary 
+                color: popup.view === "performance"
+                    ? Colors.primary
                     : (perfMouse.containsMouse ? Colors.surfaceContainerHigh : Colors.surfaceContainer)
 
                 Row {
                     anchors.centerIn: parent
-                    spacing: 8
+                    spacing: 4
 
                     Text {
                         anchors.verticalCenter: parent.verticalCenter
                         text: "\uf080"
                         font.family: "Font Awesome 7 Free"
                         font.weight: Font.Black
-                        font.pixelSize: 13
+                        font.pixelSize: 11
                         color: popup.view === "performance" ? Colors.onPrimary : Colors.foreground
                     }
                     Text {
                         anchors.verticalCenter: parent.verticalCenter
                         text: "Performance"
                         font.bold: true
-                        font.pixelSize: 12
+                        font.pixelSize: 10
+                        elide: Text.ElideRight
                         color: popup.view === "performance" ? Colors.onPrimary : Colors.foreground
                     }
                 }
@@ -121,23 +130,62 @@ PopupWindow {
                     onClicked: popup.view = popup.view === "performance" ? "menu" : "performance"
                 }
             }
+
+            // Calendar Button
+            Rectangle {
+                width: (navRow.width - (navRow.spacing * 2)) / 3
+                height: parent.height
+                radius: 8
+                color: popup.view === "calendar"
+                    ? Colors.primary
+                    : (calMouse.containsMouse ? Colors.surfaceContainerHigh : Colors.surfaceContainer)
+
+                Row {
+                    anchors.centerIn: parent
+                    spacing: 4
+
+                    Text {
+                        anchors.verticalCenter: parent.verticalCenter
+                        text: "\uf133"
+                        font.family: "Font Awesome 7 Free"
+                        font.weight: Font.Black
+                        font.pixelSize: 11
+                        color: popup.view === "calendar" ? Colors.onPrimary : Colors.foreground
+                    }
+                    Text {
+                        anchors.verticalCenter: parent.verticalCenter
+                        text: "Calendar"
+                        font.bold: true
+                        font.pixelSize: 10
+                        elide: Text.ElideRight
+                        color: popup.view === "calendar" ? Colors.onPrimary : Colors.foreground
+                    }
+                }
+
+                MouseArea {
+                    id: calMouse
+                    anchors.fill: parent
+                    hoverEnabled: true
+                    onClicked: popup.view = popup.view === "calendar" ? "menu" : "calendar"
+                }
+            }
         }
 
-        // --- Active Content Loader (Clips content during window animation) ---
+        // --- Active Content Loader ---
         Item {
             width: parent.width
             height: popup.view === "menu" ? 0 : parent.height - 48
             visible: popup.view !== "menu"
-            clip: true // 1. Prevents un-rendered content spillover during scale animations
 
             Loader {
                 id: contentLoader
                 anchors.fill: parent
-                asynchronous: true // 2. Loads child components off-thread to prevent UI stutter
+                asynchronous: true
                 sourceComponent: {
                     switch (popup.view) {
                         case "wallpapers": return wallpaperComponent
                         case "performance": return performanceComponent
+                        case "calendar": return calendarComponent
                         default: return null
                     }
                 }
@@ -168,5 +216,10 @@ PopupWindow {
             coreLoads: perfData.coreLoads
             uptimeStr: perfData.uptimeStr
         }
+    }
+
+    Component {
+        id: calendarComponent
+        CalendarPopup {}
     }
 }

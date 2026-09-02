@@ -54,18 +54,4 @@ Rectangle {
             }
         }
     }
-
-    CalendarWindow {
-        id: calendarPopup
-        anchor.item: clockRoot
-        visible: clockRoot.open
-
-        onPopupHoveredChanged: {
-            if (popupHovered) {
-                closeTimer.stop()
-            } else {
-                closeTimer.restart()
-            }
-        }
-    }
 }
