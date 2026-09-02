@@ -20,7 +20,7 @@ Rectangle {
     // Delay closing to give the mouse time to move onto the popup window
     Timer {
         id: closeTimer
-        interval: 150
+        interval: 20
         repeat: false
         onTriggered: {
             if (!mouseArea.containsMouse && !popupHover.hovered) {

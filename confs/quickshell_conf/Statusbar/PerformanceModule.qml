@@ -226,7 +226,7 @@ Item {
     }
 
     Timer { id: hoverTimer; interval: 200; onTriggered: perfRoot.popupOpen = true }
-    Timer { id: leaveTimer; interval: 300; onTriggered: perfRoot.popupOpen = false }
+    Timer { id: leaveTimer; interval: 20; onTriggered: perfRoot.popupOpen = false }
 
     // --- popup ---
     PerformancePopup {

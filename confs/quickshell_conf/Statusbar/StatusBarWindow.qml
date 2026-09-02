@@ -63,14 +63,14 @@ PanelWindow {
 
         BatteryModule {
             id: battery
-            anchors.right: power.left
+            anchors.right: network.left
             anchors.rightMargin: 10
             anchors.verticalCenter: parent.verticalCenter
         }
 
         PowerProfilesModule {
             id: powerProfiles
-            anchors.right: battery.left
+            anchors.right: power.left
             anchors.rightMargin: 10
             anchors.verticalCenter: parent.verticalCenter
         }
@@ -84,7 +84,7 @@ PanelWindow {
 
         AudioModule {
             id: audio
-            anchors.right: network.left
+            anchors.right: battery.left
             anchors.rightMargin: 10
             anchors.verticalCenter: parent.verticalCenter
         }
