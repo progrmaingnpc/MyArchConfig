@@ -23,7 +23,6 @@ post_hook = "kill -SIGUSR1 $(pgrep -x kitty)"
 [templates.quickshell]
 input_path = '~/.config/matugen/templates/quickshell-colors.json'
 output_path = '~/.local/state/quickshell/generated/quickshell-colors.json'
-post_hook = "pkill qs; qs &"
 
 [templates.walker]
 input_path = '~/.config/matugen/templates/walker-style.css'

@@ -8,12 +8,15 @@ Item {
     id: root
     signal wallpaperSelected()
 
-    // 1. Dynamic dimensions tightly wrapped around the horizontal list layout
+    property alias keyHandler: keyHandler   // exposes the focus target to DashboardPopup
+
     implicitWidth: 630
-    implicitHeight: 160 // Fixed height for 1 row of cards + padding
+    implicitHeight: 160
     height: implicitHeight
 
-    Component.onCompleted: wallpapers.refresh()
+    property int currentIndex: 0
+
+    Component.onCompleted: wallpapers.refresh()   // forceActiveFocus() call removed — now driven externally
 
     Process { id: applyProcess }
 
@@ -25,6 +28,13 @@ Item {
         sortField: FolderListModel.Name
     }
 
+    function applyIndex(i) {
+        if (i < 0 || i >= wallpapers.count) return
+        const path = wallpapers.get(i, "filePath")
+        applyProcess.command = ["waypaper", "--wallpaper", path]
+        applyProcess.startDetached()
+    }
+
     Rectangle {
         anchors.fill: parent
         radius: 12
@@ -32,78 +42,95 @@ Item {
         border.color: Colors.outline
         border.width: 1
 
-        // 2. Horizontal ListView with mouse wheel scroll handling
-        ListView {
-            id: listView
+        Item {
+            id: keyHandler
             anchors.fill: parent
-            anchors.margins: 10
-            orientation: ListView.Horizontal
-            spacing: 12
-            model: wallpapers
-            clip: true
+            focus: true
 
-            // Convert vertical mouse scroll wheel into smooth horizontal movement
-            MouseArea {
+            Keys.onLeftPressed: {
+                root.currentIndex = Math.max(0, root.currentIndex - 1)
+                listView.positionViewAtIndex(root.currentIndex, ListView.Contain)
+                root.applyIndex(root.currentIndex)
+            }
+            Keys.onRightPressed: {
+                root.currentIndex = Math.min(wallpapers.count - 1, root.currentIndex + 1)
+                listView.positionViewAtIndex(root.currentIndex, ListView.Contain)
+                root.applyIndex(root.currentIndex)
+            }
+            Keys.onReturnPressed: root.wallpaperSelected()
+            Keys.onEnterPressed: root.wallpaperSelected()
+
+            ListView {
+                id: listView
                 anchors.fill: parent
-                acceptedButtons: Qt.NoButton // Allows item clicks to pass through to delegates
-                onWheel: (wheel) => {
-                    if (wheel.angleDelta.y !== 0) {
-                        listView.contentX = Math.max(0, Math.min(listView.contentX - wheel.angleDelta.y, listView.contentWidth - listView.width));
+                anchors.margins: 10
+                orientation: ListView.Horizontal
+                spacing: 12
+                model: wallpapers
+                clip: true
+
+                MouseArea {
+                    anchors.fill: parent
+                    acceptedButtons: Qt.NoButton
+                    onWheel: (wheel) => {
+                        if (wheel.angleDelta.y !== 0) {
+                            listView.contentX = Math.max(0, Math.min(listView.contentX - wheel.angleDelta.y, listView.contentWidth - listView.width));
+                        }
                     }
                 }
-            }
 
-            delegate: Item {
-                width: 200
-                height: 140
+                delegate: Item {
+                    width: 200
+                    height: 140
 
-                Rectangle {
-                    id: card
-                    anchors.centerIn: parent
-                    width: 192
-                    height: 132
-                    radius: 8
-                    color: "transparent"
-                    border.width: 2
-                    border.color: thumbMouse.containsMouse ? Colors.primary : "transparent"
+                    Rectangle {
+                        id: card
+                        anchors.centerIn: parent
+                        width: 192
+                        height: 132
+                        radius: 8
+                        color: "transparent"
+                        property bool keySelected: root.currentIndex === index
+                        border.width: 2
+                        border.color: (thumbMouse.containsMouse || keySelected) ? Colors.primary : "transparent"
 
-                    // 3. Smooth hover scaling transformation
-                    scale: thumbMouse.containsMouse ? 1.05 : 1.0
-                    Behavior on scale { NumberAnimation { duration: 150; easing.type: Easing.OutCubic } }
+                        scale: (thumbMouse.containsMouse || keySelected) ? 1.05 : 1.0
+                        Behavior on scale { NumberAnimation { duration: 150; easing.type: Easing.OutCubic } }
 
-                    Image {
-                        anchors.fill: parent
-                        anchors.margins: 4
-                        source: "file://" + filePath
-                        fillMode: Image.PreserveAspectCrop
-                        asynchronous: true
+                        Image {
+                            anchors.fill: parent
+                            anchors.margins: 4
+                            source: "file://" + filePath
+                            fillMode: Image.PreserveAspectCrop
+                            asynchronous: true
+                            layer.enabled: true
+                        }
 
-                        // Round corners on the preview image
-                        layer.enabled: true
-                    }
+                        Text {
+                            anchors.bottom: parent.bottom
+                            anchors.left: parent.left
+                            anchors.right: parent.right
+                            anchors.margins: 8
+                            text: fileName
+                            color: Colors.foreground
+                            font.bold: true
+                            font.pixelSize: 11
+                            elide: Text.ElideRight
+                            style: Text.Outline
+                            styleColor: Colors.surface
+                        }
 
-                    Text {
-                        anchors.bottom: parent.bottom
-                        anchors.left: parent.left
-                        anchors.right: parent.right
-                        anchors.margins: 8
-                        text: fileName
-                        color: Colors.foreground
-                        font.bold: true
-                        font.pixelSize: 11
-                        elide: Text.ElideRight
-                        style: Text.Outline
-                        styleColor: Colors.surface
-                    }
-
-                    MouseArea {
-                        id: thumbMouse
-                        anchors.fill: parent
-                        hoverEnabled: true
-                        onClicked: {
-                            applyProcess.command = ["waypaper", "--wallpaper", filePath];
-                            applyProcess.startDetached();
-                            root.wallpaperSelected();
+                        MouseArea {
+                            id: thumbMouse
+                            anchors.fill: parent
+                            hoverEnabled: true
+                            onEntered: root.currentIndex = index
+                            onClicked: {
+                                root.currentIndex = index
+                                applyProcess.command = ["waypaper", "--wallpaper", filePath];
+                                applyProcess.startDetached();
+                                root.wallpaperSelected();
+                            }
                         }
                     }
                 }

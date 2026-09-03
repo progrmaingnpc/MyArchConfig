@@ -7,6 +7,7 @@ import "Calendar"
 
 PopupWindow {
     id: popup
+    grabFocus: true 
     property Item anchorItem
     signal closed()
 
@@ -189,6 +190,10 @@ PopupWindow {
                         default: return null
                     }
                 }
+                onLoaded: Qt.callLater(() => {
+                    if (item && item.keyHandler)
+                        item.keyHandler.forceActiveFocus()
+                })
             }
         }
     }
@@ -223,3 +228,4 @@ PopupWindow {
         CalendarPopup {}
     }
 }
+
