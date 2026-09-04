@@ -1,6 +1,6 @@
 hl.config({
     input = {
-        kb_layout   = "us,ro,il",
+        kb_layout   = "us",
         kb_variant  = ",std,",     -- one slot per layout, empty = default variant
         kb_model    = "",
         kb_options  = "grp:win_space_toggle",
